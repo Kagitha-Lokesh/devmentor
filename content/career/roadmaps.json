@@ -1,0 +1,66 @@
+[
+  {
+    "id": "roadmap-java-fullstack",
+    "title": "Java Full Stack Developer Career Roadmap",
+    "description": "The complete journey from Java basics to full-stack cloud-native deployment.",
+    "difficulty": "Beginner",
+    "technology": ["Java", "Spring Boot", "React", "PostgreSQL", "Docker"],
+    "track": "Full Stack",
+    "estimatedHours": 320,
+    "steps": [
+      {
+        "id": "step-java-core",
+        "title": "Phase 1: Java Language Core",
+        "description": "Master OOP, collections, threads, streams, and syntax.",
+        "skills": ["Java Syntax", "Object-Oriented Programming", "Multithreading"]
+      },
+      {
+        "id": "step-spring-boot",
+        "title": "Phase 2: Spring Boot Microservices",
+        "description": "Build scalable REST APIs, configure database persistence, and implement JWT security.",
+        "skills": ["Spring Boot", "Spring Security", "JPA / Hibernate", "PostgreSQL"]
+      },
+      {
+        "id": "step-react-frontend",
+        "title": "Phase 3: React Frontend",
+        "description": "Build high-performance UIs, manage state, and integrate REST services.",
+        "skills": ["React", "HTML5/CSS3", "JavaScript (ES6+)", "TailwindCSS"]
+      },
+      {
+        "id": "step-devops-cloud",
+        "title": "Phase 4: DevOps & Deployment",
+        "description": "Dockerize applications, set up CI/CD pipelines, and deploy to AWS.",
+        "skills": ["Docker", "GitHub Actions", "AWS", "CI/CD"]
+      }
+    ]
+  },
+  {
+    "id": "roadmap-frontend",
+    "title": "Modern Frontend Developer Roadmap",
+    "description": "Deep dive into web standards, performance, React components, and state management.",
+    "difficulty": "Beginner",
+    "technology": ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Vite"],
+    "track": "Frontend",
+    "estimatedHours": 180,
+    "steps": [
+      {
+        "id": "step-html-css-js",
+        "title": "Phase 1: Web Fundamentals",
+        "description": "Master responsive layout engineering and vanilla JS operations.",
+        "skills": ["HTML5", "CSS Grid/Flexbox", "Modern JS (ES6+)"]
+      },
+      {
+        "id": "step-react-basics",
+        "title": "Phase 2: Core React Concepts",
+        "description": "Understand components, hooks, virtual DOM, and client routers.",
+        "skills": ["React Hooks", "React Router", "JSX Structure"]
+      },
+      {
+        "id": "step-state-perf",
+        "title": "Phase 3: State Management & Build Tooling",
+        "description": "Optimize bundles using Vite, implement global store managers (Zustand, Query).",
+        "skills": ["Zustand", "React Query", "Vite Configuration"]
+      }
+    ]
+  }
+]

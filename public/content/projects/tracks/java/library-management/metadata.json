@@ -1,0 +1,32 @@
+{
+  "id": "library-management",
+  "title": "Library Management System",
+  "description": "Build a console-based Java application that manages a library catalogue — books, members, borrowing records, and search. Apply core OOP, Java Collections, file I/O, and exception handling in a real use case.",
+  "track": "java",
+  "templateType": "Intermediate",
+  "difficulty": "Intermediate",
+  "estimatedHours": 16,
+  "technologies": ["Java 17", "Java Collections Framework", "File I/O", "OOP Design Patterns"],
+  "skills": [
+    "Object-Oriented Design",
+    "Java Collections (ArrayList, HashMap, LinkedList)",
+    "Exception Handling",
+    "File I/O with Serialization",
+    "Clean Code Principles",
+    "Unit Testing with JUnit",
+    "SOLID Principles"
+  ],
+  "prerequisites": [],
+  "dependsOn": [],
+  "suggestsNext": ["task-manager-api"],
+  "tags": ["java", "oop", "collections", "backend", "intermediate"],
+  "coverImage": null,
+  "githubTemplate": null,
+  "learningObjectives": [
+    "Design class hierarchies using OOP principles",
+    "Use Java Collections Framework effectively",
+    "Implement file persistence without a database",
+    "Apply exception handling patterns",
+    "Write readable, maintainable Java code"
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What is the primary difference between Stack and Heap memory in Java?",
+    "answer": "Stack memory stores method execution frames and local variables, and is allocated/freed automatically. Heap memory stores objects and instance variables, managed by the Garbage Collector."
+  },
+  {
+    "question": "What happens if you try to use an uninitialized local variable in Java?",
+    "answer": "Java triggers a compile-time error: 'variable might not have been initialized'."
+  },
+  {
+    "question": "How do you declare a variable as constant in Java?",
+    "answer": "By using the 'final' keyword. Once initialized, its value cannot be changed."
+  },
+  {
+    "question": "Which scope of variables gets default values automatically in Java?",
+    "answer": "Instance variables (fields) and static variables get default values (like 0, false, or null). Local variables do not."
+  }
+]

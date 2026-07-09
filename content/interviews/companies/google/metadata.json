@@ -1,0 +1,10 @@
+{
+  "id": "google",
+  "name": "Google",
+  "difficulty": "FAANG",
+  "experience": ["Intern", "Fresher", "Experienced"],
+  "rounds": ["Technical Phone Screen", "Coding Round 1", "Coding Round 2", "System Design", "Googlyness & Leadership"],
+  "estimatedPreparationHours": 60,
+  "focus": ["Advanced Algorithms", "System Design", "Googlyness & Fit", "Complexity Analysis"],
+  "topicCoverage": ["Graph Algorithms", "Concurrency", "Scale & Sharding", "Behavioral"]
+}

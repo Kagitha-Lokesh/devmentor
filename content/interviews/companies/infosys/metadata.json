@@ -1,0 +1,10 @@
+{
+  "id": "infosys",
+  "name": "Infosys",
+  "difficulty": "Service",
+  "experience": ["Fresher", "Experienced"],
+  "rounds": ["Infosys Certification / Aptitude", "Technical Interview", "HR Round"],
+  "estimatedPreparationHours": 20,
+  "focus": ["Core Java", "OOPs Concepts", "Python basics", "DBMS"],
+  "topicCoverage": ["Relational Databases", "Coding Basics", "Polymorphism"]
+}

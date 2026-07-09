@@ -1,0 +1,35 @@
+[
+  {
+    "question": "Which of the following is true about local variables in Java?",
+    "options": [
+      "They are stored on the Heap.",
+      "They get default values if not explicitly initialized.",
+      "They must be initialized before they are read.",
+      "They can be declared static."
+    ],
+    "answerIndex": 2,
+    "explanation": "Local variables are allocated on the Stack and do not receive default values. Accessing an uninitialized local variable causes a compilation error."
+  },
+  {
+    "question": "How can you access a shadowed instance variable from inside a method containing a parameter with the same name?",
+    "options": [
+      "By using the super keyword",
+      "By using the this keyword prefix",
+      "By capitalizing the variable name",
+      "Shadowed variables cannot be accessed"
+    ],
+    "answerIndex": 1,
+    "explanation": "The 'this' keyword refers to the current object instance. Writing 'this.varName' bypasses local parameter shadowing to reference the instance variable."
+  },
+  {
+    "question": "If you modify a static variable in one object instance, what happens to other instances of the same class?",
+    "options": [
+      "Nothing, other instances keep their copy.",
+      "The value updates for all instances.",
+      "The program throws a ConcurrentModificationException.",
+      "The other instances reset their value to 0."
+    ],
+    "answerIndex": 1,
+    "explanation": "Static variables belong to the class, not individual objects. The memory slot is shared across all object instances, so updating it changes it globally."
+  }
+]

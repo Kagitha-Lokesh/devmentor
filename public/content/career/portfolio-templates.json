@@ -1,0 +1,34 @@
+[
+  {
+    "id": "portfolio-minimalist",
+    "title": "Minimalist Developer Portfolio Template",
+    "description": "Clean, elegant, typography-focused single-page portfolio layout.",
+    "technology": ["HTML", "Vanilla CSS", "Javascript"],
+    "category": "Portfolio",
+    "theme": "dark/light minimalist",
+    "sections": [
+      {
+        "name": "About Me",
+        "content": "Full stack engineer focused on clean code, automated workflows, and scalable backend design."
+      },
+      {
+        "name": "Projects",
+        "content": "Highlighting 3-4 key repositories with clean screenshots and github reference links."
+      }
+    ]
+  },
+  {
+    "id": "portfolio-terminal",
+    "title": "Terminal/IDE Style Portfolio Template",
+    "description": "Interactive developer portfolio designed to resemble an IDE workspace or Linux command terminal.",
+    "technology": ["React", "Tailwind CSS", "Zustand"],
+    "category": "Portfolio",
+    "theme": "retro terminal",
+    "sections": [
+      {
+        "name": "Welcome Command",
+        "content": "$ devmentor-ai --skills\n- Java full stack, React, Docker, Spring Boot"
+      }
+    ]
+  }
+]

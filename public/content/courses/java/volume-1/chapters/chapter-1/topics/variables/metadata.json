@@ -1,0 +1,18 @@
+{
+  "id": "V1-C1-T1",
+  "slug": "variables",
+  "title": "Variables in Java",
+  "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 15,
+  "difficulty": "Beginner",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": ["Java Core", "Syntax", "Fundamentals"],
+  "searchKeywords": ["variable", "declaration", "initialization", "scope", "local variable", "instance variable"],
+  "interviewImportance": "High",
+  "revisionPriority": "High",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

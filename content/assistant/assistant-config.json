@@ -1,0 +1,23 @@
+{
+  "activeProvider": "rule-based",
+  "providers": {
+    "rule-based": {
+      "name": "Deterministic Rule-Based Assistant",
+      "description": "100% offline, keyword-matching assistant accessing local curriculum directly.",
+      "enabled": true
+    },
+    "ollama": {
+      "name": "Local LLM via Ollama",
+      "description": "Offline AI running on your local machine.",
+      "endpointUrl": "http://localhost:11434",
+      "modelName": "llama3",
+      "contextLimit": 4096,
+      "enabled": true
+    }
+  },
+  "defaultSettings": {
+    "theme": "dark",
+    "experimentalFeatures": false,
+    "contextCompression": true
+  }
+}

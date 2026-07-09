@@ -1,0 +1,19 @@
+[
+  {
+    "id": "amzn-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design a Distributed Rate Limiter for a high-throughput API gateway.",
+    "sampleAnswer": "A distributed rate limiter limits API requests per user key across multiple load-balanced servers. We use Redis as a centralized high-speed cache. The Token Bucket or Leaky Bucket algorithm can be implemented. To prevent Redis from becoming a bottleneck, we can implement local token reserves on each gateway instance, fetching tokens in batches and utilizing Redis Lua scripts to ensure atomic decrements.",
+    "keyPoints": [
+      "Choice of algorithm: Token Bucket, Sliding Window Log, or Sliding Window Counter",
+      "Centralized key storage using Redis or similar in-memory cache",
+      "Network latency optimization (local caching, token batching)",
+      "Race conditions prevention using Redis Lua scripting",
+      "Graceful degradation if the cache is unreachable (fail-open vs fail-close)"
+    ],
+    "estimatedMinutes": 20,
+    "difficulty": "Hard",
+    "tags": ["system-design", "distributed-systems", "scaling", "cache"]
+  }
+]

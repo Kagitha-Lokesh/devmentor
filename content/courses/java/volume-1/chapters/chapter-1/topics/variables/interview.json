@@ -1,0 +1,12 @@
+[
+  {
+    "question": "What is variable shadowing in Java, and how do you resolve it?",
+    "idealAnswer": "Variable shadowing occurs when a variable declared within a local scope (like a method parameter or loop variable) has the same name as a variable in an outer scope (like an instance field). In Java, the local variable takes precedence. You resolve it by using the 'this' keyword to access instance fields (e.g., 'this.name = name') or the 'super' keyword for inherited parent fields.",
+    "importance": "High"
+  },
+  {
+    "question": "Explain where local, instance, and static variables are stored in JVM memory.",
+    "idealAnswer": "Local variables are allocated on the Thread Stack within the specific method execution frame. Instance variables are allocated on the Heap as member fields inside their parent Object block. Static variables are loaded once and stored in the Metaspace/Class Method Area as class-level values.",
+    "importance": "High"
+  }
+]

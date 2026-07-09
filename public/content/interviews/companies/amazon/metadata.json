@@ -1,0 +1,10 @@
+{
+  "id": "amazon",
+  "name": "Amazon",
+  "difficulty": "FAANG",
+  "experience": ["Intern", "Fresher", "Experienced"],
+  "rounds": ["OA", "Technical Round 1", "Technical Round 2", "Bar Raiser", "HR / Fit"],
+  "estimatedPreparationHours": 50,
+  "focus": ["Leadership Principles", "Data Structures", "System Design", "Object Oriented Design"],
+  "topicCoverage": ["Dynamic Programming", "Trees & Graphs", "System Design", "Behavioral"]
+}

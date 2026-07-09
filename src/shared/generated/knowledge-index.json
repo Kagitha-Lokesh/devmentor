@@ -1,0 +1,15 @@
+[
+  {
+    "id": "V1-C1-T1",
+    "slug": "variables",
+    "title": "Variables in Java",
+    "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+    "difficulty": "Beginner",
+    "tags": [
+      "Java Core",
+      "Syntax",
+      "Fundamentals"
+    ],
+    "keywords": []
+  }
+]

@@ -1,0 +1,277 @@
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Search, Command, ArrowRight, Hash, BookOpen, Terminal, MessageSquare,
+  History, FolderGit2, LayoutDashboard, Calendar, StickyNote, Bookmark,
+  Trophy, Download, Upload, Zap, Moon, Sun, X
+} from 'lucide-react';
+import { useThemeStore } from '../../store/useThemeStore';
+import commandIndex from '../../../shared/generated/command-index.json';
+import globalSearchIndex from '../../../shared/generated/global-search-index.json';
+import Fuse from 'fuse.js';
+
+const iconMap = {
+  'nav-dashboard': LayoutDashboard,
+  'nav-courses': BookOpen,
+  'nav-compiler': Terminal,
+  'nav-interviews': MessageSquare,
+  'nav-revision': History,
+  'nav-projects': FolderGit2,
+  'nav-assistant': Zap,
+  'nav-calendar': Calendar,
+  'nav-notes': StickyNote,
+  'nav-bookmarks': Bookmark,
+  'nav-timeline': Hash,
+  'nav-achievements': Trophy,
+  'nav-downloads': Download,
+  'nav-exports': Upload,
+  'cmd-theme': Moon,
+  'cmd-sidebar': Command,
+};
+
+const typeColors = {
+  topic: 'text-brand-400 bg-brand-950',
+  problem: 'text-amber-400 bg-amber-950',
+  project: 'text-purple-400 bg-purple-950',
+  flashcard: 'text-green-400 bg-green-950',
+  interview_question: 'text-red-400 bg-red-950/60',
+  course: 'text-cyan-400 bg-cyan-950',
+  career_roadmap: 'text-orange-400 bg-orange-950',
+  resume_template: 'text-pink-400 bg-pink-950',
+  portfolio_template: 'text-indigo-400 bg-indigo-950',
+};
+
+const contentFuse = new Fuse(globalSearchIndex, {
+  keys: ['title', 'description', 'type'],
+  threshold: 0.3,
+  includeScore: true
+});
+
+const commandFuse = new Fuse(commandIndex, {
+  keys: ['name', 'category'],
+  threshold: 0.35,
+  includeScore: true
+});
+
+export default function CommandPalette({ isOpen, onClose }) {
+  const [query, setQuery] = useState('');
+  const [selected, setSelected] = useState(0);
+  const inputRef = useRef(null);
+  const listRef = useRef(null);
+  const navigate = useNavigate();
+  const { toggleTheme } = useThemeStore();
+
+  const commandResults = query
+    ? commandFuse.search(query).map(r => ({ ...r.item, _kind: 'command' }))
+    : commandIndex.map(c => ({ ...c, _kind: 'command' }));
+
+  const contentResults = query
+    ? contentFuse.search(query).slice(0, 8).map(r => ({ ...r.item, _kind: 'content' }))
+    : [];
+
+  const results = [...commandResults.slice(0, query ? 4 : 10), ...contentResults];
+
+  useEffect(() => {
+    if (isOpen) {
+      setQuery('');
+      setSelected(0);
+      setTimeout(() => inputRef.current?.focus(), 50);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    setSelected(0);
+  }, [query]);
+
+  const executeItem = useCallback((item) => {
+    if (item._kind === 'command') {
+      if (item.action === 'toggleTheme') {
+        toggleTheme();
+      } else if (item.route) {
+        navigate(item.route);
+      }
+    } else if (item.route) {
+      navigate(item.route);
+    }
+    onClose();
+  }, [navigate, toggleTheme, onClose]);
+
+  useEffect(() => {
+    const handler = (e) => {
+      if (!isOpen) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        setSelected(s => Math.min(s + 1, results.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        setSelected(s => Math.max(s - 1, 0));
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (results[selected]) executeItem(results[selected]);
+      } else if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [isOpen, results, selected, executeItem, onClose]);
+
+  // Scroll selected item into view
+  useEffect(() => {
+    const el = listRef.current?.children[selected];
+    el?.scrollIntoView({ block: 'nearest' });
+  }, [selected]);
+
+  const getItemIcon = (item) => {
+    if (item._kind === 'command') {
+      const Icon = iconMap[item.id] || Command;
+      return <Icon className="h-4 w-4 flex-shrink-0" />;
+    }
+    return <Hash className="h-4 w-4 flex-shrink-0 text-text/40" />;
+  };
+
+  const getTypeBadge = (item) => {
+    if (item._kind === 'command') return null;
+    const cls = typeColors[item.type] || 'text-text/50 bg-surface-tertiary';
+    return (
+      <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${cls}`}>
+        {item.type?.replace(/_/g, ' ')}
+      </span>
+    );
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-[80] bg-slate-950/70 backdrop-blur-sm"
+            onClick={onClose}
+            aria-hidden="true"
+          />
+
+          {/* Palette Dialog */}
+          <motion.div
+            role="dialog"
+            aria-label="Command palette"
+            aria-modal="true"
+            initial={{ opacity: 0, scale: 0.96, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
+            transition={{ duration: 0.15, ease: 'easeOut' }}
+            className="fixed inset-x-0 top-[10vh] z-[90] mx-auto w-full max-w-2xl px-4"
+          >
+            <div className="bg-surface-secondary border border-surface-border rounded-2xl shadow-2xl overflow-hidden">
+              {/* Search Input */}
+              <div className="flex items-center gap-3 px-4 border-b border-surface-border">
+                <Search className="h-5 w-5 text-text/40 flex-shrink-0" aria-hidden="true" />
+                <input
+                  ref={inputRef}
+                  id="command-palette-input"
+                  type="text"
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                  placeholder="Search commands, pages, content..."
+                  className="flex-1 py-4 bg-transparent text-sm text-text placeholder-text/30 outline-none"
+                  aria-label="Command palette search input"
+                  aria-autocomplete="list"
+                  aria-controls="command-palette-list"
+                  aria-activedescendant={results[selected] ? `cmd-item-${selected}` : undefined}
+                />
+                {query && (
+                  <button
+                    onClick={() => setQuery('')}
+                    className="p-1 rounded text-text/40 hover:text-text transition-colors"
+                    aria-label="Clear search"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
+                <kbd className="hidden sm:flex items-center gap-1 text-[10px] text-text/30 font-mono bg-surface px-1.5 py-0.5 rounded border border-surface-border">
+                  Esc
+                </kbd>
+              </div>
+
+              {/* Results */}
+              <div
+                id="command-palette-list"
+                role="listbox"
+                ref={listRef}
+                className="max-h-[60vh] overflow-y-auto py-2"
+                aria-label="Command palette results"
+              >
+                {results.length === 0 ? (
+                  <div className="px-4 py-8 text-center text-text/30 text-sm">
+                    No results found for &ldquo;{query}&rdquo;
+                  </div>
+                ) : (
+                  <>
+                    {!query && (
+                      <p className="px-4 pt-1 pb-2 text-[10px] uppercase tracking-widest text-text/30 font-semibold">
+                        Navigation
+                      </p>
+                    )}
+                    {query && commandResults.length > 0 && contentResults.length > 0 && (
+                      <p className="px-4 pt-1 pb-1 text-[10px] uppercase tracking-widest text-text/30 font-semibold">
+                        Commands
+                      </p>
+                    )}
+                    {results.map((item, idx) => {
+                      const isSelected = idx === selected;
+                      const sep = query && item._kind === 'content' && (idx === 0 || results[idx - 1]._kind !== 'content');
+                      return (
+                        <React.Fragment key={item.id || idx}>
+                          {sep && (
+                            <p className="px-4 pt-3 pb-1 text-[10px] uppercase tracking-widest text-text/30 font-semibold">
+                              Content
+                            </p>
+                          )}
+                          <div
+                            id={`cmd-item-${idx}`}
+                            role="option"
+                            aria-selected={isSelected}
+                            onClick={() => executeItem(item)}
+                            onMouseEnter={() => setSelected(idx)}
+                            className={`flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors ${
+                              isSelected
+                                ? 'bg-brand-950/60 text-brand-300'
+                                : 'text-text/80 hover:bg-surface-tertiary/50'
+                            }`}
+                          >
+                            <span className={isSelected ? 'text-brand-400' : 'text-text/40'}>
+                              {getItemIcon(item)}
+                            </span>
+                            <span className="flex-1 text-sm font-medium truncate">{item.name || item.title}</span>
+                            {getTypeBadge(item)}
+                            {isSelected && (
+                              <ArrowRight className="h-3.5 w-3.5 text-brand-400 flex-shrink-0" />
+                            )}
+                          </div>
+                        </React.Fragment>
+                      );
+                    })}
+                  </>
+                )}
+              </div>
+
+              {/* Footer */}
+              <div className="px-4 py-2 border-t border-surface-border flex items-center justify-between">
+                <div className="flex items-center gap-3 text-[10px] text-text/30">
+                  <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↑↓</kbd> navigate</span>
+                  <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↵</kbd> open</span>
+                </div>
+                <span className="text-[10px] text-text/20">{results.length} results</span>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "nav-dashboard",
+    "name": "Open Dashboard",
+    "category": "Navigation",
+    "route": "/"
+  },
+  {
+    "id": "nav-courses",
+    "name": "Open Courses & Lessons",
+    "category": "Navigation",
+    "route": "/courses"
+  },
+  {
+    "id": "nav-compiler",
+    "name": "Open Practice Compiler Sandbox",
+    "category": "Navigation",
+    "route": "/compiler"
+  },
+  {
+    "id": "nav-interviews",
+    "name": "Open Mock Interviews",
+    "category": "Navigation",
+    "route": "/interviews"
+  },
+  {
+    "id": "nav-revision",
+    "name": "Open Spaced Revision",
+    "category": "Navigation",
+    "route": "/revision"
+  },
+  {
+    "id": "nav-projects",
+    "name": "Open Guided Projects Platform",
+    "category": "Navigation",
+    "route": "/projects"
+  },
+  {
+    "id": "nav-assistant",
+    "name": "Open AI Learning Assistant",
+    "category": "Navigation",
+    "route": "/assistant"
+  },
+  {
+    "id": "nav-calendar",
+    "name": "Open Learning Calendar",
+    "category": "Navigation",
+    "route": "/calendar"
+  },
+  {
+    "id": "nav-notes",
+    "name": "Open Notes & Highlights Center",
+    "category": "Navigation",
+    "route": "/notes"
+  },
+  {
+    "id": "nav-bookmarks",
+    "name": "Open Unified Bookmarks",
+    "category": "Navigation",
+    "route": "/bookmarks"
+  },
+  {
+    "id": "nav-timeline",
+    "name": "Open Activity Timeline",
+    "category": "Navigation",
+    "route": "/timeline"
+  },
+  {
+    "id": "nav-achievements",
+    "name": "Open Achievement Board",
+    "category": "Navigation",
+    "route": "/achievements"
+  },
+  {
+    "id": "nav-downloads",
+    "name": "Open Download Center",
+    "category": "Navigation",
+    "route": "/downloads"
+  },
+  {
+    "id": "nav-exports",
+    "name": "Open Export Center",
+    "category": "Navigation",
+    "route": "/exports"
+  },
+  {
+    "id": "cmd-theme",
+    "name": "Toggle Color Theme (Dark/Light)",
+    "category": "Preferences",
+    "action": "toggleTheme"
+  },
+  {
+    "id": "cmd-sidebar",
+    "name": "Toggle Navigation Sidebar",
+    "category": "Preferences",
+    "action": "toggleSidebar"
+  }
+]

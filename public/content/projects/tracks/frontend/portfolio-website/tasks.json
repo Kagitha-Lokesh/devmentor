@@ -1,0 +1,412 @@
+[
+  {
+    "id": "t1-1",
+    "milestoneId": "milestone-1",
+    "title": "Scaffold Vite + React Project",
+    "description": "Use `npm create vite@latest` to bootstrap a React application. Configure the project directory, install dependencies, and run the dev server to confirm the scaffold works.",
+    "estimatedMinutes": 20,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": [],
+    "acceptanceCriteria": [
+      "Project scaffolded with Vite and React template",
+      "Dev server starts without errors",
+      "App renders a Hello World in the browser",
+      "package.json contains react and react-dom dependencies"
+    ],
+    "hints": [
+      "Use `npm create vite@latest my-portfolio -- --template react`",
+      "Run `npm install` then `npm run dev`",
+      "Vite's dev server listens on port 5173 by default"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Vite Getting Started Guide", "url": "https://vitejs.dev/guide/" },
+      { "type": "Documentation", "title": "React Docs", "url": "https://react.dev/learn" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t1-2",
+    "milestoneId": "milestone-1",
+    "title": "Set Up React Router",
+    "description": "Install `react-router-dom` and configure a root `App.jsx` with a `BrowserRouter`. Define placeholder routes for `/`, `/about`, `/projects`, and `/contact`.",
+    "estimatedMinutes": 25,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t1-1"],
+    "acceptanceCriteria": [
+      "react-router-dom is installed",
+      "BrowserRouter wraps the application root",
+      "4 placeholder routes are defined (/, /about, /projects, /contact)",
+      "Navigation between routes works without full page reload"
+    ],
+    "hints": [
+      "Install with `npm install react-router-dom`",
+      "Use `<Routes>` and `<Route>` components",
+      "Create a `<Navbar>` with `<Link>` elements for client-side navigation"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "React Router v6 Docs", "url": "https://reactrouter.com/en/main" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t1-3",
+    "milestoneId": "milestone-1",
+    "title": "Establish Design System (Tokens & Global CSS)",
+    "description": "Create an `index.css` with CSS custom properties for your color palette (primary, accent, background, text), typography scale (font-size, line-height), and spacing scale. Apply a Google Font.",
+    "estimatedMinutes": 30,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t1-1"],
+    "acceptanceCriteria": [
+      "CSS custom properties defined under :root (colors, spacing, typography)",
+      "Google Font imported and applied globally",
+      "Body background and text color use CSS variables",
+      "Consistent visual style applied across all pages"
+    ],
+    "hints": [
+      "Use `--color-primary`, `--color-accent`, `--spacing-md` naming convention",
+      "Import Google Fonts via @import in your CSS",
+      "Define `font-size` scale using clamp() for fluid typography"
+    ],
+    "resources": [
+      { "type": "Reference", "title": "Google Fonts", "url": "https://fonts.google.com" },
+      { "type": "Article", "title": "CSS Custom Properties Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t1-4",
+    "milestoneId": "milestone-1",
+    "title": "Build Responsive Navigation Component",
+    "description": "Create a sticky `Navbar.jsx` component with your name/logo on the left, navigation links on the right, and a hamburger menu for mobile viewports.",
+    "estimatedMinutes": 35,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t1-2", "t1-3"],
+    "acceptanceCriteria": [
+      "Navbar sticks to top on scroll",
+      "Logo/name visible on the left",
+      "Navigation links work correctly",
+      "Hamburger menu appears on screens < 768px",
+      "Hamburger toggles the mobile menu open/closed",
+      "Active route is visually highlighted"
+    ],
+    "hints": [
+      "Use `useState` to track mobile menu open/closed state",
+      "Use CSS `@media (max-width: 768px)` for responsive breakpoints",
+      "Use `useLocation` from react-router-dom to detect the active route"
+    ],
+    "resources": [
+      { "type": "Article", "title": "Building a Responsive Navbar with React", "url": "https://www.freecodecamp.org/news/how-to-build-a-navbar-in-react/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t2-1",
+    "milestoneId": "milestone-2",
+    "title": "Build the Hero Section",
+    "description": "Create a fullscreen hero section with your name, title, a short professional tagline, a Call-To-Action button (View Projects), and your social media links (GitHub, LinkedIn).",
+    "estimatedMinutes": 30,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t1-4"],
+    "acceptanceCriteria": [
+      "Hero section takes full viewport height",
+      "Name and title are displayed prominently",
+      "Professional tagline visible",
+      "Call-to-action button scrolls to the Projects section",
+      "GitHub and LinkedIn icons link to correct profiles",
+      "Layout is responsive on all screen sizes"
+    ],
+    "hints": [
+      "Use `height: 100vh` or `min-height: 100vh` for the hero",
+      "Use `scroll-behavior: smooth` on the html element for anchor scroll",
+      "Use Lucide React or SVG icons for social links"
+    ],
+    "resources": [
+      { "type": "Article", "title": "CSS Hero Section Patterns", "url": "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t2-2",
+    "milestoneId": "milestone-2",
+    "title": "Build the About Section",
+    "description": "Create a two-column About section with a profile image on one side and a professional bio paragraph and key statistics (years of experience, projects, technologies) on the other.",
+    "estimatedMinutes": 25,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t2-1"],
+    "acceptanceCriteria": [
+      "Two-column layout (image + bio)",
+      "Profile image has a visually styled border or background",
+      "Bio text is readable and professional",
+      "Statistics chips/cards display correctly",
+      "Layout stacks vertically on mobile"
+    ],
+    "hints": [
+      "Use CSS Grid or Flexbox for the two-column layout",
+      "Use `gap` for spacing between columns",
+      "Use `border-radius` for circular or rounded profile image"
+    ],
+    "resources": [
+      { "type": "Article", "title": "CSS Grid Layout Guide", "url": "https://css-tricks.com/snippets/css/complete-guide-grid/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t2-3",
+    "milestoneId": "milestone-2",
+    "title": "Build the Skills Section",
+    "description": "Create a responsive skills grid displaying technology/skill cards. Each card shows the skill name, an icon (or badge), and a proficiency level indicator.",
+    "estimatedMinutes": 25,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t2-2"],
+    "acceptanceCriteria": [
+      "Skills displayed in a responsive grid (3-4 columns desktop, 2 mobile)",
+      "Each skill has a name and icon/badge",
+      "Proficiency indicator (progress bar, dots, or tag) is visible",
+      "Grid wraps properly on small screens",
+      "Hover effect on skill cards"
+    ],
+    "hints": [
+      "Use CSS Grid with `repeat(auto-fill, minmax(120px, 1fr))`",
+      "Use simple SVG icons or emoji for skill icons",
+      "Add `transform: scale(1.05)` on hover with a transition"
+    ],
+    "resources": [
+      { "type": "Article", "title": "CSS auto-fill vs auto-fit", "url": "https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t2-4",
+    "milestoneId": "milestone-2",
+    "title": "Build the Projects Section",
+    "description": "Create a Projects grid where each card displays a project title, short description, technology tags, GitHub link, and live demo link.",
+    "estimatedMinutes": 35,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t2-3"],
+    "acceptanceCriteria": [
+      "Project cards displayed in responsive grid",
+      "Each card has title, description, and technology tags",
+      "GitHub link opens in a new tab",
+      "Live demo link opens in a new tab (if applicable)",
+      "Cards have hover effect (lift/shadow)",
+      "Technology tags are visually distinct (badges/chips)"
+    ],
+    "hints": [
+      "Use `target='_blank' rel='noreferrer'` for external links",
+      "Define project data as a JS array/object inside the component or a separate data file",
+      "Use `box-shadow` with a CSS transition for the card hover lift effect"
+    ],
+    "resources": [
+      { "type": "Article", "title": "Card Component Design Patterns", "url": "https://css-tricks.com/almanac/properties/b/box-shadow/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-1",
+    "milestoneId": "milestone-3",
+    "title": "Implement Dark Mode Toggle",
+    "description": "Add a dark/light mode toggle button in the Navbar. Use CSS custom properties to switch between themes. Persist the preference in localStorage.",
+    "estimatedMinutes": 30,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t2-4"],
+    "acceptanceCriteria": [
+      "Toggle button visible in Navbar",
+      "Clicking toggles dark/light theme instantly",
+      "All sections update their colors to match the selected theme",
+      "Theme preference saved to localStorage",
+      "Preferred theme restored on page reload"
+    ],
+    "hints": [
+      "Toggle a `data-theme='dark'` attribute on the `<html>` element",
+      "Define dark mode CSS variables under `[data-theme='dark']` selector",
+      "Read/write `localStorage.getItem('theme')` on mount"
+    ],
+    "resources": [
+      { "type": "Article", "title": "Dark Mode with CSS Variables", "url": "https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-2",
+    "milestoneId": "milestone-3",
+    "title": "Add Scroll Animations",
+    "description": "Use the Intersection Observer API (or a lightweight library) to fade-in sections as the user scrolls down the page.",
+    "estimatedMinutes": 35,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t3-1"],
+    "acceptanceCriteria": [
+      "Sections animate in on scroll (fade-in or slide-in)",
+      "Animations respect `prefers-reduced-motion` media query (no animation for users who prefer reduced motion)",
+      "Animations trigger only once per element",
+      "No jank or layout shift during animation"
+    ],
+    "hints": [
+      "Use `new IntersectionObserver()` to detect when elements enter the viewport",
+      "Add a CSS class with `opacity: 1; transform: translateY(0)` when the element is visible",
+      "Use `@media (prefers-reduced-motion: reduce)` to disable animations for accessibility"
+    ],
+    "resources": [
+      { "type": "Article", "title": "IntersectionObserver API Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API" },
+      { "type": "Article", "title": "Respecting Motion Preferences", "url": "https://web.dev/prefers-reduced-motion/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-3",
+    "milestoneId": "milestone-3",
+    "title": "Build the Contact Section & Footer",
+    "description": "Create a contact section with a simple contact form (Name, Email, Message) with client-side validation, and a site footer with social links and copyright text.",
+    "estimatedMinutes": 30,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t3-2"],
+    "acceptanceCriteria": [
+      "Contact form has Name, Email, Message fields",
+      "Client-side validation shows errors for empty or invalid email",
+      "Success feedback shown on valid submission",
+      "Footer includes social links and copyright text",
+      "Form inputs are properly labelled for screen readers"
+    ],
+    "hints": [
+      "Use `useState` to track form field values and validation errors",
+      "Use regex `/^[^@]+@[^@]+\\.[^@]+$/` for email validation",
+      "Use `<label htmlFor>` and matching `id` on each input for accessibility"
+    ],
+    "resources": [
+      { "type": "Article", "title": "React Form Validation", "url": "https://react.dev/reference/react-dom/components/input" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t4-1",
+    "milestoneId": "milestone-4",
+    "title": "Accessibility Audit",
+    "description": "Run an accessibility audit using browser DevTools Lighthouse. Fix all critical and serious accessibility issues (contrast, labels, alt texts, focus indicators).",
+    "estimatedMinutes": 30,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t3-3"],
+    "acceptanceCriteria": [
+      "Lighthouse Accessibility score >= 90",
+      "All images have meaningful alt attributes",
+      "All interactive elements have visible focus indicators",
+      "Color contrast ratio >= 4.5:1 for normal text",
+      "All form inputs have associated labels"
+    ],
+    "hints": [
+      "Open Chrome DevTools → Lighthouse tab → Accessibility audit",
+      "Use `outline` CSS property for focus indicators instead of removing them",
+      "Use WebAIM Contrast Checker for color ratios"
+    ],
+    "resources": [
+      { "type": "Reference", "title": "WCAG 2.1 Quick Reference", "url": "https://www.w3.org/WAI/WCAG21/quickref/" },
+      { "type": "Reference", "title": "WebAIM Contrast Checker", "url": "https://webaim.org/resources/contrastchecker/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t4-2",
+    "milestoneId": "milestone-4",
+    "title": "Optimize for Production",
+    "description": "Run `npm run build` to generate the production bundle. Verify asset sizes, enable gzip compression in Vite config, and add a `vite.config.js` `base` option for GitHub Pages subdirectory deployment.",
+    "estimatedMinutes": 20,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t4-1"],
+    "acceptanceCriteria": [
+      "Production build completes without errors",
+      "Bundle size is reasonable (< 500KB for main JS chunk)",
+      "Images are optimized (compressed)",
+      "vite.config.js has `base` set to the GitHub repo name"
+    ],
+    "hints": [
+      "Set `base: '/your-repo-name/'` in vite.config.js for GitHub Pages",
+      "Use `npm run build && npm run preview` to test the production build locally",
+      "Check the `dist/` folder for generated assets"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Vite Build Options", "url": "https://vitejs.dev/guide/build.html" },
+      { "type": "Documentation", "title": "GitHub Pages Deployment with Vite", "url": "https://vitejs.dev/guide/static-deploy.html#github-pages" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t4-3",
+    "milestoneId": "milestone-4",
+    "title": "Deploy to GitHub Pages",
+    "description": "Create a GitHub repository, push your code, and configure GitHub Actions to automatically build and deploy the site to GitHub Pages on every push to main.",
+    "estimatedMinutes": 25,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["t4-2"],
+    "acceptanceCriteria": [
+      "GitHub repository created and code pushed",
+      "GitHub Actions workflow file created in .github/workflows/",
+      "Actions workflow builds and deploys on push to main",
+      "Site is live at https://yourusername.github.io/your-repo-name/",
+      "All page routes work correctly on the deployed URL"
+    ],
+    "hints": [
+      "Use the official GitHub Pages Vite deploy workflow from vitejs.dev",
+      "Set `GITHUB_TOKEN` permissions to `write` in the workflow file",
+      "Enable GitHub Pages in Settings → Pages → Source: GitHub Actions"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "GitHub Actions for GitHub Pages", "url": "https://docs.github.com/en/pages/getting-started-with-github-pages" },
+      { "type": "Reference", "title": "Vite GitHub Pages CI Example", "url": "https://vitejs.dev/guide/static-deploy.html#github-pages" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  }
+]

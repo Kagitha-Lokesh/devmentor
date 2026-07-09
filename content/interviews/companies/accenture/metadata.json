@@ -1,0 +1,10 @@
+{
+  "id": "accenture",
+  "name": "Accenture",
+  "difficulty": "Service",
+  "experience": ["Fresher", "Experienced"],
+  "rounds": ["Cognitive & Technical Assessment", "Technical Interview", "HR Interview"],
+  "estimatedPreparationHours": 25,
+  "focus": ["Core Java", "SQL Query Fundamentals", "Problem Solving"],
+  "topicCoverage": ["DBMS", "Data Structures Basics", "Communication"]
+}

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "tcs-tech-1",
+    "category": "Technical",
+    "type": "Theory",
+    "questionText": "What are the four pillars of Object-Oriented Programming (OOP) and explain them with examples.",
+    "sampleAnswer": "The four pillars of OOP are: 1. Encapsulation (hiding data using private fields and public getters/setters), 2. Inheritance (reusing code by extending classes via 'extends'), 3. Polymorphism (method overloading and method overriding), 4. Abstraction (hiding implementation details using abstract classes and interfaces).",
+    "keyPoints": [
+      "Encapsulation: Access modifiers (private, public)",
+      "Inheritance: Parent-child relationship",
+      "Polymorphism: Overloading (compile-time) and Overriding (run-time)",
+      "Abstraction: Interface vs Abstract class definitions"
+    ],
+    "estimatedMinutes": 6,
+    "difficulty": "Easy",
+    "tags": ["java", "oops", "fundamentals"]
+  },
+  {
+    "id": "tcs-tech-2",
+    "category": "Technical",
+    "type": "Theory",
+    "questionText": "Explain the difference between WHERE and HAVING clauses in SQL.",
+    "sampleAnswer": "The WHERE clause is used to filter records from a table before any groupings are made. The HAVING clause is used to filter groups created by the GROUP BY clause based on aggregate function results (e.g. HAVING COUNT(*) > 5).",
+    "keyPoints": [
+      "WHERE filters rows before group aggregation",
+      "HAVING filters rows after group aggregation",
+      "Aggregate functions (SUM, AVG, COUNT) are not allowed in WHERE clauses"
+    ],
+    "estimatedMinutes": 5,
+    "difficulty": "Easy",
+    "tags": ["sql", "database"]
+  }
+]

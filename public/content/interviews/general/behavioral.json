@@ -1,0 +1,30 @@
+[
+  {
+    "id": "gen-beh-1",
+    "category": "Behavioral",
+    "type": "Behavioral",
+    "questionText": "Tell me about a time you failed and what you learned from it.",
+    "starFramework": {
+      "Situation": "Detail a real work/academic situation that did not achieve its goal.",
+      "Task": "Identify your failure or mistake and why it happened.",
+      "Action": "Explain how you took responsibility, corrected the issue, and set up protections.",
+      "Result": "Describe what you learned, how it made you a better engineer, and the successful outcome next time."
+    },
+    "expectedPoints": [
+      "Took personal ownership of the failure",
+      "No finger-pointing or blaming others",
+      "Actionable learning outcomes integrated into future work",
+      "Risk prevention mechanism introduced"
+    ],
+    "commonMistakes": [
+      "Saying you have never failed",
+      "Sharing a 'fake' failure that is actually a success",
+      "Not taking responsibility"
+    ],
+    "strongExample": "In my college project, I pushed an API key to a public GitHub repo. The key was scraped, costing us our free tier limit. I immediately revoked the key, rotated our secrets, and setup git-secrets locally. I also wrote a short guide for the team on environment variables, preventing future leaks.",
+    "weakExample": "We missed our deadline because the client kept changing their mind. I tried my best but they weren't clear.",
+    "estimatedMinutes": 8,
+    "difficulty": "Easy",
+    "tags": ["behavioral", "failure", "ownership"]
+  }
+]

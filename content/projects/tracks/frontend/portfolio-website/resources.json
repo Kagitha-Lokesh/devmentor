@@ -1,0 +1,58 @@
+[
+  {
+    "id": "res-pw-1",
+    "type": "Documentation",
+    "title": "Vite Official Documentation",
+    "description": "Complete Vite build tool documentation — scaffolding, configuration, plugins, and deployment.",
+    "url": "https://vitejs.dev/guide/"
+  },
+  {
+    "id": "res-pw-2",
+    "type": "Documentation",
+    "title": "React Official Documentation",
+    "description": "Learn React from the ground up with interactive examples and conceptual guides.",
+    "url": "https://react.dev/learn"
+  },
+  {
+    "id": "res-pw-3",
+    "type": "Reference",
+    "title": "React Router v6 Docs",
+    "description": "Complete guide to client-side routing in React applications.",
+    "url": "https://reactrouter.com/en/main"
+  },
+  {
+    "id": "res-pw-4",
+    "type": "Article",
+    "title": "Complete Guide to CSS Grid",
+    "description": "Comprehensive reference for CSS Grid layout including all properties and patterns.",
+    "url": "https://css-tricks.com/snippets/css/complete-guide-grid/"
+  },
+  {
+    "id": "res-pw-5",
+    "type": "Article",
+    "title": "Dark Mode with CSS Variables",
+    "description": "Implementation patterns for theme switching using CSS custom properties.",
+    "url": "https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/"
+  },
+  {
+    "id": "res-pw-6",
+    "type": "Reference",
+    "title": "WCAG 2.1 Accessibility Quick Reference",
+    "description": "W3C's official accessibility guidelines filtered by conformance level.",
+    "url": "https://www.w3.org/WAI/WCAG21/quickref/"
+  },
+  {
+    "id": "res-pw-7",
+    "type": "Reference",
+    "title": "Google Fonts",
+    "description": "Free, open-source fonts for use in web projects.",
+    "url": "https://fonts.google.com"
+  },
+  {
+    "id": "res-pw-8",
+    "type": "GitHub",
+    "title": "GitHub Pages Deployment Docs",
+    "description": "Official guide for deploying static sites to GitHub Pages.",
+    "url": "https://docs.github.com/en/pages"
+  }
+]

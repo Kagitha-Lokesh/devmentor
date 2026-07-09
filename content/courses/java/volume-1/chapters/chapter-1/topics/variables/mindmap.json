@@ -1,0 +1,14 @@
+{
+  "topicId": "V1-C1-T1",
+  "title": "Variables in Java Mind Map",
+  "nodes": [
+    { "id": "1", "label": "Variables in Java", "parentId": null },
+    { "id": "2", "label": "Scopes", "parentId": "1" },
+    { "id": "3", "label": "Local Variables (Stack, No Defaults)", "parentId": "2" },
+    { "id": "4", "label": "Instance Variables (Heap, Default Values)", "parentId": "2" },
+    { "id": "5", "label": "Class Variables (Static Memory, Shared)", "parentId": "2" },
+    { "id": "6", "label": "Data Types", "parentId": "1" },
+    { "id": "7", "label": "Primitives (int, double, boolean, char)", "parentId": "6" },
+    { "id": "8", "label": "Reference Types (Objects, Arrays)", "parentId": "6" }
+  ]
+}

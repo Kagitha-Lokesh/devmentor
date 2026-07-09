@@ -1,0 +1,34 @@
+{
+  "portfolio-website": {
+    "title": "Personal Developer Portfolio Website",
+    "track": "frontend",
+    "difficulty": "Beginner",
+    "dependsOn": [],
+    "suggestsNext": [
+      "task-manager-api"
+    ],
+    "prerequisites": []
+  },
+  "task-manager-api": {
+    "title": "Task Manager REST API",
+    "track": "fullstack",
+    "difficulty": "Advanced",
+    "dependsOn": [
+      "library-management"
+    ],
+    "suggestsNext": [],
+    "prerequisites": [
+      "library-management"
+    ]
+  },
+  "library-management": {
+    "title": "Library Management System",
+    "track": "java",
+    "difficulty": "Intermediate",
+    "dependsOn": [],
+    "suggestsNext": [
+      "task-manager-api"
+    ],
+    "prerequisites": []
+  }
+}

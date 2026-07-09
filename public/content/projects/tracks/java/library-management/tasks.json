@@ -1,0 +1,368 @@
+[
+  {
+    "id": "t1-1",
+    "milestoneId": "milestone-1",
+    "title": "Design the Book Entity Class",
+    "description": "Create a `Book` class with fields: `isbn` (String), `title` (String), `author` (String), `genre` (String), `totalCopies` (int), `availableCopies` (int), `yearPublished` (int). Add a constructor, getters, setters, and override `toString()`, `equals()`, and `hashCode()` based on ISBN.",
+    "estimatedMinutes": 30,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": [],
+    "acceptanceCriteria": [
+      "Book class compiles without errors",
+      "All fields have correct types and access modifiers",
+      "Constructor validates that totalCopies >= 1",
+      "equals() and hashCode() are based on ISBN",
+      "toString() produces a readable output"
+    ],
+    "hints": [
+      "Use `Objects.requireNonNull()` for null validation in the constructor",
+      "ISBN should be unique — base equals/hashCode on it",
+      "Use `@Override` annotation when overriding methods"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java equals() and hashCode() Contract", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" }
+    ],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": ["V1-C1-T1"],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t1-2",
+    "milestoneId": "milestone-1",
+    "title": "Design the Member Entity Class",
+    "description": "Create a `Member` class with fields: `memberId` (String), `name` (String), `email` (String), `phone` (String), `membershipDate` (LocalDate), `activeBorrows` (List<String> — ISBNs). Add validation in the constructor and override `equals/hashCode` on memberId.",
+    "estimatedMinutes": 25,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t1-1"],
+    "acceptanceCriteria": [
+      "Member class compiles without errors",
+      "email field is validated (not null or empty)",
+      "activeBorrows initializes as an empty ArrayList",
+      "equals/hashCode based on memberId",
+      "toString() shows name and memberId"
+    ],
+    "hints": [
+      "Use `java.time.LocalDate` for the membership date (not java.util.Date)",
+      "Initialize activeBorrows with `new ArrayList<>()` in constructor",
+      "Validate email is not blank with `if (email == null || email.isBlank())`"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java LocalDate Docs", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/time/LocalDate.html" }
+    ],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": ["V1-C1-T1"],
+    "relatedQuestions": ["amzn-tech-1"]
+  },
+  {
+    "id": "t1-3",
+    "milestoneId": "milestone-1",
+    "title": "Design the BorrowRecord Entity",
+    "description": "Create a `BorrowRecord` class with: `recordId` (UUID), `memberId` (String), `isbn` (String), `borrowDate` (LocalDate), `dueDate` (LocalDate, auto-set to borrowDate + 14 days), `returnDate` (LocalDate, nullable), `isReturned` (boolean).",
+    "estimatedMinutes": 20,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t1-1", "t1-2"],
+    "acceptanceCriteria": [
+      "BorrowRecord class compiles without errors",
+      "recordId is auto-generated using UUID.randomUUID()",
+      "dueDate defaults to borrowDate + 14 days",
+      "returnDate is null for active borrows",
+      "isOverdue() method returns true if not returned and today > dueDate"
+    ],
+    "hints": [
+      "Use `UUID.randomUUID().toString()` for auto-generated IDs",
+      "Use `borrowDate.plusDays(14)` to compute dueDate",
+      "isOverdue() should check: `!isReturned && LocalDate.now().isAfter(dueDate)`"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java UUID Docs", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/UUID.html" }
+    ],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": ["V1-C1-T1"],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t2-1",
+    "milestoneId": "milestone-2",
+    "title": "Implement BookCatalogueService (CRUD)",
+    "description": "Create a `BookCatalogueService` class backed by a `HashMap<String, Book>` (keyed by ISBN). Implement: `addBook(Book)`, `removeBook(String isbn)`, `getBook(String isbn)`, `listAllBooks()`, and handle duplicate ISBNs with a custom `DuplicateBookException`.",
+    "estimatedMinutes": 40,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t1-1"],
+    "acceptanceCriteria": [
+      "HashMap used for O(1) ISBN lookup",
+      "addBook throws DuplicateBookException if ISBN already exists",
+      "removeBook throws BookNotFoundException if ISBN not found",
+      "listAllBooks returns an unmodifiable List<Book>",
+      "Custom exceptions extend RuntimeException with meaningful messages"
+    ],
+    "hints": [
+      "Use `HashMap<String, Book>` with ISBN as key",
+      "Use `containsKey()` to check for duplicate before inserting",
+      "Return `Collections.unmodifiableList(new ArrayList<>(catalogue.values()))` from listAllBooks()"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java HashMap Docs", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/HashMap.html" }
+    ],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": ["two-sum"],
+    "relatedCards": ["V1-C1-T1"],
+    "relatedQuestions": ["amzn-tech-1"]
+  },
+  {
+    "id": "t2-2",
+    "milestoneId": "milestone-2",
+    "title": "Implement Multi-Criteria Search",
+    "description": "Add a `search(SearchCriteria criteria)` method to `BookCatalogueService` using Java Streams. Support filtering by title (contains, case-insensitive), author, genre, and year range.",
+    "estimatedMinutes": 35,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t2-1"],
+    "acceptanceCriteria": [
+      "Search uses Java Streams with filter() and collect()",
+      "Title search is case-insensitive using toLowerCase()",
+      "Multiple criteria can be combined (AND logic)",
+      "Empty criteria returns all books",
+      "Returns an unmodifiable list of results"
+    ],
+    "hints": [
+      "Use `catalogue.values().stream().filter(...).collect(Collectors.toList())`",
+      "Use `Optional<String>` in SearchCriteria so fields can be absent",
+      "Chain multiple `.filter()` calls for AND logic"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java Streams API Docs", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/stream/Stream.html" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": ["two-sum"],
+    "relatedCards": [],
+    "relatedQuestions": ["amzn-tech-1"]
+  },
+  {
+    "id": "t2-3",
+    "milestoneId": "milestone-2",
+    "title": "Implement MemberService (CRUD)",
+    "description": "Create a `MemberService` class backed by `HashMap<String, Member>`. Implement `registerMember(Member)`, `removeMember(String memberId)`, `getMember(String memberId)`, and `listAllMembers()`.",
+    "estimatedMinutes": 25,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t1-2"],
+    "acceptanceCriteria": [
+      "HashMap used for member storage keyed by memberId",
+      "registerMember throws DuplicateMemberException if memberId exists",
+      "getMember throws MemberNotFoundException if not found",
+      "listAllMembers returns an unmodifiable list"
+    ],
+    "hints": [
+      "Follow the same pattern as BookCatalogueService",
+      "Member IDs should be human-readable (e.g., M001, M002)"
+    ],
+    "resources": [],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-1",
+    "milestoneId": "milestone-3",
+    "title": "Implement Borrow Operation",
+    "description": "Create a `LibraryService` class with a `borrowBook(String memberId, String isbn)` method. Validate: book exists, book has available copies, member has not exceeded their borrow limit (max 3 books). Create a `BorrowRecord`, decrement `availableCopies`, and update the member's `activeBorrows`.",
+    "estimatedMinutes": 40,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t2-1", "t2-3"],
+    "acceptanceCriteria": [
+      "Throws BookNotAvailableException when no copies remain",
+      "Throws BorrowLimitExceededException when member has 3 active borrows",
+      "BorrowRecord is created and stored",
+      "availableCopies decremented on the Book",
+      "isbn added to member's activeBorrows list"
+    ],
+    "hints": [
+      "Check `book.getAvailableCopies() <= 0` for unavailability",
+      "Check `member.getActiveBorrows().size() >= 3` for limit",
+      "Wrap all operations in try-catch and throw custom exceptions"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Java Exception Handling", "url": "https://docs.oracle.com/javase/tutorial/essential/exceptions/" }
+    ],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-2",
+    "milestoneId": "milestone-3",
+    "title": "Implement Return & Fine Calculation",
+    "description": "Add a `returnBook(String memberId, String isbn)` method to `LibraryService`. Mark the `BorrowRecord` as returned. If the book is overdue, compute a fine at ₹5/day. Increment `availableCopies`. Remove isbn from `activeBorrows`.",
+    "estimatedMinutes": 30,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t3-1"],
+    "acceptanceCriteria": [
+      "BorrowRecord.returnDate set to today",
+      "BorrowRecord.isReturned set to true",
+      "availableCopies incremented",
+      "isbn removed from member's activeBorrows",
+      "Fine computed correctly: overdueDays * 5",
+      "Return value includes fine amount (0 if returned on time)"
+    ],
+    "hints": [
+      "Use `ChronoUnit.DAYS.between(record.getDueDate(), LocalDate.now())` for overdue days",
+      "Only compute fine if `returnDate.isAfter(dueDate)`",
+      "Return a `ReturnReceipt` object containing fine amount and record"
+    ],
+    "resources": [],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t3-3",
+    "milestoneId": "milestone-3",
+    "title": "Implement Overdue Report",
+    "description": "Add a `getOverdueReport()` method to `LibraryService`. Return a list of all active borrow records where `isOverdue()` is true, enriched with member name, book title, days overdue, and fine amount.",
+    "estimatedMinutes": 25,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t3-2"],
+    "acceptanceCriteria": [
+      "Returns only active (not returned) overdue records",
+      "Each report entry includes: memberName, bookTitle, daysOverdue, fine",
+      "Report is sorted by daysOverdue descending",
+      "Empty list returned if no overdue records"
+    ],
+    "hints": [
+      "Filter: `records.stream().filter(r -> !r.isReturned() && r.isOverdue())`",
+      "Sort with `.sorted(Comparator.comparingLong(this::computeOverdueDays).reversed())`"
+    ],
+    "resources": [],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t4-1",
+    "milestoneId": "milestone-4",
+    "title": "Implement File Persistence",
+    "description": "Create a `DataPersistenceService` that serializes the catalogue, members, and borrow records to disk as JSON files using the Jackson library (or manual serialization). Load data on startup and save on shutdown.",
+    "estimatedMinutes": 45,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t3-3"],
+    "acceptanceCriteria": [
+      "Books, members, and borrow records persisted to separate JSON files",
+      "Data loaded correctly on application startup",
+      "Data saved correctly on application shutdown (or after each write)",
+      "Application handles missing data files gracefully (starts with empty state)",
+      "Invalid JSON files produce a clear error message"
+    ],
+    "hints": [
+      "Use Jackson's `ObjectMapper` for JSON serialization/deserialization",
+      "Add Jackson dependency: `com.fasterxml.jackson.core:jackson-databind`",
+      "Use a `@JsonDeserialize` annotation for LocalDate if using Jackson"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "Jackson ObjectMapper Docs", "url": "https://fasterxml.github.io/jackson-databind/javadoc/2.9/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t4-2",
+    "milestoneId": "milestone-4",
+    "title": "Build the Interactive CLI Menu",
+    "description": "Create a `CLIApplication` main class with a loop that reads user input and dispatches to the appropriate service methods. Menu: 1) Add Book, 2) Search Books, 3) Register Member, 4) Borrow Book, 5) Return Book, 6) Overdue Report, 7) Exit.",
+    "estimatedMinutes": 35,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t4-1"],
+    "acceptanceCriteria": [
+      "All 7 menu options implemented and working",
+      "Scanner reads user input correctly",
+      "Invalid input shows an error and re-displays the menu",
+      "Exit option saves data before quitting",
+      "Menu is clearly formatted and readable"
+    ],
+    "hints": [
+      "Use `Scanner sc = new Scanner(System.in)` for input",
+      "Use a `while(true)` loop broken by the Exit option",
+      "Handle `InputMismatchException` when reading integers"
+    ],
+    "resources": [],
+    "relatedLessons": ["V1-C1-T1"],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t5-1",
+    "milestoneId": "milestone-5",
+    "title": "Write JUnit Tests for Business Logic",
+    "description": "Write unit tests for: BookCatalogueService (add, remove, search), LibraryService (borrow, return, overdue), and fine calculation. Use JUnit 5 with @Test, @BeforeEach, and assertions.",
+    "estimatedMinutes": 45,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t4-2"],
+    "acceptanceCriteria": [
+      "Minimum 10 test methods covering happy paths and exception scenarios",
+      "Tests use @BeforeEach to reset service state",
+      "Assertions use assertThrows() for exception testing",
+      "All tests pass (green) when running `mvn test` or `./gradlew test`"
+    ],
+    "hints": [
+      "Use `assertThrows(BookNotFoundException.class, () -> service.removeBook(\"unknown\"))` pattern",
+      "Set up a fresh service instance in @BeforeEach",
+      "Test boundary conditions (borrow limit of 3, zero available copies)"
+    ],
+    "resources": [
+      { "type": "Documentation", "title": "JUnit 5 User Guide", "url": "https://junit.org/junit5/docs/current/user-guide/" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": []
+  },
+  {
+    "id": "t5-2",
+    "milestoneId": "milestone-5",
+    "title": "SOLID Principles Self-Review",
+    "description": "Review each class against the 5 SOLID principles. Document at least one example of each principle in your codebase in a `DESIGN_NOTES.md` file.",
+    "estimatedMinutes": 30,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["t5-1"],
+    "acceptanceCriteria": [
+      "DESIGN_NOTES.md created in project root",
+      "One example of Single Responsibility Principle identified",
+      "One example of Open/Closed Principle identified",
+      "One example of Liskov Substitution Principle identified",
+      "One example of Interface Segregation Principle identified",
+      "One example of Dependency Inversion Principle identified"
+    ],
+    "hints": [
+      "SRP: Each service class handles one domain (BookCatalogueService != LibraryService)",
+      "DIP: Services depend on abstractions (interfaces) not concrete implementations",
+      "OCP: Adding a new search criterion doesn't require modifying existing search logic"
+    ],
+    "resources": [
+      { "type": "Article", "title": "SOLID Principles Explained", "url": "https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design" }
+    ],
+    "relatedLessons": [],
+    "relatedProblems": [],
+    "relatedCards": [],
+    "relatedQuestions": ["amzn-tech-1"]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "tcs-beh-1",
+    "category": "Behavioral",
+    "type": "Behavioral",
+    "questionText": "Tell me about a time when you had to work under a tight deadline.",
+    "starFramework": {
+      "Situation": "Describe a project task or exam with a very close submission date.",
+      "Task": "Detail the requirements and what needed to be accomplished.",
+      "Action": "Explain how you prioritized tasks, created a schedule, and put in extra hours.",
+      "Result": "State that you completed the project on time with good results and positive feedback."
+    },
+    "expectedPoints": [
+      "Effective time management and prioritization",
+      "Stress management",
+      "Collaboration with peers or mentors",
+      "Successful delivery on time"
+    ],
+    "commonMistakes": [
+      "Admitting you missed the deadline without a valid excuse",
+      "Complaining about the workload",
+      "Not detailing the actions you took to prioritize"
+    ],
+    "strongExample": "During our college capstone project, a core member fell ill three days before submission. I quickly scheduled a call with the rest of the team. We split his modules based on our strengths, re-prioritized the tasks, and worked late. We submitted the project 4 hours before the deadline and scored an A grade.",
+    "weakExample": "We had a project due tomorrow. I had to stay up all night drinking coffee. I was tired but I got it done.",
+    "estimatedMinutes": 8,
+    "difficulty": "Easy",
+    "tags": ["behavioral", "time-management", "collaboration"]
+  }
+]

@@ -1,0 +1,38 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+
+    // User profile document
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId);
+      allow update: if isOwner(userId);
+      allow delete: if false; // Only allow deletion through admin SDK
+      
+      // User settings subcollection
+      match /settings/{document=**} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // User progress subcollection
+      match /progress/{document=**} {
+        allow read, write: if isOwner(userId);
+      }
+      
+      // User preferences subcollection
+      match /preferences/{document=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+  }
+}

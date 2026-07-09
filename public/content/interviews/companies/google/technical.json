@@ -1,0 +1,19 @@
+[
+  {
+    "id": "goog-tech-1",
+    "category": "Technical",
+    "type": "Coding",
+    "questionText": "Given a directed graph, write a program to find if it contains a cycle using DFS.",
+    "sampleAnswer": "To detect a cycle in a directed graph, we can use depth-first search (DFS) with node coloring: white (unvisited, 0), gray (currently visiting, 1), and black (fully visited, 2). If we encounter a gray node during DFS, a back-edge exists, indicating a cycle.",
+    "keyPoints": [
+      "Node coloring strategy: White/Gray/Black states",
+      "Recursive DFS stack tracking",
+      "Identification of back-edges",
+      "Time complexity: O(V + E)",
+      "Space complexity: O(V) for recursive call stack and colors array"
+    ],
+    "estimatedMinutes": 15,
+    "difficulty": "Medium",
+    "tags": ["dsa", "graphs", "dfs", "recursion"]
+  }
+]

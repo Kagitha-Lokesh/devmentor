@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "companiesCount": 7,
+  "totalQuestions": 18,
+  "behavioralCount": 4,
+  "technicalCount": 6,
+  "systemDesignCount": 4,
+  "hrCount": 4
+}

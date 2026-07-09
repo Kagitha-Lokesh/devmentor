@@ -1,0 +1,18 @@
+[
+  {
+    "id": "amzn-hr-1",
+    "category": "HR",
+    "type": "HR",
+    "questionText": "Why do you want to join Amazon specifically, and how do you align with our culture?",
+    "sampleAnswer": "I want to join Amazon because of its culture of customer obsession and operational excellence. At scale, technical decisions have massive impacts. I align closely with Ownership and Bias for Action — I like taking responsibility for my code from design to production monitoring. Amazon's commitment to building long-term systems is exactly where I want to grow my engineering career.",
+    "keyPoints": [
+      "Mentions specific Amazon Leadership Principles (e.g. Customer Obsession, Ownership)",
+      "Aligns technical background with Amazon's scale of engineering",
+      "Demonstrates knowledge of Amazon's business models (AWS, retail, logistics)",
+      "Shows a long-term career projection within the firm"
+    ],
+    "estimatedMinutes": 5,
+    "difficulty": "Easy",
+    "tags": ["hr", "fit", "culture"]
+  }
+]

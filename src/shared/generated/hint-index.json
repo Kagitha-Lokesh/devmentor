@@ -1,0 +1,16 @@
+{
+  "two-sum": [
+    {
+      "id": 1,
+      "hint": "Try iterating through the array. For each number x, what other number y do you need to find such that x + y = target?"
+    },
+    {
+      "id": 2,
+      "hint": "Can you rewrite the equation x + y = target? If we know x and target, then y = target - x. We need to check if this remainder has already been seen in the array."
+    },
+    {
+      "id": 3,
+      "hint": "Use a HashMap to store the numbers you have seen so far as keys, and their indices as values. For the current number, check if (target - current) exists in the map. If it does, you found your indices!"
+    }
+  ]
+}

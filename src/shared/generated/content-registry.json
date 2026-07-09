@@ -1,0 +1,47 @@
+{
+  "courses": {
+    "java": {
+      "id": "java",
+      "title": "Java Full Stack Career Path",
+      "volumes": [
+        {
+          "num": 1,
+          "folder": "volume-1",
+          "title": "Computer Fundamentals & Core Java",
+          "chapters": [
+            {
+              "id": "chapter-1",
+              "title": "Introduction to Computer Science & Java",
+              "topics": [
+                {
+                  "id": "V1-C1-T1",
+                  "slug": "variables",
+                  "title": "Variables in Java",
+                  "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+                  "estimatedMinutes": 15,
+                  "difficulty": "Beginner",
+                  "prerequisites": [],
+                  "nextTopics": [],
+                  "tags": [
+                    "Java Core",
+                    "Syntax",
+                    "Fundamentals"
+                  ],
+                  "paths": {
+                    "lesson": "courses/java/volume-1/chapters/chapter-1/topics/variables/lesson.md",
+                    "examples": "courses/java/volume-1/chapters/chapter-1/topics/variables/examples.md",
+                    "revision": "courses/java/volume-1/chapters/chapter-1/topics/variables/revision.md",
+                    "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+                    "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json",
+                    "quiz": "courses/java/volume-1/chapters/chapter-1/topics/variables/quiz.json",
+                    "interview": "courses/java/volume-1/chapters/chapter-1/topics/variables/interview.json"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "resume-java-junior",
+    "title": "Junior Java Full Stack Developer Resume Template",
+    "description": "Perfect for entry-level developers or career switchers highlighting projects and foundational Java/Spring/React skills.",
+    "difficulty": "Beginner",
+    "technology": ["Java", "Spring Boot", "React", "SQL"],
+    "category": "Resume",
+    "sections": [
+      {
+        "title": "Professional Summary",
+        "defaultValue": "Dedicated software engineer specialized in Java enterprise ecosystems and modern frontend frameworks like React. Passionate about building modular REST services, optimizing SQL databases, and implementing test-driven modules."
+      },
+      {
+        "title": "Technical Skills",
+        "defaultValue": "Java, Spring Boot, Spring Data JPA, Hibernate, PostgreSQL, MySQL, React, Zustand, Javascript, HTML5, CSS3, TailwindCSS, Git, JUnit, Docker"
+      },
+      {
+        "title": "Featured Projects",
+        "defaultValue": "DevMentor AI Sandbox Project (Vite + React client accessing microservice API endpoints, cached with IndexedDB)\n- Configured automated test runs via local compiler environments\n- Built robust responsive dashboard panels using Tailwind CSS"
+      }
+    ]
+  },
+  {
+    "id": "resume-react-junior",
+    "title": "Junior Frontend Engineer Resume Template",
+    "description": "Tailored for frontend developers focusing on UI development, performance, state management, and modern Web design.",
+    "technology": ["React", "CSS", "Javascript", "Tailwind"],
+    "category": "Resume",
+    "sections": [
+      {
+        "title": "Professional Summary",
+        "defaultValue": "Creative Frontend Engineer focused on crafting accessible, high-performance web applications. Expert in component design patterns, responsive layouts, and interactive state managers."
+      },
+      {
+        "title": "Technical Skills",
+        "defaultValue": "React, Hooks, React Router, Redux Toolkit, Zustand, HTML5, CSS Grid, Flexbox, Tailwind CSS, Javascript, TypeScript, Git, Vitest"
+      }
+    ]
+  }
+]

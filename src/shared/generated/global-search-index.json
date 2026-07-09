@@ -1,0 +1,456 @@
+[
+  {
+    "id": "course:java",
+    "title": "Java Full Stack Career Path",
+    "description": "Structured curriculum career path for learning Java Full Stack Career Path.",
+    "type": "course",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React"
+    ],
+    "track": "Java Full Stack Career Path",
+    "route": "/courses"
+  },
+  {
+    "id": "topic:V1-C1-T1",
+    "title": "Variables in Java",
+    "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+    "type": "topic",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/variables",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/variables/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/variables/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/variables/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/variables/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/variables/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T1",
+    "title": "Variables in Java Quiz",
+    "description": "Test your understanding of Variables in Java.",
+    "type": "revision_card",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "problem:two-sum",
+    "title": "Two Sum Using HashMap",
+    "description": "Coding practice problem: Two Sum Using HashMap. Target topic: Arrays.",
+    "type": "problem",
+    "difficulty": {
+      "level": 2,
+      "label": "Easy",
+      "color": "green"
+    },
+    "technology": [
+      "Java"
+    ],
+    "track": "Arrays",
+    "estimatedTime": 20,
+    "route": "/compiler/problems/two-sum"
+  },
+  {
+    "id": "project:portfolio-website",
+    "title": "Personal Developer Portfolio Website",
+    "description": "Design and build a fully responsive personal portfolio site using React, showcasing your projects, skills, and contact details. Incorporate smooth animations, dark mode, and deploy to GitHub Pages.",
+    "type": "project",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "React Router",
+      "CSS3",
+      "Vite",
+      "GitHub Pages"
+    ],
+    "track": "frontend",
+    "estimatedTime": 720,
+    "route": "/projects/portfolio-website"
+  },
+  {
+    "id": "project:task-manager-api",
+    "title": "Task Manager REST API",
+    "description": "Build a full-stack Task Manager application — a Spring Boot REST API backend connected to a React frontend. Users can create, assign, prioritize, and track tasks with deadlines, with full CRUD operations and JSON API responses.",
+    "type": "project",
+    "difficulty": "Advanced",
+    "technology": [
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Data JPA",
+      "H2/MySQL",
+      "React",
+      "Axios",
+      "REST API"
+    ],
+    "track": "fullstack",
+    "estimatedTime": 1440,
+    "route": "/projects/task-manager-api"
+  },
+  {
+    "id": "project:library-management",
+    "title": "Library Management System",
+    "description": "Build a console-based Java application that manages a library catalogue — books, members, borrowing records, and search. Apply core OOP, Java Collections, file I/O, and exception handling in a real use case.",
+    "type": "project",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java 17",
+      "Java Collections Framework",
+      "File I/O",
+      "OOP Design Patterns"
+    ],
+    "track": "java",
+    "estimatedTime": 960,
+    "route": "/projects/library-management"
+  },
+  {
+    "id": "roadmap:roadmap-java-fullstack",
+    "title": "Java Full Stack Developer Career Roadmap",
+    "description": "The complete journey from Java basics to full-stack cloud-native deployment.",
+    "type": "career_roadmap",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "track": "Full Stack",
+    "route": "/calendar"
+  },
+  {
+    "id": "roadmap:roadmap-frontend",
+    "title": "Modern Frontend Developer Roadmap",
+    "description": "Deep dive into web standards, performance, React components, and state management.",
+    "type": "career_roadmap",
+    "difficulty": "Beginner",
+    "technology": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "track": "Frontend",
+    "route": "/calendar"
+  },
+  {
+    "id": "resume:resume-java-junior",
+    "title": "Junior Java Full Stack Developer Resume Template",
+    "description": "Perfect for entry-level developers or career switchers highlighting projects and foundational Java/Spring/React skills.",
+    "type": "resume_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "SQL"
+    ],
+    "track": "Resume",
+    "route": "/downloads"
+  },
+  {
+    "id": "resume:resume-react-junior",
+    "title": "Junior Frontend Engineer Resume Template",
+    "description": "Tailored for frontend developers focusing on UI development, performance, state management, and modern Web design.",
+    "type": "resume_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "CSS",
+      "Javascript",
+      "Tailwind"
+    ],
+    "track": "Resume",
+    "route": "/downloads"
+  },
+  {
+    "id": "portfolio:portfolio-minimalist",
+    "title": "Minimalist Developer Portfolio Template",
+    "description": "Clean, elegant, typography-focused single-page portfolio layout.",
+    "type": "portfolio_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "HTML",
+      "Vanilla CSS",
+      "Javascript"
+    ],
+    "track": "Portfolio",
+    "route": "/downloads"
+  },
+  {
+    "id": "portfolio:portfolio-terminal",
+    "title": "Terminal/IDE Style Portfolio Template",
+    "description": "Interactive developer portfolio designed to resemble an IDE workspace or Linux command terminal.",
+    "type": "portfolio_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "Tailwind CSS",
+      "Zustand"
+    ],
+    "track": "Portfolio",
+    "route": "/downloads"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-1",
+    "title": "Flashcard: What is the primary difference between Stack and Heap memory in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Stack memory stores method execution frames and local variables, and is allocate...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-2",
+    "title": "Flashcard: What happens if you try to use an uninitialized local variable in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Java triggers a compile-time error: 'variable might not have been initialized'....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-3",
+    "title": "Flashcard: How do you declare a variable as constant in Java?",
+    "description": "Topic: Variables in Java. Answer preview: By using the 'final' keyword. Once initialized, its value cannot be changed....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-4",
+    "title": "Flashcard: Which scope of variables gets default values automatically in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Instance variables (fields) and static variables get default values (like 0, fal...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "question:amzn-tech-1",
+    "description": "Interview Question: In Java 8, a HashMap stores key-value pairs in an array of nodes (Node<K,V>[] table). The index is c...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-tech-2",
+    "description": "Interview Question: This problem can be resolved using a Monotonic Stack. We traverse the array from right to left, main...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-sys-1",
+    "description": "Interview Question: A distributed rate limiter limits API requests per user key across multiple load-balanced servers. W...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-hr-1",
+    "description": "Interview Question: I want to join Amazon because of its culture of customer obsession and operational excellence. At sc...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-tech-1",
+    "description": "Interview Question: To detect a cycle in a directed graph, we can use depth-first search (DFS) with node coloring: white...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-sys-1",
+    "description": "Interview Question: To design typeahead suggestions, we need a system that returns top 5 matching queries as a user type...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-hr-1",
+    "description": "Interview Question: To me, Googlyness means doing the right thing, valuing diversity, intellectual humility, and having ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-1",
+    "description": "Interview Question: The four pillars of OOP are: 1. Encapsulation (hiding data using private fields and public getters/s...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-2",
+    "description": "Interview Question: The WHERE clause is used to filter records from a table before any groupings are made. The HAVING cl...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-sys-1",
+    "description": "Interview Question: A Library Management System database requires tables for: Books (id, title, author, isbn, status), U...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-hr-1",
+    "description": "Interview Question: Yes, I am completely comfortable relocating to any TCS development center in India. I believe reloca...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-hr-1",
+    "description": "Interview Question: I am a full-stack developer specializing in building Java and React applications. I have experience ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-sys-1",
+    "description": "Interview Question: A URL shortener converts long URLs to short aliases (e.g. bit.ly/abcd12). We need: 1. A relational o...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-tech-1",
+    "description": "Interview Question: In Java, an abstract class can have state (non-static, non-final fields) and constructors, whereas i...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  }
+]

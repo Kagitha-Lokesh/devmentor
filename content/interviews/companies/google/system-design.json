@@ -1,0 +1,19 @@
+[
+  {
+    "id": "goog-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design Google Search Auto-Complete (Typeahead suggestions) system.",
+    "sampleAnswer": "To design typeahead suggestions, we need a system that returns top 5 matching queries as a user types. We use a Trie data structure stored in memory. At scale, the Trie is partitioned by prefixes across servers. We pre-aggregate search trends offline using MapReduce/Spark to update node frequencies, caching top recommendations at the edge CDNs for extremely low latency response (under 10ms).",
+    "keyPoints": [
+      "Trie data structure storage design",
+      "Offline aggregation of query frequencies",
+      "Edge caching and CDN optimizations",
+      "Prefix-based sharding and load distribution",
+      "Browser local caching of recent inputs"
+    ],
+    "estimatedMinutes": 25,
+    "difficulty": "Hard",
+    "tags": ["system-design", "trie", "latency", "scale"]
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "gen-tech-1",
+    "category": "Technical",
+    "type": "Theory",
+    "questionText": "What is the difference between an Abstract Class and an Interface in Java?",
+    "sampleAnswer": "In Java, an abstract class can have state (non-static, non-final fields) and constructors, whereas interfaces cannot have state (only public static final constants). A class can extend only one abstract class, but can implement multiple interfaces. In Java 8+, interfaces can also have default and static methods.",
+    "keyPoints": [
+      "Multiple inheritance: class can implement many interfaces but extend only one class",
+      "State: Abstract classes have instance fields; interfaces have only constants",
+      "Constructor: Abstract classes can define constructors; interfaces cannot",
+      "Default/Static methods support in Java 8+ interfaces"
+    ],
+    "estimatedMinutes": 6,
+    "difficulty": "Easy",
+    "tags": ["java", "oops", "fundamentals"]
+  }
+]

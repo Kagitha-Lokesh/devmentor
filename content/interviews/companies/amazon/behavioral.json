@@ -1,0 +1,30 @@
+[
+  {
+    "id": "amzn-beh-1",
+    "category": "Behavioral",
+    "type": "Behavioral",
+    "questionText": "Tell me about a time when you had to make a quick decision without all the data. (Customer Obsession / Bias for Action)",
+    "starFramework": {
+      "Situation": "Describe a context where a deadline was tight and critical metrics or customer experience was at risk.",
+      "Task": "Identify the data that was missing and why waiting for it would have caused negative consequences.",
+      "Action": "Detail your calculation of risks, mitigation plans, and the action you took immediately.",
+      "Result": "State the business outcome, what you learned, and how you corrected course if needed."
+    },
+    "expectedPoints": [
+      "Demonstrated Bias for Action while managing risk",
+      "Calculated trade-offs of waiting vs. moving forward",
+      "Customer-centric decision making process",
+      "Post-decision validation and telemetry setup"
+    ],
+    "commonMistakes": [
+      "Making a blind guess without any logical mitigation",
+      "Blaming others or external circumstances for the lack of data",
+      "Failing to verify the outcome afterwards"
+    ],
+    "strongExample": "In my previous project, we saw a sudden 5% drop in checkout conversions after a release. We didn't have telemetry on which service failed, but we knew rollback was the safest action for the customer. I authorized the rollback within 3 minutes, resolving the leak, and then investigated the telemetry logs which confirmed a database connection timeout.",
+    "weakExample": "Our database went slow. I didn't know why, so I decided to restart the server. It worked but we lost some transaction logs. I didn't think to back up because we were in a rush.",
+    "estimatedMinutes": 10,
+    "difficulty": "Medium",
+    "tags": ["behavioral", "amazon-leadership", "bias-for-action"]
+  }
+]

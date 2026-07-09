@@ -1,0 +1,18 @@
+[
+  {
+    "id": "goog-hr-1",
+    "category": "HR",
+    "type": "HR",
+    "questionText": "What does Googlyness mean to you, and how do you display it?",
+    "sampleAnswer": "To me, Googlyness means doing the right thing, valuing diversity, intellectual humility, and having a bias for collaboration. It means being open to feedback, admitting when you don't know the answer, and prioritizing the long-term success of the product and team over personal credit.",
+    "keyPoints": [
+      "Mentions intellectual humility",
+      "Collaborative mindset over competitive mindset",
+      "Doing the right thing for users",
+      "Thriving in ambiguous situations"
+    ],
+    "estimatedMinutes": 5,
+    "difficulty": "Easy",
+    "tags": ["hr", "fit", "googlyness"]
+  }
+]

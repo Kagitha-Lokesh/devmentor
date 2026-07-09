@@ -1,0 +1,10 @@
+{
+  "id": "tcs",
+  "name": "TCS",
+  "difficulty": "Service",
+  "experience": ["Fresher", "Experienced"],
+  "rounds": ["Aptitude Test", "Technical Interview", "Managerial Interview", "HR Round"],
+  "estimatedPreparationHours": 20,
+  "focus": ["Core Java", "SQL Queries", "OOPs Concepts", "Aptitude"],
+  "topicCoverage": ["Inheritance & Polymorphism", "Basic Arrays", "SQL Joins", "Aptitude Basics"]
+}

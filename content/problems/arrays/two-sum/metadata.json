@@ -1,0 +1,21 @@
+{
+  "id": "two-sum",
+  "slug": "two-sum",
+  "title": "Two Sum Using HashMap",
+  "difficulty": {
+    "level": 2,
+    "label": "Easy",
+    "color": "green"
+  },
+  "topic": "Arrays",
+  "subtopic": "Hash Mapping",
+  "estimatedMinutes": 20,
+  "companies": ["Amazon", "Google", "Meta"],
+  "patterns": ["Two Pointers", "Hashing"],
+  "timeComplexity": "O(N)",
+  "spaceComplexity": "O(N)",
+  "prerequisites": ["V1-C1-T1"],
+  "related": [],
+  "next": [],
+  "interviewImportance": 5
+}

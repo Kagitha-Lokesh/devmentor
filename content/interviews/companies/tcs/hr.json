@@ -1,0 +1,17 @@
+[
+  {
+    "id": "tcs-hr-1",
+    "category": "HR",
+    "type": "HR",
+    "questionText": "Are you comfortable relocating, and are you open to working in different shifts?",
+    "sampleAnswer": "Yes, I am completely comfortable relocating to any TCS development center in India. I believe relocating offers a great opportunity to explore new cultures and build a diverse network. I am also comfortable working in rotating shifts as required by project milestones and client schedules.",
+    "keyPoints": [
+      "Explicit confirmation of relocation comfort",
+      "Flexibility regarding working hours/shifts",
+      "Positive attitude towards change and professional adaptation"
+    ],
+    "estimatedMinutes": 4,
+    "difficulty": "Easy",
+    "tags": ["hr", "flexibility", "relocation"]
+  }
+]

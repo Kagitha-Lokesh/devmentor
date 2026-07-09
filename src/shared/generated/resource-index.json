@@ -1,0 +1,191 @@
+[
+  {
+    "id": "res-pw-1",
+    "type": "Documentation",
+    "title": "Vite Official Documentation",
+    "description": "Complete Vite build tool documentation — scaffolding, configuration, plugins, and deployment.",
+    "url": "https://vitejs.dev/guide/",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-2",
+    "type": "Documentation",
+    "title": "React Official Documentation",
+    "description": "Learn React from the ground up with interactive examples and conceptual guides.",
+    "url": "https://react.dev/learn",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-3",
+    "type": "Reference",
+    "title": "React Router v6 Docs",
+    "description": "Complete guide to client-side routing in React applications.",
+    "url": "https://reactrouter.com/en/main",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-4",
+    "type": "Article",
+    "title": "Complete Guide to CSS Grid",
+    "description": "Comprehensive reference for CSS Grid layout including all properties and patterns.",
+    "url": "https://css-tricks.com/snippets/css/complete-guide-grid/",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-5",
+    "type": "Article",
+    "title": "Dark Mode with CSS Variables",
+    "description": "Implementation patterns for theme switching using CSS custom properties.",
+    "url": "https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-6",
+    "type": "Reference",
+    "title": "WCAG 2.1 Accessibility Quick Reference",
+    "description": "W3C's official accessibility guidelines filtered by conformance level.",
+    "url": "https://www.w3.org/WAI/WCAG21/quickref/",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-7",
+    "type": "Reference",
+    "title": "Google Fonts",
+    "description": "Free, open-source fonts for use in web projects.",
+    "url": "https://fonts.google.com",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-pw-8",
+    "type": "GitHub",
+    "title": "GitHub Pages Deployment Docs",
+    "description": "Official guide for deploying static sites to GitHub Pages.",
+    "url": "https://docs.github.com/en/pages",
+    "projectId": "portfolio-website",
+    "track": "frontend"
+  },
+  {
+    "id": "res-tm-1",
+    "type": "Documentation",
+    "title": "Spring Initializr",
+    "description": "Bootstrap Spring Boot projects with your chosen dependencies.",
+    "url": "https://start.spring.io",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-2",
+    "type": "Documentation",
+    "title": "Spring Data JPA Reference",
+    "description": "Official guide to repositories, entities, queries, and persistence with Spring Data JPA.",
+    "url": "https://docs.spring.io/spring-data/jpa/docs/current/reference/html/",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-3",
+    "type": "Documentation",
+    "title": "Spring Boot REST Guide",
+    "description": "Step-by-step guide to building a RESTful web service with Spring Boot.",
+    "url": "https://spring.io/guides/gs/rest-service/",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-4",
+    "type": "Documentation",
+    "title": "Axios HTTP Client",
+    "description": "Promise-based HTTP client for making API requests from JavaScript/React.",
+    "url": "https://axios-http.com/docs/intro",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-5",
+    "type": "Article",
+    "title": "Bean Validation with Spring Boot",
+    "description": "How to validate request bodies using annotations like @NotBlank, @NotNull, @Size.",
+    "url": "https://www.baeldung.com/spring-boot-bean-validation",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-6",
+    "type": "Article",
+    "title": "Spring Data JPA Specifications for Dynamic Filtering",
+    "description": "Implement flexible search queries without writing JPQL.",
+    "url": "https://www.baeldung.com/rest-api-search-language-spring-data-specifications",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-tm-7",
+    "type": "Documentation",
+    "title": "Spring Boot Testing Reference",
+    "description": "Complete guide for writing integration and unit tests with Spring Boot Test and MockMvc.",
+    "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/test-auto-configuration.html",
+    "projectId": "task-manager-api",
+    "track": "fullstack"
+  },
+  {
+    "id": "res-lm-1",
+    "type": "Documentation",
+    "title": "Java Collections Framework Overview",
+    "description": "Official Oracle documentation for HashMap, ArrayList, LinkedList, and other collection classes.",
+    "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/package-summary.html",
+    "projectId": "library-management",
+    "track": "java"
+  },
+  {
+    "id": "res-lm-2",
+    "type": "Documentation",
+    "title": "Java Exception Handling Guide",
+    "description": "Official Java tutorial on checked vs unchecked exceptions and exception hierarchy.",
+    "url": "https://docs.oracle.com/javase/tutorial/essential/exceptions/",
+    "projectId": "library-management",
+    "track": "java"
+  },
+  {
+    "id": "res-lm-3",
+    "type": "Documentation",
+    "title": "Java Streams API",
+    "description": "Complete reference for stream operations: filter, map, collect, sort.",
+    "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/stream/Stream.html",
+    "projectId": "library-management",
+    "track": "java"
+  },
+  {
+    "id": "res-lm-4",
+    "type": "Documentation",
+    "title": "JUnit 5 User Guide",
+    "description": "Official JUnit 5 testing framework guide with examples.",
+    "url": "https://junit.org/junit5/docs/current/user-guide/",
+    "projectId": "library-management",
+    "track": "java"
+  },
+  {
+    "id": "res-lm-5",
+    "type": "Article",
+    "title": "SOLID Principles in Java",
+    "description": "Practical examples of all five SOLID principles with Java code.",
+    "url": "https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design",
+    "projectId": "library-management",
+    "track": "java"
+  },
+  {
+    "id": "res-lm-6",
+    "type": "Article",
+    "title": "Jackson ObjectMapper Tutorial",
+    "description": "Serialize and deserialize Java objects to/from JSON using Jackson.",
+    "url": "https://www.baeldung.com/jackson-object-mapper-tutorial",
+    "projectId": "library-management",
+    "track": "java"
+  }
+]

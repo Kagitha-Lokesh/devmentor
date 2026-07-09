@@ -1,0 +1,10 @@
+{
+  "id": "microsoft",
+  "name": "Microsoft",
+  "difficulty": "FAANG",
+  "experience": ["Intern", "Fresher", "Experienced"],
+  "rounds": ["Codility Test", "Technical 1", "Technical 2", "System Design", "As Appropriate Round"],
+  "estimatedPreparationHours": 45,
+  "focus": ["Data Structures", "System Design", "OS Fundamentals"],
+  "topicCoverage": ["Arrays & Strings", "Linked Lists", "System Design"]
+}

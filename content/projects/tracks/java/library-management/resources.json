@@ -1,0 +1,8 @@
+[
+  { "id": "res-lm-1", "type": "Documentation", "title": "Java Collections Framework Overview", "description": "Official Oracle documentation for HashMap, ArrayList, LinkedList, and other collection classes.", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/package-summary.html" },
+  { "id": "res-lm-2", "type": "Documentation", "title": "Java Exception Handling Guide", "description": "Official Java tutorial on checked vs unchecked exceptions and exception hierarchy.", "url": "https://docs.oracle.com/javase/tutorial/essential/exceptions/" },
+  { "id": "res-lm-3", "type": "Documentation", "title": "Java Streams API", "description": "Complete reference for stream operations: filter, map, collect, sort.", "url": "https://docs.oracle.com/en/java/docs/api/java.base/java/util/stream/Stream.html" },
+  { "id": "res-lm-4", "type": "Documentation", "title": "JUnit 5 User Guide", "description": "Official JUnit 5 testing framework guide with examples.", "url": "https://junit.org/junit5/docs/current/user-guide/" },
+  { "id": "res-lm-5", "type": "Article", "title": "SOLID Principles in Java", "description": "Practical examples of all five SOLID principles with Java code.", "url": "https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design" },
+  { "id": "res-lm-6", "type": "Article", "title": "Jackson ObjectMapper Tutorial", "description": "Serialize and deserialize Java objects to/from JSON using Jackson.", "url": "https://www.baeldung.com/jackson-object-mapper-tutorial" }
+]

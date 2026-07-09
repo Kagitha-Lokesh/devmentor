@@ -1,0 +1,9 @@
+[
+  { "id": "res-tm-1", "type": "Documentation", "title": "Spring Initializr", "description": "Bootstrap Spring Boot projects with your chosen dependencies.", "url": "https://start.spring.io" },
+  { "id": "res-tm-2", "type": "Documentation", "title": "Spring Data JPA Reference", "description": "Official guide to repositories, entities, queries, and persistence with Spring Data JPA.", "url": "https://docs.spring.io/spring-data/jpa/docs/current/reference/html/" },
+  { "id": "res-tm-3", "type": "Documentation", "title": "Spring Boot REST Guide", "description": "Step-by-step guide to building a RESTful web service with Spring Boot.", "url": "https://spring.io/guides/gs/rest-service/" },
+  { "id": "res-tm-4", "type": "Documentation", "title": "Axios HTTP Client", "description": "Promise-based HTTP client for making API requests from JavaScript/React.", "url": "https://axios-http.com/docs/intro" },
+  { "id": "res-tm-5", "type": "Article", "title": "Bean Validation with Spring Boot", "description": "How to validate request bodies using annotations like @NotBlank, @NotNull, @Size.", "url": "https://www.baeldung.com/spring-boot-bean-validation" },
+  { "id": "res-tm-6", "type": "Article", "title": "Spring Data JPA Specifications for Dynamic Filtering", "description": "Implement flexible search queries without writing JPQL.", "url": "https://www.baeldung.com/rest-api-search-language-spring-data-specifications" },
+  { "id": "res-tm-7", "type": "Documentation", "title": "Spring Boot Testing Reference", "description": "Complete guide for writing integration and unit tests with Spring Boot Test and MockMvc.", "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/test-auto-configuration.html" }
+]

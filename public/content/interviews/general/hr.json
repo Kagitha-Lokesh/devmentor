@@ -1,0 +1,18 @@
+[
+  {
+    "id": "gen-hr-1",
+    "category": "HR",
+    "type": "HR",
+    "questionText": "Tell me about yourself.",
+    "sampleAnswer": "I am a full-stack developer specializing in building Java and React applications. I have experience writing clean architectures, database indexing, and designing responsive user interfaces. I love debugging complex system latency problems and am passionate about learning new engineering systems.",
+    "keyPoints": [
+      "Chronological summary of technical background",
+      "Mention of key tech stack alignment (Java, React, SQL)",
+      "Highlights of a key achievement or project success",
+      "Expression of interest in the current position/growth"
+    ],
+    "estimatedMinutes": 5,
+    "difficulty": "Easy",
+    "tags": ["hr", "intro", "fundamentals"]
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "goog-beh-1",
+    "category": "Behavioral",
+    "type": "Behavioral",
+    "questionText": "Describe a situation where you had a conflict with a teammate. How did you resolve it?",
+    "starFramework": {
+      "Situation": "Describe a work context where a difference of opinions on a design or priority occurred.",
+      "Task": "Identify the cause of friction and how it risked impacting the project milestones.",
+      "Action": "Detail how you scheduled a 1-on-1, separated opinions from objective metrics, and focused on target results.",
+      "Result": "Explain how you resolved the conflict, reached a consensus, and improved the relationship."
+    },
+    "expectedPoints": [
+      "Demonstrated empathy and professional maturity",
+      "Focused on objective data rather than emotions",
+      "Reached win-win compromises",
+      "Post-resolution follow-up to maintain trust"
+    ],
+    "commonMistakes": [
+      "Saying you never have conflicts",
+      "Portraying yourself as completely right and the teammate as wrong",
+      "Involving management immediately before attempting 1-on-1 resolution"
+    ],
+    "strongExample": "We were designing a service architecture. A colleague preferred standard REST while I wanted gRPC for payload efficiency. Instead of arguing, we set up a micro-benchmark project. The data showed gRPC saved 40% bandwidth but REST saved 20% dev time. Since our budget was tight but latency wasn't critical, we compromised on REST with JSON compression, maintaining project velocity.",
+    "weakExample": "A peer changed my code without telling me. I was angry and told them to revert it. They said their way was better. We didn't talk for a week until our lead stepped in.",
+    "estimatedMinutes": 8,
+    "difficulty": "Easy",
+    "tags": ["behavioral", "conflict-resolution", "teamwork"]
+  }
+]

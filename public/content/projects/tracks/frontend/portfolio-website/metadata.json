@@ -1,0 +1,31 @@
+{
+  "id": "portfolio-website",
+  "title": "Personal Developer Portfolio Website",
+  "description": "Design and build a fully responsive personal portfolio site using React, showcasing your projects, skills, and contact details. Incorporate smooth animations, dark mode, and deploy to GitHub Pages.",
+  "track": "frontend",
+  "templateType": "Portfolio",
+  "difficulty": "Beginner",
+  "estimatedHours": 12,
+  "technologies": ["React", "React Router", "CSS3", "Vite", "GitHub Pages"],
+  "skills": [
+    "React Component Architecture",
+    "Responsive Design",
+    "CSS Animations",
+    "React Router Navigation",
+    "GitHub Pages Deployment",
+    "Accessibility (WCAG 2.1)"
+  ],
+  "prerequisites": [],
+  "dependsOn": [],
+  "suggestsNext": ["task-manager-api"],
+  "tags": ["portfolio", "react", "frontend", "beginner", "deployment"],
+  "coverImage": null,
+  "githubTemplate": null,
+  "learningObjectives": [
+    "Understand component-based architecture",
+    "Implement client-side routing",
+    "Apply responsive CSS layouts",
+    "Build accessible interactive UI",
+    "Deploy a static site to GitHub Pages"
+  ]
+}

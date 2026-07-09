@@ -1,0 +1,35 @@
+{
+  "id": "task-manager-api",
+  "title": "Task Manager REST API",
+  "description": "Build a full-stack Task Manager application — a Spring Boot REST API backend connected to a React frontend. Users can create, assign, prioritize, and track tasks with deadlines, with full CRUD operations and JSON API responses.",
+  "track": "fullstack",
+  "templateType": "Advanced",
+  "difficulty": "Advanced",
+  "estimatedHours": 24,
+  "technologies": ["Spring Boot", "Spring MVC", "Spring Data JPA", "H2/MySQL", "React", "Axios", "REST API"],
+  "skills": [
+    "RESTful API Design",
+    "Spring Boot Configuration",
+    "Spring MVC Controllers",
+    "Spring Data JPA & ORM",
+    "DTO Pattern",
+    "React + Axios API Integration",
+    "CORS Configuration",
+    "JSON Serialization",
+    "Error Handling (GlobalExceptionHandler)"
+  ],
+  "prerequisites": ["library-management"],
+  "dependsOn": ["library-management"],
+  "suggestsNext": [],
+  "tags": ["spring-boot", "rest-api", "react", "fullstack", "advanced", "jpa"],
+  "coverImage": null,
+  "githubTemplate": null,
+  "learningObjectives": [
+    "Design RESTful APIs following HTTP standards",
+    "Configure and run a Spring Boot application",
+    "Define JPA entities and repositories",
+    "Implement service layer with business logic",
+    "Consume a REST API from a React frontend",
+    "Handle errors and validation globally"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "meta",
+  "name": "Meta",
+  "difficulty": "FAANG",
+  "experience": ["Intern", "Fresher", "Experienced"],
+  "rounds": ["Technical Screening", "Coding Loop 1", "Coding Loop 2", "System Design (Product/Systems)", "Behavioral Round"],
+  "estimatedPreparationHours": 55,
+  "focus": ["Advanced DSA", "System Design", "Behavioral (STAR)"],
+  "topicCoverage": ["Facebook Scaling", "Graphs", "Dynamic Programming"]
+}

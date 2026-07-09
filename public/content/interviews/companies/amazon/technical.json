@@ -1,0 +1,36 @@
+[
+  {
+    "id": "amzn-tech-1",
+    "category": "Technical",
+    "type": "Theory",
+    "questionText": "Explain how HashMap works internally in Java 8. What happens during a hash collision?",
+    "sampleAnswer": "In Java 8, a HashMap stores key-value pairs in an array of nodes (Node<K,V>[] table). The index is computed using (n - 1) & hash(key). In case of a collision (different keys resolving to the same index), Java uses a linked list. However, if the number of items in a bucket exceeds 8 and the total table capacity is at least 64, the linked list is transformed into a Red-Black Tree (TreeNode) to improve search time complexity from O(n) to O(log n).",
+    "keyPoints": [
+      "Hashing function: (n - 1) & hash(key)",
+      "Linked list chaining for collisions",
+      "Java 8 treeification threshold of 8 elements",
+      "Red-black tree conversion for O(log n) performance",
+      "Re-sizing/rehashing triggers when threshold is reached"
+    ],
+    "estimatedMinutes": 8,
+    "difficulty": "Medium",
+    "tags": ["java", "collections", "hashmap", "data-structures"]
+  },
+  {
+    "id": "amzn-tech-2",
+    "category": "Technical",
+    "type": "Coding",
+    "questionText": "Given an array of integers representing tree heights, design an algorithm to find the next greater node in O(N) time.",
+    "sampleAnswer": "This problem can be resolved using a Monotonic Stack. We traverse the array from right to left, maintaining elements in a stack in decreasing order. For each element, we pop smaller elements off the stack. The top of the stack is the next greater element, then we push the current element onto the stack.",
+    "keyPoints": [
+      "Utilize a Monotonic Decreasing Stack",
+      "Iterate through the list or array",
+      "Pop elements that are smaller than the current element",
+      "Time complexity: O(N) since each element is pushed/popped at most once",
+      "Space complexity: O(N) for stack storage"
+    ],
+    "estimatedMinutes": 15,
+    "difficulty": "Hard",
+    "tags": ["dsa", "stack", "algorithms"]
+  }
+]

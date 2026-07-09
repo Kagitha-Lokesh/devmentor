@@ -1,0 +1,18 @@
+[
+  {
+    "id": "tcs-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design the database schema for a simple Library Management System.",
+    "sampleAnswer": "A Library Management System database requires tables for: Books (id, title, author, isbn, status), Users (id, name, email, register_date), and Transactions (id, book_id, user_id, issue_date, return_date). We establish one-to-many relationships between Users and Transactions, and Books and Transactions, using primary keys as foreign key constraints.",
+    "keyPoints": [
+      "Entity-Relationship model tables (Books, Users, Transactions)",
+      "Primary keys and Foreign keys normalization",
+      "Handling book availability status via transactional states",
+      "One-to-many database relationships mapping"
+    ],
+    "estimatedMinutes": 10,
+    "difficulty": "Easy",
+    "tags": ["system-design", "database", "database-schema"]
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "config": {
+    "activeProvider": "rule-based",
+    "providers": {
+      "rule-based": {
+        "name": "Deterministic Rule-Based Assistant",
+        "description": "100% offline, keyword-matching assistant accessing local curriculum directly.",
+        "enabled": true
+      },
+      "ollama": {
+        "name": "Local LLM via Ollama",
+        "description": "Offline AI running on your local machine.",
+        "endpointUrl": "http://localhost:11434",
+        "modelName": "llama3",
+        "contextLimit": 4096,
+        "enabled": true
+      }
+    },
+    "defaultSettings": {
+      "theme": "dark",
+      "experimentalFeatures": false,
+      "contextCompression": true
+    }
+  },
+  "templates": {
+    "system": "You are DevMentor AI, a highly technical, helpful, and concise engineering coach. Use the following user statistics, curriculum state, and conversation history to format your replies. Always explain concepts cleanly, use structured Markdown, and provide step-by-step guidance.\n\nContext:\n{{context}}",
+    "explain": "Please explain the concept '{{query}}' in detail. Frame it for a developer learning this roadmap. Focus on JVM memory architecture, syntax rules, and common mistakes.\n\nContext:\n{{context}}",
+    "hint": "Provide a helpful, non-spoiler hint for this coding problem: '{{query}}'. Guide the user to the correct logic without writing the solution for them.\n\nContext:\n{{context}}",
+    "error": "The user encountered this compiler/runtime error: '{{query}}'. Explain why this error occurs and suggest concrete ways to debug it.\n\nContext:\n{{context}}",
+    "recommend": "Recommend the next logical step for the user based on their current progress, weak areas, and revision backlog.\n\nContext:\n{{context}}"
+  },
+  "tools": [
+    {
+      "name": "explainConcept",
+      "description": "Explains curriculum concept by retrieving lesson.md and cheatsheet.md",
+      "parameters": [
+        "topicId"
+      ]
+    },
+    {
+      "name": "recommendNextStep",
+      "description": "Generates the next study recommend based on current progress & weak topics",
+      "parameters": []
+    },
+    {
+      "name": "revealHint",
+      "description": "Retrieves a non-spoiler hint for a coding problem",
+      "parameters": [
+        "problemId"
+      ]
+    },
+    {
+      "name": "explainCompilerError",
+      "description": "Interprets syntax, compilation or test execution verdicts errors",
+      "parameters": [
+        "errorMessage"
+      ]
+    },
+    {
+      "name": "querySearch",
+      "description": "Searches curriculum, coding problems and interview questions for matching terms",
+      "parameters": [
+        "keyword"
+      ]
+    }
+  ]
+}

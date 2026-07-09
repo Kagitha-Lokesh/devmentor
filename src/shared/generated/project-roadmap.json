@@ -1,0 +1,691 @@
+{
+  "portfolio-website": {
+    "milestones": [
+      {
+        "id": "milestone-1",
+        "title": "Project Foundation & Design System",
+        "description": "Scaffold the React application, set up routing, and establish the design system (fonts, colors, tokens).",
+        "order": 1,
+        "estimatedHours": 3,
+        "difficulty": "Beginner",
+        "isOptional": false,
+        "dependsOn": [],
+        "taskIds": [
+          "t1-1",
+          "t1-2",
+          "t1-3",
+          "t1-4"
+        ],
+        "tasks": [
+          {
+            "id": "t1-1",
+            "title": "Scaffold Vite + React Project",
+            "estimatedMinutes": 20,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": []
+          },
+          {
+            "id": "t1-2",
+            "title": "Set Up React Router",
+            "estimatedMinutes": 25,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1"
+            ]
+          },
+          {
+            "id": "t1-3",
+            "title": "Establish Design System (Tokens & Global CSS)",
+            "estimatedMinutes": 30,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1"
+            ]
+          },
+          {
+            "id": "t1-4",
+            "title": "Build Responsive Navigation Component",
+            "estimatedMinutes": 35,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-2",
+              "t1-3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-2",
+        "title": "Core Pages Implementation",
+        "description": "Build Hero, About, Skills, and Projects sections as separate React components.",
+        "order": 2,
+        "estimatedHours": 4,
+        "difficulty": "Beginner",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-1"
+        ],
+        "taskIds": [
+          "t2-1",
+          "t2-2",
+          "t2-3",
+          "t2-4"
+        ],
+        "tasks": [
+          {
+            "id": "t2-1",
+            "title": "Build the Hero Section",
+            "estimatedMinutes": 30,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-4"
+            ]
+          },
+          {
+            "id": "t2-2",
+            "title": "Build the About Section",
+            "estimatedMinutes": 25,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-1"
+            ]
+          },
+          {
+            "id": "t2-3",
+            "title": "Build the Skills Section",
+            "estimatedMinutes": 25,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-2"
+            ]
+          },
+          {
+            "id": "t2-4",
+            "title": "Build the Projects Section",
+            "estimatedMinutes": 35,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-3",
+        "title": "Interactivity & Polish",
+        "description": "Add dark mode toggle, smooth scroll, CSS animations, and micro-interactions.",
+        "order": 3,
+        "estimatedHours": 3,
+        "difficulty": "Beginner",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-2"
+        ],
+        "taskIds": [
+          "t3-1",
+          "t3-2",
+          "t3-3"
+        ],
+        "tasks": [
+          {
+            "id": "t3-1",
+            "title": "Implement Dark Mode Toggle",
+            "estimatedMinutes": 30,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-4"
+            ]
+          },
+          {
+            "id": "t3-2",
+            "title": "Add Scroll Animations",
+            "estimatedMinutes": 35,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-1"
+            ]
+          },
+          {
+            "id": "t3-3",
+            "title": "Build the Contact Section & Footer",
+            "estimatedMinutes": 30,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-4",
+        "title": "Accessibility & Deployment",
+        "description": "Audit for WCAG 2.1 AA compliance, optimize performance, and deploy to GitHub Pages.",
+        "order": 4,
+        "estimatedHours": 2,
+        "difficulty": "Beginner",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-3"
+        ],
+        "taskIds": [
+          "t4-1",
+          "t4-2",
+          "t4-3"
+        ],
+        "tasks": [
+          {
+            "id": "t4-1",
+            "title": "Accessibility Audit",
+            "estimatedMinutes": 30,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-3"
+            ]
+          },
+          {
+            "id": "t4-2",
+            "title": "Optimize for Production",
+            "estimatedMinutes": 20,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-1"
+            ]
+          },
+          {
+            "id": "t4-3",
+            "title": "Deploy to GitHub Pages",
+            "estimatedMinutes": 25,
+            "difficulty": "Beginner",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "task-manager-api": {
+    "milestones": [
+      {
+        "id": "milestone-1",
+        "title": "Spring Boot API Foundation",
+        "description": "Bootstrap the Spring Boot project, define the Task entity, and configure the H2 in-memory database.",
+        "order": 1,
+        "estimatedHours": 4,
+        "difficulty": "Advanced",
+        "isOptional": false,
+        "dependsOn": [],
+        "taskIds": [
+          "t1-1",
+          "t1-2",
+          "t1-3"
+        ],
+        "tasks": [
+          {
+            "id": "t1-1",
+            "title": "Bootstrap Spring Boot Project",
+            "estimatedMinutes": 20,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": []
+          },
+          {
+            "id": "t1-2",
+            "title": "Define the Task JPA Entity",
+            "estimatedMinutes": 30,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1"
+            ]
+          },
+          {
+            "id": "t1-3",
+            "title": "Create TaskRepository & TaskService",
+            "estimatedMinutes": 25,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-2",
+        "title": "REST API Endpoints (CRUD)",
+        "description": "Implement TaskController with full CRUD: GET /tasks, GET /tasks/{id}, POST /tasks, PUT /tasks/{id}, DELETE /tasks/{id}.",
+        "order": 2,
+        "estimatedHours": 5,
+        "difficulty": "Advanced",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-1"
+        ],
+        "taskIds": [
+          "t2-1",
+          "t2-2",
+          "t2-3",
+          "t2-4"
+        ],
+        "tasks": [
+          {
+            "id": "t2-1",
+            "title": "GET /api/tasks — List All Tasks",
+            "estimatedMinutes": 25,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-3"
+            ]
+          },
+          {
+            "id": "t2-2",
+            "title": "POST /api/tasks — Create Task",
+            "estimatedMinutes": 25,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-1"
+            ]
+          },
+          {
+            "id": "t2-3",
+            "title": "PUT /api/tasks/{id} — Update Task",
+            "estimatedMinutes": 20,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-2"
+            ]
+          },
+          {
+            "id": "t2-4",
+            "title": "DELETE /api/tasks/{id} — Delete Task",
+            "estimatedMinutes": 15,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-3"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-3",
+        "title": "Validation & Error Handling",
+        "description": "Add Bean Validation to the Task DTO. Implement a GlobalExceptionHandler returning structured JSON error responses.",
+        "order": 3,
+        "estimatedHours": 4,
+        "difficulty": "Advanced",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-2"
+        ],
+        "taskIds": [
+          "t3-1",
+          "t3-2"
+        ],
+        "tasks": [
+          {
+            "id": "t3-1",
+            "title": "Add Bean Validation to TaskCreateRequest",
+            "estimatedMinutes": 25,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-4"
+            ]
+          },
+          {
+            "id": "t3-2",
+            "title": "Implement GlobalExceptionHandler",
+            "estimatedMinutes": 30,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-4",
+        "title": "React Frontend Integration",
+        "description": "Build a minimal React frontend that consumes the API via Axios — displays task list, allows create/update/delete.",
+        "order": 4,
+        "estimatedHours": 6,
+        "difficulty": "Advanced",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-3"
+        ],
+        "taskIds": [
+          "t4-1",
+          "t4-2",
+          "t4-3"
+        ],
+        "tasks": [
+          {
+            "id": "t4-1",
+            "title": "Configure CORS for React Frontend",
+            "estimatedMinutes": 15,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-2"
+            ]
+          },
+          {
+            "id": "t4-2",
+            "title": "Build React Task List Page",
+            "estimatedMinutes": 45,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-1"
+            ]
+          },
+          {
+            "id": "t4-3",
+            "title": "Build Create Task Form",
+            "estimatedMinutes": 35,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-5",
+        "title": "Advanced Features & Testing",
+        "description": "Add task filtering, priority sorting, due date alerts, and write integration tests with Spring Boot Test.",
+        "order": 5,
+        "estimatedHours": 5,
+        "difficulty": "Advanced",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-4"
+        ],
+        "taskIds": [
+          "t5-1",
+          "t5-2",
+          "t5-3"
+        ],
+        "tasks": [
+          {
+            "id": "t5-1",
+            "title": "Add Task Filtering & Sorting",
+            "estimatedMinutes": 40,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-3"
+            ]
+          },
+          {
+            "id": "t5-2",
+            "title": "Write Integration Tests with @SpringBootTest",
+            "estimatedMinutes": 45,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t5-1"
+            ]
+          },
+          {
+            "id": "t5-3",
+            "title": "Due Date Alerts on React Frontend",
+            "estimatedMinutes": 25,
+            "difficulty": "Advanced",
+            "isOptional": false,
+            "dependsOn": [
+              "t5-2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "library-management": {
+    "milestones": [
+      {
+        "id": "milestone-1",
+        "title": "Domain Model & Project Structure",
+        "description": "Design the core entity classes (Book, Member, BorrowRecord) and set up the Java project structure with proper package organization.",
+        "order": 1,
+        "estimatedHours": 3,
+        "difficulty": "Intermediate",
+        "isOptional": false,
+        "dependsOn": [],
+        "taskIds": [
+          "t1-1",
+          "t1-2",
+          "t1-3"
+        ],
+        "tasks": [
+          {
+            "id": "t1-1",
+            "title": "Design the Book Entity Class",
+            "estimatedMinutes": 30,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": []
+          },
+          {
+            "id": "t1-2",
+            "title": "Design the Member Entity Class",
+            "estimatedMinutes": 25,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1"
+            ]
+          },
+          {
+            "id": "t1-3",
+            "title": "Design the BorrowRecord Entity",
+            "estimatedMinutes": 20,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1",
+              "t1-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-2",
+        "title": "Catalogue Service & Search",
+        "description": "Implement the BookCatalogueService with CRUD operations and a multi-criteria search engine using Java Streams and Collections.",
+        "order": 2,
+        "estimatedHours": 4,
+        "difficulty": "Intermediate",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-1"
+        ],
+        "taskIds": [
+          "t2-1",
+          "t2-2",
+          "t2-3"
+        ],
+        "tasks": [
+          {
+            "id": "t2-1",
+            "title": "Implement BookCatalogueService (CRUD)",
+            "estimatedMinutes": 40,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-1"
+            ]
+          },
+          {
+            "id": "t2-2",
+            "title": "Implement Multi-Criteria Search",
+            "estimatedMinutes": 35,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-1"
+            ]
+          },
+          {
+            "id": "t2-3",
+            "title": "Implement MemberService (CRUD)",
+            "estimatedMinutes": 25,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t1-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-3",
+        "title": "Borrowing & Return Engine",
+        "description": "Implement the full borrow/return lifecycle with availability checks, due date calculation, overdue detection, and fine computation.",
+        "order": 3,
+        "estimatedHours": 4,
+        "difficulty": "Intermediate",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-2"
+        ],
+        "taskIds": [
+          "t3-1",
+          "t3-2",
+          "t3-3"
+        ],
+        "tasks": [
+          {
+            "id": "t3-1",
+            "title": "Implement Borrow Operation",
+            "estimatedMinutes": 40,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t2-1",
+              "t2-3"
+            ]
+          },
+          {
+            "id": "t3-2",
+            "title": "Implement Return & Fine Calculation",
+            "estimatedMinutes": 30,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-1"
+            ]
+          },
+          {
+            "id": "t3-3",
+            "title": "Implement Overdue Report",
+            "estimatedMinutes": 25,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-4",
+        "title": "File Persistence & CLI Interface",
+        "description": "Persist all data to disk using Java Serialization (or JSON via Jackson). Build an interactive CLI menu loop.",
+        "order": 4,
+        "estimatedHours": 3,
+        "difficulty": "Intermediate",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-3"
+        ],
+        "taskIds": [
+          "t4-1",
+          "t4-2"
+        ],
+        "tasks": [
+          {
+            "id": "t4-1",
+            "title": "Implement File Persistence",
+            "estimatedMinutes": 45,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t3-3"
+            ]
+          },
+          {
+            "id": "t4-2",
+            "title": "Build the Interactive CLI Menu",
+            "estimatedMinutes": 35,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-1"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "milestone-5",
+        "title": "Testing & Code Review",
+        "description": "Write JUnit tests for all business logic methods. Run a self code review against SOLID principles.",
+        "order": 5,
+        "estimatedHours": 2,
+        "difficulty": "Intermediate",
+        "isOptional": false,
+        "dependsOn": [
+          "milestone-4"
+        ],
+        "taskIds": [
+          "t5-1",
+          "t5-2"
+        ],
+        "tasks": [
+          {
+            "id": "t5-1",
+            "title": "Write JUnit Tests for Business Logic",
+            "estimatedMinutes": 45,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t4-2"
+            ]
+          },
+          {
+            "id": "t5-2",
+            "title": "SOLID Principles Self-Review",
+            "estimatedMinutes": 30,
+            "difficulty": "Intermediate",
+            "isOptional": false,
+            "dependsOn": [
+              "t5-1"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

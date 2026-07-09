@@ -1,0 +1,46 @@
+[
+  {
+    "id": "milestone-1",
+    "title": "Project Foundation & Design System",
+    "description": "Scaffold the React application, set up routing, and establish the design system (fonts, colors, tokens).",
+    "order": 1,
+    "estimatedHours": 3,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": [],
+    "taskIds": ["t1-1", "t1-2", "t1-3", "t1-4"]
+  },
+  {
+    "id": "milestone-2",
+    "title": "Core Pages Implementation",
+    "description": "Build Hero, About, Skills, and Projects sections as separate React components.",
+    "order": 2,
+    "estimatedHours": 4,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["milestone-1"],
+    "taskIds": ["t2-1", "t2-2", "t2-3", "t2-4"]
+  },
+  {
+    "id": "milestone-3",
+    "title": "Interactivity & Polish",
+    "description": "Add dark mode toggle, smooth scroll, CSS animations, and micro-interactions.",
+    "order": 3,
+    "estimatedHours": 3,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["milestone-2"],
+    "taskIds": ["t3-1", "t3-2", "t3-3"]
+  },
+  {
+    "id": "milestone-4",
+    "title": "Accessibility & Deployment",
+    "description": "Audit for WCAG 2.1 AA compliance, optimize performance, and deploy to GitHub Pages.",
+    "order": 4,
+    "estimatedHours": 2,
+    "difficulty": "Beginner",
+    "isOptional": false,
+    "dependsOn": ["milestone-3"],
+    "taskIds": ["t4-1", "t4-2", "t4-3"]
+  }
+]

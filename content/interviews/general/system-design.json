@@ -1,0 +1,19 @@
+[
+  {
+    "id": "gen-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design a URL Shortener like Bitly.",
+    "sampleAnswer": "A URL shortener converts long URLs to short aliases (e.g. bit.ly/abcd12). We need: 1. A relational or NoSQL database mapping short key -> long URL, 2. Base62 encoding on an auto-incrementing ID to generate keys, 3. Cache layer (Redis) to serve active redirects instantly, 4. HTTP 301 (Permanent Redirect) for cache friendliness.",
+    "keyPoints": [
+      "Key generation using Base62 encoding",
+      "Handling collisions or pre-generating keys with Key Generation Service (KGS)",
+      "Caching redirection links for performance",
+      "Choice of HTTP redirect codes: 301 (Permanent) vs 302 (Temporary)",
+      "Database scaling (read-heavy, replica reads)"
+    ],
+    "estimatedMinutes": 20,
+    "difficulty": "Medium",
+    "tags": ["system-design", "scaling", "hashing"]
+  }
+]

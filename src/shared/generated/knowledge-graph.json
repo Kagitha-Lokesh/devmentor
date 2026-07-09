@@ -1,0 +1,31 @@
+[
+  {
+    "id": "V1-C1-T1",
+    "slug": "variables",
+    "title": "Variables in Java",
+    "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+    "difficulty": "Beginner",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Syntax",
+      "Fundamentals"
+    ],
+    "estimatedReadingTime": 15,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/variables/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/variables/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/variables/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/variables/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/variables/interview.json"
+    }
+  }
+]

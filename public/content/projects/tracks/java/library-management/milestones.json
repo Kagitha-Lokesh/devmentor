@@ -1,0 +1,57 @@
+[
+  {
+    "id": "milestone-1",
+    "title": "Domain Model & Project Structure",
+    "description": "Design the core entity classes (Book, Member, BorrowRecord) and set up the Java project structure with proper package organization.",
+    "order": 1,
+    "estimatedHours": 3,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": [],
+    "taskIds": ["t1-1", "t1-2", "t1-3"]
+  },
+  {
+    "id": "milestone-2",
+    "title": "Catalogue Service & Search",
+    "description": "Implement the BookCatalogueService with CRUD operations and a multi-criteria search engine using Java Streams and Collections.",
+    "order": 2,
+    "estimatedHours": 4,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["milestone-1"],
+    "taskIds": ["t2-1", "t2-2", "t2-3"]
+  },
+  {
+    "id": "milestone-3",
+    "title": "Borrowing & Return Engine",
+    "description": "Implement the full borrow/return lifecycle with availability checks, due date calculation, overdue detection, and fine computation.",
+    "order": 3,
+    "estimatedHours": 4,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["milestone-2"],
+    "taskIds": ["t3-1", "t3-2", "t3-3"]
+  },
+  {
+    "id": "milestone-4",
+    "title": "File Persistence & CLI Interface",
+    "description": "Persist all data to disk using Java Serialization (or JSON via Jackson). Build an interactive CLI menu loop.",
+    "order": 4,
+    "estimatedHours": 3,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["milestone-3"],
+    "taskIds": ["t4-1", "t4-2"]
+  },
+  {
+    "id": "milestone-5",
+    "title": "Testing & Code Review",
+    "description": "Write JUnit tests for all business logic methods. Run a self code review against SOLID principles.",
+    "order": 5,
+    "estimatedHours": 2,
+    "difficulty": "Intermediate",
+    "isOptional": false,
+    "dependsOn": ["milestone-4"],
+    "taskIds": ["t5-1", "t5-2"]
+  }
+]
