@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "strings",
+      "label": "Strings in Java"
+    },
+    {
+      "id": "strings-0",
+      "label": "Java Core",
+      "parentId": "strings"
+    },
+    {
+      "id": "strings-1",
+      "label": "Strings",
+      "parentId": "strings"
+    }
+  ]
+}

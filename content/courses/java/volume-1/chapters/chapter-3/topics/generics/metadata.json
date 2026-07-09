@@ -1,0 +1,28 @@
+{
+  "id": "V1-C3-T2",
+  "slug": "generics",
+  "title": "Generics in Java",
+  "description": "Write type-safe code with generic classes, methods, and bounded type parameters.",
+  "volume": 1,
+  "chapter": "chapter-3",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Generics"
+  ],
+  "searchKeywords": [
+    "generics",
+    "type safety",
+    "bounded type",
+    "wildcard",
+    "generic class",
+    "type parameter"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

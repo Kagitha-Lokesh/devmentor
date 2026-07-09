@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V1-C2-T3-fc-1",
+    "question": "What is the main purpose of Async JavaScript?",
+    "answer": "Handle asynchronous operations using Promises, async/await, and Fetch API.",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "Async"
+    ]
+  }
+]

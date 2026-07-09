@@ -1,0 +1,7 @@
+[
+  {
+    "id": "BE-V1-C2-T3-int1",
+    "question": "Explain Microservices Architecture in your own words.",
+    "answer": "Design and build scalable microservices with Spring Boot and REST communication."
+  }
+]

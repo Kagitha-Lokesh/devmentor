@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "microservices",
+      "label": "Microservices Architecture"
+    },
+    {
+      "id": "microservices-0",
+      "label": "Backend",
+      "parentId": "microservices"
+    },
+    {
+      "id": "microservices-1",
+      "label": "Microservices",
+      "parentId": "microservices"
+    },
+    {
+      "id": "microservices-2",
+      "label": "Architecture",
+      "parentId": "microservices"
+    },
+    {
+      "id": "microservices-3",
+      "label": "Spring Boot",
+      "parentId": "microservices"
+    }
+  ]
+}

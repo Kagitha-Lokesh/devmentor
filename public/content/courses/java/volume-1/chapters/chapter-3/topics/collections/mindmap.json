@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "collections",
+      "label": "Java Collections Framework"
+    },
+    {
+      "id": "collections-0",
+      "label": "Java Core",
+      "parentId": "collections"
+    },
+    {
+      "id": "collections-1",
+      "label": "Collections",
+      "parentId": "collections"
+    },
+    {
+      "id": "collections-2",
+      "label": "Data Structures",
+      "parentId": "collections"
+    }
+  ]
+}

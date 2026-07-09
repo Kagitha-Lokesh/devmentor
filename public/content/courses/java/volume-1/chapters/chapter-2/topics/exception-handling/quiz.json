@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C2-T4-q1",
+    "question": "Is Exception Handling essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions."
+  }
+]

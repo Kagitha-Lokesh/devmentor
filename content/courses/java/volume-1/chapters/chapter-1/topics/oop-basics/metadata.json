@@ -1,0 +1,28 @@
+{
+  "id": "V1-C1-T6",
+  "slug": "oop-basics",
+  "title": "OOP Fundamentals",
+  "description": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "OOP"
+  ],
+  "searchKeywords": [
+    "oop",
+    "classes",
+    "objects",
+    "encapsulation",
+    "constructors",
+    "object oriented"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

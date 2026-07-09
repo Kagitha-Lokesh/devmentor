@@ -1,0 +1,14 @@
+[
+  {
+    "id": "BE-V1-C2-T3-q1",
+    "question": "Is Microservices Architecture essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Design and build scalable microservices with Spring Boot and REST communication."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "DB-V1-C2-T1",
+  "slug": "postgresql-setup",
+  "title": "PostgreSQL Setup & Basics",
+  "description": "Install PostgreSQL, create databases and tables, and run queries from the command line.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Database",
+    "PostgreSQL"
+  ],
+  "searchKeywords": [
+    "postgresql",
+    "postgres",
+    "database",
+    "psql",
+    "schema",
+    "setup",
+    "sql"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "BE-V1-C2-T1-fc-1",
+    "question": "What is the main purpose of Spring Security?",
+    "answer": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens.",
+    "tags": [
+      "Backend",
+      "Spring",
+      "Security",
+      "JWT"
+    ]
+  }
+]

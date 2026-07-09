@@ -1,0 +1,30 @@
+{
+  "id": "FE-V2-C2-T2",
+  "slug": "react-forms",
+  "title": "Forms in React",
+  "description": "Handle user input efficiently using controlled components and form validation.",
+  "volume": 2,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "React",
+    "Forms"
+  ],
+  "searchKeywords": [
+    "react",
+    "forms",
+    "controlled components",
+    "validation",
+    "input",
+    "formik",
+    "react hook form"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

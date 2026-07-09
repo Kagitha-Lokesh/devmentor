@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "js-async",
+      "label": "Async JavaScript"
+    },
+    {
+      "id": "js-async-0",
+      "label": "Frontend",
+      "parentId": "js-async"
+    },
+    {
+      "id": "js-async-1",
+      "label": "JavaScript",
+      "parentId": "js-async"
+    },
+    {
+      "id": "js-async-2",
+      "label": "Async",
+      "parentId": "js-async"
+    }
+  ]
+}

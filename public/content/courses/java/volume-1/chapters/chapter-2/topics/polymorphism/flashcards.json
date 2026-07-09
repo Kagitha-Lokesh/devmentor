@@ -1,0 +1,12 @@
+[
+  {
+    "id": "V1-C2-T2-fc-1",
+    "question": "What is the main purpose of Polymorphism in Java?",
+    "answer": "Understand compile-time and runtime polymorphism, method overloading and overriding.",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Polymorphism"
+    ]
+  }
+]

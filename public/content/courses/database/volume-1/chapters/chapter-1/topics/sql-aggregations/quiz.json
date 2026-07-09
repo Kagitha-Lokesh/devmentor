@@ -1,0 +1,14 @@
+[
+  {
+    "id": "DB-V1-C1-T3-q1",
+    "question": "Is SQL Aggregations & Grouping essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX."
+  }
+]

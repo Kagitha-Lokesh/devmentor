@@ -1,0 +1,12 @@
+[
+  {
+    "id": "V1-C2-T1-fc-1",
+    "question": "What is the main purpose of Inheritance in Java?",
+    "answer": "Learn how subclasses extend parent classes and reuse code with inheritance.",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Inheritance"
+    ]
+  }
+]

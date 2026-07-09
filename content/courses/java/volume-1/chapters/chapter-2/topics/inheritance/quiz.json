@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C2-T1-q1",
+    "question": "Is Inheritance in Java essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Learn how subclasses extend parent classes and reuse code with inheritance."
+  }
+]

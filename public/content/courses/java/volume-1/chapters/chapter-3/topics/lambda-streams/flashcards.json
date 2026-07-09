@@ -1,0 +1,12 @@
+[
+  {
+    "id": "V1-C3-T3-fc-1",
+    "question": "What is the main purpose of Lambda Expressions & Streams?",
+    "answer": "Embrace functional programming with Java 8 lambdas, Stream API, and method references.",
+    "tags": [
+      "Java Core",
+      "Functional Programming",
+      "Java 8"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "id": "FE-V2-C1-T3",
+  "slug": "react-routing",
+  "title": "React Routing",
+  "description": "Navigate between pages in a single-page application using React Router.",
+  "volume": 2,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "React",
+    "Routing"
+  ],
+  "searchKeywords": [
+    "react",
+    "routing",
+    "router",
+    "navigation",
+    "spa",
+    "routes"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

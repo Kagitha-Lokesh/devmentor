@@ -1,0 +1,30 @@
+{
+  "id": "V1-C1-T3",
+  "slug": "methods",
+  "title": "Methods in Java",
+  "description": "Learn how to encapsulate code into reusable blocks using methods.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 20,
+  "difficulty": "Beginner",
+  "prerequisites": [
+    "V1-C1-T1"
+  ],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Methods"
+  ],
+  "searchKeywords": [
+    "method",
+    "function",
+    "return",
+    "parameters",
+    "arguments",
+    "method overloading"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "High",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V2-C1-T1-q1",
+    "question": "Is React Components & JSX important?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "It is very important."
+  }
+]

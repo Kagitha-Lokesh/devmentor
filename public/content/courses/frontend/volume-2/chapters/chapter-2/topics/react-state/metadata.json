@@ -1,0 +1,29 @@
+{
+  "id": "FE-V2-C2-T1",
+  "slug": "react-state",
+  "title": "State Management in React",
+  "description": "Manage complex application state with Context API and useReducer.",
+  "volume": 2,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "React",
+    "State Management"
+  ],
+  "searchKeywords": [
+    "react",
+    "state",
+    "context api",
+    "usereducer",
+    "state management",
+    "global state"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

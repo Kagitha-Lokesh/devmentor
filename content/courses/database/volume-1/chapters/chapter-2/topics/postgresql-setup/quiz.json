@@ -1,0 +1,14 @@
+[
+  {
+    "id": "DB-V1-C2-T1-q1",
+    "question": "Is PostgreSQL Setup & Basics essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Install PostgreSQL, create databases and tables, and run queries from the command line."
+  }
+]

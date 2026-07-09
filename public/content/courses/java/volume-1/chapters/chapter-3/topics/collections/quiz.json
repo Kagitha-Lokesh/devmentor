@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C3-T1-q1",
+    "question": "Is Java Collections Framework essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Master List, Set, Map, and Queue interfaces with their common implementations."
+  }
+]

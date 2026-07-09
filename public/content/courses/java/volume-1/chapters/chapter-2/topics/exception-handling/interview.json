@@ -1,0 +1,7 @@
+[
+  {
+    "id": "V1-C2-T4-int1",
+    "question": "Explain Exception Handling in your own words.",
+    "answer": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions."
+  }
+]

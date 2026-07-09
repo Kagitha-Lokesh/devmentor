@@ -1,0 +1,8 @@
+{
+  "nodes": [
+    {
+      "id": "spring-rest",
+      "label": "Spring REST APIs"
+    }
+  ]
+}

@@ -12,25 +12,15 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == uid;
     }
 
-    // User profile document
+    // User profile document and all subcollections (settings, progress, preferences, mastery, revision, etc.)
     match /users/{userId} {
       allow read: if isOwner(userId);
       allow create: if isOwner(userId);
       allow update: if isOwner(userId);
-      allow delete: if false; // Only allow deletion through admin SDK
+      allow delete: if false;
       
-      // User settings subcollection
-      match /settings/{document=**} {
-        allow read, write: if isOwner(userId);
-      }
-      
-      // User progress subcollection
-      match /progress/{document=**} {
-        allow read, write: if isOwner(userId);
-      }
-      
-      // User preferences subcollection
-      match /preferences/{document=**} {
+      // Match all subcollections under the user document
+      match /{document=**} {
         allow read, write: if isOwner(userId);
       }
     }

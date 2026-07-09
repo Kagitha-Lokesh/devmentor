@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V1-C1-T3-fc-1",
+    "question": "What is the main purpose of CSS Grid?",
+    "answer": "Create two-dimensional grid-based layouts for modern responsive web design.",
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Layouts"
+    ]
+  }
+]

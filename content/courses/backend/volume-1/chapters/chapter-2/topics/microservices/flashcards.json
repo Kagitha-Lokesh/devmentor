@@ -1,0 +1,13 @@
+[
+  {
+    "id": "BE-V1-C2-T3-fc-1",
+    "question": "What is the main purpose of Microservices Architecture?",
+    "answer": "Design and build scalable microservices with Spring Boot and REST communication.",
+    "tags": [
+      "Backend",
+      "Microservices",
+      "Architecture",
+      "Spring Boot"
+    ]
+  }
+]

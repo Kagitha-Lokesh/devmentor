@@ -1,0 +1,11 @@
+[
+  {
+    "id": "V1-C2-T4-fc-1",
+    "question": "What is the main purpose of Exception Handling?",
+    "answer": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions.",
+    "tags": [
+      "Java Core",
+      "Exception Handling"
+    ]
+  }
+]

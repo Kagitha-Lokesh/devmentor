@@ -1,0 +1,32 @@
+{
+  "id": "BE-V1-C2-T2",
+  "slug": "spring-data-jpa",
+  "title": "Spring Data JPA",
+  "description": "Persist data to relational databases using Spring Data JPA and Hibernate ORM.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Backend",
+    "Spring",
+    "JPA",
+    "Database"
+  ],
+  "searchKeywords": [
+    "jpa",
+    "spring data",
+    "hibernate",
+    "entity",
+    "repository",
+    "orm",
+    "database",
+    "spring"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

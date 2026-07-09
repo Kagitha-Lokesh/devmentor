@@ -1,0 +1,13 @@
+[
+  {
+    "id": "BE-V1-C2-T2-fc-1",
+    "question": "What is the main purpose of Spring Data JPA?",
+    "answer": "Persist data to relational databases using Spring Data JPA and Hibernate ORM.",
+    "tags": [
+      "Backend",
+      "Spring",
+      "JPA",
+      "Database"
+    ]
+  }
+]

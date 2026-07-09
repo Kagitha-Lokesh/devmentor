@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "sql-joins",
+      "label": "SQL Joins"
+    },
+    {
+      "id": "sql-joins-0",
+      "label": "Database",
+      "parentId": "sql-joins"
+    },
+    {
+      "id": "sql-joins-1",
+      "label": "SQL",
+      "parentId": "sql-joins"
+    },
+    {
+      "id": "sql-joins-2",
+      "label": "Joins",
+      "parentId": "sql-joins"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FE-V1-C2-T3-q1",
+    "question": "Is Async JavaScript essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Handle asynchronous operations using Promises, async/await, and Fetch API."
+  }
+]

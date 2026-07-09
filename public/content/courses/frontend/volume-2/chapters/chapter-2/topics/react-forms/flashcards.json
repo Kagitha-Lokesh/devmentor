@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V2-C2-T2-fc-1",
+    "question": "What is the main purpose of Forms in React?",
+    "answer": "Handle user input efficiently using controlled components and form validation.",
+    "tags": [
+      "Frontend",
+      "React",
+      "Forms"
+    ]
+  }
+]

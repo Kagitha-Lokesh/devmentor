@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "polymorphism",
+      "label": "Polymorphism in Java"
+    },
+    {
+      "id": "polymorphism-0",
+      "label": "Java Core",
+      "parentId": "polymorphism"
+    },
+    {
+      "id": "polymorphism-1",
+      "label": "OOP",
+      "parentId": "polymorphism"
+    },
+    {
+      "id": "polymorphism-2",
+      "label": "Polymorphism",
+      "parentId": "polymorphism"
+    }
+  ]
+}

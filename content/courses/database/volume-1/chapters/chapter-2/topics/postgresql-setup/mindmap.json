@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "postgresql-setup",
+      "label": "PostgreSQL Setup & Basics"
+    },
+    {
+      "id": "postgresql-setup-0",
+      "label": "Database",
+      "parentId": "postgresql-setup"
+    },
+    {
+      "id": "postgresql-setup-1",
+      "label": "PostgreSQL",
+      "parentId": "postgresql-setup"
+    }
+  ]
+}

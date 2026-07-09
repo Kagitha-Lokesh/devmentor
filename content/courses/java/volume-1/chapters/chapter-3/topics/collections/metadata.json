@@ -1,0 +1,32 @@
+{
+  "id": "V1-C3-T1",
+  "slug": "collections",
+  "title": "Java Collections Framework",
+  "description": "Master List, Set, Map, and Queue interfaces with their common implementations.",
+  "volume": 1,
+  "chapter": "chapter-3",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Collections",
+    "Data Structures"
+  ],
+  "searchKeywords": [
+    "collections",
+    "list",
+    "arraylist",
+    "linkedlist",
+    "set",
+    "hashset",
+    "map",
+    "hashmap",
+    "queue"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

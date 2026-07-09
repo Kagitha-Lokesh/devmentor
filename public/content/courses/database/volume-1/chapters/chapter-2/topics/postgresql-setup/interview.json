@@ -1,0 +1,7 @@
+[
+  {
+    "id": "DB-V1-C2-T1-int1",
+    "question": "Explain PostgreSQL Setup & Basics in your own words.",
+    "answer": "Install PostgreSQL, create databases and tables, and run queries from the command line."
+  }
+]

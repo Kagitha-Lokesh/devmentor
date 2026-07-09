@@ -1,0 +1,29 @@
+{
+  "id": "V1-C1-T4",
+  "slug": "arrays",
+  "title": "Arrays in Java",
+  "description": "Learn how to store and manipulate collections of elements using arrays.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Arrays",
+    "Data Structures"
+  ],
+  "searchKeywords": [
+    "array",
+    "arrays",
+    "index",
+    "length",
+    "multidimensional",
+    "collections"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

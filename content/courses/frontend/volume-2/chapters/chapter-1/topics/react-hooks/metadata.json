@@ -1,0 +1,29 @@
+{
+  "id": "FE-V2-C1-T2",
+  "slug": "react-hooks",
+  "title": "React Hooks",
+  "description": "Manage state and side effects in functional components using Hooks.",
+  "volume": 2,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "React",
+    "State Management"
+  ],
+  "searchKeywords": [
+    "react",
+    "hooks",
+    "usestate",
+    "useeffect",
+    "state",
+    "context"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

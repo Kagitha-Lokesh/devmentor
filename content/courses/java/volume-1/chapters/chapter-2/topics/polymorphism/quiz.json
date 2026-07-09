@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C2-T2-q1",
+    "question": "Is Polymorphism in Java essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Understand compile-time and runtime polymorphism, method overloading and overriding."
+  }
+]

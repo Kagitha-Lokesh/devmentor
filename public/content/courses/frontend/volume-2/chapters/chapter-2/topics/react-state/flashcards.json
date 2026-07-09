@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V2-C2-T1-fc-1",
+    "question": "What is the main purpose of State Management in React?",
+    "answer": "Manage complex application state with Context API and useReducer.",
+    "tags": [
+      "Frontend",
+      "React",
+      "State Management"
+    ]
+  }
+]

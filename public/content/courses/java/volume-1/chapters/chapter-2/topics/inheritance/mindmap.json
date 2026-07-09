@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "inheritance",
+      "label": "Inheritance in Java"
+    },
+    {
+      "id": "inheritance-0",
+      "label": "Java Core",
+      "parentId": "inheritance"
+    },
+    {
+      "id": "inheritance-1",
+      "label": "OOP",
+      "parentId": "inheritance"
+    },
+    {
+      "id": "inheritance-2",
+      "label": "Inheritance",
+      "parentId": "inheritance"
+    }
+  ]
+}

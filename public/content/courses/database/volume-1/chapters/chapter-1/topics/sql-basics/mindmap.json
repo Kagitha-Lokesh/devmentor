@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "sql-basics",
+      "label": "SQL Basics"
+    },
+    {
+      "id": "sql-basics-0",
+      "label": "Database",
+      "parentId": "sql-basics"
+    },
+    {
+      "id": "sql-basics-1",
+      "label": "SQL",
+      "parentId": "sql-basics"
+    },
+    {
+      "id": "sql-basics-2",
+      "label": "Relational DB",
+      "parentId": "sql-basics"
+    }
+  ]
+}

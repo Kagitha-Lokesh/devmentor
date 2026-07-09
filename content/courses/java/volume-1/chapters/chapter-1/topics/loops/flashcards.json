@@ -1,0 +1,10 @@
+[
+  {
+    "id": "V1-C1-T2-fc-1",
+    "question": "What is the difference between while and do-while?",
+    "answer": "A while loop checks the condition before executing, whereas a do-while loop executes at least once before checking the condition.",
+    "tags": [
+      "Control Flow"
+    ]
+  }
+]

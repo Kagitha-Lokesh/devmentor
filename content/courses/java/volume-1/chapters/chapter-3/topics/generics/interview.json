@@ -1,0 +1,7 @@
+[
+  {
+    "id": "V1-C3-T2-int1",
+    "question": "Explain Generics in Java in your own words.",
+    "answer": "Write type-safe code with generic classes, methods, and bounded type parameters."
+  }
+]

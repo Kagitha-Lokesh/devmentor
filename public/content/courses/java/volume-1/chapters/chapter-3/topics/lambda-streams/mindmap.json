@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "lambda-streams",
+      "label": "Lambda Expressions & Streams"
+    },
+    {
+      "id": "lambda-streams-0",
+      "label": "Java Core",
+      "parentId": "lambda-streams"
+    },
+    {
+      "id": "lambda-streams-1",
+      "label": "Functional Programming",
+      "parentId": "lambda-streams"
+    },
+    {
+      "id": "lambda-streams-2",
+      "label": "Java 8",
+      "parentId": "lambda-streams"
+    }
+  ]
+}

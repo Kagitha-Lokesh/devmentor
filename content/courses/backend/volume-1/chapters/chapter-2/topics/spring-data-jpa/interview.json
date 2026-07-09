@@ -1,0 +1,7 @@
+[
+  {
+    "id": "BE-V1-C2-T2-int1",
+    "question": "Explain Spring Data JPA in your own words.",
+    "answer": "Persist data to relational databases using Spring Data JPA and Hibernate ORM."
+  }
+]

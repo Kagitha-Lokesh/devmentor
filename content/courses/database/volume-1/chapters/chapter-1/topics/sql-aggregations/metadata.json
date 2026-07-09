@@ -1,0 +1,31 @@
+{
+  "id": "DB-V1-C1-T3",
+  "slug": "sql-aggregations",
+  "title": "SQL Aggregations & Grouping",
+  "description": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Database",
+    "SQL",
+    "Analytics"
+  ],
+  "searchKeywords": [
+    "sql",
+    "group by",
+    "having",
+    "count",
+    "sum",
+    "avg",
+    "aggregate",
+    "database"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

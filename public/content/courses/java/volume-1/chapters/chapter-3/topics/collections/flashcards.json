@@ -1,0 +1,12 @@
+[
+  {
+    "id": "V1-C3-T1-fc-1",
+    "question": "What is the main purpose of Java Collections Framework?",
+    "answer": "Master List, Set, Map, and Queue interfaces with their common implementations.",
+    "tags": [
+      "Java Core",
+      "Collections",
+      "Data Structures"
+    ]
+  }
+]

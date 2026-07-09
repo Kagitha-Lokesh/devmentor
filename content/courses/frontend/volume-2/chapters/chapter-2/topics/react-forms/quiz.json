@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FE-V2-C2-T2-q1",
+    "question": "Is Forms in React essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Handle user input efficiently using controlled components and form validation."
+  }
+]

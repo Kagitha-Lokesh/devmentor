@@ -1,0 +1,29 @@
+{
+  "id": "V1-C2-T3",
+  "slug": "abstraction",
+  "title": "Abstraction & Interfaces",
+  "description": "Learn abstract classes and interfaces to design clean and extensible Java applications.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "OOP",
+    "Abstraction",
+    "Interface"
+  ],
+  "searchKeywords": [
+    "abstraction",
+    "interface",
+    "abstract class",
+    "implements",
+    "oop"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

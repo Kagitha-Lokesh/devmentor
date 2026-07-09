@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "react-forms",
+      "label": "Forms in React"
+    },
+    {
+      "id": "react-forms-0",
+      "label": "Frontend",
+      "parentId": "react-forms"
+    },
+    {
+      "id": "react-forms-1",
+      "label": "React",
+      "parentId": "react-forms"
+    },
+    {
+      "id": "react-forms-2",
+      "label": "Forms",
+      "parentId": "react-forms"
+    }
+  ]
+}

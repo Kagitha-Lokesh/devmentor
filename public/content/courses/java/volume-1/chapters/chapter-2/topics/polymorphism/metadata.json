@@ -1,0 +1,29 @@
+{
+  "id": "V1-C2-T2",
+  "slug": "polymorphism",
+  "title": "Polymorphism in Java",
+  "description": "Understand compile-time and runtime polymorphism, method overloading and overriding.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "OOP",
+    "Polymorphism"
+  ],
+  "searchKeywords": [
+    "polymorphism",
+    "overloading",
+    "overriding",
+    "runtime",
+    "compile-time",
+    "oop"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

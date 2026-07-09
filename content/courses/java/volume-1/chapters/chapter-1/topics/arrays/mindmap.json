@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "arrays",
+      "label": "Arrays in Java"
+    },
+    {
+      "id": "arrays-0",
+      "label": "Java Core",
+      "parentId": "arrays"
+    },
+    {
+      "id": "arrays-1",
+      "label": "Arrays",
+      "parentId": "arrays"
+    },
+    {
+      "id": "arrays-2",
+      "label": "Data Structures",
+      "parentId": "arrays"
+    }
+  ]
+}

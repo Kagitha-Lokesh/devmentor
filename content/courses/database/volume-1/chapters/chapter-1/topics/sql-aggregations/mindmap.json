@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "sql-aggregations",
+      "label": "SQL Aggregations & Grouping"
+    },
+    {
+      "id": "sql-aggregations-0",
+      "label": "Database",
+      "parentId": "sql-aggregations"
+    },
+    {
+      "id": "sql-aggregations-1",
+      "label": "SQL",
+      "parentId": "sql-aggregations"
+    },
+    {
+      "id": "sql-aggregations-2",
+      "label": "Analytics",
+      "parentId": "sql-aggregations"
+    }
+  ]
+}

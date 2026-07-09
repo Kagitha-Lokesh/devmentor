@@ -1,0 +1,28 @@
+{
+  "id": "FE-V1-C2-T1",
+  "slug": "js-basics",
+  "title": "JavaScript Basics",
+  "description": "Introduction to JavaScript variables, data types, and functions.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "JavaScript",
+    "Programming"
+  ],
+  "searchKeywords": [
+    "js",
+    "javascript",
+    "variables",
+    "functions",
+    "es6"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

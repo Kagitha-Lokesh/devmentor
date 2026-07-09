@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FE-V1-C1-T3-q1",
+    "question": "Is CSS Grid essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Create two-dimensional grid-based layouts for modern responsive web design."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C1-T5-q1",
+    "question": "Is Strings in Java essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Master Java String manipulation, String methods, and immutability."
+  }
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "id": "BE-V1-C2-T1-int1",
+    "question": "Explain Spring Security in your own words.",
+    "answer": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens."
+  }
+]

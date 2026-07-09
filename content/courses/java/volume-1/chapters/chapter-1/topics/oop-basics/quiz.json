@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C1-T6-q1",
+    "question": "Is OOP Fundamentals essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors."
+  }
+]

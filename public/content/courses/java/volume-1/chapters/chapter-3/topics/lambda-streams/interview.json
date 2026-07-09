@@ -1,0 +1,7 @@
+[
+  {
+    "id": "V1-C3-T3-int1",
+    "question": "Explain Lambda Expressions & Streams in your own words.",
+    "answer": "Embrace functional programming with Java 8 lambdas, Stream API, and method references."
+  }
+]

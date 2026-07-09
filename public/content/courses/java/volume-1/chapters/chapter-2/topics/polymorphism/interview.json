@@ -1,0 +1,7 @@
+[
+  {
+    "id": "V1-C2-T2-int1",
+    "question": "Explain Polymorphism in Java in your own words.",
+    "answer": "Understand compile-time and runtime polymorphism, method overloading and overriding."
+  }
+]

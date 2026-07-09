@@ -1,0 +1,11 @@
+[
+  {
+    "id": "V1-C3-T2-fc-1",
+    "question": "What is the main purpose of Generics in Java?",
+    "answer": "Write type-safe code with generic classes, methods, and bounded type parameters.",
+    "tags": [
+      "Java Core",
+      "Generics"
+    ]
+  }
+]

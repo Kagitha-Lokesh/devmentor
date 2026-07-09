@@ -1,0 +1,30 @@
+{
+  "id": "FE-V1-C1-T3",
+  "slug": "css-grid",
+  "title": "CSS Grid",
+  "description": "Create two-dimensional grid-based layouts for modern responsive web design.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "CSS",
+    "Layouts"
+  ],
+  "searchKeywords": [
+    "css",
+    "grid",
+    "layout",
+    "columns",
+    "rows",
+    "responsive",
+    "grid-template"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

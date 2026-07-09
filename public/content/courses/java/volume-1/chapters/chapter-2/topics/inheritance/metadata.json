@@ -1,0 +1,29 @@
+{
+  "id": "V1-C2-T1",
+  "slug": "inheritance",
+  "title": "Inheritance in Java",
+  "description": "Learn how subclasses extend parent classes and reuse code with inheritance.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "OOP",
+    "Inheritance"
+  ],
+  "searchKeywords": [
+    "inheritance",
+    "extends",
+    "superclass",
+    "subclass",
+    "is-a",
+    "oop"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

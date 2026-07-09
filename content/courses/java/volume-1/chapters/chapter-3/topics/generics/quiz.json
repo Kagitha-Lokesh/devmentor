@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C3-T2-q1",
+    "question": "Is Generics in Java essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Write type-safe code with generic classes, methods, and bounded type parameters."
+  }
+]

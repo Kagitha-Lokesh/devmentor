@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "css-flexbox",
+      "label": "CSS Flexbox"
+    },
+    {
+      "id": "css-flexbox-0",
+      "label": "Frontend",
+      "parentId": "css-flexbox"
+    },
+    {
+      "id": "css-flexbox-1",
+      "label": "CSS",
+      "parentId": "css-flexbox"
+    },
+    {
+      "id": "css-flexbox-2",
+      "label": "Layouts",
+      "parentId": "css-flexbox"
+    }
+  ]
+}

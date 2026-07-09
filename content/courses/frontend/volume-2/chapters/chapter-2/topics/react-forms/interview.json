@@ -1,0 +1,7 @@
+[
+  {
+    "id": "FE-V2-C2-T2-int1",
+    "question": "Explain Forms in React in your own words.",
+    "answer": "Handle user input efficiently using controlled components and form validation."
+  }
+]

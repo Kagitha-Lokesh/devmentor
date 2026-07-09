@@ -1,0 +1,30 @@
+{
+  "id": "DB-V1-C1-T2",
+  "slug": "sql-joins",
+  "title": "SQL Joins",
+  "description": "Combine data from multiple tables using INNER JOIN, LEFT JOIN, RIGHT JOIN and more.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Database",
+    "SQL",
+    "Joins"
+  ],
+  "searchKeywords": [
+    "sql",
+    "join",
+    "inner join",
+    "left join",
+    "right join",
+    "outer join",
+    "database"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

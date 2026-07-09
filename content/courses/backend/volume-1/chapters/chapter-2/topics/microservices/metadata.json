@@ -1,0 +1,30 @@
+{
+  "id": "BE-V1-C2-T3",
+  "slug": "microservices",
+  "title": "Microservices Architecture",
+  "description": "Design and build scalable microservices with Spring Boot and REST communication.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Backend",
+    "Microservices",
+    "Architecture",
+    "Spring Boot"
+  ],
+  "searchKeywords": [
+    "microservices",
+    "architecture",
+    "spring boot",
+    "api gateway",
+    "service registry",
+    "eureka"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "BE-V1-C2-T1-q1",
+    "question": "Is Spring Security essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens."
+  }
+]

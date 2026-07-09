@@ -1,0 +1,31 @@
+{
+  "id": "V1-C3-T3",
+  "slug": "lambda-streams",
+  "title": "Lambda Expressions & Streams",
+  "description": "Embrace functional programming with Java 8 lambdas, Stream API, and method references.",
+  "volume": 1,
+  "chapter": "chapter-3",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Functional Programming",
+    "Java 8"
+  ],
+  "searchKeywords": [
+    "lambda",
+    "streams",
+    "functional",
+    "map",
+    "filter",
+    "reduce",
+    "java 8",
+    "method reference"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

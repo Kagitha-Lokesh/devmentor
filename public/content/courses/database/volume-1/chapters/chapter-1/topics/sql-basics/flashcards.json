@@ -1,0 +1,12 @@
+[
+  {
+    "id": "DB-V1-C1-T1-fc-1",
+    "question": "What is the main purpose of SQL Basics?",
+    "answer": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples.",
+    "tags": [
+      "Database",
+      "SQL",
+      "Relational DB"
+    ]
+  }
+]

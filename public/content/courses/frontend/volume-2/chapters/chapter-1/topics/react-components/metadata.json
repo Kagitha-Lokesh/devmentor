@@ -1,0 +1,28 @@
+{
+  "id": "FE-V2-C1-T1",
+  "slug": "react-components",
+  "title": "React Components & JSX",
+  "description": "Understand the building blocks of React applications.",
+  "volume": 2,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "React",
+    "UI"
+  ],
+  "searchKeywords": [
+    "react",
+    "components",
+    "jsx",
+    "props",
+    "ui"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

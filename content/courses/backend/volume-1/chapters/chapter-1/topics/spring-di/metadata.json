@@ -1,0 +1,30 @@
+{
+  "id": "BE-V1-C1-T3",
+  "slug": "spring-di",
+  "title": "Dependency Injection in Spring",
+  "description": "Master Inversion of Control (IoC) and Dependency Injection in the Spring framework.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Backend",
+    "Java",
+    "Spring",
+    "Architecture"
+  ],
+  "searchKeywords": [
+    "spring",
+    "dependency injection",
+    "di",
+    "ioc",
+    "beans",
+    "autowired"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

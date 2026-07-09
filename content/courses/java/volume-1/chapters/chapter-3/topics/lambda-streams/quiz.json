@@ -1,0 +1,14 @@
+[
+  {
+    "id": "V1-C3-T3-q1",
+    "question": "Is Lambda Expressions & Streams essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Embrace functional programming with Java 8 lambdas, Stream API, and method references."
+  }
+]

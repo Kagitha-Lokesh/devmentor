@@ -1,0 +1,12 @@
+[
+  {
+    "id": "DB-V1-C2-T2-fc-1",
+    "question": "What is the main purpose of Database Design & Normalization?",
+    "answer": "Design efficient databases using 1NF, 2NF, 3NF and ER diagrams.",
+    "tags": [
+      "Database",
+      "Design",
+      "Normalization"
+    ]
+  }
+]

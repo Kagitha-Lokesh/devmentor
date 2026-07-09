@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "spring-security",
+      "label": "Spring Security"
+    },
+    {
+      "id": "spring-security-0",
+      "label": "Backend",
+      "parentId": "spring-security"
+    },
+    {
+      "id": "spring-security-1",
+      "label": "Spring",
+      "parentId": "spring-security"
+    },
+    {
+      "id": "spring-security-2",
+      "label": "Security",
+      "parentId": "spring-security"
+    },
+    {
+      "id": "spring-security-3",
+      "label": "JWT",
+      "parentId": "spring-security"
+    }
+  ]
+}

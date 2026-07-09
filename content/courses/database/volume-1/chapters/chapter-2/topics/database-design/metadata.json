@@ -1,0 +1,31 @@
+{
+  "id": "DB-V1-C2-T2",
+  "slug": "database-design",
+  "title": "Database Design & Normalization",
+  "description": "Design efficient databases using 1NF, 2NF, 3NF and ER diagrams.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Database",
+    "Design",
+    "Normalization"
+  ],
+  "searchKeywords": [
+    "database design",
+    "normalization",
+    "1nf",
+    "2nf",
+    "3nf",
+    "er diagram",
+    "primary key",
+    "foreign key"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

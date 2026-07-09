@@ -1,0 +1,30 @@
+{
+  "id": "V1-C1-T2",
+  "slug": "loops",
+  "title": "Loops in Java",
+  "description": "Master control flow structures using for, while, and do-while loops in Java.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 20,
+  "difficulty": "Beginner",
+  "prerequisites": [
+    "V1-C1-T1"
+  ],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Control Flow"
+  ],
+  "searchKeywords": [
+    "loops",
+    "for loop",
+    "while loop",
+    "do while",
+    "iteration",
+    "control flow"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "High",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

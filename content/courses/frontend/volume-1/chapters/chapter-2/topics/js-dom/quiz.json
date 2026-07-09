@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FE-V1-C2-T2-q1",
+    "question": "Is JavaScript DOM Manipulation essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Interact with the browser Document Object Model to make web pages dynamic."
+  }
+]

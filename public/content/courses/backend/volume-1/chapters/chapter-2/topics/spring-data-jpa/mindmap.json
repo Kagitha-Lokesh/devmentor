@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "spring-data-jpa",
+      "label": "Spring Data JPA"
+    },
+    {
+      "id": "spring-data-jpa-0",
+      "label": "Backend",
+      "parentId": "spring-data-jpa"
+    },
+    {
+      "id": "spring-data-jpa-1",
+      "label": "Spring",
+      "parentId": "spring-data-jpa"
+    },
+    {
+      "id": "spring-data-jpa-2",
+      "label": "JPA",
+      "parentId": "spring-data-jpa"
+    },
+    {
+      "id": "spring-data-jpa-3",
+      "label": "Database",
+      "parentId": "spring-data-jpa"
+    }
+  ]
+}

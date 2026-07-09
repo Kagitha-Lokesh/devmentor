@@ -1,0 +1,30 @@
+{
+  "id": "FE-V1-C2-T3",
+  "slug": "js-async",
+  "title": "Async JavaScript",
+  "description": "Handle asynchronous operations using Promises, async/await, and Fetch API.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "JavaScript",
+    "Async"
+  ],
+  "searchKeywords": [
+    "async",
+    "await",
+    "promise",
+    "fetch api",
+    "callbacks",
+    "javascript",
+    "http"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

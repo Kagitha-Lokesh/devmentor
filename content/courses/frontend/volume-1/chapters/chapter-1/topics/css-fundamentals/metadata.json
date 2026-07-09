@@ -1,0 +1,29 @@
+{
+  "id": "FE-V1-C1-T1",
+  "slug": "css-fundamentals",
+  "title": "CSS Fundamentals",
+  "description": "Learn how to style web pages using CSS, covering selectors, colors, and the box model.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 30,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Frontend",
+    "CSS",
+    "Web Design"
+  ],
+  "searchKeywords": [
+    "css",
+    "styling",
+    "box model",
+    "flexbox",
+    "grid",
+    "colors"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

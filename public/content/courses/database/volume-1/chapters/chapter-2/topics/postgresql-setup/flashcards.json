@@ -1,0 +1,11 @@
+[
+  {
+    "id": "DB-V1-C2-T1-fc-1",
+    "question": "What is the main purpose of PostgreSQL Setup & Basics?",
+    "answer": "Install PostgreSQL, create databases and tables, and run queries from the command line.",
+    "tags": [
+      "Database",
+      "PostgreSQL"
+    ]
+  }
+]

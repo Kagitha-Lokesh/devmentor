@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "css-grid",
+      "label": "CSS Grid"
+    },
+    {
+      "id": "css-grid-0",
+      "label": "Frontend",
+      "parentId": "css-grid"
+    },
+    {
+      "id": "css-grid-1",
+      "label": "CSS",
+      "parentId": "css-grid"
+    },
+    {
+      "id": "css-grid-2",
+      "label": "Layouts",
+      "parentId": "css-grid"
+    }
+  ]
+}

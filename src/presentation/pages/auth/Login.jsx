@@ -137,6 +137,7 @@ export default function Login() {
           </button>
         </form>
 
+        {/* 
         <div className="relative my-8">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t border-slate-800" />
@@ -183,6 +184,7 @@ export default function Login() {
             GitHub
           </button>
         </div>
+        */ }
 
         <p className="mt-8 text-center text-sm text-slate-500">
           New to DevMentor?{' '}

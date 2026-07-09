@@ -1,0 +1,7 @@
+[
+  {
+    "id": "FE-V2-C1-T3-int1",
+    "question": "Explain React Routing in an interview.",
+    "answer": "I would explain that Navigate between pages in a single-page application using React Router."
+  }
+]

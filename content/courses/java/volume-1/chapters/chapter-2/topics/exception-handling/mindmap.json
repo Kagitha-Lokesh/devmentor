@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "exception-handling",
+      "label": "Exception Handling"
+    },
+    {
+      "id": "exception-handling-0",
+      "label": "Java Core",
+      "parentId": "exception-handling"
+    },
+    {
+      "id": "exception-handling-1",
+      "label": "Exception Handling",
+      "parentId": "exception-handling"
+    }
+  ]
+}

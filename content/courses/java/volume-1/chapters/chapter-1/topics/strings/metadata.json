@@ -1,0 +1,29 @@
+{
+  "id": "V1-C1-T5",
+  "slug": "strings",
+  "title": "Strings in Java",
+  "description": "Master Java String manipulation, String methods, and immutability.",
+  "volume": 1,
+  "chapter": "chapter-1",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Strings"
+  ],
+  "searchKeywords": [
+    "string",
+    "strings",
+    "stringbuilder",
+    "substring",
+    "concat",
+    "immutable",
+    "string methods"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

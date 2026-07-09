@@ -1,0 +1,13 @@
+[
+  {
+    "id": "V1-C2-T3-fc-1",
+    "question": "What is the main purpose of Abstraction & Interfaces?",
+    "answer": "Learn abstract classes and interfaces to design clean and extensible Java applications.",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Abstraction",
+      "Interface"
+    ]
+  }
+]

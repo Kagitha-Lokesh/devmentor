@@ -141,7 +141,7 @@ export default function Signup() {
           </button>
         </form>
 
-        {/* Divider */}
+        {/* Divider
         <div className="relative my-8">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t border-slate-800" />
@@ -151,7 +151,7 @@ export default function Signup() {
           </div>
         </div>
 
-        {/* Social buttons */}
+        {/* Social buttons *}
         <div className="grid grid-cols-2 gap-4">
           <button
             onClick={handleGoogleSignIn}
@@ -177,6 +177,7 @@ export default function Signup() {
             GitHub
           </button>
         </div>
+        */ }
 
         <p className="mt-8 text-center text-sm text-slate-500">
           Already have an account?{' '}

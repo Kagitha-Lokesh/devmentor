@@ -1,5 +1,248 @@
 [
   {
+    "topicId": "BE-V1-C1-T1",
+    "slug": "spring-boot-intro",
+    "title": "Introduction to Spring Boot",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/flashcards.json"
+  },
+  {
+    "topicId": "BE-V1-C1-T3",
+    "slug": "spring-di",
+    "title": "Dependency Injection in Spring",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/flashcards.json"
+  },
+  {
+    "topicId": "BE-V1-C1-T2",
+    "slug": "spring-rest",
+    "title": "Spring REST APIs",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/flashcards.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T3",
+    "slug": "microservices",
+    "title": "Microservices Architecture",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/flashcards.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T2",
+    "slug": "spring-data-jpa",
+    "title": "Spring Data JPA",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/flashcards.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T1",
+    "slug": "spring-security",
+    "title": "Spring Security",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/flashcards.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T3",
+    "slug": "sql-aggregations",
+    "title": "SQL Aggregations & Grouping",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/flashcards.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T1",
+    "slug": "sql-basics",
+    "title": "SQL Basics",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/flashcards.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T2",
+    "slug": "sql-joins",
+    "title": "SQL Joins",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/flashcards.json"
+  },
+  {
+    "topicId": "DB-V1-C2-T2",
+    "slug": "database-design",
+    "title": "Database Design & Normalization",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/database-design/flashcards.json"
+  },
+  {
+    "topicId": "DB-V1-C2-T1",
+    "slug": "postgresql-setup",
+    "title": "PostgreSQL Setup & Basics",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T2",
+    "slug": "css-flexbox",
+    "title": "CSS Flexbox",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T1",
+    "slug": "css-fundamentals",
+    "title": "CSS Fundamentals",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T3",
+    "slug": "css-grid",
+    "title": "CSS Grid",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T3",
+    "slug": "js-async",
+    "title": "Async JavaScript",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T1",
+    "slug": "js-basics",
+    "title": "JavaScript Basics",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/flashcards.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T2",
+    "slug": "js-dom",
+    "title": "JavaScript DOM Manipulation",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/flashcards.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T1",
+    "slug": "react-components",
+    "title": "React Components & JSX",
+    "chapter": "chapter-1",
+    "volume": 2,
+    "count": 1,
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/flashcards.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T2",
+    "slug": "react-hooks",
+    "title": "React Hooks",
+    "chapter": "chapter-1",
+    "volume": 2,
+    "count": 1,
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/flashcards.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T3",
+    "slug": "react-routing",
+    "title": "React Routing",
+    "chapter": "chapter-1",
+    "volume": 2,
+    "count": 1,
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/flashcards.json"
+  },
+  {
+    "topicId": "FE-V2-C2-T2",
+    "slug": "react-forms",
+    "title": "Forms in React",
+    "chapter": "chapter-2",
+    "volume": 2,
+    "count": 1,
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/flashcards.json"
+  },
+  {
+    "topicId": "FE-V2-C2-T1",
+    "slug": "react-state",
+    "title": "State Management in React",
+    "chapter": "chapter-2",
+    "volume": 2,
+    "count": 1,
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/flashcards.json"
+  },
+  {
+    "topicId": "V1-C1-T4",
+    "slug": "arrays",
+    "title": "Arrays in Java",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/arrays/flashcards.json"
+  },
+  {
+    "topicId": "V1-C1-T2",
+    "slug": "loops",
+    "title": "Loops in Java",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/loops/flashcards.json"
+  },
+  {
+    "topicId": "V1-C1-T3",
+    "slug": "methods",
+    "title": "Methods in Java",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/methods/flashcards.json"
+  },
+  {
+    "topicId": "V1-C1-T6",
+    "slug": "oop-basics",
+    "title": "OOP Fundamentals",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/flashcards.json"
+  },
+  {
+    "topicId": "V1-C1-T5",
+    "slug": "strings",
+    "title": "Strings in Java",
+    "chapter": "chapter-1",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/strings/flashcards.json"
+  },
+  {
     "topicId": "V1-C1-T1",
     "slug": "variables",
     "title": "Variables in Java",
@@ -7,5 +250,68 @@
     "volume": 1,
     "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json"
+  },
+  {
+    "topicId": "V1-C2-T3",
+    "slug": "abstraction",
+    "title": "Abstraction & Interfaces",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/flashcards.json"
+  },
+  {
+    "topicId": "V1-C2-T4",
+    "slug": "exception-handling",
+    "title": "Exception Handling",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/flashcards.json"
+  },
+  {
+    "topicId": "V1-C2-T1",
+    "slug": "inheritance",
+    "title": "Inheritance in Java",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/flashcards.json"
+  },
+  {
+    "topicId": "V1-C2-T2",
+    "slug": "polymorphism",
+    "title": "Polymorphism in Java",
+    "chapter": "chapter-2",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/flashcards.json"
+  },
+  {
+    "topicId": "V1-C3-T1",
+    "slug": "collections",
+    "title": "Java Collections Framework",
+    "chapter": "chapter-3",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/collections/flashcards.json"
+  },
+  {
+    "topicId": "V1-C3-T2",
+    "slug": "generics",
+    "title": "Generics in Java",
+    "chapter": "chapter-3",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/generics/flashcards.json"
+  },
+  {
+    "topicId": "V1-C3-T3",
+    "slug": "lambda-streams",
+    "title": "Lambda Expressions & Streams",
+    "chapter": "chapter-3",
+    "volume": 1,
+    "count": 1,
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/flashcards.json"
   }
 ]

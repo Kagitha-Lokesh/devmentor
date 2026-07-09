@@ -1,0 +1,31 @@
+{
+  "id": "BE-V1-C2-T1",
+  "slug": "spring-security",
+  "title": "Spring Security",
+  "description": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Backend",
+    "Spring",
+    "Security",
+    "JWT"
+  ],
+  "searchKeywords": [
+    "spring security",
+    "jwt",
+    "authentication",
+    "authorization",
+    "security",
+    "token",
+    "spring"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

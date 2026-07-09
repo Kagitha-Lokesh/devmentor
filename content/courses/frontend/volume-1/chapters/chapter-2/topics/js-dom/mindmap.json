@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "js-dom",
+      "label": "JavaScript DOM Manipulation"
+    },
+    {
+      "id": "js-dom-0",
+      "label": "Frontend",
+      "parentId": "js-dom"
+    },
+    {
+      "id": "js-dom-1",
+      "label": "JavaScript",
+      "parentId": "js-dom"
+    },
+    {
+      "id": "js-dom-2",
+      "label": "DOM",
+      "parentId": "js-dom"
+    }
+  ]
+}

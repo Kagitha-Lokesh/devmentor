@@ -1,0 +1,7 @@
+[
+  {
+    "id": "DB-V1-C1-T3-int1",
+    "question": "Explain SQL Aggregations & Grouping in your own words.",
+    "answer": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX."
+  }
+]

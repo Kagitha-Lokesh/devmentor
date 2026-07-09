@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "react-state",
+      "label": "State Management in React"
+    },
+    {
+      "id": "react-state-0",
+      "label": "Frontend",
+      "parentId": "react-state"
+    },
+    {
+      "id": "react-state-1",
+      "label": "React",
+      "parentId": "react-state"
+    },
+    {
+      "id": "react-state-2",
+      "label": "State Management",
+      "parentId": "react-state"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "oop-basics",
+      "label": "OOP Fundamentals"
+    },
+    {
+      "id": "oop-basics-0",
+      "label": "Java Core",
+      "parentId": "oop-basics"
+    },
+    {
+      "id": "oop-basics-1",
+      "label": "OOP",
+      "parentId": "oop-basics"
+    }
+  ]
+}

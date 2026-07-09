@@ -1,0 +1,14 @@
+[
+  {
+    "id": "FE-V2-C2-T1-q1",
+    "question": "Is State Management in React essential for a full-stack developer?",
+    "options": [
+      "Yes, absolutely",
+      "No",
+      "Only for backend",
+      "Only for frontend"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "Manage complex application state with Context API and useReducer."
+  }
+]

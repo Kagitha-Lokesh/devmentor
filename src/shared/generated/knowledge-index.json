@@ -1,5 +1,356 @@
 [
   {
+    "id": "BE-V1-C1-T1",
+    "slug": "spring-boot-intro",
+    "title": "Introduction to Spring Boot",
+    "description": "Get started with Spring Boot, auto-configuration, and standalone Spring applications.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring Boot"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "BE-V1-C1-T3",
+    "slug": "spring-di",
+    "title": "Dependency Injection in Spring",
+    "description": "Master Inversion of Control (IoC) and Dependency Injection in the Spring framework.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring",
+      "Architecture"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "BE-V1-C1-T2",
+    "slug": "spring-rest",
+    "title": "Spring REST APIs",
+    "description": "Build robust RESTful web services using Spring MVC and Controllers.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring Boot",
+      "API"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "BE-V1-C2-T3",
+    "slug": "microservices",
+    "title": "Microservices Architecture",
+    "description": "Design and build scalable microservices with Spring Boot and REST communication.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Microservices",
+      "Architecture",
+      "Spring Boot"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "BE-V1-C2-T2",
+    "slug": "spring-data-jpa",
+    "title": "Spring Data JPA",
+    "description": "Persist data to relational databases using Spring Data JPA and Hibernate ORM.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Spring",
+      "JPA",
+      "Database"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "BE-V1-C2-T1",
+    "slug": "spring-security",
+    "title": "Spring Security",
+    "description": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Backend",
+      "Spring",
+      "Security",
+      "JWT"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "DB-V1-C1-T3",
+    "slug": "sql-aggregations",
+    "title": "SQL Aggregations & Grouping",
+    "description": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Database",
+      "SQL",
+      "Analytics"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "DB-V1-C1-T1",
+    "slug": "sql-basics",
+    "title": "SQL Basics",
+    "description": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Database",
+      "SQL",
+      "Relational DB"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "DB-V1-C1-T2",
+    "slug": "sql-joins",
+    "title": "SQL Joins",
+    "description": "Combine data from multiple tables using INNER JOIN, LEFT JOIN, RIGHT JOIN and more.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Database",
+      "SQL",
+      "Joins"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "DB-V1-C2-T2",
+    "slug": "database-design",
+    "title": "Database Design & Normalization",
+    "description": "Design efficient databases using 1NF, 2NF, 3NF and ER diagrams.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Database",
+      "Design",
+      "Normalization"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "DB-V1-C2-T1",
+    "slug": "postgresql-setup",
+    "title": "PostgreSQL Setup & Basics",
+    "description": "Install PostgreSQL, create databases and tables, and run queries from the command line.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Database",
+      "PostgreSQL"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C1-T2",
+    "slug": "css-flexbox",
+    "title": "CSS Flexbox",
+    "description": "Build flexible and responsive layouts using the CSS Flexbox model.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Layouts"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C1-T1",
+    "slug": "css-fundamentals",
+    "title": "CSS Fundamentals",
+    "description": "Learn how to style web pages using CSS, covering selectors, colors, and the box model.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Web Design"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C1-T3",
+    "slug": "css-grid",
+    "title": "CSS Grid",
+    "description": "Create two-dimensional grid-based layouts for modern responsive web design.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Layouts"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C2-T3",
+    "slug": "js-async",
+    "title": "Async JavaScript",
+    "description": "Handle asynchronous operations using Promises, async/await, and Fetch API.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "Async"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C2-T1",
+    "slug": "js-basics",
+    "title": "JavaScript Basics",
+    "description": "Introduction to JavaScript variables, data types, and functions.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "Programming"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V1-C2-T2",
+    "slug": "js-dom",
+    "title": "JavaScript DOM Manipulation",
+    "description": "Interact with the browser Document Object Model to make web pages dynamic.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "DOM"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V2-C1-T1",
+    "slug": "react-components",
+    "title": "React Components & JSX",
+    "description": "Understand the building blocks of React applications.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "React",
+      "UI"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V2-C1-T2",
+    "slug": "react-hooks",
+    "title": "React Hooks",
+    "description": "Manage state and side effects in functional components using Hooks.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "React",
+      "State Management"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V2-C1-T3",
+    "slug": "react-routing",
+    "title": "React Routing",
+    "description": "Navigate between pages in a single-page application using React Router.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "React",
+      "Routing"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V2-C2-T2",
+    "slug": "react-forms",
+    "title": "Forms in React",
+    "description": "Handle user input efficiently using controlled components and form validation.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "React",
+      "Forms"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "FE-V2-C2-T1",
+    "slug": "react-state",
+    "title": "State Management in React",
+    "description": "Manage complex application state with Context API and useReducer.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Frontend",
+      "React",
+      "State Management"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C1-T4",
+    "slug": "arrays",
+    "title": "Arrays in Java",
+    "description": "Learn how to store and manipulate collections of elements using arrays.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Arrays",
+      "Data Structures"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C1-T2",
+    "slug": "loops",
+    "title": "Loops in Java",
+    "description": "Master control flow structures using for, while, and do-while loops in Java.",
+    "difficulty": "Beginner",
+    "tags": [
+      "Java Core",
+      "Control Flow"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C1-T3",
+    "slug": "methods",
+    "title": "Methods in Java",
+    "description": "Learn how to encapsulate code into reusable blocks using methods.",
+    "difficulty": "Beginner",
+    "tags": [
+      "Java Core",
+      "Methods"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C1-T6",
+    "slug": "oop-basics",
+    "title": "OOP Fundamentals",
+    "description": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "OOP"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C1-T5",
+    "slug": "strings",
+    "title": "Strings in Java",
+    "description": "Master Java String manipulation, String methods, and immutability.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Strings"
+    ],
+    "keywords": []
+  },
+  {
     "id": "V1-C1-T1",
     "slug": "variables",
     "title": "Variables in Java",
@@ -9,6 +360,96 @@
       "Java Core",
       "Syntax",
       "Fundamentals"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C2-T3",
+    "slug": "abstraction",
+    "title": "Abstraction & Interfaces",
+    "description": "Learn abstract classes and interfaces to design clean and extensible Java applications.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Abstraction",
+      "Interface"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C2-T4",
+    "slug": "exception-handling",
+    "title": "Exception Handling",
+    "description": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Exception Handling"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C2-T1",
+    "slug": "inheritance",
+    "title": "Inheritance in Java",
+    "description": "Learn how subclasses extend parent classes and reuse code with inheritance.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Inheritance"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C2-T2",
+    "slug": "polymorphism",
+    "title": "Polymorphism in Java",
+    "description": "Understand compile-time and runtime polymorphism, method overloading and overriding.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Polymorphism"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C3-T1",
+    "slug": "collections",
+    "title": "Java Collections Framework",
+    "description": "Master List, Set, Map, and Queue interfaces with their common implementations.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Collections",
+      "Data Structures"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C3-T2",
+    "slug": "generics",
+    "title": "Generics in Java",
+    "description": "Write type-safe code with generic classes, methods, and bounded type parameters.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Generics"
+    ],
+    "keywords": []
+  },
+  {
+    "id": "V1-C3-T3",
+    "slug": "lambda-streams",
+    "title": "Lambda Expressions & Streams",
+    "description": "Embrace functional programming with Java 8 lambdas, Stream API, and method references.",
+    "difficulty": "Intermediate",
+    "tags": [
+      "Java Core",
+      "Functional Programming",
+      "Java 8"
     ],
     "keywords": []
   }

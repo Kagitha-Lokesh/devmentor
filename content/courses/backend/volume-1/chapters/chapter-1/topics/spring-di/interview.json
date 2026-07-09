@@ -1,0 +1,7 @@
+[
+  {
+    "id": "BE-V1-C1-T3-int1",
+    "question": "Explain Dependency Injection in Spring in an interview.",
+    "answer": "I would explain that Master Inversion of Control (IoC) and Dependency Injection in the Spring framework."
+  }
+]

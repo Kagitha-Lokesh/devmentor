@@ -1,0 +1,7 @@
+[
+  {
+    "id": "FE-V2-C2-T1-int1",
+    "question": "Explain State Management in React in your own words.",
+    "answer": "Manage complex application state with Context API and useReducer."
+  }
+]

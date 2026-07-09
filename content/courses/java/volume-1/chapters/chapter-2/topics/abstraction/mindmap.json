@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "abstraction",
+      "label": "Abstraction & Interfaces"
+    },
+    {
+      "id": "abstraction-0",
+      "label": "Java Core",
+      "parentId": "abstraction"
+    },
+    {
+      "id": "abstraction-1",
+      "label": "OOP",
+      "parentId": "abstraction"
+    },
+    {
+      "id": "abstraction-2",
+      "label": "Abstraction",
+      "parentId": "abstraction"
+    },
+    {
+      "id": "abstraction-3",
+      "label": "Interface",
+      "parentId": "abstraction"
+    }
+  ]
+}

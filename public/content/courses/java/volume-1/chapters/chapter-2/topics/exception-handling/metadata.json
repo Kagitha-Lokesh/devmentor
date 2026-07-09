@@ -1,0 +1,30 @@
+{
+  "id": "V1-C2-T4",
+  "slug": "exception-handling",
+  "title": "Exception Handling",
+  "description": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions.",
+  "volume": 1,
+  "chapter": "chapter-2",
+  "estimatedMinutes": 35,
+  "difficulty": "Intermediate",
+  "prerequisites": [],
+  "nextTopics": [],
+  "tags": [
+    "Java Core",
+    "Exception Handling"
+  ],
+  "searchKeywords": [
+    "exception",
+    "try",
+    "catch",
+    "finally",
+    "throw",
+    "throws",
+    "custom exception",
+    "error handling"
+  ],
+  "interviewImportance": "High",
+  "revisionPriority": "Medium",
+  "version": "1.0.0",
+  "lastUpdated": "2026-07-09"
+}

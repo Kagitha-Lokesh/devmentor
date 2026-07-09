@@ -1,0 +1,23 @@
+{
+  "nodes": [
+    {
+      "id": "database-design",
+      "label": "Database Design & Normalization"
+    },
+    {
+      "id": "database-design-0",
+      "label": "Database",
+      "parentId": "database-design"
+    },
+    {
+      "id": "database-design-1",
+      "label": "Design",
+      "parentId": "database-design"
+    },
+    {
+      "id": "database-design-2",
+      "label": "Normalization",
+      "parentId": "database-design"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V1-C2-T2-fc-1",
+    "question": "What is the main purpose of JavaScript DOM Manipulation?",
+    "answer": "Interact with the browser Document Object Model to make web pages dynamic.",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "DOM"
+    ]
+  }
+]

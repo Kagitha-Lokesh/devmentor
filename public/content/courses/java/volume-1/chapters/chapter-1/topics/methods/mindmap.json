@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "methods",
+      "label": "Methods"
+    },
+    {
+      "id": "overloading",
+      "label": "Overloading",
+      "parentId": "methods"
+    },
+    {
+      "id": "overriding",
+      "label": "Overriding",
+      "parentId": "methods"
+    }
+  ]
+}

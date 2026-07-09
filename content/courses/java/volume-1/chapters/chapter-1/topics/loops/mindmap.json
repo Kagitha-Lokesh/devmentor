@@ -1,0 +1,18 @@
+{
+  "nodes": [
+    {
+      "id": "loops",
+      "label": "Loops"
+    },
+    {
+      "id": "for",
+      "label": "For Loop",
+      "parentId": "loops"
+    },
+    {
+      "id": "while",
+      "label": "While Loop",
+      "parentId": "loops"
+    }
+  ]
+}

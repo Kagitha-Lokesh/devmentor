@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FE-V1-C2-T1-q1",
+    "question": "Is JavaScript Basics important?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "correctAnswerIndex": 0,
+    "explanation": "It is very important."
+  }
+]

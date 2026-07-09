@@ -1,0 +1,7 @@
+[
+  {
+    "id": "FE-V1-C2-T2-int1",
+    "question": "Explain JavaScript DOM Manipulation in your own words.",
+    "answer": "Interact with the browser Document Object Model to make web pages dynamic."
+  }
+]
