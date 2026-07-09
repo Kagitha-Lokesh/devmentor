@@ -1,7 +1,10 @@
 [
   {
-    "id": "FE-V2-C1-T2-int1",
-    "question": "Explain React Hooks in an interview.",
-    "answer": "I would explain that Manage state and side effects in functional components using Hooks."
+    "question": "What is a custom Hook and when would you create one?",
+    "answer": "A custom Hook is a function starting with 'use' that calls other Hooks. Create one to extract and reuse stateful logic across multiple components. Example: useFetch(url) encapsulates fetch logic, loading state, and error handling so any component can reuse it without duplicating code."
+  },
+  {
+    "question": "What is a stale closure in the context of React hooks?",
+    "answer": "A stale closure happens when a useEffect callback captures an old value of a state or prop because it was closed over when the effect was created. If you use a state variable inside useEffect but don't include it in the dependency array, the effect always 'sees' the old value from when it was defined."
   }
 ]

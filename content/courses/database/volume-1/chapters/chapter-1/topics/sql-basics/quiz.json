@@ -1,14 +1,24 @@
 [
   {
-    "id": "DB-V1-C1-T1-q1",
-    "question": "Is SQL Basics essential for a full-stack developer?",
+    "question": "Which SQL command removes all rows where status = 'inactive'?",
     "options": [
-      "Yes, absolutely",
-      "No",
-      "Only for backend",
-      "Only for frontend"
+      "REMOVE FROM users WHERE status='inactive'",
+      "DELETE FROM users WHERE status='inactive'",
+      "DROP users WHERE status='inactive'",
+      "TRUNCATE users WHERE status='inactive'"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples."
+    "answerIndex": 1,
+    "explanation": "DELETE FROM is the correct command to remove specific rows. REMOVE doesn't exist. DROP removes the entire table. TRUNCATE removes all rows but doesn't support a WHERE clause."
+  },
+  {
+    "question": "How do you retrieve records where the name starts with 'Jo'?",
+    "options": [
+      "WHERE name = 'Jo'",
+      "WHERE name STARTS WITH 'Jo'",
+      "WHERE name LIKE 'Jo%'",
+      "WHERE name CONTAINS 'Jo'"
+    ],
+    "answerIndex": 2,
+    "explanation": "LIKE with the % wildcard matches patterns. 'Jo%' matches any string starting with 'Jo' — John, Jones, Joseph, etc."
   }
 ]

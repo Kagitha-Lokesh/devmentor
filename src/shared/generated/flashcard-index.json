@@ -5,7 +5,7 @@
     "title": "Introduction to Spring Boot",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/flashcards.json"
   },
   {
@@ -68,7 +68,7 @@
     "title": "SQL Basics",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/flashcards.json"
   },
   {
@@ -77,7 +77,7 @@
     "title": "SQL Joins",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/flashcards.json"
   },
   {
@@ -113,7 +113,7 @@
     "title": "CSS Fundamentals",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/flashcards.json"
   },
   {
@@ -167,7 +167,7 @@
     "title": "React Hooks",
     "chapter": "chapter-1",
     "volume": 2,
-    "count": 1,
+    "count": 4,
     "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/flashcards.json"
   },
   {
@@ -203,7 +203,7 @@
     "title": "Arrays in Java",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/arrays/flashcards.json"
   },
   {
@@ -212,7 +212,7 @@
     "title": "Loops in Java",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/loops/flashcards.json"
   },
   {
@@ -221,7 +221,7 @@
     "title": "Methods in Java",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/methods/flashcards.json"
   },
   {
@@ -230,7 +230,7 @@
     "title": "OOP Fundamentals",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/flashcards.json"
   },
   {
@@ -239,7 +239,7 @@
     "title": "Strings in Java",
     "chapter": "chapter-1",
     "volume": 1,
-    "count": 1,
+    "count": 4,
     "path": "courses/java/volume-1/chapters/chapter-1/topics/strings/flashcards.json"
   },
   {

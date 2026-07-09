@@ -1,11 +1,18 @@
 [
   {
-    "id": "V1-C1-T5-fc-1",
-    "question": "What is the main purpose of Strings in Java?",
-    "answer": "Master Java String manipulation, String methods, and immutability.",
-    "tags": [
-      "Java Core",
-      "Strings"
-    ]
+    "question": "Why should you use .equals() instead of == to compare Strings?",
+    "answer": "== compares memory references (locations). .equals() compares the actual character content. Two String objects with the same text can be at different memory locations, so == would return false even though they look the same."
+  },
+  {
+    "question": "What is String immutability in Java?",
+    "answer": "Once a String object is created, its character sequence cannot be changed. Methods like toUpperCase() and replace() return NEW String objects rather than modifying the original."
+  },
+  {
+    "question": "What is the String Pool?",
+    "answer": "A special memory area (part of the heap) where Java stores String literals. When you write String s = \"hello\", Java checks the pool first. If \"hello\" exists, it reuses it — saving memory."
+  },
+  {
+    "question": "When should you use StringBuilder instead of String concatenation?",
+    "answer": "When building strings inside loops. String concatenation in a loop is O(n²) because each '+' creates a new object. StringBuilder uses a mutable buffer making it O(n)."
   }
 ]

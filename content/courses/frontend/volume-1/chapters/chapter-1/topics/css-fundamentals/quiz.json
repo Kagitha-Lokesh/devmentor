@@ -1,12 +1,24 @@
 [
   {
-    "id": "FE-V1-C1-T1-q1",
-    "question": "Is CSS Fundamentals important?",
+    "question": "Which CSS selector has the highest specificity?",
     "options": [
-      "Yes",
-      "No"
+      ".class",
+      "#id",
+      "element",
+      "* (universal)"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "It is very important."
+    "answerIndex": 1,
+    "explanation": "ID selectors (#id) have a specificity of 100, which is higher than class (10) or element (1) selectors. Inline styles are even higher at 1000, but that's not a selector."
+  },
+  {
+    "question": "In the box model, which area creates visible space INSIDE the border?",
+    "options": [
+      "Margin",
+      "Padding",
+      "Content",
+      "Border"
+    ],
+    "answerIndex": 1,
+    "explanation": "Padding is the space between the content and the border. It's inside the border and takes the background color of the element."
   }
 ]

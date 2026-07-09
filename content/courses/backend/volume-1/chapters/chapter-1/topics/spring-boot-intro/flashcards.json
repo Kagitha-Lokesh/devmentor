@@ -1,12 +1,18 @@
 [
   {
-    "id": "BE-V1-C1-T1-fc-1",
-    "question": "What is the main purpose of Introduction to Spring Boot?",
-    "answer": "To solve problems related to Backend, Java, Spring Boot.",
-    "tags": [
-      "Backend",
-      "Java",
-      "Spring Boot"
-    ]
+    "question": "What does @SpringBootApplication do?",
+    "answer": "It's a convenience annotation combining @SpringBootConfiguration, @EnableAutoConfiguration, and @ComponentScan. It marks the main class and triggers auto-configuration and component scanning."
+  },
+  {
+    "question": "What is auto-configuration in Spring Boot?",
+    "answer": "Spring Boot automatically configures beans based on the dependencies on your classpath. For example, adding spring-boot-starter-web automatically sets up an embedded Tomcat server and Spring MVC without any manual configuration."
+  },
+  {
+    "question": "What is the difference between @Controller and @RestController?",
+    "answer": "@Controller is used for web MVC apps returning HTML views. @RestController is a combination of @Controller and @ResponseBody — it returns data (JSON/XML) directly, not a view name."
+  },
+  {
+    "question": "How does Spring Boot differ from traditional Spring Framework?",
+    "answer": "Spring Framework requires extensive XML or Java configuration. Spring Boot provides auto-configuration, starter dependencies, an embedded server, and production-ready features out of the box — drastically reducing setup time."
   }
 ]

@@ -1,10 +1,18 @@
 [
   {
-    "id": "V1-C1-T3-fc-1",
     "question": "What is method overloading?",
-    "answer": "Having multiple methods with the same name but different parameters within the same class.",
-    "tags": [
-      "Methods"
-    ]
+    "answer": "Defining multiple methods with the same name but different parameter lists (type or count). Java selects the correct version at compile time."
+  },
+  {
+    "question": "Is Java pass-by-value or pass-by-reference?",
+    "answer": "Always pass-by-value. For objects, a copy of the reference is passed — you can mutate the object but cannot reassign the original reference."
+  },
+  {
+    "question": "What defines a method's signature in Java?",
+    "answer": "The method name plus the parameter types and their order. The return type is NOT part of the signature."
+  },
+  {
+    "question": "What is the difference between method overloading and overriding?",
+    "answer": "Overloading: same class, same name, different params (compile-time). Overriding: subclass redefines a parent's method with the same signature (runtime)."
   }
 ]

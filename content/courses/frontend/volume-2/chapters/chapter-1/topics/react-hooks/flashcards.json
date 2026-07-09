@@ -1,12 +1,18 @@
 [
   {
-    "id": "FE-V2-C1-T2-fc-1",
-    "question": "What is the main purpose of React Hooks?",
-    "answer": "To solve problems related to Frontend, React, State Management.",
-    "tags": [
-      "Frontend",
-      "React",
-      "State Management"
-    ]
+    "question": "What does the dependency array in useEffect control?",
+    "answer": "It controls when the effect re-runs. Empty array [] = run once on mount. Array with values = re-run when any value changes. No array = run after every render."
+  },
+  {
+    "question": "Why should you never mutate state directly in React?",
+    "answer": "React tracks state changes through the setter function. Directly mutating state (e.g., state.push() or count++) doesn't notify React, so the component won't re-render and the UI won't update."
+  },
+  {
+    "question": "What is the difference between useRef and useState?",
+    "answer": "useState triggers a re-render when changed. useRef stores a mutable value that persists across renders without causing a re-render. useRef is also used to directly access DOM elements."
+  },
+  {
+    "question": "What are the two Rules of Hooks?",
+    "answer": "1) Only call Hooks at the top level (not inside if statements, loops, or nested functions). 2) Only call Hooks from React function components or custom Hooks."
   }
 ]

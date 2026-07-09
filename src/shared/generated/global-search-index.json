@@ -1407,8 +1407,44 @@
   },
   {
     "id": "flashcard:BE-V1-C1-T1-fc-1",
-    "title": "Flashcard: What is the main purpose of Introduction to Spring Boot?",
-    "description": "Topic: Introduction to Spring Boot. Answer preview: To solve problems related to Backend, Java, Spring Boot....",
+    "title": "Flashcard: What does @SpringBootApplication do?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: It's a convenience annotation combining @SpringBootConfiguration, @EnableAutoCon...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-2",
+    "title": "Flashcard: What is auto-configuration in Spring Boot?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: Spring Boot automatically configures beans based on the dependencies on your cla...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-3",
+    "title": "Flashcard: What is the difference between @Controller and @RestController?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: @Controller is used for web MVC apps returning HTML views. @RestController is a ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-4",
+    "title": "Flashcard: How does Spring Boot differ from traditional Spring Framework?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: Spring Framework requires extensive XML or Java configuration. Spring Boot provi...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1491,8 +1527,44 @@
   },
   {
     "id": "flashcard:DB-V1-C1-T1-fc-1",
-    "title": "Flashcard: What is the main purpose of SQL Basics?",
-    "description": "Topic: SQL Basics. Answer preview: Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples...",
+    "title": "Flashcard: What is the correct SQL syntax to get all rows from a 'products' table?",
+    "description": "Topic: SQL Basics. Answer preview: SELECT * FROM products;  The * means all columns....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-2",
+    "title": "Flashcard: What happens if you run UPDATE without a WHERE clause?",
+    "description": "Topic: SQL Basics. Answer preview: It updates ALL rows in the table! Always include a WHERE clause to target specif...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-3",
+    "title": "Flashcard: What does the LIKE operator with '%' wildcard do?",
+    "description": "Topic: SQL Basics. Answer preview: '%' matches any sequence of zero or more characters. 'name LIKE J%' matches anyt...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-4",
+    "title": "Flashcard: How do you check if a column value is NULL in SQL?",
+    "description": "Topic: SQL Basics. Answer preview: Use 'IS NULL' or 'IS NOT NULL'. You cannot use '= NULL' because NULL represents ...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1503,8 +1575,44 @@
   },
   {
     "id": "flashcard:DB-V1-C1-T2-fc-1",
-    "title": "Flashcard: What is the main purpose of SQL Joins?",
-    "description": "Topic: SQL Joins. Answer preview: Combine data from multiple tables using INNER JOIN, LEFT JOIN, RIGHT JOIN and mo...",
+    "title": "Flashcard: What does an INNER JOIN return?",
+    "description": "Topic: SQL Joins. Answer preview: Only the rows that have matching values in BOTH joined tables. Rows from either ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-2",
+    "title": "Flashcard: What is the difference between LEFT JOIN and INNER JOIN?",
+    "description": "Topic: SQL Joins. Answer preview: INNER JOIN returns only matched rows from both tables. LEFT JOIN returns ALL row...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-3",
+    "title": "Flashcard: How can you find all records in Table A that have NO match in Table B?",
+    "description": "Topic: SQL Joins. Answer preview: Use a LEFT JOIN and filter WHERE b.id IS NULL: SELECT * FROM A LEFT JOIN B ON A....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-4",
+    "title": "Flashcard: What is a CROSS JOIN?",
+    "description": "Topic: SQL Joins. Answer preview: A CROSS JOIN (Cartesian product) returns every possible combination of rows from...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1551,8 +1659,44 @@
   },
   {
     "id": "flashcard:FE-V1-C1-T1-fc-1",
-    "title": "Flashcard: What is the main purpose of CSS Fundamentals?",
-    "description": "Topic: CSS Fundamentals. Answer preview: To solve problems related to Frontend, CSS, Web Design....",
+    "title": "Flashcard: What are the four components of the CSS Box Model (from inside out)?",
+    "description": "Topic: CSS Fundamentals. Answer preview: Content → Padding → Border → Margin. Content is the actual element content, padd...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-2",
+    "title": "Flashcard: What does 'box-sizing: border-box' do?",
+    "description": "Topic: CSS Fundamentals. Answer preview: It makes the width and height properties include padding and border in their cal...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-3",
+    "title": "Flashcard: What is CSS specificity and how is it calculated?",
+    "description": "Topic: CSS Fundamentals. Answer preview: Specificity determines which CSS rule wins when multiple rules target the same e...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-4",
+    "title": "Flashcard: What is the difference between 'display: none' and 'visibility: hidden'?",
+    "description": "Topic: CSS Fundamentals. Answer preview: display: none removes the element from the layout entirely (no space taken). vis...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1623,8 +1767,44 @@
   },
   {
     "id": "flashcard:FE-V2-C1-T2-fc-1",
-    "title": "Flashcard: What is the main purpose of React Hooks?",
-    "description": "Topic: React Hooks. Answer preview: To solve problems related to Frontend, React, State Management....",
+    "title": "Flashcard: What does the dependency array in useEffect control?",
+    "description": "Topic: React Hooks. Answer preview: It controls when the effect re-runs. Empty array [] = run once on mount. Array w...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-2",
+    "title": "Flashcard: Why should you never mutate state directly in React?",
+    "description": "Topic: React Hooks. Answer preview: React tracks state changes through the setter function. Directly mutating state ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-3",
+    "title": "Flashcard: What is the difference between useRef and useState?",
+    "description": "Topic: React Hooks. Answer preview: useState triggers a re-render when changed. useRef stores a mutable value that p...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-4",
+    "title": "Flashcard: What are the two Rules of Hooks?",
+    "description": "Topic: React Hooks. Answer preview: 1) Only call Hooks at the top level (not inside if statements, loops, or nested ...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1671,8 +1851,44 @@
   },
   {
     "id": "flashcard:V1-C1-T4-fc-1",
-    "title": "Flashcard: What is the main purpose of Arrays in Java?",
-    "description": "Topic: Arrays in Java. Answer preview: Learn how to store and manipulate collections of elements using arrays....",
+    "title": "Flashcard: What is the index of the first element in a Java array?",
+    "description": "Topic: Arrays in Java. Answer preview: 0. Arrays in Java are zero-indexed, so the first element is at index 0 and the l...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-2",
+    "title": "Flashcard: What exception is thrown when you access an invalid array index?",
+    "description": "Topic: Arrays in Java. Answer preview: ArrayIndexOutOfBoundsException — thrown at runtime when accessing an index < 0 o...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-3",
+    "title": "Flashcard: How do you get the number of elements in a Java array?",
+    "description": "Topic: Arrays in Java. Answer preview: Using the .length property (not a method — no parentheses). Example: arr.length...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-4",
+    "title": "Flashcard: What are the default values for int[], String[], and boolean[] arrays?",
+    "description": "Topic: Arrays in Java. Answer preview: int[] defaults to 0, String[] defaults to null, boolean[] defaults to false....",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1683,8 +1899,44 @@
   },
   {
     "id": "flashcard:V1-C1-T2-fc-1",
-    "title": "Flashcard: What is the difference between while and do-while?",
-    "description": "Topic: Loops in Java. Answer preview: A while loop checks the condition before executing, whereas a do-while loop exec...",
+    "title": "Flashcard: What is the key difference between while and do-while loops?",
+    "description": "Topic: Loops in Java. Answer preview: A while loop checks the condition BEFORE executing the body (may never run). A d...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-2",
+    "title": "Flashcard: What does the 'continue' keyword do inside a loop?",
+    "description": "Topic: Loops in Java. Answer preview: It immediately skips the rest of the current iteration and jumps to the next ite...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-3",
+    "title": "Flashcard: What are the three parts of a for loop header?",
+    "description": "Topic: Loops in Java. Answer preview: 1) Initialization (runs once), 2) Condition (checked each iteration), 3) Update ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-4",
+    "title": "Flashcard: When would you choose a while loop over a for loop?",
+    "description": "Topic: Loops in Java. Answer preview: When the number of iterations is not known in advance, such as reading input unt...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1696,7 +1948,43 @@
   {
     "id": "flashcard:V1-C1-T3-fc-1",
     "title": "Flashcard: What is method overloading?",
-    "description": "Topic: Methods in Java. Answer preview: Having multiple methods with the same name but different parameters within the s...",
+    "description": "Topic: Methods in Java. Answer preview: Defining multiple methods with the same name but different parameter lists (type...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-2",
+    "title": "Flashcard: Is Java pass-by-value or pass-by-reference?",
+    "description": "Topic: Methods in Java. Answer preview: Always pass-by-value. For objects, a copy of the reference is passed — you can m...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-3",
+    "title": "Flashcard: What defines a method's signature in Java?",
+    "description": "Topic: Methods in Java. Answer preview: The method name plus the parameter types and their order. The return type is NOT...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-4",
+    "title": "Flashcard: What is the difference between method overloading and overriding?",
+    "description": "Topic: Methods in Java. Answer preview: Overloading: same class, same name, different params (compile-time). Overriding:...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1707,8 +1995,44 @@
   },
   {
     "id": "flashcard:V1-C1-T6-fc-1",
-    "title": "Flashcard: What is the main purpose of OOP Fundamentals?",
-    "description": "Topic: OOP Fundamentals. Answer preview: Understand Object-Oriented Programming: classes, objects, encapsulation, and con...",
+    "title": "Flashcard: What is encapsulation and how is it implemented in Java?",
+    "description": "Topic: OOP Fundamentals. Answer preview: Encapsulation is hiding an object's internal state and requiring all interaction...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-2",
+    "title": "Flashcard: What is the purpose of the 'this' keyword in Java?",
+    "description": "Topic: OOP Fundamentals. Answer preview: 'this' refers to the current object instance. It's used to resolve naming confli...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-3",
+    "title": "Flashcard: What happens if you don't define any constructor in a Java class?",
+    "description": "Topic: OOP Fundamentals. Answer preview: Java automatically provides a default no-argument constructor. However, if you d...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-4",
+    "title": "Flashcard: What is the difference between a class and an object?",
+    "description": "Topic: OOP Fundamentals. Answer preview: A class is a blueprint or template that defines fields and methods. An object is...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [
@@ -1719,8 +2043,44 @@
   },
   {
     "id": "flashcard:V1-C1-T5-fc-1",
-    "title": "Flashcard: What is the main purpose of Strings in Java?",
-    "description": "Topic: Strings in Java. Answer preview: Master Java String manipulation, String methods, and immutability....",
+    "title": "Flashcard: Why should you use .equals() instead of == to compare Strings?",
+    "description": "Topic: Strings in Java. Answer preview: == compares memory references (locations). .equals() compares the actual charact...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-2",
+    "title": "Flashcard: What is String immutability in Java?",
+    "description": "Topic: Strings in Java. Answer preview: Once a String object is created, its character sequence cannot be changed. Metho...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-3",
+    "title": "Flashcard: What is the String Pool?",
+    "description": "Topic: Strings in Java. Answer preview: A special memory area (part of the heap) where Java stores String literals. When...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-4",
+    "title": "Flashcard: When should you use StringBuilder instead of String concatenation?",
+    "description": "Topic: Strings in Java. Answer preview: When building strings inside loops. String concatenation in a loop is O(n²) beca...",
     "type": "flashcard",
     "difficulty": "Intermediate",
     "technology": [

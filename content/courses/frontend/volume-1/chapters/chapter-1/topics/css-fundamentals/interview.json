@@ -1,7 +1,10 @@
 [
   {
-    "id": "FE-V1-C1-T1-int1",
-    "question": "Explain CSS Fundamentals in an interview.",
-    "answer": "I would explain that Learn how to style web pages using CSS, covering selectors, colors, and the box model."
+    "question": "Explain the difference between relative, absolute, and fixed positioning.",
+    "answer": "Relative: element stays in normal flow, offset from its normal position. Absolute: removed from flow, positioned relative to the nearest non-static ancestor. Fixed: removed from flow, positioned relative to the browser viewport and doesn't scroll."
+  },
+  {
+    "question": "What is the difference between margin and padding?",
+    "answer": "Padding is inside the border — it's part of the element's clickable area and takes the background color. Margin is outside the border — it's transparent space between elements. Margins can collapse (two adjacent margins merge into the larger one). Padding never collapses."
   }
 ]

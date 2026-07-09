@@ -1,10 +1,18 @@
 [
   {
-    "id": "V1-C1-T2-fc-1",
-    "question": "What is the difference between while and do-while?",
-    "answer": "A while loop checks the condition before executing, whereas a do-while loop executes at least once before checking the condition.",
-    "tags": [
-      "Control Flow"
-    ]
+    "question": "What is the key difference between while and do-while loops?",
+    "answer": "A while loop checks the condition BEFORE executing the body (may never run). A do-while checks AFTER, so the body always runs at least once."
+  },
+  {
+    "question": "What does the 'continue' keyword do inside a loop?",
+    "answer": "It immediately skips the rest of the current iteration and jumps to the next iteration of the loop."
+  },
+  {
+    "question": "What are the three parts of a for loop header?",
+    "answer": "1) Initialization (runs once), 2) Condition (checked each iteration), 3) Update expression (runs after each body execution)."
+  },
+  {
+    "question": "When would you choose a while loop over a for loop?",
+    "answer": "When the number of iterations is not known in advance, such as reading input until the user types 'quit'."
   }
 ]

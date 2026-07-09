@@ -1,7 +1,10 @@
 [
   {
-    "id": "BE-V1-C1-T1-int1",
-    "question": "Explain Introduction to Spring Boot in an interview.",
-    "answer": "I would explain that Get started with Spring Boot, auto-configuration, and standalone Spring applications."
+    "question": "What is the difference between @Component, @Service, and @Repository?",
+    "answer": "All three are Spring stereotypes that register a class as a bean. @Component is generic. @Service marks business logic — semantically meaningful for readability. @Repository marks the data access layer and has an extra feature: it translates database-specific exceptions into Spring's DataAccessException hierarchy."
+  },
+  {
+    "question": "How does Spring Boot's auto-configuration work internally?",
+    "answer": "Spring Boot scans META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports in each starter JAR. Each listed class is a @Configuration class with @ConditionalOn... annotations — they only activate when certain conditions are met (e.g., a class is on the classpath, a property is set). This conditional loading is what makes auto-configuration non-invasive."
   }
 ]

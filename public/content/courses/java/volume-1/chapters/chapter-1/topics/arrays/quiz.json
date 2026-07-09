@@ -1,14 +1,24 @@
 [
   {
-    "id": "V1-C1-T4-q1",
-    "question": "Is Arrays in Java essential for a full-stack developer?",
+    "question": "What does 'int[] arr = new int[5]' create?",
     "options": [
-      "Yes, absolutely",
-      "No",
-      "Only for backend",
-      "Only for frontend"
+      "An array with values 1,2,3,4,5",
+      "An array of 5 zeros",
+      "A compile error",
+      "An array of 5 nulls"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "Learn how to store and manipulate collections of elements using arrays."
+    "answerIndex": 1,
+    "explanation": "When you create an int array with 'new int[5]', all elements are initialized to 0 by default."
+  },
+  {
+    "question": "Given arr = {10,20,30,40,50}, what is arr[arr.length - 1]?",
+    "options": [
+      "40",
+      "50",
+      "null",
+      "ArrayIndexOutOfBoundsException"
+    ],
+    "answerIndex": 1,
+    "explanation": "arr.length is 5, so arr.length - 1 is 4. arr[4] is the last element, which is 50."
   }
 ]

@@ -1,12 +1,18 @@
 [
   {
-    "id": "DB-V1-C1-T1-fc-1",
-    "question": "What is the main purpose of SQL Basics?",
-    "answer": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples.",
-    "tags": [
-      "Database",
-      "SQL",
-      "Relational DB"
-    ]
+    "question": "What is the correct SQL syntax to get all rows from a 'products' table?",
+    "answer": "SELECT * FROM products;  The * means all columns."
+  },
+  {
+    "question": "What happens if you run UPDATE without a WHERE clause?",
+    "answer": "It updates ALL rows in the table! Always include a WHERE clause to target specific rows."
+  },
+  {
+    "question": "What does the LIKE operator with '%' wildcard do?",
+    "answer": "'%' matches any sequence of zero or more characters. 'name LIKE J%' matches anything starting with J — Java, JavaScript, John, etc."
+  },
+  {
+    "question": "How do you check if a column value is NULL in SQL?",
+    "answer": "Use 'IS NULL' or 'IS NOT NULL'. You cannot use '= NULL' because NULL represents unknown — comparing anything to NULL using = always returns NULL (not true/false)."
   }
 ]

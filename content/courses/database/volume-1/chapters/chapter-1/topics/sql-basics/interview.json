@@ -1,7 +1,10 @@
 [
   {
-    "id": "DB-V1-C1-T1-int1",
-    "question": "Explain SQL Basics in your own words.",
-    "answer": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples."
+    "question": "What is the difference between DELETE, TRUNCATE, and DROP?",
+    "answer": "DELETE: removes specific rows with WHERE clause; can be rolled back; triggers fire; slow on large tables. TRUNCATE: removes all rows; faster (doesn't log individual rows); cannot be rolled back in some databases. DROP: removes the entire table structure AND data; irreversible."
+  },
+  {
+    "question": "What is SQL injection and how do you prevent it?",
+    "answer": "SQL injection is when a malicious user inputs SQL code as data (e.g., 'OR 1=1--' in a login field), causing unintended queries to run. Prevent it by using parameterized queries (prepared statements) instead of string concatenation to build SQL queries."
   }
 ]

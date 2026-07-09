@@ -1,12 +1,18 @@
 [
   {
-    "id": "FE-V1-C1-T1-fc-1",
-    "question": "What is the main purpose of CSS Fundamentals?",
-    "answer": "To solve problems related to Frontend, CSS, Web Design.",
-    "tags": [
-      "Frontend",
-      "CSS",
-      "Web Design"
-    ]
+    "question": "What are the four components of the CSS Box Model (from inside out)?",
+    "answer": "Content → Padding → Border → Margin. Content is the actual element content, padding is transparent space inside the border, border surrounds the padding, and margin is the transparent space outside the border."
+  },
+  {
+    "question": "What does 'box-sizing: border-box' do?",
+    "answer": "It makes the width and height properties include padding and border in their calculation. Without it, padding and border ADD to the specified width, which makes layout math confusing."
+  },
+  {
+    "question": "What is CSS specificity and how is it calculated?",
+    "answer": "Specificity determines which CSS rule wins when multiple rules target the same element. ID selectors (100) beat class selectors (10) which beat element selectors (1). Inline styles score 1000."
+  },
+  {
+    "question": "What is the difference between 'display: none' and 'visibility: hidden'?",
+    "answer": "display: none removes the element from the layout entirely (no space taken). visibility: hidden hides the element visually but it still occupies space in the layout."
   }
 ]

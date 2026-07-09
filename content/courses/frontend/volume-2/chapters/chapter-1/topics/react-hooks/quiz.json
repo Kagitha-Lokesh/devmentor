@@ -1,12 +1,24 @@
 [
   {
-    "id": "FE-V2-C1-T2-q1",
-    "question": "Is React Hooks important?",
+    "question": "What will useEffect(() => { fetchData(); }, []) do?",
     "options": [
-      "Yes",
-      "No"
+      "Run after every render",
+      "Run only once after the first render",
+      "Run before every render",
+      "Never run"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "It is very important."
+    "answerIndex": 1,
+    "explanation": "An empty dependency array [] means 'no dependencies changed' — so the effect only runs once after the initial mount, equivalent to componentDidMount in class components."
+  },
+  {
+    "question": "How should you update state when the new value depends on the old value?",
+    "options": [
+      "setState(state + 1)",
+      "setState(prev => prev + 1)",
+      "state = state + 1",
+      "setState({ value: state + 1 })"
+    ],
+    "answerIndex": 1,
+    "explanation": "Using the functional form setState(prev => prev + 1) ensures you always work with the latest state, especially in async situations or batched updates."
   }
 ]

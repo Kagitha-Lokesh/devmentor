@@ -1,7 +1,10 @@
 [
   {
-    "id": "V1-C1-T4-int1",
-    "question": "Explain Arrays in Java in your own words.",
-    "answer": "Learn how to store and manipulate collections of elements using arrays."
+    "question": "What is the difference between an array and an ArrayList?",
+    "answer": "Arrays have a fixed size set at creation and can store primitives. ArrayLists are dynamic (resize automatically) and can only store objects. Arrays use [] syntax, ArrayList uses .get() and .add()."
+  },
+  {
+    "question": "How is a 2D array stored in Java's memory?",
+    "answer": "A 2D array is an array of arrays. The outer array holds references to inner arrays, which hold the actual values. Each row is a separate object on the heap, so rows can technically have different lengths (jagged arrays)."
   }
 ]

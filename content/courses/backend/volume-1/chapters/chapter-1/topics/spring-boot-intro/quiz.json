@@ -1,12 +1,24 @@
 [
   {
-    "id": "BE-V1-C1-T1-q1",
-    "question": "Is Introduction to Spring Boot important?",
+    "question": "What does 'spring-boot-starter-web' provide?",
     "options": [
-      "Yes",
-      "No"
+      "Only Spring MVC",
+      "Embedded Tomcat, Spring MVC, and Jackson JSON support",
+      "JSP template support only",
+      "WebSocket support only"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "It is very important."
+    "answerIndex": 1,
+    "explanation": "The web starter bundles an embedded Tomcat server, Spring MVC for REST endpoints, and Jackson for JSON serialization/deserialization — everything you need for a REST API."
+  },
+  {
+    "question": "What port does Spring Boot use by default?",
+    "options": [
+      "3000",
+      "8000",
+      "8080",
+      "443"
+    ],
+    "answerIndex": 2,
+    "explanation": "Spring Boot starts on port 8080 by default. You can change it with 'server.port=9090' in application.properties."
   }
 ]

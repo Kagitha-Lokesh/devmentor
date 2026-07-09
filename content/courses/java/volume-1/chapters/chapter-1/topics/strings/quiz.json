@@ -1,14 +1,24 @@
 [
   {
-    "id": "V1-C1-T5-q1",
-    "question": "Is Strings in Java essential for a full-stack developer?",
+    "question": "What does the following print?\nString a = \"hello\";\nString b = new String(\"hello\");\nSystem.out.println(a == b);",
     "options": [
-      "Yes, absolutely",
-      "No",
-      "Only for backend",
-      "Only for frontend"
+      "true",
+      "false",
+      "Compile error",
+      "hello"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "Master Java String manipulation, String methods, and immutability."
+    "answerIndex": 1,
+    "explanation": "'a' points to the String pool. 'b = new String(...)' always creates a new heap object. They are at different memory addresses, so == returns false. Use .equals() to compare content."
+  },
+  {
+    "question": "What does String.split(\",\") return for input \"a,b,c\"?",
+    "options": [
+      "[\"a,b,c\"]",
+      "[\"a\", \"b\", \"c\"]",
+      "[\"a\",\",\",\"b\",\",\",\"c\"]",
+      "Compile error"
+    ],
+    "answerIndex": 1,
+    "explanation": "split() divides the string at each occurrence of the delimiter and returns a String array. \"a,b,c\".split(\",\") gives [\"a\", \"b\", \"c\"]."
   }
 ]

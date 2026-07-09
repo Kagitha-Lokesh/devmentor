@@ -1,14 +1,24 @@
 [
   {
-    "id": "V1-C1-T3-q1",
-    "question": "What is the return type of a method that does not return any value?",
+    "question": "Which of the following correctly overloads the method 'int add(int a, int b)'?",
     "options": [
-      "null",
-      "void",
-      "empty",
-      "none"
+      "double add(int a, int b)",
+      "int add(int x, int y)",
+      "int add(int a, int b, int c)",
+      "void add(int a, int b)"
     ],
-    "correctAnswerIndex": 1,
-    "explanation": "The 'void' keyword is used to indicate that the method does not return a value."
+    "answerIndex": 2,
+    "explanation": "Overloading requires a different parameter count or types. Only the three-parameter version qualifies. Changing only the return type or parameter names is not valid overloading."
+  },
+  {
+    "question": "What does void as a return type mean?",
+    "options": [
+      "The method returns zero",
+      "The method returns null",
+      "The method does not return any value",
+      "The method can return any type"
+    ],
+    "answerIndex": 2,
+    "explanation": "void means the method performs an action but does not produce a return value. You cannot assign the result of a void method."
   }
 ]

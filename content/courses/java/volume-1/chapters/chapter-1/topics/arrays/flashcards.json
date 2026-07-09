@@ -1,12 +1,18 @@
 [
   {
-    "id": "V1-C1-T4-fc-1",
-    "question": "What is the main purpose of Arrays in Java?",
-    "answer": "Learn how to store and manipulate collections of elements using arrays.",
-    "tags": [
-      "Java Core",
-      "Arrays",
-      "Data Structures"
-    ]
+    "question": "What is the index of the first element in a Java array?",
+    "answer": "0. Arrays in Java are zero-indexed, so the first element is at index 0 and the last is at index (length - 1)."
+  },
+  {
+    "question": "What exception is thrown when you access an invalid array index?",
+    "answer": "ArrayIndexOutOfBoundsException — thrown at runtime when accessing an index < 0 or >= array.length."
+  },
+  {
+    "question": "How do you get the number of elements in a Java array?",
+    "answer": "Using the .length property (not a method — no parentheses). Example: arr.length"
+  },
+  {
+    "question": "What are the default values for int[], String[], and boolean[] arrays?",
+    "answer": "int[] defaults to 0, String[] defaults to null, boolean[] defaults to false."
   }
 ]

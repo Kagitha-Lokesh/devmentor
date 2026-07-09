@@ -1,11 +1,18 @@
 [
   {
-    "id": "V1-C1-T6-fc-1",
-    "question": "What is the main purpose of OOP Fundamentals?",
-    "answer": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors.",
-    "tags": [
-      "Java Core",
-      "OOP"
-    ]
+    "question": "What is encapsulation and how is it implemented in Java?",
+    "answer": "Encapsulation is hiding an object's internal state and requiring all interaction to go through methods. In Java, it's implemented by making fields 'private' and providing 'public' getters and setters."
+  },
+  {
+    "question": "What is the purpose of the 'this' keyword in Java?",
+    "answer": "'this' refers to the current object instance. It's used to resolve naming conflicts between instance fields and constructor/method parameters, and to call other constructors in the same class (this())."
+  },
+  {
+    "question": "What happens if you don't define any constructor in a Java class?",
+    "answer": "Java automatically provides a default no-argument constructor. However, if you define any constructor yourself, the default one is no longer provided automatically."
+  },
+  {
+    "question": "What is the difference between a class and an object?",
+    "answer": "A class is a blueprint or template that defines fields and methods. An object is a concrete instance of that class created with the 'new' keyword, allocated on the Heap with its own copy of instance fields."
   }
 ]

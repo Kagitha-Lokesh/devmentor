@@ -1,14 +1,24 @@
 [
   {
-    "id": "V1-C1-T6-q1",
-    "question": "Is OOP Fundamentals essential for a full-stack developer?",
+    "question": "Which keyword is used to create an object from a class?",
     "options": [
-      "Yes, absolutely",
-      "No",
-      "Only for backend",
-      "Only for frontend"
+      "create",
+      "new",
+      "object",
+      "instance"
     ],
-    "correctAnswerIndex": 0,
-    "explanation": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors."
+    "answerIndex": 1,
+    "explanation": "'new' allocates memory on the heap and calls the constructor to initialize the object."
+  },
+  {
+    "question": "What is the main benefit of making a field 'private'?",
+    "options": [
+      "Faster execution",
+      "Less memory usage",
+      "Controlled access — prevents invalid state",
+      "Allows access from all classes"
+    ],
+    "answerIndex": 2,
+    "explanation": "Private fields can only be accessed via the class's own methods. This lets you add validation in setters and prevents other code from setting the field to an invalid value."
   }
 ]
