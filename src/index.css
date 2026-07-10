@@ -28,40 +28,62 @@
 
   * {
     @apply border-surface-border;
+    /* Prevent horizontal overflow globally */
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   html {
     @apply scroll-smooth;
+    /* Prevent horizontal scroll at root */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-surface text-text font-sans antialiased;
     min-height: 100dvh;
+    overflow-x: hidden;
+    /* Safe area support for notched phones */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   /* Scrollbar styling */
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
   ::-webkit-scrollbar-track { @apply bg-surface-secondary; }
   ::-webkit-scrollbar-thumb { @apply bg-surface-tertiary rounded-full; }
   ::-webkit-scrollbar-thumb:hover { @apply bg-slate-500; }
 
-  /* Focus rings */
+  /* Focus rings — accessible and visible */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-500;
   }
 
   /* Code blocks */
   pre, code { @apply font-mono; }
+
+  /* Prevent images from overflowing */
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Responsive base typography */
+  h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
+  h2 { font-size: clamp(1.25rem, 3vw, 1.875rem); }
+  h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
 }
 
 @layer components {
-  /* Button variants */
+  /* ── Button variants ── */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2.5
            bg-brand-600 hover:bg-brand-500 active:bg-brand-700
            text-white text-sm font-medium rounded-lg
            transition-all duration-150 cursor-pointer
-           disabled:opacity-50 disabled:cursor-not-allowed;
+           disabled:opacity-50 disabled:cursor-not-allowed
+           /* Minimum 44px touch target on mobile */
+           min-h-[44px] sm:min-h-[auto];
   }
 
   .btn-secondary {
@@ -69,19 +91,21 @@
            bg-surface-secondary hover:bg-surface-tertiary
            text-text text-sm font-medium rounded-lg border border-surface-border
            transition-all duration-150 cursor-pointer
-           disabled:opacity-50 disabled:cursor-not-allowed;
+           disabled:opacity-50 disabled:cursor-not-allowed
+           min-h-[44px] sm:min-h-[auto];
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-3 py-2
            hover:bg-surface-secondary text-text/80 hover:text-text
            text-sm font-medium rounded-lg
-           transition-all duration-150 cursor-pointer;
+           transition-all duration-150 cursor-pointer
+           min-h-[44px] sm:min-h-[auto];
   }
 
-  /* Card */
+  /* ── Card ── */
   .card {
-    @apply bg-surface-secondary border border-surface-border rounded-xl p-5;
+    @apply bg-surface-secondary border border-surface-border rounded-xl p-4 sm:p-5;
   }
 
   .card-hover {
@@ -89,16 +113,18 @@
            transition-all duration-200 cursor-pointer;
   }
 
-  /* Form inputs */
+  /* ── Form inputs ── */
   .input {
     @apply w-full px-3 py-2.5 bg-surface-secondary border border-surface-border
            rounded-lg text-text placeholder:text-text/45
            text-sm focus:outline-none focus:border-brand-500
-           transition-colors duration-150;
+           transition-colors duration-150
+           /* Minimum 44px height for touch targets */
+           min-h-[44px];
   }
 
   .input-error {
-    @apply input border-error;
+    @apply input border-red-500;
   }
 
   .label {
@@ -109,7 +135,7 @@
     @apply text-xs text-red-400 mt-1;
   }
 
-  /* Badges */
+  /* ── Badges ── */
   .badge {
     @apply inline-flex items-center gap-1 px-2 py-0.5
            text-xs font-medium rounded-full;
@@ -121,41 +147,72 @@
   .badge-error { @apply badge bg-red-950 text-red-300 border border-red-800; }
   .badge-xp { @apply badge bg-violet-950 text-violet-300 border border-violet-800; }
 
-  /* Sidebar nav item */
+  /* ── Sidebar nav item ── */
   .nav-item {
-    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
            text-text/60 hover:text-text hover:bg-surface-tertiary
-           transition-all duration-150 cursor-pointer;
+           transition-all duration-150 cursor-pointer
+           /* Touch-friendly tap targets */
+           min-h-[44px];
   }
 
   .nav-item-active {
     @apply nav-item text-brand-700 bg-brand-50 hover:bg-brand-100 dark:text-brand-300 dark:bg-brand-950 dark:hover:bg-brand-900;
   }
 
-  /* Skeleton loader */
+  /* ── Skeleton loader ── */
   .skeleton {
     @apply bg-surface-tertiary rounded animate-pulse;
   }
 
-  /* Difficulty chips */
+  /* ── Difficulty chips ── */
   .chip-easy    { @apply badge bg-green-950  text-green-300  border border-green-800; }
   .chip-medium  { @apply badge bg-amber-950  text-amber-300  border border-amber-800; }
   .chip-hard    { @apply badge bg-red-950    text-red-300    border border-red-800; }
   .chip-expert  { @apply badge bg-purple-950 text-purple-300 border border-purple-800; }
 
-  /* Mastery heatmap cells */
+  /* ── Mastery heatmap cells ── */
   .heatmap-not-started { @apply bg-surface-tertiary; }
   .heatmap-weak   { @apply bg-red-900/60  border border-red-700; }
   .heatmap-mid    { @apply bg-amber-900/60 border border-amber-700; }
   .heatmap-strong { @apply bg-green-900/60 border border-green-700; }
+
+  /* ── Responsive table wrapper ── */
+  .table-responsive {
+    @apply w-full overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0;
+  }
+
+  /* ── Mobile bottom sheet backdrop ── */
+  .bottom-sheet-backdrop {
+    @apply fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm;
+  }
+
+  /* ── Page container — consistent responsive padding ── */
+  .page-container {
+    @apply px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 max-w-7xl mx-auto;
+  }
 }
 
 @layer utilities {
-  /* Layout helpers */
+  /* ── Critical layout helpers ── */
+
+  /* Mobile: NO left margin (sidebar is a drawer overlay)
+     Desktop (lg+): shift content right to make room for sidebar */
   .content-area {
-    margin-left: var(--sidebar-width);
+    margin-left: 0;
     margin-top: var(--topbar-height);
     min-height: calc(100dvh - var(--topbar-height));
+    padding: 1rem;
+    /* Bottom padding for potential mobile nav bars */
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  @media (min-width: 1024px) {
+    .content-area {
+      margin-left: var(--sidebar-width);
+      padding: 2rem;
+      padding-bottom: 2rem;
+    }
   }
 
   .content-area-full {
@@ -163,7 +220,7 @@
     margin-top: var(--topbar-height);
   }
 
-  /* Text truncation */
+  /* ── Text truncation ── */
   .truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -171,7 +228,48 @@
     overflow: hidden;
   }
 
-  /* Transition presets */
+  .truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── Transition presets ── */
   .transition-smooth { @apply transition-all duration-200 ease-out; }
   .transition-fast   { @apply transition-all duration-150 ease-out; }
+
+  /* ── Prevent text overflow in tight containers ── */
+  .text-safe {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+  }
+
+  /* ── Topbar height on left for sidebar — only on large screens ── */
+  .lg-left-sidebar {
+    left: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .lg-left-sidebar {
+      left: var(--sidebar-width);
+    }
+  }
+
+  /* ── Reduce motion for accessibility ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── Safe area utilities ── */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
 }

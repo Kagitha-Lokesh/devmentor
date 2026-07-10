@@ -141,6 +141,9 @@ export default function CommandPalette({ isOpen, onClose }) {
     );
   };
 
+  // Detect mobile for bottom sheet layout
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -156,20 +159,39 @@ export default function CommandPalette({ isOpen, onClose }) {
             aria-hidden="true"
           />
 
-          {/* Palette Dialog */}
+          {/* ── Desktop: Centered modal | Mobile: Bottom sheet ── */}
           <motion.div
             role="dialog"
             aria-label="Command palette"
             aria-modal="true"
-            initial={{ opacity: 0, scale: 0.96, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="fixed inset-x-0 top-[10vh] z-[90] mx-auto w-full max-w-2xl px-4"
+            {...(isMobile
+              ? {
+                  initial: { y: '100%' },
+                  animate: { y: 0 },
+                  exit: { y: '100%' },
+                  transition: { type: 'spring', damping: 30, stiffness: 300 },
+                  className: 'fixed bottom-0 inset-x-0 z-[90] max-h-[85dvh] flex flex-col',
+                }
+              : {
+                  initial: { opacity: 0, scale: 0.96, y: -10 },
+                  animate: { opacity: 1, scale: 1, y: 0 },
+                  exit: { opacity: 0, scale: 0.95, y: -10 },
+                  transition: { duration: 0.15, ease: 'easeOut' },
+                  className: 'fixed inset-x-0 top-[10vh] z-[90] mx-auto w-full max-w-2xl px-4',
+                })}
           >
-            <div className="bg-surface-secondary border border-surface-border rounded-2xl shadow-2xl overflow-hidden">
+            <div className={`bg-surface-secondary border border-surface-border shadow-2xl overflow-hidden flex flex-col ${
+              isMobile ? 'rounded-t-2xl max-h-[85dvh]' : 'rounded-2xl'
+            }`}>
+              {/* Mobile drag handle */}
+              {isMobile && (
+                <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
+                  <div className="w-10 h-1 rounded-full bg-surface-tertiary" />
+                </div>
+              )}
+
               {/* Search Input */}
-              <div className="flex items-center gap-3 px-4 border-b border-surface-border">
+              <div className="flex items-center gap-3 px-4 border-b border-surface-border flex-shrink-0">
                 <Search className="h-5 w-5 text-text/40 flex-shrink-0" aria-hidden="true" />
                 <input
                   ref={inputRef}
@@ -178,7 +200,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                   value={query}
                   onChange={e => setQuery(e.target.value)}
                   placeholder="Search commands, pages, content..."
-                  className="flex-1 py-4 bg-transparent text-sm text-text placeholder-text/30 outline-none"
+                  className="flex-1 py-4 bg-transparent text-sm text-text placeholder-text/30 outline-none min-h-[44px]"
                   aria-label="Command palette search input"
                   aria-autocomplete="list"
                   aria-controls="command-palette-list"
@@ -187,15 +209,26 @@ export default function CommandPalette({ isOpen, onClose }) {
                 {query && (
                   <button
                     onClick={() => setQuery('')}
-                    className="p-1 rounded text-text/40 hover:text-text transition-colors"
+                    className="p-2 rounded text-text/40 hover:text-text transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label="Clear search"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 )}
-                <kbd className="hidden sm:flex items-center gap-1 text-[10px] text-text/30 font-mono bg-surface px-1.5 py-0.5 rounded border border-surface-border">
-                  Esc
-                </kbd>
+                {!isMobile && (
+                  <kbd className="hidden sm:flex items-center gap-1 text-[10px] text-text/30 font-mono bg-surface px-1.5 py-0.5 rounded border border-surface-border">
+                    Esc
+                  </kbd>
+                )}
+                {isMobile && (
+                  <button
+                    onClick={onClose}
+                    aria-label="Close"
+                    className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-surface-tertiary text-text/60"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                )}
               </div>
 
               {/* Results */}
@@ -203,7 +236,8 @@ export default function CommandPalette({ isOpen, onClose }) {
                 id="command-palette-list"
                 role="listbox"
                 ref={listRef}
-                className="max-h-[60vh] overflow-y-auto py-2"
+                className="overflow-y-auto py-2 flex-1"
+                style={{ maxHeight: isMobile ? '60dvh' : '60vh' }}
                 aria-label="Command palette results"
               >
                 {results.length === 0 ? (
@@ -238,7 +272,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                             aria-selected={isSelected}
                             onClick={() => executeItem(item)}
                             onMouseEnter={() => setSelected(idx)}
-                            className={`flex items-center gap-3 px-4 py-2.5 cursor-pointer transition-colors ${
+                            className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors min-h-[48px] ${
                               isSelected
                                 ? 'bg-brand-950/60 text-brand-300'
                                 : 'text-text/80 hover:bg-surface-tertiary/50'
@@ -261,10 +295,15 @@ export default function CommandPalette({ isOpen, onClose }) {
               </div>
 
               {/* Footer */}
-              <div className="px-4 py-2 border-t border-surface-border flex items-center justify-between">
+              <div className="px-4 py-2.5 border-t border-surface-border flex items-center justify-between flex-shrink-0">
                 <div className="flex items-center gap-3 text-[10px] text-text/30">
-                  <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↑↓</kbd> navigate</span>
-                  <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↵</kbd> open</span>
+                  {!isMobile && (
+                    <>
+                      <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↑↓</kbd> navigate</span>
+                      <span className="flex items-center gap-1"><kbd className="font-mono bg-surface px-1 py-0.5 rounded border border-surface-border">↵</kbd> open</span>
+                    </>
+                  )}
+                  {isMobile && <span>Tap to open</span>}
                 </div>
                 <span className="text-[10px] text-text/20">{results.length} results</span>
               </div>

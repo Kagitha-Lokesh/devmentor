@@ -66,12 +66,12 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4 py-12 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4 py-8 sm:py-12 relative overflow-hidden">
       {/* Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-900/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-violet-900/20 rounded-full blur-[120px]" />
 
-      <div className="w-full max-w-md bg-slate-900/80 backdrop-blur-md border border-slate-800 p-8 rounded-2xl shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-slate-900/80 backdrop-blur-md border border-slate-800 p-5 sm:p-8 rounded-2xl shadow-2xl relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex p-3 bg-brand-950 border border-brand-800 rounded-xl mb-4 text-brand-400">
             <Sparkles className="h-6 w-6 animate-pulse" />

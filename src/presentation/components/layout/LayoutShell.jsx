@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Topbar from './Topbar';
 import CommandPalette from '../common/CommandPalette';
@@ -8,6 +8,7 @@ export default function LayoutShell() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleSidebar = useCallback(() => {
     setIsSidebarOpen(v => !v);
@@ -15,6 +16,11 @@ export default function LayoutShell() {
 
   const openPalette = useCallback(() => setIsPaletteOpen(true), []);
   const closePalette = useCallback(() => setIsPaletteOpen(false), []);
+
+  // Close sidebar on route change (mobile nav)
+  useEffect(() => {
+    setIsSidebarOpen(false);
+  }, [location.pathname]);
 
   // Global keyboard shortcuts
   useEffect(() => {
@@ -54,7 +60,7 @@ export default function LayoutShell() {
   }, [navigate, toggleSidebar]);
 
   return (
-    <div className="min-h-screen bg-surface text-text">
+    <div className="min-h-screen bg-surface text-text overflow-x-hidden">
       <Sidebar
         isOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
@@ -62,9 +68,9 @@ export default function LayoutShell() {
       />
       <Topbar toggleSidebar={toggleSidebar} onOpenCommandPalette={openPalette} />
 
-      {/* Main Content Area */}
-      <main className="content-area p-6 lg:p-8 transition-all duration-300">
-        <div className="max-w-7xl mx-auto animate-fade-in">
+      {/* Main Content Area — pushes right only on lg+ via CSS */}
+      <main className="content-area">
+        <div className="max-w-7xl mx-auto w-full animate-fade-in">
           <Outlet />
         </div>
       </main>
