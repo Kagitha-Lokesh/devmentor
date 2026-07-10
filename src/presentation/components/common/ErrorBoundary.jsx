@@ -25,8 +25,8 @@ export class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6 text-slate-100 font-sans">
-          <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden">
+        <div className="min-h-screen bg-surface flex items-center justify-center p-6 text-primary font-sans">
+          <div className="max-w-md w-full bg-surface border border-default rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden">
             <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-red-950/15 rounded-full blur-[80px]" />
             
             <div className="relative z-10">
@@ -34,13 +34,13 @@ export class ErrorBoundary extends React.Component {
                 <AlertOctagon className="h-8 w-8" />
               </div>
 
-              <h1 className="text-2xl font-bold tracking-tight text-white mb-2">Something went wrong</h1>
-              <p className="text-sm text-slate-400 max-w-sm mx-auto mb-6">
+              <h1 className="text-2xl font-bold tracking-tight text-primary mb-2">Something went wrong</h1>
+              <p className="text-sm text-muted max-w-sm mx-auto mb-6">
                 An unexpected application error has crashed this screen. Our engineering logs have been notified.
               </p>
 
               {this.state.error && (
-                <pre className="text-[10px] text-left bg-slate-950 border border-slate-850 p-4 rounded-lg text-red-300 overflow-x-auto max-h-36 mb-6 font-mono">
+                <pre className="text-[10px] text-left bg-surface border border-default p-4 rounded-lg text-red-300 overflow-x-auto max-h-36 mb-6 font-mono">
                   <code>
                     {this.state.error.name}: {this.state.error.message}
                   </code>

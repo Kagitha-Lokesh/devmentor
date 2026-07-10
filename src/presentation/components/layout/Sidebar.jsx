@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
@@ -19,7 +19,8 @@ import {
   Download,
   Upload,
   Zap,
-  Command
+  Command,
+  ChevronDown
 } from 'lucide-react';
 import { useAuthStore } from '../../store/useAuthStore';
 import { useUserStore } from '../../store/useUserStore';
@@ -28,6 +29,7 @@ export default function Sidebar({ isOpen, toggleSidebar, onOpenCommandPalette })
   const { signOut } = useAuthStore();
   const { profile } = useUserStore();
   const sidebarRef = useRef(null);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   const coreItems = [
     { name: 'Dashboard', path: '/', icon: LayoutDashboard },
@@ -120,7 +122,7 @@ export default function Sidebar({ isOpen, toggleSidebar, onOpenCommandPalette })
       {/* ── Mobile Backdrop Overlay ── */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm lg:hidden"
+          className="fixed inset-0 z-40 bg-surface/60 backdrop-blur-sm lg:hidden"
           onClick={toggleSidebar}
           aria-hidden="true"
         />
@@ -145,7 +147,7 @@ export default function Sidebar({ isOpen, toggleSidebar, onOpenCommandPalette })
                 <GraduationCap className="h-5 w-5" aria-hidden="true" />
               </div>
               <span className="font-extrabold text-xl tracking-tight text-text flex items-center gap-1">
-                DevMentor
+                JavaMentor
                 <span className="text-brand-400 text-xs px-1.5 py-0.5 rounded bg-brand-950 border border-brand-800 font-normal">
                   AI
                 </span>
@@ -231,39 +233,50 @@ export default function Sidebar({ isOpen, toggleSidebar, onOpenCommandPalette })
           </nav>
         </div>
 
-        {/* ── Bottom: Command Palette + User ── */}
+        {/* ── Bottom: User Profile + Expandable Options ── */}
         <div className="p-3 border-t border-surface-border bg-surface/20 space-y-2 flex-shrink-0">
-          {/* Command Palette Shortcut */}
-          <button
-            onClick={() => { onOpenCommandPalette(); closeSidebarOnMobile(); }}
-            aria-label="Open command palette"
-            className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-xs font-medium text-text/40 hover:text-text hover:bg-surface-tertiary/60 transition-colors group min-h-[44px]"
-          >
-            <Command className="h-4 w-4 flex-shrink-0" />
-            Command Palette
-            <kbd className="ml-auto text-[10px] font-mono px-1.5 py-0.5 rounded border border-surface-border bg-surface group-hover:border-brand-800 group-hover:text-brand-400 transition-colors hidden sm:block">
-              Ctrl K
-            </kbd>
-          </button>
+          {/* Expandable Menu Items */}
+          {isUserMenuOpen && (
+            <div className="space-y-1 animate-slide-up mb-2">
+              {/* Command Palette Shortcut */}
+              <button
+                onClick={() => { onOpenCommandPalette(); closeSidebarOnMobile(); }}
+                aria-label="Open command palette"
+                className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-text/40 hover:text-text hover:bg-surface-tertiary/60 transition-colors group min-h-[40px] cursor-pointer"
+              >
+                <Command className="h-4 w-4 text-text/30 group-hover:text-text/50 transition-colors flex-shrink-0" />
+                Command Palette
+                <kbd className="ml-auto text-[10px] font-mono px-1.5 py-0.5 rounded border border-surface-border bg-surface group-hover:border-brand-850 group-hover:text-brand-400 transition-colors hidden sm:block">
+                  Ctrl K
+                </kbd>
+              </button>
 
-          {/* User Profile */}
-          <div className="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-surface/50 border border-surface-border">
-            <div className="h-8 w-8 rounded-full bg-brand-950 border border-brand-800 text-brand-400 font-bold text-sm flex items-center justify-center flex-shrink-0">
+              {/* Sign Out */}
+              <button
+                onClick={() => { signOut(); closeSidebarOnMobile(); }}
+                className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-semibold text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 hover:bg-red-500/10 transition-all duration-150 cursor-pointer min-h-[40px]"
+              >
+                <LogOut className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
+                Sign Out
+              </button>
+            </div>
+          )}
+
+          {/* User Profile Trigger */}
+          <button
+            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+            aria-expanded={isUserMenuOpen}
+            aria-label="Toggle user actions"
+            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-surface/50 border border-surface-border hover:bg-surface/85 transition-colors text-left focus:outline-none focus:ring-1 focus:ring-brand-500 cursor-pointer"
+          >
+            <div className="h-8 w-8 rounded-full bg-brand-950 border border-brand-800 text-brand-400 font-black text-sm flex items-center justify-center flex-shrink-0">
               {profile?.email?.[0]?.toUpperCase() || 'U'}
             </div>
             <div className="overflow-hidden flex-1 min-w-0">
               <p className="text-xs font-semibold text-text truncate">{profile?.displayName || 'Learner'}</p>
               <p className="text-[10px] text-text/50 truncate">{profile?.email}</p>
             </div>
-          </div>
-
-          {/* Sign Out */}
-          <button
-            onClick={() => signOut()}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 hover:bg-red-500/10 transition-all duration-150 cursor-pointer min-h-[44px]"
-          >
-            <LogOut className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
-            Sign Out
+            <ChevronDown className={`h-4 w-4 text-text/30 transition-transform duration-200 flex-shrink-0 ${isUserMenuOpen ? 'rotate-180' : ''}`} />
           </button>
         </div>
       </aside>

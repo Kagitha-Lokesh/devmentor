@@ -1,5 +1,5 @@
 {
-  "name": "devmentor-ai",
+  "name": "javamentor",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "prebuild": "node scripts/generate-content-registry.js",
     "dev": "vite",
     "build": "vite build",
-    "lint": "oxlint",
+    "lint": "oxlint && node scripts/theme-linter.cjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",

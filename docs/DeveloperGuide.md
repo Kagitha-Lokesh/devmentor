@@ -1,4 +1,4 @@
-# DevMentor AI — Developer Setup & Workflow Guide
+# JavaMentor — Developer Setup & Workflow Guide
 
 ## 1. Project Requirements
 - **Node.js**: v20 or higher

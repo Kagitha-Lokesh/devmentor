@@ -1,4 +1,4 @@
-# DevMentor AI — Product Release Roadmap
+# JavaMentor — Product Release Roadmap
 
 ## v1.0.0 — Stable Production Release (Active)
 - Complete Clean Architecture specifications validation.

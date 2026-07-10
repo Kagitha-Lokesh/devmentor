@@ -35,7 +35,7 @@ export class RuleBasedAssistantProvider extends IAssistantProvider {
   // ─── Response Generators ─────────────────────────────────────────────────
 
   _getHelpResponse() {
-    return `### DevMentor AI Assistant Capabilities (Rule-Based Mode)
+    return `### JavaMentor Assistant Capabilities (Rule-Based Mode)
 
 I am running in **100% offline, rule-based mode**. Here is what I can help you with deterministically:
 

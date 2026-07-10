@@ -62,10 +62,10 @@ const queryClient = new QueryClient({
 // Loading fallback spinner
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+    <div className="min-h-screen bg-surface flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
-        <div className="h-8 w-8 border-4 border-slate-800 border-t-brand-500 rounded-full animate-spin" />
-        <p className="text-xs text-slate-500 font-semibold tracking-wider uppercase">Loading DevMentor...</p>
+        <div className="h-8 w-8 border-4 border-default border-t-brand-500 rounded-full animate-spin" />
+        <p className="text-xs text-muted font-semibold tracking-wider uppercase">Loading JavaMentor...</p>
       </div>
     </div>
   );

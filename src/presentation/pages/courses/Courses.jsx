@@ -226,7 +226,7 @@ export default function Courses() {
 
                             <button
                               aria-label={`Start learning ${topic.title}`}
-                              className="h-8 w-8 rounded-full bg-surface border border-surface-border text-brand-500 dark:text-brand-300 flex items-center justify-center group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-white transition-colors cursor-pointer shrink-0"
+                              className="h-8 w-8 rounded-full bg-surface border border-surface-border text-brand-500 dark:text-brand-300 flex items-center justify-center group-hover:bg-brand-600 group-hover:border-brand-600 group-hover:text-primary transition-colors cursor-pointer shrink-0"
                             >
                               <Play className="h-3.5 w-3.5 fill-current" />
                             </button>

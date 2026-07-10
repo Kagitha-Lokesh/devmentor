@@ -36,7 +36,7 @@ function NoteEditor({ note, onSave, onClose }) {
   };
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface/70 backdrop-blur-sm"
       onClick={handleSave}>
       <motion.div initial={{ scale: 0.97, y: 8 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.97 }}
         onClick={e => e.stopPropagation()}
@@ -45,7 +45,7 @@ function NoteEditor({ note, onSave, onClose }) {
           <StickyNote className="h-4 w-4 text-brand-400" />
           <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Note title..."
             className="flex-1 bg-transparent text-sm font-semibold text-text placeholder-text/30 outline-none" />
-          <button onClick={handleSave} className="p-1.5 bg-brand-700 hover:bg-brand-600 text-white rounded-lg transition-colors">
+          <button onClick={handleSave} className="p-1.5 bg-brand-700 hover:bg-brand-600 text-primary rounded-lg transition-colors">
             <Check className="h-4 w-4" />
           </button>
           <button onClick={onClose} className="p-1.5 text-text/40 hover:text-text transition-colors"><X className="h-4 w-4" /></button>
@@ -156,7 +156,7 @@ export default function NotesPage() {
           <p className="text-sm text-text/50 mt-0.5">Personal markdown notes and text highlights from your lessons.</p>
         </div>
         <button onClick={() => setIsCreating(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-brand-900/30">
+          className="flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-primary text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-brand-900/30">
           <Plus className="h-4 w-4" /> New Note
         </button>
       </div>
@@ -166,13 +166,13 @@ export default function NotesPage() {
         <div className="flex items-center bg-surface-secondary border border-surface-border rounded-xl p-1 gap-1">
           <button onClick={() => setActiveTab('notes')}
             className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
-              activeTab === 'notes' ? 'bg-brand-700 text-white' : 'text-text/50 hover:text-text'
+              activeTab === 'notes' ? 'bg-brand-700 text-primary' : 'text-text/50 hover:text-text'
             }`}>
             <StickyNote className="h-3.5 w-3.5" /> Notes ({allNotes.length})
           </button>
           <button onClick={() => setActiveTab('highlights')}
             className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all ${
-              activeTab === 'highlights' ? 'bg-brand-700 text-white' : 'text-text/50 hover:text-text'
+              activeTab === 'highlights' ? 'bg-brand-700 text-primary' : 'text-text/50 hover:text-text'
             }`}>
             <Highlighter className="h-3.5 w-3.5" /> Highlights ({allHighlights.length})
           </button>

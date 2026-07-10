@@ -1,4 +1,4 @@
-# DevMentor AI — API & Storage Schema Documentation
+# JavaMentor — API & Storage Schema Documentation
 
 ## 1. Domain Repository Contracts
 
@@ -18,7 +18,7 @@
 ---
 
 ## 2. Local IndexedDB Schema
-IndexedDB data is stored under the `DevMentorAI_LocalDB` database (v7):
+IndexedDB data is stored under the `JavaMentorAI_LocalDB` database (v7):
 
 | Object Store | Key Format | Description |
 | ------------ | ---------- | ----------- |

@@ -21,9 +21,9 @@ export function Button({
   const baseStyle = "inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-150 ease-out cursor-pointer select-none active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 min-h-[44px] sm:min-h-[auto]";
   
   const variants = {
-    primary: "bg-brand-600 hover:bg-brand-500 active:bg-brand-700 text-white shadow-sm",
+    primary: "bg-brand-600 hover:bg-brand-500 active:bg-brand-700 text-primary shadow-sm",
     secondary: "bg-surface hover:bg-surface-secondary active:bg-surface-tertiary text-text border border-surface-border",
-    danger: "bg-red-600 hover:bg-red-500 active:bg-red-700 text-white shadow-sm",
+    danger: "bg-red-600 hover:bg-red-500 active:bg-red-700 text-primary shadow-sm",
     ghost: "hover:bg-surface-secondary active:bg-surface-tertiary text-text/85 hover:text-text",
     outline: "bg-transparent hover:bg-surface-secondary text-text border border-surface-border",
     icon: "p-2 hover:bg-surface-secondary text-text/80 hover:text-text rounded-lg min-h-[44px]"

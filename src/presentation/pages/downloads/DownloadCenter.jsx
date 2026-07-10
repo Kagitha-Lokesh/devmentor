@@ -58,7 +58,7 @@ function AssetCard({ asset, isDownloaded, onDownload, isDownloading }) {
             ? 'bg-surface border-surface-border text-text/30 cursor-wait'
             : isDownloaded
               ? 'bg-surface-tertiary border-surface-border text-text/70 hover:bg-brand-950 hover:text-brand-400 hover:border-brand-800'
-              : 'bg-brand-700 hover:bg-brand-600 border-brand-700 text-white shadow-sm shadow-brand-900/40'
+              : 'bg-brand-700 hover:bg-brand-600 border-brand-700 text-primary shadow-sm shadow-brand-900/40'
         }`}>
         <Download className="h-4 w-4" />
         {isDownloading ? 'Downloading...' : isDownloaded ? 'Download Again' : 'Download'}

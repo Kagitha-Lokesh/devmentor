@@ -1,4 +1,4 @@
-# DevMentor AI — Content Pipeline & Sync Engine
+# JavaMentor — Content Pipeline & Sync Engine
 
 This guide details static index registries, the prebuild pipeline, and the synchronization engine.
 

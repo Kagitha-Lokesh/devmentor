@@ -1,7 +1,7 @@
-# DevMentor AI — Portfolio Case Study & Product Showcase
+# JavaMentor — Portfolio Case Study & Product Showcase
 
 ## 1. Executive Summary
-DevMentor AI is an enterprise-scale full-stack developer training platform. It replaces generic tutorials with Socratic learning pathways, active sandboxed code compilers, mock technical interviews, and systematic retention tooling.
+JavaMentor is an enterprise-scale full-stack developer training platform. It replaces generic tutorials with Socratic learning pathways, active sandboxed code compilers, mock technical interviews, and systematic retention tooling.
 
 ---
 

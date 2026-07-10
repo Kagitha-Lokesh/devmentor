@@ -1,6 +1,6 @@
 class AuthSyncManager {
   constructor() {
-    this.channelName = 'devmentor_auth_sync';
+    this.channelName = 'javamentor_auth_sync';
     this.channel = typeof window !== 'undefined' && 'BroadcastChannel' in window
       ? new BroadcastChannel(this.channelName)
       : null;
@@ -20,7 +20,7 @@ class AuthSyncManager {
 
     // 2. Fallback to LocalStorage 'storage' event for older browsers
     window.addEventListener('storage', (event) => {
-      if (event.key === 'devmentor_auth_trigger' && event.newValue) {
+      if (event.key === 'javamentor_auth_trigger' && event.newValue) {
         try {
           const data = JSON.parse(event.newValue);
           this._handleSyncEvent(data);
@@ -46,7 +46,7 @@ class AuthSyncManager {
     
     // Write to localStorage for cross-tab sync fallback
     try {
-      localStorage.setItem('devmentor_auth_trigger', JSON.stringify(eventData));
+      localStorage.setItem('javamentor_auth_trigger', JSON.stringify(eventData));
     } catch {}
   }
 

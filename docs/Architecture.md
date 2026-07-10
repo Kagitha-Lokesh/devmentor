@@ -1,7 +1,7 @@
-# DevMentor AI — System Architecture & Core Concepts
+# JavaMentor — System Architecture & Core Concepts
 
 ## 1. Clean Architecture Overview
-DevMentor AI is built upon Clean Architecture principles, separating business domains from visual interfaces and backend providers:
+JavaMentor is built upon Clean Architecture principles, separating business domains from visual interfaces and backend providers:
 
 - **Domain Layer (`/src/domain`)**: Contains enterprise models, schemas, and repository interfaces. It depends on nothing else.
 - **Application Layer (`/src/application`)**: Houses workflow-specific use cases. Calls domain models and coordinates repository transactions.

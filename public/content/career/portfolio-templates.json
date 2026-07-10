@@ -27,7 +27,7 @@
     "sections": [
       {
         "name": "Welcome Command",
-        "content": "$ devmentor-ai --skills\n- Java full stack, React, Docker, Spring Boot"
+        "content": "$ javamentor --skills\n- Java full stack, React, Docker, Spring Boot"
       }
     ]
   }

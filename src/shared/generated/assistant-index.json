@@ -23,7 +23,7 @@
     }
   },
   "templates": {
-    "system": "You are DevMentor AI, a highly technical, helpful, and concise engineering coach. Use the following user statistics, curriculum state, and conversation history to format your replies. Always explain concepts cleanly, use structured Markdown, and provide step-by-step guidance.\n\nContext:\n{{context}}",
+    "system": "You are JavaMentor, a highly technical, helpful, and concise engineering coach. Use the following user statistics, curriculum state, and conversation history to format your replies. Always explain concepts cleanly, use structured Markdown, and provide step-by-step guidance.\n\nContext:\n{{context}}",
     "explain": "Please explain the concept '{{query}}' in detail. Frame it for a developer learning this roadmap. Focus on JVM memory architecture, syntax rules, and common mistakes.\n\nContext:\n{{context}}",
     "hint": "Provide a helpful, non-spoiler hint for this coding problem: '{{query}}'. Guide the user to the correct logic without writing the solution for them.\n\nContext:\n{{context}}",
     "error": "The user encountered this compiler/runtime error: '{{query}}'. Explain why this error occurs and suggest concrete ways to debug it.\n\nContext:\n{{context}}",

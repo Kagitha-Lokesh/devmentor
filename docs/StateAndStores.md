@@ -1,4 +1,4 @@
-# DevMentor AI — State & Dependency Injection Manual
+# JavaMentor — State & Dependency Injection Manual
 
 This guide documents the Zustand stores, state actions, persistence rules, and the Dependency Injection configuration.
 

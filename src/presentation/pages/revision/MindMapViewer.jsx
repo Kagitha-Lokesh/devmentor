@@ -305,12 +305,12 @@ function MindMapCanvas({ nodes }) {
   }
 
   return (
-    <div className="relative w-full rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl" style={{ height: '620px' }}>
+    <div className="relative w-full rounded-2xl overflow-hidden bg-surface border border-default shadow-2xl" style={{ height: '620px' }}>
       {/* Toolbar */}
       <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
         <button
           onClick={() => setZoom((z) => Math.min(2.5, z + 0.15))}
-          className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shadow"
+          className="p-2 bg-surface border border-default rounded-lg text-muted hover:text-primary hover:bg-surface-secondary transition-colors cursor-pointer shadow"
           title="Zoom In"
           aria-label="Zoom In"
         >
@@ -318,7 +318,7 @@ function MindMapCanvas({ nodes }) {
         </button>
         <button
           onClick={() => setZoom((z) => Math.max(0.3, z - 0.15))}
-          className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shadow"
+          className="p-2 bg-surface border border-default rounded-lg text-muted hover:text-primary hover:bg-surface-secondary transition-colors cursor-pointer shadow"
           title="Zoom Out"
           aria-label="Zoom Out"
         >
@@ -326,7 +326,7 @@ function MindMapCanvas({ nodes }) {
         </button>
         <button
           onClick={resetView}
-          className="p-2 bg-slate-900 border border-slate-800 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shadow"
+          className="p-2 bg-surface border border-default rounded-lg text-muted hover:text-primary hover:bg-surface-secondary transition-colors cursor-pointer shadow"
           title="Reset View"
           aria-label="Reset View"
         >
@@ -335,12 +335,12 @@ function MindMapCanvas({ nodes }) {
       </div>
 
       {/* Zoom indicator */}
-      <div className="absolute bottom-4 right-4 z-10 text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+      <div className="absolute bottom-4 right-4 z-10 text-[10px] font-bold text-muted uppercase tracking-wider">
         {Math.round(zoom * 100)}%
       </div>
 
       {/* Instructions */}
-      <div className="absolute bottom-4 left-4 z-10 text-[10px] text-slate-600 font-medium">
+      <div className="absolute bottom-4 left-4 z-10 text-[10px] text-secondary font-medium">
         Drag to pan · Scroll to zoom · Click nodes to expand/collapse
       </div>
 
@@ -429,15 +429,15 @@ export default function MindMapViewer() {
       <div className="max-w-5xl mx-auto pb-12">
         <button
           onClick={() => navigate('/revision')}
-          className="flex items-center gap-1 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider mb-6 cursor-pointer"
+          className="flex items-center gap-1 text-xs font-bold text-muted hover:text-primary uppercase tracking-wider mb-6 cursor-pointer"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Dashboard
         </button>
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center space-y-4">
-          <Network className="h-10 w-10 text-slate-500 mx-auto" />
-          <h3 className="text-lg font-bold text-white">No Mind Map Available</h3>
-          <p className="text-xs text-slate-400 max-w-xs mx-auto">
+        <div className="bg-surface border border-default rounded-2xl p-12 text-center space-y-4">
+          <Network className="h-10 w-10 text-muted mx-auto" />
+          <h3 className="text-lg font-bold text-primary">No Mind Map Available</h3>
+          <p className="text-xs text-muted max-w-xs mx-auto">
             This topic does not have a mind map configured yet.
           </p>
         </div>
@@ -448,21 +448,21 @@ export default function MindMapViewer() {
   return (
     <div className="max-w-6xl mx-auto space-y-6 pb-12">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-default pb-4">
         <div className="space-y-1">
           <button
             onClick={() => navigate('/revision')}
-            className="flex items-center gap-1 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-colors cursor-pointer"
+            className="flex items-center gap-1 text-xs font-bold text-muted hover:text-primary uppercase tracking-wider transition-colors cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Dashboard
           </button>
-          <h1 className="text-2xl font-extrabold text-white flex items-center gap-2">
+          <h1 className="text-2xl font-extrabold text-primary flex items-center gap-2">
             <Network className="h-6 w-6 text-brand-400" />
             {mindMap.title}
           </h1>
         </div>
-        <div className="flex gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+        <div className="flex gap-2 text-[10px] text-muted font-bold uppercase tracking-wider">
           <span>{mindMap.nodes.length} Nodes</span>
           <span>·</span>
           <span>{mindMap.nodes.filter((n) => !n.parentId).length} Root</span>
@@ -475,9 +475,9 @@ export default function MindMapViewer() {
           { label: 'Root', color: 'bg-indigo-500' },
           { label: 'Level 1', color: 'bg-sky-500' },
           { label: 'Level 2', color: 'bg-emerald-500' },
-          { label: 'Leaf', color: 'bg-slate-500' },
+          { label: 'Leaf', color: 'bg-surface-tertiary' },
         ].map(({ label, color }) => (
-          <div key={label} className="flex items-center gap-1.5 text-slate-400">
+          <div key={label} className="flex items-center gap-1.5 text-muted">
             <div className={`w-2.5 h-2.5 rounded-sm ${color}`} />
             {label}
           </div>
@@ -493,8 +493,8 @@ export default function MindMapViewer() {
 function MindMapViewerSkeleton() {
   return (
     <div className="max-w-6xl mx-auto space-y-6 pb-12 animate-pulse">
-      <div className="h-10 border-b border-slate-800/40" />
-      <div className="bg-slate-900/50 border border-slate-800/40 rounded-2xl" style={{ height: '620px' }} />
+      <div className="h-10 border-b border-default/40" />
+      <div className="bg-surface/50 border border-default/40 rounded-2xl" style={{ height: '620px' }} />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('DevMentor AI Enterprise E2E Suite', () => {
+test.describe('JavaMentor Enterprise E2E Suite', () => {
   test('should load landing page and support searching', async ({ page }) => {
     // Navigate to page
     await page.goto('/');
     
     // Check main title
-    await expect(page).toHaveTitle(/DevMentor AI/);
+    await expect(page).toHaveTitle(/JavaMentor/);
   });
 
   test('should trigger command palette shortcut', async ({ page }) => {

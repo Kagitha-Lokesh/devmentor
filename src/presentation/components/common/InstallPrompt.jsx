@@ -49,7 +49,7 @@ export default function InstallPrompt() {
 
   return (
     <div 
-      className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-slate-900 border border-slate-800 rounded-xl p-5 shadow-2xl animate-slide-up flex gap-4 text-slate-100 font-sans"
+      className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-surface border border-default rounded-xl p-5 shadow-2xl animate-slide-up flex gap-4 text-primary font-sans"
       role="dialog"
       aria-label="PWA install prompt"
     >
@@ -58,8 +58,8 @@ export default function InstallPrompt() {
       </div>
       
       <div className="flex-1">
-        <h3 className="text-sm font-bold text-white">Install DevMentor</h3>
-        <p className="text-xs text-slate-400 mt-1 mb-4 leading-relaxed">
+        <h3 className="text-sm font-bold text-primary">Install JavaMentor</h3>
+        <p className="text-xs text-muted mt-1 mb-4 leading-relaxed">
           Install our app on your device for fast offline access, notification alerts, and full screen sandbox compiling.
         </p>
         
@@ -82,7 +82,7 @@ export default function InstallPrompt() {
       <button
         onClick={handleDismiss}
         aria-label="Dismiss banner"
-        className="absolute top-3 right-3 text-slate-500 hover:text-slate-400 cursor-pointer"
+        className="absolute top-3 right-3 text-muted hover:text-muted cursor-pointer"
       >
         <X className="h-4 w-4" />
       </button>

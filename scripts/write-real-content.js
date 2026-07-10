@@ -650,7 +650,7 @@ System.out.println("Vowels: " + count); // 3
 
 ## Example 2: Reverse a string using StringBuilder
 \`\`\`java
-String original = "DevMentor";
+String original = "JavaMentor";
 String reversed = new StringBuilder(original).reverse().toString();
 System.out.println(reversed); // rotneMyeD
 \`\`\`

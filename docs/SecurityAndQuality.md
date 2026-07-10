@@ -1,4 +1,4 @@
-# DevMentor AI — Security & Quality Specifications
+# JavaMentor — Security & Quality Specifications
 
 This document maps out user privacy isolation boundaries, DOMPurify sanitizer configurations, WCAG 2.1 AA targets, and testing coverage structures.
 

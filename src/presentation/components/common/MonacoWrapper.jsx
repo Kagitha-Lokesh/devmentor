@@ -29,9 +29,9 @@ export function MonacoWrapper({
   };
 
   return (
-    <div className="w-full h-full min-h-[300px] relative bg-slate-950 flex items-center justify-center">
+    <div className="w-full h-full min-h-[300px] relative bg-surface flex items-center justify-center">
       <Suspense fallback={
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-950/80 z-10">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-surface/80 z-10">
           <Spinner size="lg" />
           <span className="text-xs text-text/40 font-mono tracking-wider">Initialising workspace compiler...</span>
         </div>

@@ -395,7 +395,7 @@ export default function Compiler() {
 
   return (
     <div className={`flex flex-col h-[calc(100vh-var(--topbar-height)-2rem)] text-text ${
-      isFullscreen ? 'fixed inset-0 z-50 bg-slate-950 p-4 h-screen' : ''
+      isFullscreen ? 'fixed inset-0 z-50 bg-surface p-4 h-screen' : ''
     }`}>
       {/* Top Controls Toolbar */}
       <div className="flex flex-col sm:flex-row justify-between items-center bg-surface-secondary border border-surface-border p-3 rounded-t-xl gap-3">
@@ -621,7 +621,7 @@ export default function Compiler() {
                     isDiff={true}
                     originalValue={diffOriginalCode}
                     value={code}
-                    theme={theme === 'dark' ? 'vs-dark' : 'light'}
+                    theme={theme === 'dark' ? 'vs-dark' : 'vs'}
                     language={selectedLang}
                     options={{
                       originalEditable: false,
@@ -713,7 +713,7 @@ export default function Compiler() {
               value={code}
               onChange={handleEditorChange}
               fontSize={fontSize}
-              theme={theme === 'dark' ? 'vs-dark' : 'light'}
+              theme={theme === 'dark' ? 'vs-dark' : 'vs'}
               onMount={(editor) => {
                 editorRef.current = editor;
               }}
@@ -756,24 +756,24 @@ export default function Compiler() {
             </div>
 
             {/* Scrollable console terminal wrapper */}
-            <div className="flex-1 p-4 bg-slate-950 text-slate-300 font-mono text-xs overflow-y-auto leading-relaxed">
+            <div className="flex-1 p-4 bg-surface text-primary font-mono text-xs overflow-y-auto leading-relaxed">
               {consoleTab === 'output' && (
                 isExecuting ? (
-                  <div className="flex items-center gap-2 text-slate-500">
-                    <span className="h-3.5 w-3.5 border-2 border-slate-700 border-t-brand-500 rounded-full animate-spin" />
+                  <div className="flex items-center gap-2 text-muted">
+                    <span className="h-3.5 w-3.5 border-2 border-default border-t-brand-500 rounded-full animate-spin" />
                     Executing code in Piston API Sandbox...
                   </div>
                 ) : compileOutput || stdout || stderr ? (
                   <div className="space-y-3">
                     {compileOutput && (
-                      <div className="border-b border-slate-900 pb-2">
+                      <div className="border-b border-default pb-2">
                         <span className="text-red-400 font-semibold block uppercase text-[10px] tracking-wider mb-1">Compilation Log</span>
                         <pre className="whitespace-pre-wrap text-red-300">{compileOutput}</pre>
                       </div>
                     )}
                     {stdout && (
                       <div>
-                        <span className="text-slate-500 font-semibold block uppercase text-[10px] tracking-wider mb-1">Standard Output</span>
+                        <span className="text-muted font-semibold block uppercase text-[10px] tracking-wider mb-1">Standard Output</span>
                         <pre className="whitespace-pre-wrap">{stdout}</pre>
                       </div>
                     )}
@@ -784,13 +784,13 @@ export default function Compiler() {
                       </div>
                     )}
                     {metrics && (
-                      <div className="pt-2 border-t border-slate-900 text-[10px] text-slate-500 flex gap-4">
+                      <div className="pt-2 border-t border-default text-[10px] text-muted flex gap-4">
                         <span>Runtime: {metrics.runtime}ms</span>
                       </div>
                     )}
                   </div>
                 ) : (
-                  <span className="text-slate-600">No console outputs. Trigger run to execute code.</span>
+                  <span className="text-secondary">No console outputs. Trigger run to execute code.</span>
                 )
               )}
 
@@ -799,14 +799,14 @@ export default function Compiler() {
                   value={stdin}
                   onChange={(e) => setStdin(e.target.value)}
                   placeholder="Type inputs here to feed into standard stdin..."
-                  className="w-full h-full bg-transparent border-none outline-none resize-none text-slate-300 placeholder:text-slate-700 focus:ring-0 font-mono text-xs"
+                  className="w-full h-full bg-transparent border-none outline-none resize-none text-primary placeholder:text-secondary focus:ring-0 font-mono text-xs"
                 />
               )}
 
               {consoleTab === 'tests' && (
                 isExecuting ? (
-                  <div className="flex items-center gap-2 text-slate-500">
-                    <span className="h-3.5 w-3.5 border-2 border-slate-700 border-t-brand-500 rounded-full animate-spin" />
+                  <div className="flex items-center gap-2 text-muted">
+                    <span className="h-3.5 w-3.5 border-2 border-default border-t-brand-500 rounded-full animate-spin" />
                     Evaluating solution against test assertions...
                   </div>
                 ) : testCaseResults.length > 0 ? (
@@ -823,9 +823,9 @@ export default function Compiler() {
                     )}
                     
                     {testCaseResults.map((res) => (
-                      <div key={res.id} className="border border-slate-900 p-3 rounded-lg space-y-2 bg-slate-950/30">
+                      <div key={res.id} className="border border-default p-3 rounded-lg space-y-2 bg-surface/30">
                         <div className="flex justify-between items-center">
-                          <span className="font-bold text-slate-200">{res.name}</span>
+                          <span className="font-bold text-primary">{res.name}</span>
                           <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                             res.passed ? 'bg-green-950/50 text-green-400' : 'bg-red-950/50 text-red-400'
                           }`}>
@@ -834,16 +834,16 @@ export default function Compiler() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 pt-1.5 text-[10px]">
                           <div>
-                            <span className="text-slate-500 block">Input:</span>
-                            <span className="text-slate-300 whitespace-pre">{res.input}</span>
+                            <span className="text-muted block">Input:</span>
+                            <span className="text-primary whitespace-pre">{res.input}</span>
                           </div>
                           <div>
-                            <span className="text-slate-500 block">Expected:</span>
-                            <span className="text-slate-300 whitespace-pre">{res.expected}</span>
+                            <span className="text-muted block">Expected:</span>
+                            <span className="text-primary whitespace-pre">{res.expected}</span>
                           </div>
                           <div>
-                            <span className="text-slate-500 block">Actual:</span>
-                            <span className={`whitespace-pre ${res.passed ? 'text-slate-300' : 'text-red-400'}`}>
+                            <span className="text-muted block">Actual:</span>
+                            <span className={`whitespace-pre ${res.passed ? 'text-primary' : 'text-red-400'}`}>
                               {res.actual}
                             </span>
                           </div>
@@ -852,7 +852,7 @@ export default function Compiler() {
                     ))}
                   </div>
                 ) : (
-                  <span className="text-slate-600">No test results. Trigger Practice Check to verify correctness.</span>
+                  <span className="text-secondary">No test results. Trigger Practice Check to verify correctness.</span>
                 )
               )}
             </div>

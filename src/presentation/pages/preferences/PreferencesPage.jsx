@@ -86,7 +86,7 @@ function Toggle({ checked, onChange, label }) {
       }`}
     >
       <span
-        className={`inline-block h-3.5 w-3.5 transform rounded-full bg-white shadow-sm transition-transform ${
+        className={`inline-block h-3.5 w-3.5 transform rounded-full bg-background shadow-sm transition-transform ${
           checked ? 'translate-x-[18px]' : 'translate-x-[2px]'
         }`}
       />
@@ -274,11 +274,11 @@ export default function PreferencesPage() {
       )}
 
       {/* ── Section 1: Account ── */}
-      <SectionCard icon={User} title="Account" subtitle="Your account identity on DevMentor AI">
+      <SectionCard icon={User} title="Account" subtitle="Your account identity on JavaMentor">
         {/* Avatar */}
         <div className="flex items-center gap-4">
           <div className="relative">
-            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center text-white text-xl font-extrabold select-none shadow-lg">
+            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-brand-600 to-violet-600 flex items-center justify-center text-primary text-xl font-extrabold select-none shadow-lg">
               {profile?.photoURL
                 ? <img src={profile.photoURL} alt="avatar" className="h-16 w-16 rounded-2xl object-cover" />
                 : profileInitials
@@ -412,11 +412,11 @@ export default function PreferencesPage() {
       <button
         onClick={handleSave}
         disabled={saving}
-        className="w-full flex items-center justify-center gap-2 py-3 bg-brand-600 hover:bg-brand-500 disabled:bg-brand-900 disabled:text-brand-600 text-white font-semibold rounded-xl transition-all shadow-lg shadow-brand-900/30 hover:shadow-brand-700/30 hover:translate-y-[-1px] active:translate-y-[1px]"
+        className="w-full flex items-center justify-center gap-2 py-3 bg-brand-600 hover:bg-brand-500 disabled:bg-brand-900 disabled:text-brand-600 text-primary font-semibold rounded-xl transition-all shadow-lg shadow-brand-900/30 hover:shadow-brand-700/30 hover:translate-y-[-1px] active:translate-y-[1px]"
       >
         {saving ? (
           <>
-            <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            <span className="h-4 w-4 border-2 border-default/30 border-t-white rounded-full animate-spin" />
             Saving...
           </>
         ) : (

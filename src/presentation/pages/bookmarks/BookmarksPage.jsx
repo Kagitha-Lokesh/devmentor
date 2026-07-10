@@ -132,11 +132,11 @@ export default function BookmarksPage() {
         </div>
         <div className="flex items-center gap-2 bg-surface-secondary border border-surface-border rounded-xl p-1">
           <button onClick={() => setViewMode('grid')} aria-label="Grid view"
-            className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-brand-700 text-white' : 'text-text/40 hover:text-text'}`}>
+            className={`p-2 rounded-lg transition-all ${viewMode === 'grid' ? 'bg-brand-700 text-primary' : 'text-text/40 hover:text-text'}`}>
             <Grid3x3 className="h-4 w-4" />
           </button>
           <button onClick={() => setViewMode('list')} aria-label="List view"
-            className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-brand-700 text-white' : 'text-text/40 hover:text-text'}`}>
+            className={`p-2 rounded-lg transition-all ${viewMode === 'list' ? 'bg-brand-700 text-primary' : 'text-text/40 hover:text-text'}`}>
             <List className="h-4 w-4" />
           </button>
         </div>

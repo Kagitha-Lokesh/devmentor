@@ -1,6 +1,6 @@
 class LocalDatabase {
   constructor() {
-    this.dbName = 'DevMentorAI_LocalDB';
+    this.dbName = 'JavaMentorAI_LocalDB';
     this.dbVersion = 7;
     this.db = null;
   }

@@ -10,6 +10,21 @@ const PUBLIC_CONTENT_DIR = path.resolve(__dirname, '../public/content');
 const GENERATED_DIR = path.resolve(__dirname, '../public/generated');
 const SHARED_GENERATED_DIR = path.resolve(__dirname, '../src/shared/generated');
 
+// ── Load Curriculum Manifest (single source of truth) ─────────────────────
+const MANIFEST_PATH = path.resolve(__dirname, '../src/shared/config/curriculum-manifest.json');
+if (!fs.existsSync(MANIFEST_PATH)) {
+  console.error('[ValidationError] Missing curriculum-manifest.json — cannot build curriculum index.');
+  process.exit(1);
+}
+const CURRICULUM_MANIFEST = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'));
+
+// Build lookup: moduleId → module definition (for validation)
+const MANIFEST_MODULES = new Map(
+  (CURRICULUM_MANIFEST.modules || []).map(m => [m.id, m])
+);
+// Build lookup: courseId → moduleId (from manifest idPrefix → module)
+const VALID_MODULE_IDS = new Set(MANIFEST_MODULES.keys());
+
 // Ensure target directories exist
 if (!fs.existsSync(GENERATED_DIR)) {
   fs.mkdirSync(GENERATED_DIR, { recursive: true });
@@ -319,6 +334,23 @@ function buildRegistry() {
 
                   chapterNode.topics.push(topicNode);
 
+                  // ── Curriculum Structure Validation ──────────────────────
+                  const requiredCurriculumFields = ['courseId', 'moduleId', 'volumeOrder', 'chapterOrder', 'topicOrder'];
+                  for (const field of requiredCurriculumFields) {
+                    if (topicMeta[field] === undefined || topicMeta[field] === null) {
+                      console.error(`[ValidationError] Topic "${topicMeta.id}" (${topicMeta.slug}) is missing required curriculum field: "${field}". Run: node scripts/patch-topic-metadata.js`);
+                      process.exit(1);
+                    }
+                  }
+                  if (!VALID_MODULE_IDS.has(topicMeta.moduleId)) {
+                    console.error(`[ValidationError] Topic "${topicMeta.id}" has moduleId "${topicMeta.moduleId}" which does not exist in curriculum-manifest.json`);
+                    process.exit(1);
+                  }
+                  if (typeof topicMeta.volumeOrder !== 'number' || typeof topicMeta.chapterOrder !== 'number' || typeof topicMeta.topicOrder !== 'number') {
+                    console.error(`[ValidationError] Topic "${topicMeta.id}" volumeOrder/chapterOrder/topicOrder must be integers`);
+                    process.exit(1);
+                  }
+
                   // Graph Node metadata mapping
                   graphNodes.push({
                     id: topicMeta.id,
@@ -326,6 +358,13 @@ function buildRegistry() {
                     title: topicMeta.title,
                     description: topicMeta.description,
                     difficulty: topicMeta.difficulty,
+                    // Explicit curriculum structure — no tag-based routing
+                    courseId:     topicMeta.courseId,
+                    moduleId:     topicMeta.moduleId,
+                    volumeOrder:  topicMeta.volumeOrder,
+                    chapterOrder: topicMeta.chapterOrder,
+                    topicOrder:   topicMeta.topicOrder,
+                    // Legacy fields (backward compat)
                     volume: volNum,
                     chapter: chapFolder,
                     prerequisites: topicMeta.prerequisites || [],
@@ -364,7 +403,7 @@ function buildRegistry() {
     });
   }
 
-  // 2. Validate Knowledge Graph Links
+  // 2. Validate Knowledge Graph Links + Duplicate Order Check
   console.log('[Content Builder] Validating knowledge graph dependencies...');
   const allTopicIds = new Set(graphNodes.map(n => n.id));
 
@@ -385,6 +424,73 @@ function buildRegistry() {
       }
     });
   });
+
+  // Validate no duplicate (moduleId, volumeOrder, chapterOrder, topicOrder) combinations
+  const orderKeySet = new Set();
+  graphNodes.forEach(node => {
+    const key = `${node.moduleId}:${node.volumeOrder}:${node.chapterOrder}:${node.topicOrder}`;
+    if (orderKeySet.has(key)) {
+      console.error(`[ValidationError] Duplicate topic order position: "${key}" — both "${node.id}" and another topic occupy the same slot`);
+      process.exit(1);
+    }
+    orderKeySet.add(key);
+  });
+
+  // Validate no duplicate slugs
+  const slugSet = new Set();
+  graphNodes.forEach(node => {
+    if (slugSet.has(node.slug)) {
+      console.error(`[ValidationError] Duplicate topic slug detected: "${node.slug}" in topic "${node.id}"`);
+      process.exit(1);
+    }
+    slugSet.add(node.slug);
+  });
+
+  // ── Build canonical curriculum-index.json ─────────────────────────────────
+  console.log('[Content Builder] Building curriculum-index.json...');
+
+  // Sort graphNodes by manifest module order → volumeOrder → chapterOrder → topicOrder
+  const moduleOrderMap = new Map(
+    (CURRICULUM_MANIFEST.modules || []).map(m => [m.id, m.order])
+  );
+
+  const sortedForIndex = [...graphNodes].sort((a, b) => {
+    const ma = moduleOrderMap.get(a.moduleId) ?? 999;
+    const mb = moduleOrderMap.get(b.moduleId) ?? 999;
+    if (ma !== mb) return ma - mb;
+    if (a.volumeOrder !== b.volumeOrder) return a.volumeOrder - b.volumeOrder;
+    if (a.chapterOrder !== b.chapterOrder) return a.chapterOrder - b.chapterOrder;
+    return a.topicOrder - b.topicOrder;
+  });
+
+  const orderedTopicIds = sortedForIndex.map(n => n.id);
+
+  // Build moduleIndex slice map
+  const moduleIndexMap = {};
+  let sliceStart = 0;
+  for (const mod of (CURRICULUM_MANIFEST.modules || [])) {
+    const modTopics = sortedForIndex.filter(n => n.moduleId === mod.id);
+    if (modTopics.length > 0) {
+      moduleIndexMap[mod.id] = {
+        order: mod.order,
+        startIndex: sliceStart,
+        count: modTopics.length,
+        courseId: mod.courseId
+      };
+      sliceStart += modTopics.length;
+    }
+  }
+
+  const curriculumIndex = {
+    schemaVersion: CURRICULUM_MANIFEST.schemaVersion || 1,
+    curriculumVersion: CURRICULUM_MANIFEST.curriculumVersion || '2026.1',
+    generatedAt: new Date().toISOString(),
+    totalTopics: orderedTopicIds.length,
+    orderedTopicIds,
+    moduleIndex: moduleIndexMap
+  };
+
+  console.log(`[Content Builder] Curriculum index built: ${orderedTopicIds.length} topics across ${Object.keys(moduleIndexMap).length} modules`);
 
   // 3. Process & Validate Coding Problems
   console.log('[Content Builder] Validating coding problems...');
@@ -821,6 +927,14 @@ function buildRegistry() {
   fs.writeFileSync(path.join(GENERATED_DIR, 'revision-index.json'), JSON.stringify(revisionIndex, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'revision-config.json'), JSON.stringify(revisionConfig, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'revision-manifest.json'), JSON.stringify(revisionManifest, null, 2), 'utf-8');
+
+  // ── Curriculum Index — canonical ordered topic list ──────────────────────
+  fs.writeFileSync(path.join(GENERATED_DIR, 'curriculum-index.json'), JSON.stringify(curriculumIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SHARED_GENERATED_DIR, 'curriculum-index.json'), JSON.stringify(curriculumIndex, null, 2), 'utf-8');
+  console.log(`[Content Builder] ✓ curriculum-index.json written (${orderedTopicIds.length} topics)`);
+
+  // Also write updated knowledge-graph.json to shared/generated for CourseGraph
+  fs.writeFileSync(path.join(SHARED_GENERATED_DIR, 'knowledge-graph.json'), JSON.stringify(graphNodes, null, 2), 'utf-8');
 
   // Assistant Specific Writes
   fs.writeFileSync(path.join(GENERATED_DIR, 'assistant-index.json'), JSON.stringify(assistantIndex, null, 2), 'utf-8');

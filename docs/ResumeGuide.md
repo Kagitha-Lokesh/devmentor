@@ -1,4 +1,4 @@
-# DevMentor AI — Resume & Career Guide
+# JavaMentor — Resume & Career Guide
 
 ## 1. ATS-Optimized Project Bullet Points
 Add these high-impact descriptions to your professional software developer resume:
@@ -11,7 +11,7 @@ Add these high-impact descriptions to your professional software developer resum
 ---
 
 ## 2. LinkedIn Project Description
-> **DevMentor AI — Full-Stack Developer Platform (Enterprise SaaS Project)**
+> **JavaMentor — Full-Stack Developer Platform (Enterprise SaaS Project)**
 > 
 > Engineered a comprehensive full-stack training platform featuring interactive learning paths, mock company-track interview simulators, and custom sandboxed code execution modules.
 >

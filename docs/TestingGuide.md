@@ -1,4 +1,4 @@
-# DevMentor AI — Testing Guide
+# JavaMentor — Testing Guide
 
 ## 1. Unit & Integration Testing (Vitest)
 Unit tests check core stores, use cases, sync queues, and database key formats:

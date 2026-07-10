@@ -1,4 +1,4 @@
-# DevMentor AI — Workspace Structure & System Flow Diagrams
+# JavaMentor — Workspace Structure & System Flow Diagrams
 
 This guide documents the folder layout, user authentication flows, and data interaction sequence loops.
 

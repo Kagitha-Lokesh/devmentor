@@ -1,4 +1,4 @@
-# DevMentor AI — Production Deployment Guide
+# JavaMentor — Production Deployment Guide
 
 ## 1. Firebase Hosting Setup
 

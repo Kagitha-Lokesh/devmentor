@@ -17,8 +17,8 @@ export class MockFirebaseAuthService extends IAuthService {
   constructor() {
     super();
     this.listeners = [];
-    this.sessionKey = 'devmentor_mock_session';
-    this.usersKey = 'devmentor_mock_users';
+    this.sessionKey = 'javamentor_mock_session';
+    this.usersKey = 'javamentor_mock_users';
     
     // Restore current session
     const saved = localStorage.getItem(this.sessionKey);
@@ -132,7 +132,7 @@ export class MockFirebaseAuthService extends IAuthService {
   async signInWithGoogle() {
     this.currentUser = {
       uid: 'google-mock-uid-123',
-      email: 'google.student@devmentor.ai',
+      email: 'google.student@javamentor.ai',
       displayName: 'Google Learner',
       emailVerified: true,
       photoURL: null
@@ -144,7 +144,7 @@ export class MockFirebaseAuthService extends IAuthService {
   async signInWithGithub() {
     this.currentUser = {
       uid: 'github-mock-uid-456',
-      email: 'github.student@devmentor.ai',
+      email: 'github.student@javamentor.ai',
       displayName: 'GitHub Developer',
       emailVerified: true,
       photoURL: null

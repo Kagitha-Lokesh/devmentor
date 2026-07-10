@@ -2,7 +2,7 @@
 
 ## Milestone 1: Core Models
 - Implement `Book`, `Member` and `BorrowRecord` domain classes
-- Setup package structures: `com.devmentor.library.model`, `com.devmentor.library.service`, `com.devmentor.library.exception`
+- Setup package structures: `com.javamentor.library.model`, `com.javamentor.library.service`, `com.javamentor.library.exception`
 
 ## Milestone 2: Catalogue Management
 - Implement BookCatalogueService with CRUD HashMap storage

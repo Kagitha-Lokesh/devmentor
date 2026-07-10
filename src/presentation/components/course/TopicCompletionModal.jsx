@@ -68,7 +68,7 @@ export function TopicCompletionModal({
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-background/70 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -176,7 +176,7 @@ export function TopicCompletionModal({
         {/* CTA */}
         <button
           onClick={handleNext}
-          className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600 active:scale-95 transition-all shadow-lg shadow-brand-500/25"
+          className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-brand-500 text-primary font-bold hover:bg-brand-600 active:scale-95 transition-all shadow-lg shadow-brand-500/25"
         >
           {nextTopic ? 'Continue →' : 'Back to Roadmap'}
           <ArrowRight className="h-4 w-4" />

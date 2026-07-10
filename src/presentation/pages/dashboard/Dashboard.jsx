@@ -770,7 +770,7 @@ export default function Dashboard() {
                 let colorClass = 'bg-surface';
                 if (day.count > 0 && day.count <= 2) colorClass = 'bg-brand-950 text-brand-500 border border-brand-900';
                 else if (day.count > 2 && day.count <= 4) colorClass = 'bg-brand-900/60 text-brand-300';
-                else if (day.count > 4) colorClass = 'bg-brand-500 text-slate-950';
+                else if (day.count > 4) colorClass = 'bg-brand-500 text-primary';
 
                 return (
                   <div

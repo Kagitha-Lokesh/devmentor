@@ -16,8 +16,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'DevMentor — Java Full Stack Learning Platform',
-        short_name: 'DevMentor',
+        name: 'JavaMentor — Java Full Stack Learning Platform',
+        short_name: 'JavaMentor',
         description: 'Zero-to-hired Java Full Stack learning platform with adaptive curriculum, live compiler, mock interviews, and spaced revision.',
         theme_color: '#0f172a',
         background_color: '#0f172a',

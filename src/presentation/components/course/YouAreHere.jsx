@@ -60,7 +60,7 @@ export function YouAreHere({ modules = {}, currentModuleKey = null }) {
               {/* Current position dot */}
               {isActive && completion > 0 && (
                 <div
-                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-brand-500 border-2 border-white dark:border-surface shadow-lg animate-pulse"
+                  className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-brand-500 border-2 border-default dark:border-surface shadow-lg animate-pulse"
                   style={{ left: `calc(${completion}% - 7px)` }}
                 />
               )}

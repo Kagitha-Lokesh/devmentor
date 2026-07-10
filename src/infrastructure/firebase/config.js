@@ -6,7 +6,7 @@ import { getStorage, connectStorageEmulator } from 'firebase/storage';
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "AIzaSyDummyKeyFormatForFirebaseEmulators",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "mock-auth-domain",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "devmentor-ai-mock",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "javamentor-mock",
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "mock-storage-bucket",
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "mock-sender-id",
   appId: import.meta.env.VITE_FIREBASE_APP_ID || "mock-app-id"

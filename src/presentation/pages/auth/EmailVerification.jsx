@@ -60,18 +60,18 @@ export default function EmailVerification() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6 text-slate-100 font-sans relative overflow-hidden">
+    <div className="min-h-screen bg-surface flex items-center justify-center p-6 text-primary font-sans relative overflow-hidden">
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-900/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-violet-900/20 rounded-full blur-[120px]" />
 
-      <div className="max-w-md w-full bg-slate-900/80 backdrop-blur-md border border-slate-800 p-8 rounded-2xl shadow-2xl relative z-10 text-center">
+      <div className="max-w-md w-full bg-surface/80 backdrop-blur-md border border-default p-8 rounded-2xl shadow-2xl relative z-10 text-center">
         <div className="h-16 w-16 bg-brand-950 border border-brand-800 text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
           <Mail className="h-8 w-8 animate-pulse" />
         </div>
 
-        <h1 className="text-2xl font-bold tracking-tight text-white mb-2">Verify Your Email</h1>
-        <p className="text-sm text-slate-400 max-w-sm mx-auto mb-6">
-          We sent a verification link to <span className="font-semibold text-brand-400">{user?.email}</span>. Click the link inside to activate your DevMentor account.
+        <h1 className="text-2xl font-bold tracking-tight text-primary mb-2">Verify Your Email</h1>
+        <p className="text-sm text-muted max-w-sm mx-auto mb-6">
+          We sent a verification link to <span className="font-semibold text-brand-400">{user?.email}</span>. Click the link inside to activate your JavaMentor account.
         </p>
 
         {successMsg && (

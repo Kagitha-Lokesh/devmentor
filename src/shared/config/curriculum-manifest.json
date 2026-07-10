@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "curriculumVersion": "2026.1",
+  "lastUpdated": "2026-07-10",
+  "journeyTitle": "Full Stack Java Developer",
+  "modules": [
+    {
+      "id": "java",
+      "title": "Java Core & Advanced",
+      "order": 1,
+      "courseId": "java",
+      "idPrefix": "V",
+      "color": "#f59e0b",
+      "icon": "Code2",
+      "volumes": [
+        {
+          "id": "volume-1",
+          "title": "Java Fundamentals",
+          "order": 1,
+          "chapters": [
+            { "id": "chapter-1", "title": "Core Syntax", "order": 1 },
+            { "id": "chapter-2", "title": "Object-Oriented Programming", "order": 2 },
+            { "id": "chapter-3", "title": "Advanced Java", "order": 3 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "title": "React & Frontend",
+      "order": 2,
+      "courseId": "frontend",
+      "idPrefix": "FE",
+      "color": "#06b6d4",
+      "icon": "Layout",
+      "volumes": [
+        {
+          "id": "volume-1",
+          "title": "HTML, CSS & JavaScript",
+          "order": 1,
+          "chapters": [
+            { "id": "chapter-1", "title": "CSS Fundamentals", "order": 1 },
+            { "id": "chapter-2", "title": "JavaScript Essentials", "order": 2 }
+          ]
+        },
+        {
+          "id": "volume-2",
+          "title": "React Development",
+          "order": 2,
+          "chapters": [
+            { "id": "chapter-1", "title": "React Core", "order": 1 },
+            { "id": "chapter-2", "title": "Advanced React", "order": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sql",
+      "title": "SQL & Databases",
+      "order": 3,
+      "courseId": "database",
+      "idPrefix": "DB",
+      "color": "#3b82f6",
+      "icon": "Database",
+      "volumes": [
+        {
+          "id": "volume-1",
+          "title": "Relational Databases",
+          "order": 1,
+          "chapters": [
+            { "id": "chapter-1", "title": "SQL Fundamentals", "order": 1 },
+            { "id": "chapter-2", "title": "Database Design", "order": 2 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Spring Boot & Backend",
+      "order": 4,
+      "courseId": "backend",
+      "idPrefix": "BE",
+      "color": "#22c55e",
+      "icon": "Server",
+      "volumes": [
+        {
+          "id": "volume-1",
+          "title": "Spring Boot Fundamentals",
+          "order": 1,
+          "chapters": [
+            { "id": "chapter-1", "title": "Spring Boot Core", "order": 1 },
+            { "id": "chapter-2", "title": "Spring Advanced", "order": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

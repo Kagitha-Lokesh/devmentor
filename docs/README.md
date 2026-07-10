@@ -1,6 +1,6 @@
-# DevMentor AI — Technical Documentation Suite
+# JavaMentor — Technical Documentation Suite
 
-Welcome to the DevMentor AI Enterprise SaaS Technical Documentation. Use the links below to navigate the guides:
+Welcome to the JavaMentor Enterprise SaaS Technical Documentation. Use the links below to navigate the guides:
 
 ---
 

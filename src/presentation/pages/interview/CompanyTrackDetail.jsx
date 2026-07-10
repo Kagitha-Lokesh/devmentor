@@ -172,7 +172,7 @@ export default function CompanyTrackDetail() {
             onClick={() => setActiveTab(tab)}
             className={`shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-all cursor-pointer
               ${activeTab === tab
-                ? 'bg-brand-500 text-white shadow-lg shadow-brand-500/30'
+                ? 'bg-brand-500 text-primary shadow-lg shadow-brand-500/30'
                 : 'bg-surface border border-surface-border text-text/60 hover:text-text hover:border-brand-500'}`}
           >
             {tab.charAt(0).toUpperCase() + tab.slice(1)}

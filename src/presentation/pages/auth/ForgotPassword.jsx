@@ -36,17 +36,17 @@ export default function ForgotPassword() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4 py-12 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-surface px-4 py-12 relative overflow-hidden">
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-900/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-violet-900/20 rounded-full blur-[120px]" />
 
-      <div className="w-full max-w-md bg-slate-900/80 backdrop-blur-md border border-slate-800 p-8 rounded-2xl shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-surface/80 backdrop-blur-md border border-default p-8 rounded-2xl shadow-2xl relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex p-3 bg-brand-950 border border-brand-800 rounded-xl mb-4 text-brand-400">
             <Sparkles className="h-6 w-6" />
           </div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight">Reset Password</h1>
-          <p className="text-slate-400 mt-2 text-sm">Enter your email to receive a password reset link</p>
+          <h1 className="text-3xl font-extrabold text-primary tracking-tight">Reset Password</h1>
+          <p className="text-muted mt-2 text-sm">Enter your email to receive a password reset link</p>
         </div>
 
         {error && (
@@ -64,8 +64,8 @@ export default function ForgotPassword() {
             <div className="inline-flex p-3 bg-green-950/50 border border-green-800 rounded-xl mb-4 text-green-400">
               <CheckCircle className="h-8 w-8" />
             </div>
-            <h2 className="text-lg font-semibold text-white">Reset Link Sent</h2>
-            <p className="text-slate-400 text-sm mt-2 mb-6">
+            <h2 className="text-lg font-semibold text-primary">Reset Link Sent</h2>
+            <p className="text-muted text-sm mt-2 mb-6">
               Check your inbox for instructions to set your new password.
             </p>
             <Link to="/login" className="w-full btn-secondary py-3 flex items-center justify-center gap-2">
@@ -92,7 +92,7 @@ export default function ForgotPassword() {
             >
               {loading ? (
                 <span className="flex items-center gap-2">
-                  <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <span className="h-4 w-4 border-2 border-default/30 border-t-white rounded-full animate-spin" />
                   Sending link...
                 </span>
               ) : (

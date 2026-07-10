@@ -7,7 +7,7 @@ export class FirebaseAnalyticsService extends IAnalyticsService {
   constructor() {
     super();
     this.analytics = null;
-    this.mockStorageKey = 'devmentor_mock_analytics';
+    this.mockStorageKey = 'javamentor_mock_analytics';
 
     if (environment.analyticsEnabled) {
       try {

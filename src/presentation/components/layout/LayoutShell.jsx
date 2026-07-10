@@ -61,7 +61,7 @@ export default function LayoutShell() {
 
   return (
     <div className="min-h-screen bg-surface text-text overflow-x-hidden">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-600 text-white px-4 py-2 rounded-lg z-[9999] shadow-md font-semibold text-sm">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-600 text-primary px-4 py-2 rounded-lg z-[9999] shadow-md font-semibold text-sm">
         Skip to main content
       </a>
       <Sidebar

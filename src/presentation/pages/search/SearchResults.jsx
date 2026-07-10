@@ -67,19 +67,19 @@ export default function SearchResults() {
   return (
     <div className="space-y-8 max-w-4xl mx-auto pb-12">
       <div className="text-center space-y-3">
-        <h1 className="text-3xl font-extrabold text-white tracking-tight">Search Engine</h1>
-        <p className="text-slate-400 text-sm">Instant fuzzy search across all lessons, coding problems, error guides, and interview banks</p>
+        <h1 className="text-3xl font-extrabold text-primary tracking-tight">Search Engine</h1>
+        <p className="text-muted text-sm">Instant fuzzy search across all lessons, coding problems, error guides, and interview banks</p>
       </div>
 
       {/* Input bar */}
       <div className="relative">
-        <Search className="absolute left-4 top-4.5 h-5 w-5 text-slate-500" />
+        <Search className="absolute left-4 top-4.5 h-5 w-5 text-muted" />
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for HashMap, inheritance, ArrayList, NullPointerException..."
-          className="w-full bg-slate-900 border border-slate-800 focus:border-brand-500 rounded-2xl py-4 pl-12 pr-4 text-slate-100 placeholder:text-slate-500 text-base shadow-xl outline-none transition-colors"
+          className="w-full bg-surface border border-default focus:border-brand-500 rounded-2xl py-4 pl-12 pr-4 text-primary placeholder:text-muted text-base shadow-xl outline-none transition-colors"
           autoFocus
         />
       </div>
@@ -87,7 +87,7 @@ export default function SearchResults() {
       {/* Search results */}
       {query ? (
         <div className="space-y-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-slate-500 pl-1">
+          <div className="text-xs font-bold uppercase tracking-wider text-muted pl-1">
             Found {filteredResults.length} matches
           </div>
 
@@ -99,38 +99,38 @@ export default function SearchResults() {
                   <div
                     key={res.id}
                     onClick={() => navigate('/courses')}
-                    className="group bg-slate-900 border border-slate-800 hover:border-brand-700 p-5 rounded-xl flex justify-between items-center gap-4 transition-smooth cursor-pointer"
+                    className="group bg-surface border border-default hover:border-brand-700 p-5 rounded-xl flex justify-between items-center gap-4 transition-smooth cursor-pointer"
                   >
                     <div className="flex gap-4">
-                      <div className="shrink-0 p-3 bg-slate-950 border border-slate-850 rounded-lg text-brand-400 group-hover:text-brand-300">
+                      <div className="shrink-0 p-3 bg-surface border border-default rounded-lg text-brand-400 group-hover:text-brand-300">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div className="space-y-1">
                         <div className="flex items-center gap-2.5 flex-wrap">
-                          <h3 className="font-bold text-slate-100 group-hover:text-white transition-colors">{res.title}</h3>
-                          <span className="text-[10px] font-mono text-slate-500 bg-slate-950 px-2 py-0.5 rounded border border-slate-850 uppercase">
+                          <h3 className="font-bold text-primary group-hover:text-primary transition-colors">{res.title}</h3>
+                          <span className="text-[10px] font-mono text-muted bg-surface px-2 py-0.5 rounded border border-default uppercase">
                             {res.type}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-400 leading-relaxed">{res.excerpt}</p>
+                        <p className="text-xs text-muted leading-relaxed">{res.excerpt}</p>
                       </div>
                     </div>
-                    <ArrowRight className="h-4.5 w-4.5 text-slate-600 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0" />
+                    <ArrowRight className="h-4.5 w-4.5 text-secondary group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
                   </div>
                 );
               })}
             </div>
           ) : (
-            <div className="bg-slate-900 border border-slate-800 rounded-xl p-8 text-center text-slate-500 text-sm">
+            <div className="bg-surface border border-default rounded-xl p-8 text-center text-muted text-sm">
               No results found for "{query}". Try another search term.
             </div>
           )}
         </div>
       ) : (
-        <div className="bg-slate-900/50 border border-slate-900 rounded-2xl p-8 text-center max-w-lg mx-auto">
-          <BrainCardIcon className="h-10 w-10 text-slate-600 mx-auto mb-3" />
-          <h4 className="text-sm font-bold text-slate-400">Discover Instantly</h4>
-          <p className="text-xs text-slate-500 mt-1 max-w-xs mx-auto">
+        <div className="bg-surface/50 border border-default rounded-2xl p-8 text-center max-w-lg mx-auto">
+          <BrainCardIcon className="h-10 w-10 text-secondary mx-auto mb-3" />
+          <h4 className="text-sm font-bold text-muted">Discover Instantly</h4>
+          <p className="text-xs text-muted mt-1 max-w-xs mx-auto">
             Type anything above to pull resources instantly from our comprehensive knowledge base.
           </p>
         </div>

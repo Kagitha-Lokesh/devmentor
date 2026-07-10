@@ -11,23 +11,23 @@
     "weight": 20,
     "label": "Java Core & Advanced",
     "order": 2,
-    "tags": ["Java"],
+    "tags": ["Java Core", "OOP", "Java", "Collections", "Generics", "Functional Programming"],
     "color": "#f59e0b",
     "icon": "Code2"
   },
-  "dsa": {
-    "weight": 20,
-    "label": "Data Structures & Algorithms",
+  "react": {
+    "weight": 15,
+    "label": "React & Frontend",
     "order": 3,
-    "tags": ["DSA", "Algorithms", "Data Structures"],
-    "color": "#10b981",
-    "icon": "GitBranch"
+    "tags": ["Frontend", "React", "CSS", "JavaScript"],
+    "color": "#06b6d4",
+    "icon": "Layout"
   },
   "sql": {
     "weight": 10,
     "label": "SQL & Databases",
     "order": 4,
-    "tags": ["SQL", "Database", "Databases"],
+    "tags": ["Database", "SQL", "Relational DB", "Design", "Normalization"],
     "color": "#3b82f6",
     "icon": "Database"
   },
@@ -35,17 +35,17 @@
     "weight": 15,
     "label": "Spring Boot & Backend",
     "order": 5,
-    "tags": ["Backend", "Spring Boot", "Spring"],
+    "tags": ["Backend", "Spring Boot", "Spring", "Microservices"],
     "color": "#22c55e",
     "icon": "Server"
   },
-  "react": {
-    "weight": 15,
-    "label": "React & Frontend",
+  "dsa": {
+    "weight": 10,
+    "label": "Data Structures & Algorithms",
     "order": 6,
-    "tags": ["React", "Frontend"],
-    "color": "#06b6d4",
-    "icon": "Layout"
+    "tags": ["DSA", "Algorithms"],
+    "color": "#10b981",
+    "icon": "GitBranch"
   },
   "projects": {
     "weight": 5,

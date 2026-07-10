@@ -301,7 +301,7 @@ export default function MockSession() {
                   onClick={() => setConfidenceRating(prev => ({ ...prev, [qId]: v }))}
                   className={`flex-1 py-2 rounded-xl border text-xs font-bold transition-all cursor-pointer
                     ${(confidenceRating[qId] || 3) >= v
-                      ? 'bg-sky-600 border-sky-500 text-white shadow-lg shadow-sky-600/20'
+                      ? 'bg-sky-600 border-sky-500 text-primary shadow-lg shadow-sky-600/20'
                       : 'bg-surface border-surface-border text-text/40 hover:border-sky-700'}`}
                 >
                   {v}
@@ -323,7 +323,7 @@ export default function MockSession() {
                   onClick={() => setSelfRating(prev => ({ ...prev, [qId]: v }))}
                   className={`flex-1 py-2 rounded-xl border text-xs font-bold transition-all cursor-pointer
                     ${(selfRating[qId] || 3) >= v
-                      ? 'bg-brand-600 border-brand-500 text-white shadow-lg shadow-brand-600/20'
+                      ? 'bg-brand-600 border-brand-500 text-primary shadow-lg shadow-brand-600/20'
                       : 'bg-surface border-surface-border text-text/40 hover:border-brand-700'}`}
                 >
                   <Star className={`h-3.5 w-3.5 mx-auto ${(selfRating[qId] || 3) >= v ? 'fill-current' : ''}`} />
@@ -357,7 +357,7 @@ export default function MockSession() {
           ) : (
             <button
               onClick={() => { submitAnswer(); setPhase('review'); }}
-              className="flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-600 border border-emerald-600 text-white text-sm font-bold rounded-xl transition-all cursor-pointer ml-auto"
+              className="flex items-center gap-2 px-6 py-3 bg-emerald-700 hover:bg-emerald-600 border border-emerald-600 text-primary text-sm font-bold rounded-xl transition-all cursor-pointer ml-auto"
             >
               Review Answers <Flag className="h-4 w-4" />
             </button>

@@ -1,4 +1,4 @@
-# DevMentor AI — Database & Cache Storage Guide
+# JavaMentor — Database & Cache Storage Guide
 
 This document catalogs the Firestore collection rules, IndexedDB v7 schema boundaries, and LocalStorage properties.
 

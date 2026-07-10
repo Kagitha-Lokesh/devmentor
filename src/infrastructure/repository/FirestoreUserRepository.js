@@ -11,10 +11,10 @@ import { environment } from '../env/environment';
 export class FirestoreUserRepository extends IUserRepository {
   constructor() {
     super();
-    this.profileKeyPrefix = 'devmentor_profile_';
-    this.settingsKeyPrefix = 'devmentor_settings_';
-    this.progressKeyPrefix = 'devmentor_progress_';
-    this.preferencesKeyPrefix = 'devmentor_preferences_';
+    this.profileKeyPrefix = 'javamentor_profile_';
+    this.settingsKeyPrefix = 'javamentor_settings_';
+    this.progressKeyPrefix = 'javamentor_progress_';
+    this.preferencesKeyPrefix = 'javamentor_preferences_';
   }
 
   // --- MOCK LOCALSTORAGE IMPLEMENTATION ---

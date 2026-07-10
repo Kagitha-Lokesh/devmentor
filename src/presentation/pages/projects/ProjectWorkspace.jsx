@@ -519,7 +519,7 @@ export default function ProjectWorkspace() {
       {/* ─── TIME LOG OVERLAY MODAL ─── */}
       {showLogTimeModal && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-surface/60 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
         >

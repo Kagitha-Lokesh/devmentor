@@ -66,18 +66,18 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4 py-8 sm:py-12 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-surface px-4 py-8 sm:py-12 relative overflow-hidden">
       {/* Background Blobs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-indigo-900/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-violet-900/20 rounded-full blur-[120px]" />
 
-      <div className="w-full max-w-md bg-slate-900/80 backdrop-blur-md border border-slate-800 p-5 sm:p-8 rounded-2xl shadow-2xl relative z-10">
+      <div className="w-full max-w-md bg-surface/80 backdrop-blur-md border border-default p-5 sm:p-8 rounded-2xl shadow-2xl relative z-10">
         <div className="text-center mb-8">
           <div className="inline-flex p-3 bg-brand-950 border border-brand-800 rounded-xl mb-4 text-brand-400">
             <Sparkles className="h-6 w-6 animate-pulse" />
           </div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight">Welcome Back</h1>
-          <p className="text-slate-400 mt-2 text-sm">Resume your journey to Java Full Stack mastery</p>
+          <h1 className="text-3xl font-extrabold text-primary tracking-tight">Welcome Back</h1>
+          <p className="text-muted mt-2 text-sm">Resume your journey to Java Full Stack mastery</p>
         </div>
 
         {(authError || error) && (
@@ -103,7 +103,7 @@ export default function Login() {
 
           <div>
             <div className="flex justify-between items-center mb-1">
-              <label className="text-sm font-semibold text-slate-300">Password</label>
+              <label className="text-sm font-semibold text-primary">Password</label>
               <Link to="/forgot-password" className="text-xs text-brand-400 hover:text-brand-300 transition-colors">
                 Forgot password?
               </Link>
@@ -125,7 +125,7 @@ export default function Login() {
           >
             {loading ? (
               <span className="flex items-center gap-2">
-                <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <span className="h-4 w-4 border-2 border-default/30 border-t-white rounded-full animate-spin" />
                 Signing in...
               </span>
             ) : (
@@ -140,10 +140,10 @@ export default function Login() {
         {/* 
         <div className="relative my-8">
           <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t border-slate-800" />
+            <span className="w-full border-t border-default" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-slate-900 px-3 text-slate-500">Or continue with</span>
+            <span className="bg-surface px-3 text-muted">Or continue with</span>
           </div>
         </div>
 
@@ -151,7 +151,7 @@ export default function Login() {
           <button
             onClick={handleGoogleSignIn}
             disabled={loading}
-            className="btn-secondary py-2.5 flex items-center justify-center gap-2 hover:bg-slate-800 hover:text-white"
+            className="btn-secondary py-2.5 flex items-center justify-center gap-2 hover:bg-surface-secondary hover:text-primary"
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24">
               <path
@@ -176,7 +176,7 @@ export default function Login() {
           <button
             onClick={handleGithubSignIn}
             disabled={loading}
-            className="btn-secondary py-2.5 flex items-center justify-center gap-2 hover:bg-slate-800 hover:text-white"
+            className="btn-secondary py-2.5 flex items-center justify-center gap-2 hover:bg-surface-secondary hover:text-primary"
           >
             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
@@ -186,8 +186,8 @@ export default function Login() {
         </div>
         */ }
 
-        <p className="mt-8 text-center text-sm text-slate-500">
-          New to DevMentor?{' '}
+        <p className="mt-8 text-center text-sm text-muted">
+          New to JavaMentor?{' '}
           <Link to="/signup" className="text-brand-400 hover:text-brand-300 font-medium transition-colors">
             Create an account
           </Link>

@@ -48,7 +48,7 @@ function AddTaskModal({ onAdd, onClose }) {
   };
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-surface/70 backdrop-blur-sm"
       onClick={onClose}>
       <motion.div initial={{ scale: 0.95, y: 10 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95 }}
         onClick={e => e.stopPropagation()}
@@ -84,7 +84,7 @@ function AddTaskModal({ onAdd, onClose }) {
               className="w-full px-3 py-2 bg-surface border border-surface-border rounded-lg text-sm text-text outline-none focus:border-brand-600" />
           </div>
           <button type="submit"
-            className="w-full py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-lg transition-colors">
+            className="w-full py-2.5 bg-brand-600 hover:bg-brand-500 text-primary text-sm font-semibold rounded-lg transition-colors">
             Add Task
           </button>
         </form>
@@ -189,7 +189,7 @@ export default function LearningCalendar() {
           <p className="text-sm text-text/50 mt-0.5">Plan and track your study schedule.</p>
         </div>
         <button onClick={() => setShowAddModal(true)}
-          className="flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-brand-900/30">
+          className="flex items-center gap-2 px-4 py-2 bg-brand-600 hover:bg-brand-500 text-primary text-sm font-semibold rounded-xl transition-colors shadow-lg shadow-brand-900/30">
           <Plus className="h-4 w-4" /> Add Task
         </button>
       </div>
@@ -219,7 +219,7 @@ export default function LearningCalendar() {
           {['day', 'week', 'month'].map(mode => (
             <button key={mode} onClick={() => setViewMode(mode)}
               className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all capitalize ${
-                viewMode === mode ? 'bg-brand-700 text-white shadow' : 'text-text/50 hover:text-text'
+                viewMode === mode ? 'bg-brand-700 text-primary shadow' : 'text-text/50 hover:text-text'
               }`}>
               {mode}
             </button>
@@ -250,7 +250,7 @@ export default function LearningCalendar() {
                   {day && (
                     <>
                       <div className={`text-xs font-bold mb-1.5 w-7 h-7 flex items-center justify-center rounded-full ${
-                        isToday ? 'bg-brand-600 text-white' : 'text-text/70'
+                        isToday ? 'bg-brand-600 text-primary' : 'text-text/70'
                       }`}>{day}</div>
                       <div className="space-y-0.5">
                         {dayTasks.slice(0, 2).map(t => (
@@ -279,7 +279,7 @@ export default function LearningCalendar() {
                 <div key={i} onClick={() => setSelectedDate(dateStr)}
                   className={`p-3 text-center cursor-pointer transition-colors hover:bg-surface-tertiary/40 ${dateStr === selectedDate ? 'bg-brand-950/40' : ''}`}>
                   <div className="text-xs text-text/40 mb-1">{DAYS[d.getDay()]}</div>
-                  <div className={`text-sm font-bold w-8 h-8 mx-auto flex items-center justify-center rounded-full ${isToday ? 'bg-brand-600 text-white' : 'text-text'}`}>
+                  <div className={`text-sm font-bold w-8 h-8 mx-auto flex items-center justify-center rounded-full ${isToday ? 'bg-brand-600 text-primary' : 'text-text'}`}>
                     {d.getDate()}
                   </div>
                   <div className="mt-1 text-[10px] text-text/30">

@@ -4,7 +4,7 @@ export const useThemeStore = create((set, get) => ({
   theme: 'dark', // 'dark' | 'light'
 
   initTheme: () => {
-    const saved = localStorage.getItem('devmentor_theme');
+    const saved = localStorage.getItem('javamentor_theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const initialTheme = saved || (systemPrefersDark ? 'dark' : 'light');
     
@@ -13,7 +13,7 @@ export const useThemeStore = create((set, get) => ({
   },
 
   setTheme: (theme) => {
-    localStorage.setItem('devmentor_theme', theme);
+    localStorage.setItem('javamentor_theme', theme);
     set({ theme });
     get()._applyTheme(theme);
   },

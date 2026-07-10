@@ -47,9 +47,8 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
 
   return (
     <header
-      className="fixed top-0 right-0 z-30 flex items-center justify-between px-3 sm:px-6 bg-surface-secondary border-b border-surface-border lg:left-sidebar"
+      className="fixed top-0 right-0 z-30 flex items-center justify-between px-3 sm:px-6 bg-surface-secondary border-b border-surface-border lg-left-sidebar"
       style={{
-        left: 0,
         height: 'var(--topbar-height)',
       }}
     >
@@ -63,16 +62,15 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
           <Menu className="h-5 w-5" />
         </button>
 
-        {/* Search bar — hidden on xs, visible from sm */}
+        {/* Search bar */}
         <button
           onClick={onOpenCommandPalette}
           aria-label="Open command palette and search"
-          className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-surface hover:bg-surface/80 border border-surface-border rounded-lg text-text/50 hover:text-text/70 text-xs transition-colors cursor-pointer max-w-[240px] lg:max-w-xs"
+          className="hidden sm:flex items-center gap-3 px-3.5 py-2 bg-surface/55 hover:bg-surface/90 border border-surface-border/80 rounded-xl text-text/40 hover:text-text/60 text-xs transition-all duration-200 cursor-pointer w-72 lg:w-96 text-left group shadow-sm"
         >
-          <Search className="h-3.5 w-3.5 flex-shrink-0" />
-          <span className="hidden md:inline truncate">Commands &amp; search...</span>
-          <span className="inline md:hidden">Search...</span>
-          <kbd className="hidden lg:flex bg-surface-tertiary px-1.5 py-0.5 rounded border border-surface-border text-[10px] font-mono text-text/60 ml-auto flex-shrink-0">
+          <Search className="h-4 w-4 text-text/30 group-hover:text-text/50 transition-colors flex-shrink-0" />
+          <span className="flex-1 truncate">Search commands, pages, topics...</span>
+          <kbd className="hidden lg:flex items-center gap-0.5 bg-surface-tertiary px-2 py-0.5 rounded-lg border border-surface-border text-[9px] font-mono text-text/45 ml-auto flex-shrink-0 font-bold">
             Ctrl+K
           </kbd>
         </button>
@@ -81,9 +79,9 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
         <button
           onClick={onOpenCommandPalette}
           aria-label="Open search"
-          className="sm:hidden p-2 rounded-lg hover:bg-surface-tertiary text-text/60 hover:text-text cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center"
+          className="sm:hidden p-2 rounded-xl hover:bg-surface-tertiary text-text/60 hover:text-text cursor-pointer min-w-[40px] min-h-[40px] flex items-center justify-center border border-surface-border/40 bg-surface/20"
         >
-          <Search className="h-5 w-5" />
+          <Search className="h-4 w-4" />
         </button>
       </div>
 
@@ -103,7 +101,7 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
         {/* Gamified stats — compact on mobile */}
         <div className="flex items-center gap-1.5 sm:gap-3">
           <div className="flex items-center gap-1 sm:gap-1.5 bg-brand-950 border border-brand-800/60 rounded-full pl-1 sm:pl-1.5 pr-2 sm:pr-3 py-1">
-            <div className="h-5 w-5 rounded-full bg-brand-600 text-white flex items-center justify-center flex-shrink-0">
+            <div className="h-5 w-5 rounded-full bg-brand-600 text-primary flex items-center justify-center flex-shrink-0">
               <Zap className="h-3 w-3 fill-current" />
             </div>
             <div className="text-xs font-bold text-brand-300">
@@ -112,7 +110,7 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
           </div>
 
           <div className="flex items-center gap-1 sm:gap-1.5 bg-amber-950/60 border border-amber-800/50 rounded-full pl-1 sm:pl-1.5 pr-2 sm:pr-3 py-1">
-            <div className="h-5 w-5 rounded-full bg-amber-600 text-white flex items-center justify-center flex-shrink-0">
+            <div className="h-5 w-5 rounded-full bg-amber-600 text-primary flex items-center justify-center flex-shrink-0">
               <Flame className="h-3 w-3 fill-current" />
             </div>
             <div className="text-xs font-bold text-amber-400">
@@ -137,36 +135,42 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
               aria-expanded={userDropdownOpen}
               aria-haspopup="true"
               aria-label="User account actions"
-              className="h-9 w-9 rounded-full bg-brand-950 border border-brand-800 text-brand-400 font-bold text-xs flex items-center justify-center cursor-pointer hover:border-brand-600 transition-colors min-w-[44px] min-h-[44px]"
+              className="flex items-center gap-2 p-1.5 rounded-full hover:bg-surface-tertiary transition-colors border border-transparent hover:border-surface-border cursor-pointer focus:outline-none"
             >
-              {profile?.email?.[0]?.toUpperCase() || 'U'}
+              <div className="h-8 w-8 rounded-full bg-brand-950 border border-brand-800 text-brand-400 font-black text-xs flex items-center justify-center flex-shrink-0">
+                {profile?.email?.[0]?.toUpperCase() || 'U'}
+              </div>
+              <span className="hidden sm:inline text-xs font-bold text-text/80 pr-1 max-w-[100px] truncate">
+                {profile?.displayName || 'Learner'}
+              </span>
             </button>
 
             {userDropdownOpen && (
               <div
                 role="menu"
-                className="absolute right-0 mt-2.5 w-48 bg-surface-secondary border border-surface-border rounded-xl shadow-xl py-1.5 z-50 animate-slide-up"
+                className="absolute right-0 mt-2 w-60 bg-surface-secondary border border-surface-border rounded-xl shadow-xl py-1.5 z-50 animate-slide-up origin-top-right right-0"
               >
-                <div className="px-4 py-2 border-b border-surface-border">
-                  <p className="text-xs text-text/40">Signed in as</p>
-                  <p className="text-sm font-semibold text-text truncate">{profile?.displayName || 'Learner'}</p>
+                <div className="px-4 py-2.5 border-b border-surface-border">
+                  <p className="text-[10px] uppercase font-bold tracking-widest text-text/30">Signed in as</p>
+                  <p className="text-sm font-bold text-text truncate mt-0.5">{profile?.displayName || 'Learner'}</p>
+                  <p className="text-[10px] text-text/45 truncate mt-0.5">{profile?.email}</p>
                 </div>
 
                 <button
                   role="menuitem"
                   onClick={() => { setUserDropdownOpen(false); navigate('/'); }}
-                  className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-text/80 hover:text-text hover:bg-surface-tertiary text-left cursor-pointer transition-colors"
+                  className="w-full flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-text/80 hover:text-text hover:bg-surface-tertiary text-left cursor-pointer transition-colors"
                 >
-                  <User className="h-4 w-4 text-text/60 flex-shrink-0" />
+                  <User className="h-4 w-4 text-text/40 flex-shrink-0" />
                   My Dashboard
                 </button>
 
                 <button
                   role="menuitem"
                   onClick={() => { setUserDropdownOpen(false); navigate('/preferences'); }}
-                  className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-text/80 hover:text-text hover:bg-surface-tertiary text-left cursor-pointer transition-colors"
+                  className="w-full flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-text/80 hover:text-text hover:bg-surface-tertiary text-left cursor-pointer transition-colors"
                 >
-                  <Settings className="h-4 w-4 text-text/60 flex-shrink-0" />
+                  <Settings className="h-4 w-4 text-text/40 flex-shrink-0" />
                   Preferences
                 </button>
 
@@ -175,7 +179,7 @@ export default function Topbar({ toggleSidebar, onOpenCommandPalette }) {
                 <button
                   role="menuitem"
                   onClick={() => { setUserDropdownOpen(false); signOut(); }}
-                  className="w-full flex items-center gap-2.5 px-4 py-3 text-sm text-red-500 dark:text-red-400 hover:bg-red-500/10 text-left cursor-pointer transition-colors"
+                  className="w-full flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 hover:bg-red-500/10 text-left cursor-pointer transition-colors"
                 >
                   <LogOut className="h-4 w-4 flex-shrink-0" />
                   Sign Out

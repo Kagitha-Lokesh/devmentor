@@ -14,7 +14,7 @@ export class ExportUseCase {
   async exportProgress(uid, { format, progressData, label }) {
     const job = new ExportJob({ userId: uid, format, status: 'completed' });
     let content = '';
-    let filename = `devmentor-${label || 'export'}-${Date.now()}`;
+    let filename = `javamentor-${label || 'export'}-${Date.now()}`;
 
     if (format === 'JSON') {
       content = JSON.stringify(progressData, null, 2);

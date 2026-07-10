@@ -1,21 +1,21 @@
 /**
  * ProgressHubUseCase — Learning OS Core Computation Engine
  *
- * Single responsibility: compute the complete Learning OS dashboard state.
- * Uses ONLY existing repositories already registered in the DI container.
- * Does NOT duplicate LearningUseCase — it composes above it.
+ * Composes repositories and delegates math to ProgressAggregationService.
+ * No tag-based module matching or manual sorting here.
  */
 import { resolveLearningStatus, LearningStatus } from '../../domain/models/LearningStatus';
 import curriculumWeights from '../../shared/config/curriculum-weights.json';
 
 export class ProgressHubUseCase {
-  constructor({ progressRepo, masteryRepo, activityRepo, graphRepo, recEngine, logger } = {}) {
-    this.progressRepo    = progressRepo;
-    this.masteryRepo     = masteryRepo;
-    this.activityRepo    = activityRepo;
-    this.graphRepo       = graphRepo;
-    this.recEngine       = recEngine;
-    this.logger          = logger;
+  constructor({ progressRepo, masteryRepo, activityRepo, graphRepo, recEngine, logger, progressAggService } = {}) {
+    this.progressRepo      = progressRepo;
+    this.masteryRepo       = masteryRepo;
+    this.activityRepo      = activityRepo;
+    this.graphRepo         = graphRepo;
+    this.recEngine         = recEngine;
+    this.logger            = logger;
+    this.progressAggService = progressAggService || null;
   }
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -24,66 +24,44 @@ export class ProgressHubUseCase {
 
   /**
    * Compute overall weighted completion % and per-module readiness.
+   * Delegates to ProgressAggregationService when available (no tag matching).
+   * Falls back to legacy tag-based logic if service not injected.
    * @param {LearningNode[]} graph
    * @param {Progress[]}     progressList
    * @param {Mastery[]}      masteryList
-   * @returns {{ overall: number, modules: object, readinessMap: Map }}
    */
   computeWeightedProgress(graph, progressList, masteryList) {
     const progressMap = new Map(progressList.map(p => [p.topicId, p]));
     const masteryMap  = new Map(masteryList.map(m => [m.topicId, m]));
 
+    if (this.progressAggService) {
+      return this.progressAggService.computeWeightedProgress(progressMap, masteryMap);
+    }
+
+    // Legacy fallback (tag-based) — used only if ProgressAggregationService not injected
     const modules = {};
     const readinessMap = new Map();
     let weightedSum = 0;
-
     const weights = Object.entries(curriculumWeights).filter(([k]) => k !== '_meta');
-
     for (const [key, config] of weights) {
-      // Match graph nodes to this module by tag
       const moduleNodes = graph.filter(node =>
         node.tags && node.tags.some(tag => config.tags.includes(tag))
       );
-
       if (moduleNodes.length === 0) {
         modules[key] = { ...config, completion: 0, mastery: 0, total: 0, completed: 0 };
         readinessMap.set(key, 0);
         continue;
       }
-
-      const completed = moduleNodes.filter(node => {
-        const p = progressMap.get(node.id);
-        return p && p.lessonCompleted;
-      }).length;
-
-      // Average mastery for this module
-      const masteryScores = moduleNodes
-        .map(node => masteryMap.get(node.id)?.score || 0)
-        .filter(s => s > 0);
+      const completed = moduleNodes.filter(n => progressMap.get(n.id)?.lessonCompleted).length;
+      const masteryScores = moduleNodes.map(n => masteryMap.get(n.id)?.score || 0).filter(s => s > 0);
       const avgMastery = masteryScores.length > 0
-        ? Math.round(masteryScores.reduce((a, b) => a + b, 0) / masteryScores.length)
-        : 0;
-
+        ? Math.round(masteryScores.reduce((a, b) => a + b, 0) / masteryScores.length) : 0;
       const completion = Math.round((completed / moduleNodes.length) * 100);
-
-      modules[key] = {
-        ...config,
-        completion,
-        mastery: avgMastery,
-        total: moduleNodes.length,
-        completed,
-        remaining: moduleNodes.length - completed
-      };
+      modules[key] = { ...config, completion, mastery: avgMastery, total: moduleNodes.length, completed, remaining: moduleNodes.length - completed };
       readinessMap.set(key, completion);
-
       weightedSum += (completion / 100) * config.weight;
     }
-
-    return {
-      overall: Math.round(weightedSum),
-      modules,
-      readinessMap
-    };
+    return { overall: Math.round(weightedSum), modules, readinessMap };
   }
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -92,38 +70,32 @@ export class ProgressHubUseCase {
 
   /**
    * Returns 1-based position metadata for a topic within the full graph.
+   * Delegates to ProgressAggregationService → CourseGraph (no regex parsing).
    */
   computeTopicPosition(topicId, graph) {
-    // Flatten by volume → chapter → topic order
+    if (this.progressAggService) {
+      return this.progressAggService.computeTopicPosition(topicId);
+    }
+    // Legacy fallback
+    const getVol = (n) => typeof n.volume === 'number' ? n.volume : parseInt(String(n.volume).replace(/\D/g, '')) || 999;
+    const getCh  = (n) => parseInt((String(n.chapter || '').replace('chapter-', '')) || '999');
+    const getNum = (id) => parseInt((id.match(/T(\d+)$/) || [0, 999])[1]);
     const sorted = [...graph].sort((a, b) => {
-      const getVol = (n) => typeof n.volume === 'number' ? n.volume : parseInt(String(n.volume).replace(/\D/g, '')) || 999;
-      const getCh  = (n) => parseInt((String(n.chapter || '').replace('chapter-', '')) || '999');
-      const getNum = (id) => parseInt((id.match(/T(\d+)$/) || [0, 999])[1]);
-
-      const vd = getVol(a) - getVol(b);
-      if (vd !== 0) return vd;
-      const cd = getCh(a) - getCh(b);
-      if (cd !== 0) return cd;
+      const vd = getVol(a) - getVol(b); if (vd !== 0) return vd;
+      const cd = getCh(a) - getCh(b);   if (cd !== 0) return cd;
       return getNum(a.id) - getNum(b.id);
     });
-
     const idx = sorted.findIndex(n => n.id === topicId);
     const node = sorted[idx];
     if (!node) return null;
-
     const volumes = [...new Set(sorted.map(n => n.volume))].sort();
     const chaptersInVolume = sorted.filter(n => n.volume === node.volume);
     const chaptersUniq = [...new Set(chaptersInVolume.map(n => n.chapter))].sort();
-
     return {
-      topicIndex: idx + 1,
-      totalTopics: sorted.length,
-      volumeIndex: volumes.indexOf(node.volume) + 1,
-      totalVolumes: volumes.length,
-      chapterIndex: chaptersUniq.indexOf(node.chapter) + 1,
-      totalChapters: chaptersUniq.length,
-      volumeLabel: `Volume ${node.volume}`,
-      chapterLabel: node.chapter
+      topicIndex: idx + 1, totalTopics: sorted.length,
+      volumeIndex: volumes.indexOf(node.volume) + 1, totalVolumes: volumes.length,
+      chapterIndex: chaptersUniq.indexOf(node.chapter) + 1, totalChapters: chaptersUniq.length,
+      volumeLabel: `Volume ${node.volume}`, chapterLabel: node.chapter
     };
   }
 

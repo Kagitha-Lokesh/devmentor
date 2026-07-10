@@ -166,21 +166,21 @@ export default function FlashcardSession() {
   return (
     <div className="max-w-2xl mx-auto space-y-6 pb-12">
       {/* Navigation and Title */}
-      <div className="flex justify-between items-center border-b border-slate-800 pb-4">
+      <div className="flex justify-between items-center border-b border-default pb-4">
         <button 
           onClick={() => navigate('/revision')}
-          className="flex items-center gap-1 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-colors cursor-pointer"
+          className="flex items-center gap-1 text-xs font-bold text-muted hover:text-primary uppercase tracking-wider transition-colors cursor-pointer"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to Dashboard
         </button>
-        <span className="text-xs text-slate-500 font-bold uppercase tracking-wider">
+        <span className="text-xs text-muted font-bold uppercase tracking-wider">
           {topicDetails ? topicDetails.title : 'Revision Session'}
         </span>
       </div>
 
       {sessionCompleted ? (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center space-y-6 shadow-2xl relative overflow-hidden">
+        <div className="bg-surface border border-default rounded-2xl p-8 text-center space-y-6 shadow-2xl relative overflow-hidden">
           <div className="absolute top-[-20%] right-[-20%] w-[200px] h-[200px] bg-emerald-500/10 rounded-full blur-[80px] pointer-events-none" />
           
           <div className="inline-flex p-4 bg-emerald-950/80 border border-emerald-850 text-emerald-400 rounded-2xl">
@@ -188,25 +188,25 @@ export default function FlashcardSession() {
           </div>
           
           <div className="space-y-2">
-            <h2 className="text-2xl font-extrabold text-white">Revision Complete!</h2>
-            <p className="text-slate-400 text-xs max-w-sm mx-auto">
+            <h2 className="text-2xl font-extrabold text-primary">Revision Complete!</h2>
+            <p className="text-muted text-xs max-w-sm mx-auto">
               Your memory retrieval stats have been synced to the database. Spaced Repetition scheduling has adjusted.
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-850">
+          <div className="grid grid-cols-3 gap-4 bg-surface p-4 rounded-xl border border-default">
             <div>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Reviewed</span>
-              <strong className="text-lg text-white font-black">{results.length}</strong>
+              <span className="text-[10px] text-muted font-bold uppercase tracking-wider block">Reviewed</span>
+              <strong className="text-lg text-primary font-black">{results.length}</strong>
             </div>
             <div>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Accuracy</span>
+              <span className="text-[10px] text-muted font-bold uppercase tracking-wider block">Accuracy</span>
               <strong className="text-lg text-emerald-400 font-black">
                 {Math.round((results.filter((r) => r.isCorrect).length / results.length) * 100)}%
               </strong>
             </div>
             <div>
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Recall time</span>
+              <span className="text-[10px] text-muted font-bold uppercase tracking-wider block">Recall time</span>
               <strong className="text-lg text-brand-400 font-black">
                 {Math.round(results.reduce((sum, r) => sum + r.timeSpent, 0) / results.length)}s
               </strong>
@@ -236,33 +236,33 @@ export default function FlashcardSession() {
           </div>
         </div>
       ) : processedCards.length === 0 ? (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-12 text-center space-y-4">
-          <Brain className="h-10 w-10 text-slate-500 mx-auto" />
-          <h3 className="text-lg font-bold text-white">No Flashcards Available</h3>
-          <p className="text-xs text-slate-400 max-w-xs mx-auto">
+        <div className="bg-surface border border-default rounded-2xl p-12 text-center space-y-4">
+          <Brain className="h-10 w-10 text-muted mx-auto" />
+          <h3 className="text-lg font-bold text-primary">No Flashcards Available</h3>
+          <p className="text-xs text-muted max-w-xs mx-auto">
             This topic does not contain any compiled flashcard items in its configuration.
           </p>
         </div>
       ) : (
         <div className="space-y-6">
           {/* Deck Toolbar and Modes selector */}
-          <div className="flex justify-between items-center bg-slate-900 border border-slate-800/80 px-4 py-2.5 rounded-xl">
+          <div className="flex justify-between items-center bg-surface border border-default/80 px-4 py-2.5 rounded-xl">
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Mode:</span>
+              <span className="text-[10px] text-muted font-bold uppercase tracking-wider">Mode:</span>
               <select
                 value={reviewMode}
                 onChange={(e) => {
                   setReviewMode(e.target.value);
                   resetSession();
                 }}
-                className="bg-slate-950 border border-slate-800 text-[10px] text-slate-300 font-bold uppercase px-2 py-1 rounded focus:outline-none"
+                className="bg-surface border border-default text-[10px] text-primary font-bold uppercase px-2 py-1 rounded focus:outline-none"
               >
                 <option value="normal">Normal Order</option>
                 <option value="random">Shuffle deck</option>
                 <option value="quick">Quick (5 cards)</option>
               </select>
             </div>
-            <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+            <div className="text-[10px] text-muted font-bold uppercase tracking-wider">
               Card {activeIdx + 1} of {processedCards.length}
             </div>
           </div>
@@ -282,10 +282,10 @@ export default function FlashcardSession() {
             >
               {/* Front Side */}
               <div 
-                className="absolute w-full h-full bg-slate-900 border border-slate-800 rounded-2xl p-8 flex flex-col justify-between items-center text-center shadow-2xl backface-hidden"
+                className="absolute w-full h-full bg-surface border border-default rounded-2xl p-8 flex flex-col justify-between items-center text-center shadow-2xl backface-hidden"
                 style={{ backfaceVisibility: 'hidden' }}
               >
-                <div className="w-full flex justify-between items-center text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                <div className="w-full flex justify-between items-center text-[10px] text-muted font-bold uppercase tracking-wider">
                   <span>Front (Question)</span>
                   {currentCardEntry.state && (
                     <span className="text-brand-400">EF: {currentCardEntry.state.easeFactor.toFixed(1)}</span>
@@ -293,12 +293,12 @@ export default function FlashcardSession() {
                 </div>
 
                 <div className="flex-1 flex items-center justify-center px-4">
-                  <h3 className="text-lg md:text-xl font-bold text-white leading-snug">
+                  <h3 className="text-lg md:text-xl font-bold text-primary leading-snug">
                     {currentCardEntry.card.front}
                   </h3>
                 </div>
 
-                <div className="text-xs font-bold text-slate-500 border border-slate-850 bg-slate-950 px-3 py-1.5 rounded-full flex items-center gap-1.5 group-hover:text-brand-300 group-hover:border-brand-800 transition-colors">
+                <div className="text-xs font-bold text-muted border border-default bg-surface px-3 py-1.5 rounded-full flex items-center gap-1.5 group-hover:text-brand-300 group-hover:border-brand-800 transition-colors">
                   <HelpCircle className="h-3.5 w-3.5" />
                   <span>Click or press SPACE to flip</span>
                 </div>
@@ -306,23 +306,23 @@ export default function FlashcardSession() {
 
               {/* Back Side */}
               <div 
-                className="absolute w-full h-full bg-slate-900 border border-slate-850 rounded-2xl p-8 flex flex-col justify-between items-center text-center shadow-2xl backface-hidden"
+                className="absolute w-full h-full bg-surface border border-default rounded-2xl p-8 flex flex-col justify-between items-center text-center shadow-2xl backface-hidden"
                 style={{ 
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)'
                 }}
               >
-                <div className="w-full text-left text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                <div className="w-full text-left text-[10px] text-muted font-bold uppercase tracking-wider">
                   Back (Answer)
                 </div>
 
                 <div className="flex-1 flex items-center justify-center px-4 overflow-y-auto">
-                  <p className="text-sm md:text-base text-slate-350 leading-relaxed font-semibold">
+                  <p className="text-sm md:text-base text-muted leading-relaxed font-semibold">
                     {currentCardEntry.card.back}
                   </p>
                 </div>
 
-                <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">
+                <div className="text-[10px] text-muted font-bold uppercase tracking-wider">
                   How well did you recall this?
                 </div>
               </div>
@@ -362,7 +362,7 @@ export default function FlashcardSession() {
               </button>
             </div>
           ) : (
-            <div className="text-center text-[10px] text-slate-500 font-semibold uppercase tracking-wider">
+            <div className="text-center text-[10px] text-muted font-semibold uppercase tracking-wider">
               Flip the card to reveal options
             </div>
           )}
@@ -375,9 +375,9 @@ export default function FlashcardSession() {
 function FlashcardSessionSkeleton() {
   return (
     <div className="max-w-2xl mx-auto space-y-6 pb-12 animate-pulse">
-      <div className="h-10 border-b border-slate-800/40" />
-      <div className="bg-slate-900/50 border border-slate-800/40 h-80 rounded-2xl" />
-      <div className="h-12 bg-slate-900/50 rounded-xl" />
+      <div className="h-10 border-b border-default/40" />
+      <div className="bg-surface/50 border border-default/40 h-80 rounded-2xl" />
+      <div className="h-12 bg-surface/50 rounded-xl" />
     </div>
   );
 }

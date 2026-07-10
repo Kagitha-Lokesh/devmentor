@@ -154,10 +154,10 @@ export default function ExportCenter() {
             <button onClick={handleExport} disabled={isExporting}
               className={`w-full flex items-center justify-center gap-2 py-3 text-sm font-bold rounded-xl transition-all ${
                 success
-                  ? 'bg-green-700 text-white'
+                  ? 'bg-green-700 text-primary'
                   : isExporting
                     ? 'bg-brand-900 text-brand-300 cursor-wait opacity-70'
-                    : 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-900/30'
+                    : 'bg-brand-600 hover:bg-brand-500 text-primary shadow-lg shadow-brand-900/30'
               }`}>
               {success ? <><CheckCircle2 className="h-4 w-4" /> Exported!</> :
                isExporting ? <><Clock className="h-4 w-4 animate-spin" /> Exporting...</> :

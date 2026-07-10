@@ -103,22 +103,22 @@ export default function CheatSheetViewer() {
   return (
     <div className="max-w-6xl mx-auto space-y-6 pb-12 print:p-0">
       {/* Header and Toolbar (hidden when printing) */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4 print:hidden">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-default pb-4 print:hidden">
         <div className="space-y-1">
           <button 
             onClick={() => navigate('/revision')}
-            className="flex items-center gap-1 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-wider transition-colors cursor-pointer"
+            className="flex items-center gap-1 text-xs font-bold text-muted hover:text-primary uppercase tracking-wider transition-colors cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Dashboard
           </button>
-          <h1 className="text-2xl font-extrabold text-white">
+          <h1 className="text-2xl font-extrabold text-primary">
             {cheatSheet?.title} Cheat Sheet
           </h1>
         </div>
         <button 
           onClick={handlePrint}
-          className="flex items-center gap-1.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-800 rounded-xl text-xs font-bold text-slate-350 hover:text-white transition-all cursor-pointer shadow"
+          className="flex items-center gap-1.5 px-3.5 py-2 bg-surface hover:bg-surface-secondary border border-default rounded-xl text-xs font-bold text-muted hover:text-primary transition-all cursor-pointer shadow"
         >
           <Printer className="h-4 w-4" />
           <span>Print / Save as PDF</span>
@@ -127,13 +127,13 @@ export default function CheatSheetViewer() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         {/* TOC Sidebar Panel (hidden when printing) */}
-        <div className="lg:col-span-1 sticky top-24 self-start bg-slate-900 border border-slate-850 p-4 rounded-2xl shadow-xl print:hidden max-h-[70vh] overflow-y-auto">
-          <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider border-b border-slate-800 pb-2 mb-3 flex items-center gap-1.5">
+        <div className="lg:col-span-1 sticky top-24 self-start bg-surface border border-default p-4 rounded-2xl shadow-xl print:hidden max-h-[70vh] overflow-y-auto">
+          <h3 className="text-xs font-bold text-muted uppercase tracking-wider border-b border-default pb-2 mb-3 flex items-center gap-1.5">
             <Menu className="h-4 w-4 text-brand-400" />
             Table of Contents
           </h3>
           {toc.length === 0 ? (
-            <p className="text-xs text-slate-500 italic">No headings identified.</p>
+            <p className="text-xs text-muted italic">No headings identified.</p>
           ) : (
             <nav className="space-y-1 text-xs">
               {toc.map((item, idx) => (
@@ -150,7 +150,7 @@ export default function CheatSheetViewer() {
                   } ${
                     activeAnchor === item.id 
                       ? 'border-brand-500 text-brand-400 font-bold bg-brand-950/10' 
-                      : 'border-transparent text-slate-500 hover:text-slate-350 hover:border-slate-800'
+                      : 'border-transparent text-muted hover:text-muted hover:border-default'
                   }`}
                 >
                   {item.text}
@@ -161,10 +161,10 @@ export default function CheatSheetViewer() {
         </div>
 
         {/* Content Area */}
-        <div className="lg:col-span-3 bg-slate-900 border border-slate-850/80 rounded-2xl p-6 md:p-8 shadow-2xl print:bg-transparent print:border-none print:shadow-none print:p-0">
+        <div className="lg:col-span-3 bg-surface border border-default/80 rounded-2xl p-6 md:p-8 shadow-2xl print:bg-transparent print:border-none print:shadow-none print:p-0">
           <div className="print:block hidden mb-6">
-            <h1 className="text-3xl font-black text-slate-900">{cheatSheet?.title} Cheat Sheet</h1>
-            <hr className="border-slate-300 my-4" />
+            <h1 className="text-3xl font-black text-primary">{cheatSheet?.title} Cheat Sheet</h1>
+            <hr className="border-muted my-4" />
           </div>
           <MarkdownRenderer content={content} />
         </div>
@@ -176,10 +176,10 @@ export default function CheatSheetViewer() {
 function CheatSheetViewerSkeleton() {
   return (
     <div className="max-w-6xl mx-auto space-y-6 pb-12 animate-pulse">
-      <div className="h-10 border-b border-slate-800/40" />
+      <div className="h-10 border-b border-default/40" />
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <div className="bg-slate-900/50 border border-slate-800/40 h-48 rounded-2xl" />
-        <div className="lg:col-span-3 bg-slate-900/50 border border-slate-800/40 h-96 rounded-2xl" />
+        <div className="bg-surface/50 border border-default/40 h-48 rounded-2xl" />
+        <div className="lg:col-span-3 bg-surface/50 border border-default/40 h-96 rounded-2xl" />
       </div>
     </div>
   );

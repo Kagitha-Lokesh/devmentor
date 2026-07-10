@@ -1,7 +1,7 @@
 # ADR-001: Decoupling Domain Logic via Clean Architecture
 
 ## Context
-DevMentor AI requires maximum modularity, clean testability, and stability across platforms. Mixing presentation states with storage engine APIs creates high friction during updates.
+JavaMentor requires maximum modularity, clean testability, and stability across platforms. Mixing presentation states with storage engine APIs creates high friction during updates.
 
 ## Decision
 We implement Clean Architecture, separating the codebase into three isolated layers:

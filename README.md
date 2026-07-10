@@ -1,6 +1,6 @@
-# DevMentor AI — Enterprise Full-Stack Coding Mentor Platform
+# JavaMentor — Enterprise Full-Stack Coding Mentor Platform
 
-DevMentor AI is a feature-rich developer training application designed for full-stack engineer training. Built on **Clean Architecture**, **Dependency Injection**, and **Offline-First Synchronization** models.
+JavaMentor is a feature-rich developer training application designed for full-stack engineer training. Built on **Clean Architecture**, **Dependency Injection**, and **Offline-First Synchronization** models.
 
 ---
 

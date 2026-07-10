@@ -1,4 +1,4 @@
-name: DevMentor CI/CD
+name: JavaMentor CI/CD
 
 on:
   push:
@@ -21,16 +21,16 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: devmentor-ai/package-lock.json
+          cache-dependency-path: javamentor/package-lock.json
 
       - name: Install Dependencies
         run: |
-          cd devmentor-ai
+          cd javamentor
           npm ci
 
       - name: Build Project
         run: |
-          cd devmentor-ai
+          cd javamentor
           npm run build
 
   deploy-to-hosting:
@@ -47,16 +47,16 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-          cache-dependency-path: devmentor-ai/package-lock.json
+          cache-dependency-path: javamentor/package-lock.json
 
       - name: Install Dependencies
         run: |
-          cd devmentor-ai
+          cd javamentor
           npm ci
 
       - name: Build Project
         run: |
-          cd devmentor-ai
+          cd javamentor
           npm run build
 
       - name: Deploy to Firebase Hosting
@@ -64,6 +64,6 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DECMENTOR_AI }}'
-          projectId: devmentor-ai-mock
+          projectId: javamentor-mock
           channelId: live
-          entryPoint: devmentor-ai
+          entryPoint: javamentor

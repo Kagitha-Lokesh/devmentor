@@ -15,8 +15,8 @@ export default function OfflinePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6 text-slate-100 font-sans">
-      <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden">
+    <div className="min-h-screen bg-surface flex items-center justify-center p-6 text-primary font-sans">
+      <div className="max-w-md w-full bg-surface border border-default rounded-2xl p-8 text-center shadow-2xl relative overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-red-950/15 rounded-full blur-[80px]" />
         
         <div className="relative z-10">
@@ -24,8 +24,8 @@ export default function OfflinePage() {
             <WifiOff className="h-8 w-8" />
           </div>
 
-          <h1 className="text-2xl font-bold tracking-tight text-white mb-2">Connection Lost</h1>
-          <p className="text-sm text-slate-400 max-w-sm mx-auto mb-8">
+          <h1 className="text-2xl font-bold tracking-tight text-primary mb-2">Connection Lost</h1>
+          <p className="text-sm text-muted max-w-sm mx-auto mb-8">
             You are currently offline. Check your internet connection. Some local features might remain accessible.
           </p>
 

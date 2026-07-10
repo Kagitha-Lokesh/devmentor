@@ -17,7 +17,7 @@
       },
       {
         "title": "Featured Projects",
-        "defaultValue": "DevMentor AI Sandbox Project (Vite + React client accessing microservice API endpoints, cached with IndexedDB)\n- Configured automated test runs via local compiler environments\n- Built robust responsive dashboard panels using Tailwind CSS"
+        "defaultValue": "JavaMentor Sandbox Project (Vite + React client accessing microservice API endpoints, cached with IndexedDB)\n- Configured automated test runs via local compiler environments\n- Built robust responsive dashboard panels using Tailwind CSS"
       }
     ]
   },

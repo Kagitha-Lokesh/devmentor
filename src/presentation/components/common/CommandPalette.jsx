@@ -205,7 +205,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.15 }}
-            className="fixed inset-0 z-[80] bg-slate-950/70 backdrop-blur-sm"
+            className="fixed inset-0 z-[80] bg-surface/70 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
           />

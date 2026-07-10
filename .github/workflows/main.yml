@@ -1,4 +1,4 @@
-name: DevMentor AI CI Pipeline
+name: JavaMentor CI Pipeline
 
 on:
   push:

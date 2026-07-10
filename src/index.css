@@ -6,13 +6,50 @@
 
 @layer base {
   :root {
-    --color-brand: 99 102 241;
+    /* Phase 2: Theme Semantic Variables */
+    --color-background: 255 255 255;
+    --color-background-secondary: 248 250 252;
     --color-surface: 255 255 255;
     --color-surface-secondary: 248 250 252;
-    --color-surface-tertiary: 241 245 249;
+    --color-surface-hover: 241 245 249;
+    --color-card: 255 255 255;
+    --color-card-hover: 248 250 252;
+    --color-popover: 255 255 255;
+    --color-tooltip: 15 23 42;
+    --color-modal: 255 255 255;
+    --color-sidebar: 248 250 252;
+    --color-navbar: 255 255 255;
+    --color-footer: 248 250 252;
+    
     --color-border: 226 232 240;
+    --color-border-muted: 241 245 249;
+    --color-border-active: 99 102 241;
+    
+    --color-primary: 99 102 241;
+    --color-secondary: 100 116 139;
+    --color-accent: 167 139 250;
+    --color-success: 34 197 94;
+    --color-warning: 245 158 11;
+    --color-danger: 239 68 68;
+    --color-info: 59 130 246;
+    
+    --color-text-primary: 15 23 42;
+    --color-text-secondary: 71 85 105;
+    --color-text-muted: 100 116 139;
+    --color-text-disabled: 148 163 184;
+    
+    --color-link: 99 102 241;
+    --color-focus: 99 102 241;
+    --color-selection: 199 210 254;
+    --color-scrollbar: 203 213 225;
+    --color-shadow: 0 0 0;
+
+    /* Legacy fallbacks (to prevent immediate breakage) */
+    --color-brand: 99 102 241;
     --color-text: 15 23 42;
     --color-muted: 100 116 139;
+    --color-surface-tertiary: 241 245 249;
+
     --sidebar-width: 260px;
     --topbar-height: 60px;
 
@@ -25,12 +62,47 @@
   }
 
   .dark {
+    --color-background: 15 23 42;
+    --color-background-secondary: 30 41 59;
     --color-surface: 15 23 42;
     --color-surface-secondary: 30 41 59;
-    --color-surface-tertiary: 51 65 85;
+    --color-surface-hover: 51 65 85;
+    --color-card: 15 23 42;
+    --color-card-hover: 30 41 59;
+    --color-popover: 30 41 59;
+    --color-tooltip: 248 250 252;
+    --color-modal: 15 23 42;
+    --color-sidebar: 15 23 42;
+    --color-navbar: 15 23 42;
+    --color-footer: 15 23 42;
+    
     --color-border: 51 65 85;
+    --color-border-muted: 30 41 59;
+    --color-border-active: 99 102 241;
+    
+    --color-primary: 99 102 241;
+    --color-secondary: 148 163 184;
+    --color-accent: 167 139 250;
+    --color-success: 34 197 94;
+    --color-warning: 245 158 11;
+    --color-danger: 239 68 68;
+    --color-info: 59 130 246;
+    
+    --color-text-primary: 248 250 252;
+    --color-text-secondary: 203 213 225;
+    --color-text-muted: 148 163 184;
+    --color-text-disabled: 71 85 105;
+    
+    --color-link: 129 140 248;
+    --color-focus: 99 102 241;
+    --color-selection: 49 46 129;
+    --color-scrollbar: 71 85 105;
+    --color-shadow: 0 0 0;
+
+    --color-brand: 99 102 241;
     --color-text: 248 250 252;
     --color-muted: 148 163 184;
+    --color-surface-tertiary: 51 65 85;
   }
 
   * {

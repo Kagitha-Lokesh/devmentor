@@ -42,7 +42,7 @@ function CodeBlock({ language, value }) {
       </div>
       
       {/* Code Area */}
-      <pre className="p-4 overflow-x-auto bg-surface/30 dark:bg-slate-950/40 text-sm font-mono leading-relaxed text-text">
+      <pre className="p-4 overflow-x-auto bg-surface/30 dark:bg-surface/40 text-sm font-mono leading-relaxed text-text">
         <code className={`language-${language}`}>{value}</code>
       </pre>
     </div>
@@ -210,7 +210,7 @@ export function MarkdownRenderer({ content }) {
   };
 
   return (
-    <div className="prose dark:prose-invert prose-slate max-w-none">
+    <div className="prose dark:prose-invert max-w-none">
       <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
         {content}
       </ReactMarkdown>

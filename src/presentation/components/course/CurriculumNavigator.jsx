@@ -19,7 +19,7 @@ import {
   Circle, BookOpen, Zap, X, Map as MapIcon
 } from 'lucide-react';
 import { resolveLearningStatus, LearningStatus } from '../../../domain/models/LearningStatus';
-import curriculumWeights from '../../../shared/config/curriculum-weights.json';
+import { container } from '../../../infrastructure/di/container';
 
 const STATUS_CONFIG = {
   [LearningStatus.MASTERED]:  { icon: CheckCircle, color: 'text-emerald-500', label: 'Mastered' },
@@ -31,32 +31,6 @@ const STATUS_CONFIG = {
   [LearningStatus.AVAILABLE]: { icon: Circle,       color: 'text-text/30',     label: 'Available' },
   [LearningStatus.LOCKED]:    { icon: Lock,         color: 'text-text/20',     label: 'Locked' },
 };
-
-const MODULE_ORDER = Object.entries(curriculumWeights)
-  .filter(([k]) => k !== '_meta')
-  .sort((a, b) => (a[1].order || 0) - (b[1].order || 0));
-
-function groupGraphByModule(graph) {
-  const moduleMap = {};
-  for (const [key, config] of MODULE_ORDER) {
-    const nodes = graph.filter(n =>
-      n.tags && n.tags.some(t => config.tags.includes(t))
-    );
-    if (nodes.length > 0) {
-      // Group by volume then chapter
-      const byVolume = {};
-      for (const node of nodes) {
-        const vol = node.volume || 1;
-        if (!byVolume[vol]) byVolume[vol] = {};
-        const chap = node.chapter || 'chapter-1';
-        if (!byVolume[vol][chap]) byVolume[vol][chap] = [];
-        byVolume[vol][chap].push(node);
-      }
-      moduleMap[key] = { config, byVolume };
-    }
-  }
-  return moduleMap;
-}
 
 export function CurriculumNavigator({
   graph = [],
@@ -74,25 +48,51 @@ export function CurriculumNavigator({
   const [expandedChapters, setExpandedChapters] = useState(new Set());
   const currentRef = useRef(null);
 
-  const groupedGraph = useMemo(() => groupGraphByModule(graph), [graph]);
+  // Resolve CourseGraph from container for clean, ordered curriculum structure
+  const courseGraph = useMemo(() => {
+    try {
+      return container.resolve('CourseGraph');
+    } catch (e) {
+      console.warn('Could not resolve CourseGraph from container inside CurriculumNavigator:', e);
+      return null;
+    }
+  }, []);
 
-  // Auto-expand the section containing the current topic
+  // Build canonical modules list with their structured volumes/chapters/topics
+  const modulesList = useMemo(() => {
+    if (!courseGraph) return [];
+    return courseGraph.getModules().map(mod => {
+      const structure = courseGraph.getModuleStructure(mod.id);
+      const allModuleTopics = courseGraph.getTopicsInModule(mod.id);
+      return {
+        id: mod.id,
+        title: mod.title,
+        color: mod.color || '#f59e0b',
+        icon: mod.icon,
+        structure, // Array of { volumeOrder, chapters: [ { chapterOrder, topics: [...] } ] }
+        allModuleTopics
+      };
+    });
+  }, [courseGraph]);
+
+  // Auto-expand the sections containing the current active topic
   useEffect(() => {
-    if (!currentTopicId || graph.length === 0) return;
-    const node = graph.find(n => n.id === currentTopicId);
+    if (!currentTopicId || !courseGraph) return;
+    const node = courseGraph.getTopic(currentTopicId);
     if (!node) return;
 
-    for (const [modKey, config] of MODULE_ORDER) {
-      if (config.tags.some(t => node.tags?.includes(t))) {
-        setExpandedModules(s => new Set([...s, modKey]));
-        setExpandedVolumes(s => new Set([...s, `${modKey}-${node.volume}`]));
-        setExpandedChapters(s => new Set([...s, `${modKey}-${node.volume}-${node.chapter}`]));
-        break;
-      }
-    }
-  }, [currentTopicId, graph]);
+    const modId = node.moduleId;
+    const vol = node.volumeOrder;
+    const chap = node.chapterOrder;
 
-  // Scroll current topic into view
+    if (modId) {
+      setExpandedModules(s => new Set([...s, modId]));
+      setExpandedVolumes(s => new Set([...s, `${modId}-${vol}`]));
+      setExpandedChapters(s => new Set([...s, `${modId}-${vol}-${chap}`]));
+    }
+  }, [currentTopicId, courseGraph]);
+
+  // Scroll active topic into view
   useEffect(() => {
     if (isOpen && currentRef.current) {
       setTimeout(() => {
@@ -109,7 +109,7 @@ export function CurriculumNavigator({
     setExpandedChapters(s => { const n = new Set(s); n.has(key) ? n.delete(key) : n.add(key); return n; });
 
   const handleTopicClick = (node) => {
-    const courseId = node.tags?.includes('Backend') || node.tags?.includes('Spring Boot') ? 'backend' : 'java';
+    const courseId = node.courseId || 'java';
     if (onTopicSelect) {
       onTopicSelect(courseId, node.slug);
     } else {
@@ -118,7 +118,7 @@ export function CurriculumNavigator({
     onClose?.();
   };
 
-  const searchLower = search.toLowerCase();
+  const searchLower = search.toLowerCase().trim();
 
   const content = (
     <div className="flex flex-col h-full bg-surface border-r border-surface-border">
@@ -151,13 +151,15 @@ export function CurriculumNavigator({
 
       {/* Scrollable topic tree */}
       <div className="flex-1 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-surface-border">
-        {Object.entries(groupedGraph).map(([modKey, { config, byVolume }]) => {
-          const isModuleExpanded = expandedModules.has(modKey);
+        {modulesList.map((mod) => {
+          const isModuleExpanded = expandedModules.has(mod.id);
+          const allModuleTopics = mod.allModuleTopics;
 
-          // Filter by search
-          const allModuleTopics = Object.values(byVolume).flatMap(v => Object.values(v).flat());
-          const matchesSearch = !search || allModuleTopics.some(n =>
-            n.title.toLowerCase().includes(searchLower)
+          // Filter module visibility by search query
+          const matchesSearch = !searchLower || allModuleTopics.some(n =>
+            n.title.toLowerCase().includes(searchLower) ||
+            (n.description && n.description.toLowerCase().includes(searchLower)) ||
+            (n.tags && n.tags.some(t => t.toLowerCase().includes(searchLower)))
           );
           if (!matchesSearch) return null;
 
@@ -165,18 +167,18 @@ export function CurriculumNavigator({
           const completedCount = allModuleTopics.filter(n => progressMap.get(n.id)?.lessonCompleted).length;
 
           return (
-            <div key={modKey} className="border-b border-surface-border/50">
+            <div key={mod.id} className="border-b border-surface-border/50">
               {/* Module header */}
               <button
-                onClick={() => toggleModule(modKey)}
+                onClick={() => toggleModule(mod.id)}
                 className="w-full flex items-center gap-3 px-4 py-3 hover:bg-surface-secondary/50 transition-colors text-left"
               >
                 <span
                   className="w-2.5 h-2.5 rounded-full flex-shrink-0"
-                  style={{ backgroundColor: config.color }}
+                  style={{ backgroundColor: mod.color }}
                 />
                 <span className="text-xs font-black text-text flex-1 uppercase tracking-wider">
-                  {config.label}
+                  {mod.title}
                 </span>
                 <span className="text-[10px] text-text/30 tabular-nums flex-shrink-0">
                   {completedCount}/{allModuleTopics.length}
@@ -188,116 +190,125 @@ export function CurriculumNavigator({
               </button>
 
               {/* Volumes */}
-              {isModuleExpanded && Object.entries(byVolume)
-                .sort(([a], [b]) => Number(a) - Number(b))
-                .map(([vol, chapters]) => {
-                  const volKey = `${modKey}-${vol}`;
-                  const isVolExpanded = expandedVolumes.has(volKey) || !!search;
-                  const volTopics = Object.values(chapters).flat();
+              {isModuleExpanded && mod.structure.map(({ volumeOrder, chapters }) => {
+                const volKey = `${mod.id}-${volumeOrder}`;
+                const isVolExpanded = expandedVolumes.has(volKey) || !!searchLower;
+                const volTopics = chapters.flatMap(c => c.topics);
 
-                  return (
-                    <div key={vol}>
-                      {Object.keys(byVolume).length > 1 && (
-                        <button
-                          onClick={() => toggleVolume(volKey)}
-                          className="w-full flex items-center gap-2 px-6 py-2 hover:bg-surface-secondary/30 transition-colors text-left"
-                        >
-                          <span className="text-[10px] text-text/40 font-bold uppercase tracking-widest flex-1">
-                            Volume {vol}
-                          </span>
-                          {isVolExpanded
-                            ? <ChevronDown className="h-3 w-3 text-text/20" />
-                            : <ChevronRight className="h-3 w-3 text-text/20" />
-                          }
-                        </button>
-                      )}
+                // Filter volume visibility by search query
+                const volumeMatchesSearch = !searchLower || volTopics.some(n =>
+                  n.title.toLowerCase().includes(searchLower) ||
+                  (n.description && n.description.toLowerCase().includes(searchLower))
+                );
+                if (!volumeMatchesSearch) return null;
 
-                      {/* Chapters */}
-                      {(isVolExpanded || Object.keys(byVolume).length === 1) &&
-                        Object.entries(chapters).map(([chap, topics]) => {
-                          const chapKey = `${modKey}-${vol}-${chap}`;
-                          const isChapExpanded = expandedChapters.has(chapKey) || !!search;
-                          const chapLabel = chap.replace('chapter-', 'Chapter ').replace('-', ' ');
+                return (
+                  <div key={volumeOrder}>
+                    {mod.structure.length > 1 && (
+                      <button
+                        onClick={() => toggleVolume(volKey)}
+                        className="w-full flex items-center gap-2 px-6 py-2 hover:bg-surface-secondary/30 transition-colors text-left"
+                      >
+                        <span className="text-[10px] text-text/40 font-bold uppercase tracking-widest flex-1">
+                          Volume {volumeOrder}
+                        </span>
+                        {isVolExpanded
+                          ? <ChevronDown className="h-3 w-3 text-text/20" />
+                          : <ChevronRight className="h-3 w-3 text-text/20" />
+                        }
+                      </button>
+                    )}
 
-                          // Filter by search within chapter
-                          const filteredTopics = search
-                            ? topics.filter(n => n.title.toLowerCase().includes(searchLower))
-                            : topics;
-                          if (filteredTopics.length === 0) return null;
+                    {/* Chapters */}
+                    {(isVolExpanded || mod.structure.length === 1) &&
+                      chapters.map(({ chapterOrder, topics }) => {
+                        const chapKey = `${mod.id}-${volumeOrder}-${chapterOrder}`;
+                        const isChapExpanded = expandedChapters.has(chapKey) || !!searchLower;
+                        const chapLabel = `Chapter ${chapterOrder}`;
 
-                          return (
-                            <div key={chap}>
-                              <button
-                                onClick={() => toggleChapter(chapKey)}
-                                className="w-full flex items-center gap-2 px-8 py-1.5 hover:bg-surface-secondary/20 transition-colors text-left"
-                              >
-                                <span className="text-[10px] text-text/30 font-bold uppercase tracking-wider flex-1">
-                                  {chapLabel}
-                                </span>
-                                {isChapExpanded
-                                  ? <ChevronDown className="h-3 w-3 text-text/15" />
-                                  : <ChevronRight className="h-3 w-3 text-text/15" />
-                                }
-                              </button>
+                        // Filter by search within chapter
+                        const filteredTopics = searchLower
+                          ? topics.filter(n =>
+                              n.title.toLowerCase().includes(searchLower) ||
+                              (n.description && n.description.toLowerCase().includes(searchLower)) ||
+                              (n.tags && n.tags.some(t => t.toLowerCase().includes(searchLower)))
+                            )
+                          : topics;
+                        if (filteredTopics.length === 0) return null;
 
-                              {/* Topics */}
-                              {(isChapExpanded || !!search) && filteredTopics.map(node => {
-                                const prerequisites = dependencyMap.get(node.id) || [];
-                                const status = resolveLearningStatus(
-                                  node.id, prerequisites, progressMap, new Map()
-                                );
-                                const sc = STATUS_CONFIG[status] || STATUS_CONFIG[LearningStatus.AVAILABLE];
-                                const StatusIcon = sc.icon;
-                                const isCurrent = node.id === currentTopicId;
-                                const isLocked = status === LearningStatus.LOCKED;
+                        return (
+                          <div key={chapterOrder}>
+                            <button
+                              onClick={() => toggleChapter(chapKey)}
+                              className="w-full flex items-center gap-2 px-8 py-1.5 hover:bg-surface-secondary/20 transition-colors text-left"
+                            >
+                              <span className="text-[10px] text-text/30 font-bold uppercase tracking-wider flex-1">
+                                {chapLabel}
+                              </span>
+                              {isChapExpanded
+                                ? <ChevronDown className="h-3 w-3 text-text/15" />
+                                : <ChevronRight className="h-3 w-3 text-text/15" />
+                              }
+                            </button>
 
-                                // Prerequisite tooltip text
-                                const missingPrereqs = prerequisites.filter(pid => {
-                                  const pp = progressMap.get(pid);
-                                  return !pp || !pp.lessonCompleted;
-                                });
+                            {/* Topics */}
+                            {(isChapExpanded || !!searchLower) && filteredTopics.map(node => {
+                              const prerequisites = dependencyMap.get(node.id) || [];
+                              const status = resolveLearningStatus(
+                                node.id, prerequisites, progressMap, new Map()
+                              );
+                              const sc = STATUS_CONFIG[status] || STATUS_CONFIG[LearningStatus.AVAILABLE];
+                              const StatusIcon = sc.icon;
+                              const isCurrent = node.id === currentTopicId;
+                              const isLocked = status === LearningStatus.LOCKED;
 
-                                return (
-                                  <div
-                                    key={node.id}
-                                    ref={isCurrent ? currentRef : null}
+                              // Prerequisite tooltip text
+                              const missingPrereqs = prerequisites.filter(pid => {
+                                const pp = progressMap.get(pid);
+                                return !pp || !pp.lessonCompleted;
+                              });
+
+                              return (
+                                <div
+                                  key={node.id}
+                                  ref={isCurrent ? currentRef : null}
+                                >
+                                  <button
+                                    onClick={() => !isLocked && handleTopicClick(node)}
+                                    disabled={isLocked}
+                                    title={isLocked && missingPrereqs.length > 0
+                                      ? `Locked — complete prerequisites first`
+                                      : node.title
+                                    }
+                                    className={`
+                                      w-full flex items-center gap-2 px-10 py-2 text-left transition-all duration-150
+                                      ${isCurrent
+                                        ? 'bg-brand-500/10 border-r-2 border-brand-500'
+                                        : isLocked
+                                        ? 'opacity-40 cursor-not-allowed'
+                                        : 'hover:bg-surface-secondary/40 cursor-pointer'}
+                                    `}
                                   >
-                                    <button
-                                      onClick={() => !isLocked && handleTopicClick(node)}
-                                      disabled={isLocked}
-                                      title={isLocked && missingPrereqs.length > 0
-                                        ? `Locked — complete prerequisites first`
-                                        : node.title
-                                      }
-                                      className={`
-                                        w-full flex items-center gap-2 px-10 py-2 text-left transition-all duration-150
-                                        ${isCurrent
-                                          ? 'bg-brand-500/10 border-r-2 border-brand-500'
-                                          : isLocked
-                                          ? 'opacity-40 cursor-not-allowed'
-                                          : 'hover:bg-surface-secondary/40 cursor-pointer'}
-                                      `}
-                                    >
-                                      <StatusIcon className={`h-3.5 w-3.5 flex-shrink-0 ${sc.color}`} />
-                                      <span className={`
-                                        text-xs truncate flex-1 font-medium
-                                        ${isCurrent ? 'text-brand-500 font-bold' : 'text-text/70'}
-                                      `}>
-                                        {node.title}
-                                      </span>
-                                      {isCurrent && (
-                                        <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse flex-shrink-0" />
-                                      )}
-                                    </button>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          );
-                        })
-                      }
-                    </div>
-                  );
+                                    <StatusIcon className={`h-3.5 w-3.5 flex-shrink-0 ${sc.color}`} />
+                                    <span className={`
+                                      text-xs truncate flex-1 font-medium
+                                      ${isCurrent ? 'text-brand-500 font-bold' : 'text-text/70'}
+                                    `}>
+                                      {node.title}
+                                    </span>
+                                    {isCurrent && (
+                                      <span className="w-1.5 h-1.5 rounded-full bg-brand-500 animate-pulse flex-shrink-0" />
+                                    )}
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        );
+                      })
+                    }
+                  </div>
+                );
               })}
             </div>
           );
@@ -316,7 +327,7 @@ export function CurriculumNavigator({
       {/* Mobile drawer */}
       {isOpen && (
         <div className="lg:hidden fixed inset-0 z-50 flex">
-          <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+          <div className="absolute inset-0 bg-background/50" onClick={onClose} />
           <div className="relative w-80 h-full flex flex-col shadow-2xl animate-[slideInLeft_0.25s_ease-out_both]">
             {content}
           </div>

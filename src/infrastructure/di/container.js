@@ -11,6 +11,12 @@ import { FirestoreSubmissionRepository } from '../repository/FirestoreSubmission
 import { PistonExecutionProvider } from '../execution/PistonExecutionProvider';
 import { IEvaluationService } from '../../domain/evaluation/IEvaluationService';
 import { StaticKnowledgeGraphRepository } from '../repository/StaticKnowledgeGraphRepository';
+import { StaticCurriculumRepository } from '../repository/StaticCurriculumRepository';
+import { CourseGraph } from '../../domain/curriculum/CourseGraph';
+import { CurriculumFlowService } from '../../application/curriculum/CurriculumFlowService';
+import { ProgressAggregationService } from '../../application/progress/ProgressAggregationService';
+import graphData from '../../../public/generated/knowledge-graph.json';
+import curriculumIndexData from '../../shared/generated/curriculum-index.json';
 import { FirestoreProgressRepository } from '../repository/FirestoreProgressRepository';
 import { FirestoreMasteryRepository } from '../repository/FirestoreMasteryRepository';
 import { FirestoreActivityRepository } from '../repository/FirestoreActivityRepository';
@@ -101,6 +107,29 @@ class Container {
 
     const knowledgeGraphRepository = new StaticKnowledgeGraphRepository();
     this.services.set('IKnowledgeGraphRepository', knowledgeGraphRepository);
+
+    // Register Curriculum Engine
+    const curriculumRepository = new StaticCurriculumRepository();
+    this.services.set('ICurriculumRepository', curriculumRepository);
+
+    // CourseGraph: built from static JSON imports for synchronous initialization
+    const courseGraph = new CourseGraph(
+      graphData,
+      curriculumIndexData,
+      curriculumIndexData.moduleIndex
+        ? Object.keys(curriculumIndexData.moduleIndex).map(id => ({
+            id,
+            ...curriculumIndexData.moduleIndex[id]
+          }))
+        : []
+    );
+    this.services.set('CourseGraph', courseGraph);
+
+    const flowService = new CurriculumFlowService(courseGraph);
+    this.services.set('CurriculumFlowService', flowService);
+
+    const progressAggService = new ProgressAggregationService(courseGraph);
+    this.services.set('ProgressAggregationService', progressAggService);
 
     const progressRepository = new FirestoreProgressRepository();
     this.services.set('IProgressRepository', progressRepository);
@@ -240,12 +269,13 @@ class Container {
 
     // Register Learning OS v1.2 Use Cases
     const progressHubUseCase = new ProgressHubUseCase({
-      progressRepo: this.resolve('IProgressRepository'),
-      masteryRepo: this.resolve('IMasteryRepository'),
-      activityRepo: this.resolve('IActivityRepository'),
-      graphRepo: this.resolve('IKnowledgeGraphRepository'),
-      recEngine: this.resolve('IRecommendationEngine'),
-      logger: this.resolve('ILogger')
+      progressRepo:      this.resolve('IProgressRepository'),
+      masteryRepo:       this.resolve('IMasteryRepository'),
+      activityRepo:      this.resolve('IActivityRepository'),
+      graphRepo:         this.resolve('IKnowledgeGraphRepository'),
+      recEngine:         this.resolve('IRecommendationEngine'),
+      logger:            this.resolve('ILogger'),
+      progressAggService: this.resolve('ProgressAggregationService')
     });
     this.services.set('ProgressHubUseCase', progressHubUseCase);
   }

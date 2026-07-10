@@ -210,7 +210,7 @@ export default function AssistantPage() {
   };
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] bg-slate-950 border border-surface-border rounded-2xl overflow-hidden shadow-2xl">
+    <div className="flex h-[calc(100vh-8rem)] bg-surface border border-surface-border rounded-2xl overflow-hidden shadow-2xl">
       {/* ── Sidebar ── */}
       <div className="w-80 bg-surface-secondary border-r border-surface-border flex flex-col shrink-0">
         <div className="p-4 border-b border-surface-border flex items-center justify-between">
@@ -227,7 +227,7 @@ export default function AssistantPage() {
         </div>
 
         {/* Suggested Queries Action Chips */}
-        <div className="p-3 border-b border-surface-border bg-slate-900/30">
+        <div className="p-3 border-b border-surface-border bg-surface/30">
           <span className="text-[9px] uppercase font-bold text-text/40 tracking-wider mb-2 block">Quick Actions</span>
           <div className="flex flex-col gap-1.5">
             {[
@@ -292,7 +292,7 @@ export default function AssistantPage() {
         </div>
 
         {/* Health status widget */}
-        <div className="p-4 border-t border-surface-border bg-slate-950 flex items-center justify-between">
+        <div className="p-4 border-t border-surface-border bg-surface flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs">
             <div className={`h-2.5 w-2.5 rounded-full ${healthStatus === 'Available' ? 'bg-emerald-500 animate-pulse' : healthStatus === 'Loading' ? 'bg-amber-500 animate-spin' : 'bg-red-500'}`} />
             <div>
@@ -348,7 +348,7 @@ export default function AssistantPage() {
                   <div className={`p-4 rounded-2xl border text-sm leading-relaxed whitespace-pre-wrap font-medium
                     ${msg.sender === 'user'
                       ? 'bg-brand-900/35 border-brand-850 text-text/90'
-                      : 'bg-surface border-surface-border text-text/80 shadow-lg shadow-black/10'}`}
+                      : 'bg-surface border-surface-border text-text/80 shadow-lg'}`}
                   >
                     {msg.text}
                   </div>
@@ -379,7 +379,7 @@ export default function AssistantPage() {
         </div>
 
         {/* Input Bar */}
-        <div className="p-4 border-t border-surface-border bg-slate-950">
+        <div className="p-4 border-t border-surface-border bg-surface">
           <form
             onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
             className="flex gap-3 max-w-4xl mx-auto"
@@ -399,7 +399,7 @@ export default function AssistantPage() {
               className="px-5 py-3 btn-primary text-sm font-bold flex items-center gap-2 cursor-pointer disabled:opacity-35 disabled:cursor-not-allowed"
             >
               {isSending ? (
-                <div className="h-4 w-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="h-4 w-4 border-2 border-default border-t-transparent rounded-full animate-spin" />
               ) : (
                 <Send className="h-4 w-4" />
               )}
@@ -411,7 +411,7 @@ export default function AssistantPage() {
 
       {/* ── Settings / Preferences Drawer ── */}
       {isConfigOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-background/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-surface-secondary border border-surface-border rounded-2xl w-full max-w-md p-6 space-y-5 shadow-2xl relative">
             <h3 className="text-lg font-bold text-text flex items-center gap-2">
               <Settings className="h-5 w-5 text-violet-400" />
@@ -430,7 +430,7 @@ export default function AssistantPage() {
                       onClick={() => setProviderForm(prov)}
                       className={`py-2.5 rounded-xl border text-xs font-bold transition-all cursor-pointer capitalize
                         ${providerForm === prov
-                          ? 'bg-violet-900/50 border-violet-600 text-white shadow-lg'
+                          ? 'bg-violet-900/50 border-violet-600 text-primary shadow-lg'
                           : 'bg-surface border-surface-border text-text/40 hover:border-violet-850'}`}
                     >
                       {prov === 'rule-based' ? 'Rule-Based' : 'Ollama (Local)'}

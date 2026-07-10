@@ -22,7 +22,7 @@ export function Tooltip({
     <div className={`relative group inline-block ${className}`} {...props}>
       {children}
       <div
-        className={`absolute z-50 scale-95 opacity-0 pointer-events-none group-hover:scale-100 group-hover:opacity-100 transition-all duration-150 ease-out bg-slate-900 dark:bg-slate-800 text-white text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap ${currentPosition}`}
+        className={`absolute z-50 scale-95 opacity-0 pointer-events-none group-hover:scale-100 group-hover:opacity-100 transition-all duration-150 ease-out bg-surface dark:bg-surface-secondary text-primary text-xs font-medium px-2 py-1 rounded shadow-md whitespace-nowrap ${currentPosition}`}
         role="tooltip"
       >
         {content}

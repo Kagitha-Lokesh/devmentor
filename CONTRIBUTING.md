@@ -1,4 +1,4 @@
-# Contributing to DevMentor AI
+# Contributing to JavaMentor
 
 Thank you for contributing! To ensure the codebase remains clean, robust, and highly structured, please follow these rules:
 

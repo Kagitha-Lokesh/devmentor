@@ -39,7 +39,7 @@ export function ContinueButton({ progress, topic, onTabChange, onNextTopic, clas
       onClick={handleClick}
       className={`
         inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm
-        bg-brand-500 text-white hover:bg-brand-600 active:scale-95
+        bg-brand-500 text-primary hover:bg-brand-600 active:scale-95
         shadow-lg shadow-brand-500/25 transition-all duration-200
         ${className}
       `}
