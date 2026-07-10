@@ -10,7 +10,12 @@ export const ActivityType = {
   MindMapViewed: 'Mind Map Viewed',
   Search: 'Search Query',
   Bookmark: 'Bookmark Toggle',
-  RecommendationAccepted: 'Recommendation Accepted'
+  RecommendationAccepted: 'Recommendation Accepted',
+  // Learning OS v1.2 extensions
+  QuizPassed: 'Quiz Passed',
+  FlashcardsReviewed: 'Flashcards Reviewed',
+  TopicMastered: 'Topic Mastered',
+  QueueItemStarted: 'Queue Item Started'
 };
 
 export class Activity {

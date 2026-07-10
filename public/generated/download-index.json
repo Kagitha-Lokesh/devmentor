@@ -1,0 +1,306 @@
+[
+  {
+    "id": "dl-java-cheat-sheet",
+    "title": "Java Cheat Sheet Quick Reference",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+    "sizeBytes": 1500
+  },
+  {
+    "id": "dl-resume-java-junior",
+    "title": "Junior Java Full Stack Resume Template",
+    "type": "Resume",
+    "format": "JSON",
+    "path": "career/resume-templates.json",
+    "sizeBytes": 1200
+  },
+  {
+    "id": "dl-portfolio-minimalist",
+    "title": "Minimalist Developer Portfolio Template",
+    "type": "Portfolio",
+    "format": "JSON",
+    "path": "career/portfolio-templates.json",
+    "sizeBytes": 850
+  },
+  {
+    "id": "dl-cs-BE-V1-C1-T1",
+    "title": "Introduction to Spring Boot Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-BE-V1-C1-T2",
+    "title": "Spring REST APIs Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-BE-V1-C1-T3",
+    "title": "Dependency Injection in Spring Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-BE-V1-C2-T1",
+    "title": "Spring Security Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-BE-V1-C2-T2",
+    "title": "Spring Data JPA Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-BE-V1-C2-T3",
+    "title": "Microservices Architecture Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-DB-V1-C1-T1",
+    "title": "SQL Basics Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-DB-V1-C1-T2",
+    "title": "SQL Joins Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-DB-V1-C1-T3",
+    "title": "SQL Aggregations & Grouping Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-DB-V1-C2-T1",
+    "title": "PostgreSQL Setup & Basics Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-DB-V1-C2-T2",
+    "title": "Database Design & Normalization Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/database-design/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C1-T1",
+    "title": "CSS Fundamentals Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C1-T2",
+    "title": "CSS Flexbox Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C1-T3",
+    "title": "CSS Grid Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C2-T1",
+    "title": "JavaScript Basics Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C2-T2",
+    "title": "JavaScript DOM Manipulation Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V1-C2-T3",
+    "title": "Async JavaScript Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V2-C1-T1",
+    "title": "React Components & JSX Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V2-C1-T2",
+    "title": "React Hooks Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V2-C1-T3",
+    "title": "React Routing Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V2-C2-T1",
+    "title": "State Management in React Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-FE-V2-C2-T2",
+    "title": "Forms in React Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T1",
+    "title": "Variables in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T2",
+    "title": "Loops in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/loops/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T3",
+    "title": "Methods in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/methods/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T4",
+    "title": "Arrays in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/arrays/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T5",
+    "title": "Strings in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/strings/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C1-T6",
+    "title": "OOP Fundamentals Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C2-T1",
+    "title": "Inheritance in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C2-T2",
+    "title": "Polymorphism in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C2-T3",
+    "title": "Abstraction & Interfaces Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C2-T4",
+    "title": "Exception Handling Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C3-T1",
+    "title": "Java Collections Framework Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/collections/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C3-T2",
+    "title": "Generics in Java Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/generics/cheatsheet.md",
+    "sizeBytes": 2500
+  },
+  {
+    "id": "dl-cs-V1-C3-T3",
+    "title": "Lambda Expressions & Streams Reference Cheat Sheet",
+    "type": "CheatSheet",
+    "format": "Markdown",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/cheatsheet.md",
+    "sizeBytes": 2500
+  }
+]

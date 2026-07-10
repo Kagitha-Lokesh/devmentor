@@ -15,6 +15,13 @@
     --color-muted: 100 116 139;
     --sidebar-width: 260px;
     --topbar-height: 60px;
+
+    /* Enterprise Motion System Tokens */
+    --duration-fast: 150ms;
+    --duration-medium: 250ms;
+    --duration-slow: 350ms;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
@@ -28,14 +35,12 @@
 
   * {
     @apply border-surface-border;
-    /* Prevent horizontal overflow globally */
     max-width: 100%;
     box-sizing: border-box;
   }
 
   html {
     @apply scroll-smooth;
-    /* Prevent horizontal scroll at root */
     overflow-x: hidden;
   }
 
@@ -43,116 +48,143 @@
     @apply bg-surface text-text font-sans antialiased;
     min-height: 100dvh;
     overflow-x: hidden;
-    /* Safe area support for notched phones */
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);
   }
 
-  /* Scrollbar styling */
-  ::-webkit-scrollbar { width: 4px; height: 4px; }
-  ::-webkit-scrollbar-track { @apply bg-surface-secondary; }
-  ::-webkit-scrollbar-thumb { @apply bg-surface-tertiary rounded-full; }
-  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-500; }
+  /* Custom high-polish scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-tertiary rounded-full transition-colors duration-150;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
 
-  /* Focus rings — accessible and visible */
+  /* Accessible visible focus outlines */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-500;
   }
 
-  /* Code blocks */
-  pre, code { @apply font-mono; }
+  pre, code {
+    @apply font-mono;
+  }
 
-  /* Prevent images from overflowing */
   img, video, canvas, svg {
     max-width: 100%;
     height: auto;
   }
 
-  /* Responsive base typography */
-  h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); }
-  h2 { font-size: clamp(1.25rem, 3vw, 1.875rem); }
-  h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+  /* Responsive typography clamp styling */
+  h1 { font-size: clamp(1.6rem, 4.5vw, 2.4rem); font-weight: 700; tracking-tight: -0.025em; }
+  h2 { font-size: clamp(1.3rem, 3.5vw, 1.9rem); font-weight: 600; tracking-tight: -0.02em; }
+  h3 { font-size: clamp(1.15rem, 2.8vw, 1.55rem); font-weight: 600; }
 }
 
 @layer components {
-  /* ── Button variants ── */
+  /* ── Interactive standards classes ── */
+
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2.5
            bg-brand-600 hover:bg-brand-500 active:bg-brand-700
-           text-white text-sm font-medium rounded-lg
-           transition-all duration-150 cursor-pointer
+           text-white text-sm font-medium rounded-lg shadow-sm
+           transition-all duration-[var(--duration-fast)] ease-out cursor-pointer
            disabled:opacity-50 disabled:cursor-not-allowed
-           /* Minimum 44px touch target on mobile */
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500
+           active:scale-[0.98]
            min-h-[44px] sm:min-h-[auto];
   }
 
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-4 py-2.5
-           bg-surface-secondary hover:bg-surface-tertiary
+           bg-surface hover:bg-surface-secondary active:bg-surface-tertiary
            text-text text-sm font-medium rounded-lg border border-surface-border
-           transition-all duration-150 cursor-pointer
+           transition-all duration-[var(--duration-fast)] ease-out cursor-pointer
            disabled:opacity-50 disabled:cursor-not-allowed
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500
+           active:scale-[0.98]
            min-h-[44px] sm:min-h-[auto];
   }
 
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-3 py-2
-           hover:bg-surface-secondary text-text/80 hover:text-text
+           hover:bg-surface-secondary active:bg-surface-tertiary text-text/85 hover:text-text
            text-sm font-medium rounded-lg
-           transition-all duration-150 cursor-pointer
+           transition-all duration-[var(--duration-fast)] ease-out cursor-pointer
+           disabled:opacity-50 disabled:cursor-not-allowed
            min-h-[44px] sm:min-h-[auto];
   }
 
-  /* ── Card ── */
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5
+           bg-red-600 hover:bg-red-500 active:bg-red-700
+           text-white text-sm font-medium rounded-lg shadow-sm
+           transition-all duration-[var(--duration-fast)] ease-out cursor-pointer
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98]
+           min-h-[44px] sm:min-h-[auto];
+  }
+
+  /* ── Cards ── */
   .card {
-    @apply bg-surface-secondary border border-surface-border rounded-xl p-4 sm:p-5;
+    @apply bg-surface border border-surface-border rounded-xl p-5 shadow-sm
+           transition-all duration-[var(--duration-medium)] ease-[var(--ease-out-expo)];
   }
 
   .card-hover {
-    @apply card hover:border-brand-700 hover:bg-surface-tertiary
-           transition-all duration-200 cursor-pointer;
+    @apply card hover:border-brand-500 hover:shadow-md hover:translate-y-[-1px]
+           cursor-pointer;
   }
 
-  /* ── Form inputs ── */
+  .card-interactive {
+    @apply card hover:border-brand-500 hover:bg-surface-secondary active:bg-surface-tertiary
+           cursor-pointer active:scale-[0.99];
+  }
+
+  /* ── Form Inputs ── */
   .input {
-    @apply w-full px-3 py-2.5 bg-surface-secondary border border-surface-border
+    @apply w-full px-3 py-2.5 bg-surface border border-surface-border
            rounded-lg text-text placeholder:text-text/45
-           text-sm focus:outline-none focus:border-brand-500
-           transition-colors duration-150
-           /* Minimum 44px height for touch targets */
+           text-sm focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500
+           transition-all duration-[var(--duration-fast)] ease-out
            min-h-[44px];
   }
 
   .input-error {
-    @apply input border-red-500;
+    @apply input border-red-500 focus:ring-red-500/20 focus:border-red-500;
   }
 
   .label {
-    @apply block text-sm font-medium text-text/80 mb-1.5;
+    @apply block text-sm font-medium text-text/85 mb-1.5;
   }
 
   .error-text {
-    @apply text-xs text-red-400 mt-1;
+    @apply text-xs text-red-500 mt-1.5 flex items-center gap-1;
   }
 
   /* ── Badges ── */
   .badge {
-    @apply inline-flex items-center gap-1 px-2 py-0.5
-           text-xs font-medium rounded-full;
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5
+           text-xs font-semibold rounded-full border transition-all;
   }
 
-  .badge-brand { @apply badge bg-brand-950 text-brand-300 border border-brand-800; }
-  .badge-success { @apply badge bg-green-950 text-green-300 border border-green-800; }
-  .badge-warning { @apply badge bg-amber-950 text-amber-300 border border-amber-800; }
-  .badge-error { @apply badge bg-red-950 text-red-300 border border-red-800; }
-  .badge-xp { @apply badge bg-violet-950 text-violet-300 border border-violet-800; }
+  .badge-brand { @apply badge bg-brand-50 text-brand-700 border-brand-200 dark:bg-brand-950 dark:text-brand-300 dark:border-brand-900; }
+  .badge-success { @apply badge bg-green-50 text-green-700 border-green-200 dark:bg-green-950 dark:text-green-300 dark:border-green-900; }
+  .badge-warning { @apply badge bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-900; }
+  .badge-error { @apply badge bg-red-50 text-red-700 border-red-200 dark:bg-red-950 dark:text-red-300 dark:border-red-900; }
+  .badge-xp { @apply badge bg-violet-50 text-violet-700 border-violet-200 dark:bg-violet-950 dark:text-violet-300 dark:border-violet-900; }
 
-  /* ── Sidebar nav item ── */
+  /* ── Navigation List Items ── */
   .nav-item {
     @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
-           text-text/60 hover:text-text hover:bg-surface-tertiary
-           transition-all duration-150 cursor-pointer
-           /* Touch-friendly tap targets */
+           text-text/70 hover:text-text hover:bg-surface-secondary
+           transition-all duration-[var(--duration-fast)] ease-out cursor-pointer
            min-h-[44px];
   }
 
@@ -160,50 +192,38 @@
     @apply nav-item text-brand-700 bg-brand-50 hover:bg-brand-100 dark:text-brand-300 dark:bg-brand-950 dark:hover:bg-brand-900;
   }
 
-  /* ── Skeleton loader ── */
+  /* ── Shimmer Skeleton ── */
   .skeleton {
-    @apply bg-surface-tertiary rounded animate-pulse;
+    @apply bg-surface-tertiary rounded relative overflow-hidden;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    animation: shimmer 1.6s infinite;
   }
 
-  /* ── Difficulty chips ── */
-  .chip-easy    { @apply badge bg-green-950  text-green-300  border border-green-800; }
-  .chip-medium  { @apply badge bg-amber-950  text-amber-300  border border-amber-800; }
-  .chip-hard    { @apply badge bg-red-950    text-red-300    border border-red-800; }
-  .chip-expert  { @apply badge bg-purple-950 text-purple-300 border border-purple-800; }
-
-  /* ── Mastery heatmap cells ── */
+  /* ── Heatmap Cells ── */
   .heatmap-not-started { @apply bg-surface-tertiary; }
-  .heatmap-weak   { @apply bg-red-900/60  border border-red-700; }
-  .heatmap-mid    { @apply bg-amber-900/60 border border-amber-700; }
-  .heatmap-strong { @apply bg-green-900/60 border border-green-700; }
+  .heatmap-weak   { @apply bg-red-500/25 border border-red-500/40; }
+  .heatmap-mid    { @apply bg-amber-500/25 border border-amber-500/40; }
+  .heatmap-strong { @apply bg-green-500/25 border border-green-500/40; }
 
-  /* ── Responsive table wrapper ── */
+  /* ── Table Styling ── */
   .table-responsive {
     @apply w-full overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0;
   }
 
-  /* ── Mobile bottom sheet backdrop ── */
-  .bottom-sheet-backdrop {
-    @apply fixed inset-0 z-40 bg-slate-950/60 backdrop-blur-sm;
-  }
-
-  /* ── Page container — consistent responsive padding ── */
   .page-container {
     @apply px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8 max-w-7xl mx-auto;
   }
 }
 
 @layer utilities {
-  /* ── Critical layout helpers ── */
-
-  /* Mobile: NO left margin (sidebar is a drawer overlay)
-     Desktop (lg+): shift content right to make room for sidebar */
   .content-area {
     margin-left: 0;
     margin-top: var(--topbar-height);
     min-height: calc(100dvh - var(--topbar-height));
     padding: 1rem;
-    /* Bottom padding for potential mobile nav bars */
     padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 
@@ -220,7 +240,6 @@
     margin-top: var(--topbar-height);
   }
 
-  /* ── Text truncation ── */
   .truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -235,16 +254,13 @@
     overflow: hidden;
   }
 
-  /* ── Transition presets ── */
-  .transition-smooth { @apply transition-all duration-200 ease-out; }
-  .transition-fast   { @apply transition-all duration-150 ease-out; }
+  .transition-smooth { @apply transition-all duration-[var(--duration-medium)] ease-[var(--ease-out-expo)]; }
+  .transition-fast   { @apply transition-all duration-[var(--duration-fast)] ease-out; }
 
-  /* ── Prevent text overflow in tight containers ── */
   .text-safe {
     @apply overflow-hidden text-ellipsis whitespace-nowrap;
   }
 
-  /* ── Topbar height on left for sidebar — only on large screens ── */
   .lg-left-sidebar {
     left: 0;
   }
@@ -255,7 +271,6 @@
     }
   }
 
-  /* ── Reduce motion for accessibility ── */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       animation-duration: 0.01ms !important;
@@ -264,12 +279,17 @@
     }
   }
 
-  /* ── Safe area utilities ── */
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
 
   .pt-safe {
     padding-top: env(safe-area-inset-top);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
   }
 }

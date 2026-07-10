@@ -1,19 +1,34 @@
 import Fuse from 'fuse.js';
-import searchIndex from '../../shared/generated/global-search-index.json';
 import { ISearchRepository } from '../../domain/repository/ISearchRepository';
 import { localDB } from '../../shared/utils/indexedDB';
 
 export class SearchRepository extends ISearchRepository {
   constructor() {
     super();
-    this.fuse = new Fuse(searchIndex, {
-      keys: ['title', 'description', 'technology', 'track', 'tags', 'keywords'],
-      threshold: 0.35,
-      includeScore: true
-    });
+    this.searchIndex = null;
+    this.fuse = null;
+  }
+
+  async _ensureFuseLoaded() {
+    if (this.fuse) return;
+    try {
+      // Lazy fetch the index from the runtime path
+      const index = await fetch('/generated/search/global-search-index.json').then(r => r.json());
+      this.searchIndex = index;
+      this.fuse = new Fuse(index, {
+        keys: ['title', 'description', 'technology', 'track', 'tags', 'keywords'],
+        threshold: 0.35,
+        includeScore: true
+      });
+    } catch (err) {
+      console.warn('Fallback to empty search index (offline or direct load):', err.message);
+      this.searchIndex = [];
+      this.fuse = new Fuse([], { keys: [] });
+    }
   }
 
   async search(queryText, filters = {}) {
+    await this._ensureFuseLoaded();
     let results = [];
     if (queryText && queryText.trim()) {
       results = this.fuse.search(queryText).map(res => ({
@@ -21,7 +36,7 @@ export class SearchRepository extends ISearchRepository {
         score: res.score
       }));
     } else {
-      results = [...searchIndex];
+      results = [...(this.searchIndex || [])];
     }
 
     if (filters) {
@@ -48,6 +63,7 @@ export class SearchRepository extends ISearchRepository {
   }
 
   async getSuggestions(text) {
+    await this._ensureFuseLoaded();
     if (!text) return [];
     const searchRes = this.fuse.search(text);
     return searchRes.slice(0, 5).map(res => res.item.title);

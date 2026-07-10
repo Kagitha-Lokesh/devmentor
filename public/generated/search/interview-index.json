@@ -1,0 +1,200 @@
+[
+  {
+    "id": "question:amzn-tech-1",
+    "description": "Interview Question: In Java 8, a HashMap stores key-value pairs in an array of nodes (Node<K,V>[] table). The index is c...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-tech-2",
+    "description": "Interview Question: This problem can be resolved using a Monotonic Stack. We traverse the array from right to left, main...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-sys-1",
+    "description": "Interview Question: A distributed rate limiter limits API requests per user key across multiple load-balanced servers. W...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-hr-1",
+    "description": "Interview Question: I want to join Amazon because of its culture of customer obsession and operational excellence. At sc...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-tech-1",
+    "description": "Interview Question: To detect a cycle in a directed graph, we can use depth-first search (DFS) with node coloring: white...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-sys-1",
+    "description": "Interview Question: To design typeahead suggestions, we need a system that returns top 5 matching queries as a user type...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-hr-1",
+    "description": "Interview Question: To me, Googlyness means doing the right thing, valuing diversity, intellectual humility, and having ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-1",
+    "description": "Interview Question: The four pillars of OOP are: 1. Encapsulation (hiding data using private fields and public getters/s...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-2",
+    "description": "Interview Question: The WHERE clause is used to filter records from a table before any groupings are made. The HAVING cl...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-sys-1",
+    "description": "Interview Question: A Library Management System database requires tables for: Books (id, title, author, isbn, status), U...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-hr-1",
+    "description": "Interview Question: Yes, I am completely comfortable relocating to any TCS development center in India. I believe reloca...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-hr-1",
+    "description": "Interview Question: I am a full-stack developer specializing in building Java and React applications. I have experience ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-sys-1",
+    "description": "Interview Question: A URL shortener converts long URLs to short aliases (e.g. bit.ly/abcd12). We need: 1. A relational o...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-tech-1",
+    "description": "Interview Question: In Java, an abstract class can have state (non-static, non-final fields) and constructors, whereas i...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  }
+]

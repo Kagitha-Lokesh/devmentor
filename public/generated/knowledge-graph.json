@@ -1,0 +1,1020 @@
+[
+  {
+    "id": "BE-V1-C1-T1",
+    "slug": "spring-boot-intro",
+    "title": "Introduction to Spring Boot",
+    "description": "Get started with Spring Boot, auto-configuration, and standalone Spring applications.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring Boot"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/interview.json"
+    }
+  },
+  {
+    "id": "BE-V1-C1-T2",
+    "slug": "spring-rest",
+    "title": "Spring REST APIs",
+    "description": "Build robust RESTful web services using Spring MVC and Controllers.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring Boot",
+      "API"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/interview.json"
+    }
+  },
+  {
+    "id": "BE-V1-C1-T3",
+    "slug": "spring-di",
+    "title": "Dependency Injection in Spring",
+    "description": "Master Inversion of Control (IoC) and Dependency Injection in the Spring framework.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Java",
+      "Spring",
+      "Architecture"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/interview.json"
+    }
+  },
+  {
+    "id": "BE-V1-C2-T1",
+    "slug": "spring-security",
+    "title": "Spring Security",
+    "description": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Spring",
+      "Security",
+      "JWT"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/interview.json"
+    }
+  },
+  {
+    "id": "BE-V1-C2-T2",
+    "slug": "spring-data-jpa",
+    "title": "Spring Data JPA",
+    "description": "Persist data to relational databases using Spring Data JPA and Hibernate ORM.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Spring",
+      "JPA",
+      "Database"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/interview.json"
+    }
+  },
+  {
+    "id": "BE-V1-C2-T3",
+    "slug": "microservices",
+    "title": "Microservices Architecture",
+    "description": "Design and build scalable microservices with Spring Boot and REST communication.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Backend",
+      "Microservices",
+      "Architecture",
+      "Spring Boot"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/interview.json"
+    }
+  },
+  {
+    "id": "DB-V1-C1-T1",
+    "slug": "sql-basics",
+    "title": "SQL Basics",
+    "description": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Database",
+      "SQL",
+      "Relational DB"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/interview.json"
+    }
+  },
+  {
+    "id": "DB-V1-C1-T2",
+    "slug": "sql-joins",
+    "title": "SQL Joins",
+    "description": "Combine data from multiple tables using INNER JOIN, LEFT JOIN, RIGHT JOIN and more.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Database",
+      "SQL",
+      "Joins"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/interview.json"
+    }
+  },
+  {
+    "id": "DB-V1-C1-T3",
+    "slug": "sql-aggregations",
+    "title": "SQL Aggregations & Grouping",
+    "description": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Database",
+      "SQL",
+      "Analytics"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/interview.json"
+    }
+  },
+  {
+    "id": "DB-V1-C2-T1",
+    "slug": "postgresql-setup",
+    "title": "PostgreSQL Setup & Basics",
+    "description": "Install PostgreSQL, create databases and tables, and run queries from the command line.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Database",
+      "PostgreSQL"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/interview.json"
+    }
+  },
+  {
+    "id": "DB-V1-C2-T2",
+    "slug": "database-design",
+    "title": "Database Design & Normalization",
+    "description": "Design efficient databases using 1NF, 2NF, 3NF and ER diagrams.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Database",
+      "Design",
+      "Normalization"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-2/topics/database-design/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-2/topics/database-design/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-2/topics/database-design/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-2/topics/database-design/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-2/topics/database-design/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-2/topics/database-design/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-2/topics/database-design/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C1-T1",
+    "slug": "css-fundamentals",
+    "title": "CSS Fundamentals",
+    "description": "Learn how to style web pages using CSS, covering selectors, colors, and the box model.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Web Design"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C1-T2",
+    "slug": "css-flexbox",
+    "title": "CSS Flexbox",
+    "description": "Build flexible and responsive layouts using the CSS Flexbox model.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Layouts"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C1-T3",
+    "slug": "css-grid",
+    "title": "CSS Grid",
+    "description": "Create two-dimensional grid-based layouts for modern responsive web design.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "CSS",
+      "Layouts"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C2-T1",
+    "slug": "js-basics",
+    "title": "JavaScript Basics",
+    "description": "Introduction to JavaScript variables, data types, and functions.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "Programming"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C2-T2",
+    "slug": "js-dom",
+    "title": "JavaScript DOM Manipulation",
+    "description": "Interact with the browser Document Object Model to make web pages dynamic.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "DOM"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/interview.json"
+    }
+  },
+  {
+    "id": "FE-V1-C2-T3",
+    "slug": "js-async",
+    "title": "Async JavaScript",
+    "description": "Handle asynchronous operations using Promises, async/await, and Fetch API.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "Async"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/interview.json"
+    }
+  },
+  {
+    "id": "FE-V2-C1-T1",
+    "slug": "react-components",
+    "title": "React Components & JSX",
+    "description": "Understand the building blocks of React applications.",
+    "difficulty": "Intermediate",
+    "volume": 2,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "React",
+      "UI"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/interview.json"
+    }
+  },
+  {
+    "id": "FE-V2-C1-T2",
+    "slug": "react-hooks",
+    "title": "React Hooks",
+    "description": "Manage state and side effects in functional components using Hooks.",
+    "difficulty": "Intermediate",
+    "volume": 2,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "React",
+      "State Management"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/interview.json"
+    }
+  },
+  {
+    "id": "FE-V2-C1-T3",
+    "slug": "react-routing",
+    "title": "React Routing",
+    "description": "Navigate between pages in a single-page application using React Router.",
+    "difficulty": "Intermediate",
+    "volume": 2,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "React",
+      "Routing"
+    ],
+    "estimatedReadingTime": 30,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/interview.json"
+    }
+  },
+  {
+    "id": "FE-V2-C2-T1",
+    "slug": "react-state",
+    "title": "State Management in React",
+    "description": "Manage complex application state with Context API and useReducer.",
+    "difficulty": "Intermediate",
+    "volume": 2,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "React",
+      "State Management"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/interview.json"
+    }
+  },
+  {
+    "id": "FE-V2-C2-T2",
+    "slug": "react-forms",
+    "title": "Forms in React",
+    "description": "Handle user input efficiently using controlled components and form validation.",
+    "difficulty": "Intermediate",
+    "volume": 2,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Frontend",
+      "React",
+      "Forms"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T1",
+    "slug": "variables",
+    "title": "Variables in Java",
+    "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+    "difficulty": "Beginner",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Syntax",
+      "Fundamentals"
+    ],
+    "estimatedReadingTime": 15,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/variables/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/variables/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/variables/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/variables/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/variables/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T2",
+    "slug": "loops",
+    "title": "Loops in Java",
+    "description": "Master control flow structures using for, while, and do-while loops in Java.",
+    "difficulty": "Beginner",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [
+      "V1-C1-T1"
+    ],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Control Flow"
+    ],
+    "estimatedReadingTime": 20,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/loops/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/loops/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/loops/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/loops/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/loops/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/loops/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/loops/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T3",
+    "slug": "methods",
+    "title": "Methods in Java",
+    "description": "Learn how to encapsulate code into reusable blocks using methods.",
+    "difficulty": "Beginner",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [
+      "V1-C1-T1"
+    ],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Methods"
+    ],
+    "estimatedReadingTime": 20,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/methods/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/methods/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/methods/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/methods/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/methods/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/methods/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/methods/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T4",
+    "slug": "arrays",
+    "title": "Arrays in Java",
+    "description": "Learn how to store and manipulate collections of elements using arrays.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Arrays",
+      "Data Structures"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/arrays/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/arrays/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/arrays/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/arrays/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/arrays/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/arrays/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/arrays/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T5",
+    "slug": "strings",
+    "title": "Strings in Java",
+    "description": "Master Java String manipulation, String methods, and immutability.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Strings"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/strings/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/strings/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/strings/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/strings/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/strings/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/strings/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/strings/interview.json"
+    }
+  },
+  {
+    "id": "V1-C1-T6",
+    "slug": "oop-basics",
+    "title": "OOP Fundamentals",
+    "description": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-1",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "OOP"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/interview.json"
+    }
+  },
+  {
+    "id": "V1-C2-T1",
+    "slug": "inheritance",
+    "title": "Inheritance in Java",
+    "description": "Learn how subclasses extend parent classes and reuse code with inheritance.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Inheritance"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/interview.json"
+    }
+  },
+  {
+    "id": "V1-C2-T2",
+    "slug": "polymorphism",
+    "title": "Polymorphism in Java",
+    "description": "Understand compile-time and runtime polymorphism, method overloading and overriding.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Polymorphism"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/interview.json"
+    }
+  },
+  {
+    "id": "V1-C2-T3",
+    "slug": "abstraction",
+    "title": "Abstraction & Interfaces",
+    "description": "Learn abstract classes and interfaces to design clean and extensible Java applications.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "OOP",
+      "Abstraction",
+      "Interface"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/interview.json"
+    }
+  },
+  {
+    "id": "V1-C2-T4",
+    "slug": "exception-handling",
+    "title": "Exception Handling",
+    "description": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-2",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Exception Handling"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/interview.json"
+    }
+  },
+  {
+    "id": "V1-C3-T1",
+    "slug": "collections",
+    "title": "Java Collections Framework",
+    "description": "Master List, Set, Map, and Queue interfaces with their common implementations.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-3",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Collections",
+      "Data Structures"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/collections/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/collections/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/collections/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/collections/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/collections/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/collections/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/collections/interview.json"
+    }
+  },
+  {
+    "id": "V1-C3-T2",
+    "slug": "generics",
+    "title": "Generics in Java",
+    "description": "Write type-safe code with generic classes, methods, and bounded type parameters.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-3",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Generics"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/generics/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/generics/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/generics/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/generics/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/generics/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/generics/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/generics/interview.json"
+    }
+  },
+  {
+    "id": "V1-C3-T3",
+    "slug": "lambda-streams",
+    "title": "Lambda Expressions & Streams",
+    "description": "Embrace functional programming with Java 8 lambdas, Stream API, and method references.",
+    "difficulty": "Intermediate",
+    "volume": 1,
+    "chapter": "chapter-3",
+    "prerequisites": [],
+    "nextTopics": [],
+    "tags": [
+      "Java Core",
+      "Functional Programming",
+      "Java 8"
+    ],
+    "estimatedReadingTime": 35,
+    "estimatedPracticeTime": 20,
+    "estimatedRevisionTime": 8,
+    "interviewImportance": "High",
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/interview.json"
+    }
+  }
+]

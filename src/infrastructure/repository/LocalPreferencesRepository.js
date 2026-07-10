@@ -13,7 +13,7 @@ export class LocalPreferencesRepository extends IAssistantPreferencesRepository 
       }
       
       // Fallback: load default settings from generated index
-      const def = await fetch('/src/shared/generated/assistant-config.json')
+      const def = await fetch('/generated/assistant-config.json')
         .then(r => r.json())
         .catch(() => ({ activeProvider: 'rule-based' }));
 

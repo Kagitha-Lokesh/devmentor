@@ -23,4 +23,6 @@ export const useExportsStore = create((set) => ({
       throw err;
     }
   },
+
+  reset: () => set({ exportJobs: [], isExporting: false }),
 }));

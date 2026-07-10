@@ -5,7 +5,7 @@ export class PromptBuilder {
 
   async _loadTemplates() {
     if (!this._templates) {
-      this._templates = await fetch('/src/shared/generated/prompt-templates.json')
+      this._templates = await fetch('/generated/prompt-templates.json')
         .then(r => r.json())
         .catch(() => ({}));
     }

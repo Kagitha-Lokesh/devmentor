@@ -51,6 +51,7 @@ import { AchievementUseCase } from '../../application/achievements/AchievementUs
 import { CalendarUseCase } from '../../application/calendar/CalendarUseCase';
 import { DownloadUseCase } from '../../application/downloads/DownloadUseCase';
 import { ExportUseCase } from '../../application/exports/ExportUseCase';
+import { ProgressHubUseCase } from '../../application/learning/ProgressHubUseCase';
 
 class Container {
   constructor() {
@@ -169,7 +170,12 @@ class Container {
     this.services.set('OllamaAssistantProvider', ollamaProvider);
 
     // Register Assistant Use Case
-    const assistantUseCase = new AssistantUseCase();
+    const assistantUseCase = new AssistantUseCase({
+      prefRepo: this.resolve('IAssistantPreferencesRepository'),
+      convRepo: this.resolve('IConversationRepository'),
+      analytics: this.resolve('IAnalyticsService'),
+      logger: this.resolve('ILogger')
+    });
     this.services.set('AssistantUseCase', assistantUseCase);
 
     // Register Projects Platform Repositories & Use Cases
@@ -231,6 +237,17 @@ class Container {
 
     const exportUseCase = new ExportUseCase();
     this.services.set('ExportUseCase', exportUseCase);
+
+    // Register Learning OS v1.2 Use Cases
+    const progressHubUseCase = new ProgressHubUseCase({
+      progressRepo: this.resolve('IProgressRepository'),
+      masteryRepo: this.resolve('IMasteryRepository'),
+      activityRepo: this.resolve('IActivityRepository'),
+      graphRepo: this.resolve('IKnowledgeGraphRepository'),
+      recEngine: this.resolve('IRecommendationEngine'),
+      logger: this.resolve('ILogger')
+    });
+    this.services.set('ProgressHubUseCase', progressHubUseCase);
   }
 
   resolve(name) {

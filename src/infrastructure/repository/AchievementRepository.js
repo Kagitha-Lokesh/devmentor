@@ -14,13 +14,16 @@ export class AchievementRepository extends IAchievementRepository {
     this.env = container.resolve('environment');
   }
 
+  _storeKey(uid, achievementId) {
+    return `${uid}_${achievementId}`;
+  }
+
   async getStaticAchievements() {
     return staticAchievements;
   }
 
   async getAchievements(uid) {
-    const all = await this._getAllLocalAchievements();
-    const userAch = all.filter(a => a.userId === uid);
+    const userAch = await localDB.getAllByPrefix('achievements', uid);
     if (userAch.length > 0) {
       return userAch.map(a => new Achievement(a));
     }
@@ -34,7 +37,7 @@ export class AchievementRepository extends IAchievementRepository {
       for (const d of snap.docs) {
         const data = d.data();
         const ach = new Achievement({ ...data, id: d.id, userId: uid });
-        await localDB.put('achievements', ach.id, ach.toJSON());
+        await localDB.put('achievements', this._storeKey(uid, ach.id), ach.toJSON());
         list.push(ach);
       }
       return list;
@@ -47,23 +50,8 @@ export class AchievementRepository extends IAchievementRepository {
   async saveAchievementProgress(uid, achievement) {
     achievement.userId = uid;
     const data = achievement.toJSON();
-    await localDB.put('achievements', achievement.id, data);
+    await localDB.put('achievements', this._storeKey(uid, achievement.id), data);
     await syncQueue.enqueue('achievements', uid, data);
-  }
-
-  async _getAllLocalAchievements() {
-    try {
-      const dbInstance = await localDB.open();
-      return new Promise((resolve) => {
-        const tx = dbInstance.transaction('achievements', 'readonly');
-        const store = tx.objectStore('achievements');
-        const req = store.getAll();
-        req.onsuccess = () => resolve(req.result || []);
-        req.onerror = () => resolve([]);
-      });
-    } catch {
-      return [];
-    }
   }
 }
 export default AchievementRepository;

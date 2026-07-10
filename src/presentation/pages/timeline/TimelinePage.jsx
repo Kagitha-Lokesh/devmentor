@@ -90,6 +90,7 @@ function groupByDate(events) {
 
 export default function TimelinePage() {
   const [typeFilter, setTypeFilter] = useState('all');
+  const [visibleCount, setVisibleCount] = useState(25);
   const { user } = useAuthStore();
   const { events, stats, isLoading, loadEvents } = useTimelineStore();
 
@@ -97,8 +98,14 @@ export default function TimelinePage() {
     if (user?.uid) loadEvents(user.uid);
   }, [user?.uid]);
 
+  // Reset pagination count on filter change
+  useEffect(() => {
+    setVisibleCount(25);
+  }, [typeFilter]);
+
   const filtered = typeFilter === 'all' ? events : events.filter(e => e.type === typeFilter);
-  const grouped = groupByDate(filtered);
+  const slicedFiltered = filtered.slice(0, visibleCount);
+  const grouped = groupByDate(slicedFiltered);
 
   const STAT_CARDS = [
     { label: 'Total Events', value: stats?.total || 0, icon: Activity, color: 'bg-brand-950 text-brand-400' },
@@ -162,6 +169,16 @@ export default function TimelinePage() {
               </div>
             </div>
           ))}
+          {filtered.length > visibleCount && (
+            <div className="flex justify-center pt-4">
+              <button
+                onClick={() => setVisibleCount(c => c + 25)}
+                className="btn-secondary text-xs py-2 px-6 flex items-center gap-1.5 cursor-pointer border border-surface-border hover:bg-surface-tertiary transition-colors rounded-lg font-semibold text-text/80"
+              >
+                Load More Events
+              </button>
+            </div>
+          )}
         </div>
       )}
     </div>

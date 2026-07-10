@@ -25,5 +25,13 @@ export const useUiStore = create((set) => ({
     activeModal: null,
     requestState: 'idle',
     globalError: null
-  })
+  }),
+
+  reset: () => set({
+    sidebarOpen: false,
+    mobileDrawerOpen: false,
+    activeModal: null,
+    requestState: 'idle',
+    globalError: null
+  }),
 }));

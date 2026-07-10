@@ -1,0 +1,212 @@
+[
+  {
+    "topicId": "BE-V1-C1-T1",
+    "slug": "spring-boot-intro",
+    "title": "Introduction to Spring Boot",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/mindmap.json"
+  },
+  {
+    "topicId": "BE-V1-C1-T2",
+    "slug": "spring-rest",
+    "title": "Spring REST APIs",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/mindmap.json"
+  },
+  {
+    "topicId": "BE-V1-C1-T3",
+    "slug": "spring-di",
+    "title": "Dependency Injection in Spring",
+    "path": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/mindmap.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T1",
+    "slug": "spring-security",
+    "title": "Spring Security",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/mindmap.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T2",
+    "slug": "spring-data-jpa",
+    "title": "Spring Data JPA",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/mindmap.json"
+  },
+  {
+    "topicId": "BE-V1-C2-T3",
+    "slug": "microservices",
+    "title": "Microservices Architecture",
+    "path": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/mindmap.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T1",
+    "slug": "sql-basics",
+    "title": "SQL Basics",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/mindmap.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T2",
+    "slug": "sql-joins",
+    "title": "SQL Joins",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/mindmap.json"
+  },
+  {
+    "topicId": "DB-V1-C1-T3",
+    "slug": "sql-aggregations",
+    "title": "SQL Aggregations & Grouping",
+    "path": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/mindmap.json"
+  },
+  {
+    "topicId": "DB-V1-C2-T1",
+    "slug": "postgresql-setup",
+    "title": "PostgreSQL Setup & Basics",
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/mindmap.json"
+  },
+  {
+    "topicId": "DB-V1-C2-T2",
+    "slug": "database-design",
+    "title": "Database Design & Normalization",
+    "path": "courses/database/volume-1/chapters/chapter-2/topics/database-design/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T1",
+    "slug": "css-fundamentals",
+    "title": "CSS Fundamentals",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T2",
+    "slug": "css-flexbox",
+    "title": "CSS Flexbox",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C1-T3",
+    "slug": "css-grid",
+    "title": "CSS Grid",
+    "path": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T1",
+    "slug": "js-basics",
+    "title": "JavaScript Basics",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T2",
+    "slug": "js-dom",
+    "title": "JavaScript DOM Manipulation",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/mindmap.json"
+  },
+  {
+    "topicId": "FE-V1-C2-T3",
+    "slug": "js-async",
+    "title": "Async JavaScript",
+    "path": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/mindmap.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T1",
+    "slug": "react-components",
+    "title": "React Components & JSX",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/mindmap.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T2",
+    "slug": "react-hooks",
+    "title": "React Hooks",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/mindmap.json"
+  },
+  {
+    "topicId": "FE-V2-C1-T3",
+    "slug": "react-routing",
+    "title": "React Routing",
+    "path": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/mindmap.json"
+  },
+  {
+    "topicId": "FE-V2-C2-T1",
+    "slug": "react-state",
+    "title": "State Management in React",
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/mindmap.json"
+  },
+  {
+    "topicId": "FE-V2-C2-T2",
+    "slug": "react-forms",
+    "title": "Forms in React",
+    "path": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T1",
+    "slug": "variables",
+    "title": "Variables in Java",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/variables/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T2",
+    "slug": "loops",
+    "title": "Loops in Java",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/loops/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T3",
+    "slug": "methods",
+    "title": "Methods in Java",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/methods/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T4",
+    "slug": "arrays",
+    "title": "Arrays in Java",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/arrays/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T5",
+    "slug": "strings",
+    "title": "Strings in Java",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/strings/mindmap.json"
+  },
+  {
+    "topicId": "V1-C1-T6",
+    "slug": "oop-basics",
+    "title": "OOP Fundamentals",
+    "path": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/mindmap.json"
+  },
+  {
+    "topicId": "V1-C2-T1",
+    "slug": "inheritance",
+    "title": "Inheritance in Java",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/mindmap.json"
+  },
+  {
+    "topicId": "V1-C2-T2",
+    "slug": "polymorphism",
+    "title": "Polymorphism in Java",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/mindmap.json"
+  },
+  {
+    "topicId": "V1-C2-T3",
+    "slug": "abstraction",
+    "title": "Abstraction & Interfaces",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/mindmap.json"
+  },
+  {
+    "topicId": "V1-C2-T4",
+    "slug": "exception-handling",
+    "title": "Exception Handling",
+    "path": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/mindmap.json"
+  },
+  {
+    "topicId": "V1-C3-T1",
+    "slug": "collections",
+    "title": "Java Collections Framework",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/collections/mindmap.json"
+  },
+  {
+    "topicId": "V1-C3-T2",
+    "slug": "generics",
+    "title": "Generics in Java",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/generics/mindmap.json"
+  },
+  {
+    "topicId": "V1-C3-T3",
+    "slug": "lambda-streams",
+    "title": "Lambda Expressions & Streams",
+    "path": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/mindmap.json"
+  }
+]

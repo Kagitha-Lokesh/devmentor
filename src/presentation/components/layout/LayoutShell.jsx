@@ -61,6 +61,9 @@ export default function LayoutShell() {
 
   return (
     <div className="min-h-screen bg-surface text-text overflow-x-hidden">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-brand-600 text-white px-4 py-2 rounded-lg z-[9999] shadow-md font-semibold text-sm">
+        Skip to main content
+      </a>
       <Sidebar
         isOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
@@ -69,7 +72,7 @@ export default function LayoutShell() {
       <Topbar toggleSidebar={toggleSidebar} onOpenCommandPalette={openPalette} />
 
       {/* Main Content Area — pushes right only on lg+ via CSS */}
-      <main className="content-area">
+      <main id="main-content" tabIndex="-1" className="content-area outline-none">
         <div className="max-w-7xl mx-auto w-full animate-fade-in">
           <Outlet />
         </div>

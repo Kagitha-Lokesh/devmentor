@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 /**
  * Simple HTML sanitizer and encoder for input values to prevent basic XSS injections.
  */
@@ -29,14 +31,15 @@ export function decodeSanitizedString(value) {
 export function sanitizeHtml(htmlString) {
   if (typeof htmlString !== 'string') return htmlString;
   
-  // Strip script blocks and dangerous tags completely
-  let clean = htmlString.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
-  
-  // Strip inline event attributes (e.g. onload, onerror, onclick)
-  clean = clean.replace(/on\w+\s*=\s*["'][^"']*["']/gi, '');
-  clean = clean.replace(/javascript\s*:/gi, '');
-  
-  return clean;
+  // Use enterprise-grade secure DOMPurify library
+  return DOMPurify.sanitize(htmlString, {
+    ALLOWED_TAGS: [
+      'p', 'b', 'i', 'em', 'strong', 'a', 'ul', 'ol', 'li', 'code', 'pre',
+      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br', 'span', 'blockquote',
+      'table', 'thead', 'tbody', 'tr', 'th', 'td', 'img', 'div'
+    ],
+    ALLOWED_ATTR: ['href', 'target', 'src', 'alt', 'class', 'id', 'style']
+  });
 }
 
 export function sanitizeObject(obj) {

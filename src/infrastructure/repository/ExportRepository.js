@@ -10,18 +10,14 @@ export class ExportRepository extends IExportRepository {
     this.logger = container.resolve('ILogger');
   }
 
+  _storeKey(uid, jobId) {
+    return `${uid}_${jobId}`;
+  }
+
   async getExportJobs(uid) {
     try {
-      const dbInstance = await localDB.open();
-      const all = await new Promise((resolve) => {
-        const tx = dbInstance.transaction('exports', 'readonly');
-        const store = tx.objectStore('exports');
-        const req = store.getAll();
-        req.onsuccess = () => resolve(req.result || []);
-        req.onerror = () => resolve([]);
-      });
-      return all
-        .filter(j => j.userId === uid)
+      const userExports = await localDB.getAllByPrefix('exports', uid);
+      return userExports
         .map(j => new ExportJob(j))
         .sort((a, b) => b.timestamp - a.timestamp);
     } catch {
@@ -32,7 +28,7 @@ export class ExportRepository extends IExportRepository {
   async saveExportJob(uid, job) {
     job.userId = uid;
     const data = job.toJSON();
-    await localDB.put('exports', job.id, data);
+    await localDB.put('exports', this._storeKey(uid, job.id), data);
     await syncQueue.enqueue('exports', uid, data);
   }
 }

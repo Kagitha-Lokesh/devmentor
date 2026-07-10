@@ -13,9 +13,12 @@ export class TimelineRepository extends ITimelineRepository {
     this.env = container.resolve('environment');
   }
 
+  _storeKey(uid, eventId) {
+    return `${uid}_${eventId}`;
+  }
+
   async getEvents(uid) {
-    const all = await this._getAllLocalEvents();
-    const userEvents = all.filter(e => e.userId === uid);
+    const userEvents = await localDB.getAllByPrefix('timeline', uid);
     if (userEvents.length > 0) {
       return userEvents
         .map(e => new TimelineEvent(e))
@@ -31,7 +34,7 @@ export class TimelineRepository extends ITimelineRepository {
       for (const d of snap.docs) {
         const data = d.data();
         const evt = new TimelineEvent({ ...data, id: d.id, userId: uid });
-        await localDB.put('timeline', evt.id, evt.toJSON());
+        await localDB.put('timeline', this._storeKey(uid, evt.id), evt.toJSON());
         list.push(evt);
       }
       return list.sort((a, b) => b.timestamp - a.timestamp);
@@ -44,23 +47,8 @@ export class TimelineRepository extends ITimelineRepository {
   async recordEvent(uid, event) {
     event.userId = uid;
     const data = event.toJSON();
-    await localDB.put('timeline', event.id, data);
+    await localDB.put('timeline', this._storeKey(uid, event.id), data);
     await syncQueue.enqueue('timeline', uid, data);
-  }
-
-  async _getAllLocalEvents() {
-    try {
-      const dbInstance = await localDB.open();
-      return new Promise((resolve) => {
-        const tx = dbInstance.transaction('timeline', 'readonly');
-        const store = tx.objectStore('timeline');
-        const req = store.getAll();
-        req.onsuccess = () => resolve(req.result || []);
-        req.onerror = () => resolve([]);
-      });
-    } catch {
-      return [];
-    }
   }
 }
 export default TimelineRepository;

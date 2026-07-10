@@ -1,0 +1,16 @@
+{
+  "scoringProfiles": {
+    "campus": {
+      "Technical": 50,
+      "Behavioral": 30,
+      "HR": 20,
+      "SystemDesign": 0
+    },
+    "experienced": {
+      "Technical": 40,
+      "SystemDesign": 40,
+      "Behavioral": 20,
+      "HR": 0
+    }
+  }
+}

@@ -14,10 +14,10 @@ export class StaticInterviewRepository extends IInterviewRepository {
   async _load() {
     if (this._cache) return this._cache;
     try {
-      const res = await fetch('/src/shared/generated/question-index.json');
+      const res = await fetch('/generated/question-index.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      this._cache = data.questions || [];
+      this._cache = Array.isArray(data) ? data : (data.questions || []);
       return this._cache;
     } catch (err) {
       console.warn('[StaticInterviewRepository] Could not load question-index:', err.message);

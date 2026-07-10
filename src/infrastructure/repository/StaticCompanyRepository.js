@@ -15,10 +15,10 @@ export class StaticCompanyRepository extends ICompanyRepository {
   async getCompanies() {
     if (this._cache) return this._cache;
     try {
-      const res = await fetch('/src/shared/generated/company-index.json');
+      const res = await fetch('/generated/company-index.json');
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      this._cache = data.companies || [];
+      this._cache = Array.isArray(data) ? data : (data.companies || []);
       return this._cache;
     } catch (err) {
       console.warn('[StaticCompanyRepository] Could not load company-index:', err.message);

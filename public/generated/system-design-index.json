@@ -1,0 +1,95 @@
+[
+  {
+    "id": "amzn-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design a Distributed Rate Limiter for a high-throughput API gateway.",
+    "sampleAnswer": "A distributed rate limiter limits API requests per user key across multiple load-balanced servers. We use Redis as a centralized high-speed cache. The Token Bucket or Leaky Bucket algorithm can be implemented. To prevent Redis from becoming a bottleneck, we can implement local token reserves on each gateway instance, fetching tokens in batches and utilizing Redis Lua scripts to ensure atomic decrements.",
+    "keyPoints": [
+      "Choice of algorithm: Token Bucket, Sliding Window Log, or Sliding Window Counter",
+      "Centralized key storage using Redis or similar in-memory cache",
+      "Network latency optimization (local caching, token batching)",
+      "Race conditions prevention using Redis Lua scripting",
+      "Graceful degradation if the cache is unreachable (fail-open vs fail-close)"
+    ],
+    "estimatedMinutes": 20,
+    "difficulty": "Hard",
+    "tags": [
+      "system-design",
+      "distributed-systems",
+      "scaling",
+      "cache"
+    ],
+    "companyId": "amazon",
+    "companyName": "Amazon"
+  },
+  {
+    "id": "goog-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design Google Search Auto-Complete (Typeahead suggestions) system.",
+    "sampleAnswer": "To design typeahead suggestions, we need a system that returns top 5 matching queries as a user types. We use a Trie data structure stored in memory. At scale, the Trie is partitioned by prefixes across servers. We pre-aggregate search trends offline using MapReduce/Spark to update node frequencies, caching top recommendations at the edge CDNs for extremely low latency response (under 10ms).",
+    "keyPoints": [
+      "Trie data structure storage design",
+      "Offline aggregation of query frequencies",
+      "Edge caching and CDN optimizations",
+      "Prefix-based sharding and load distribution",
+      "Browser local caching of recent inputs"
+    ],
+    "estimatedMinutes": 25,
+    "difficulty": "Hard",
+    "tags": [
+      "system-design",
+      "trie",
+      "latency",
+      "scale"
+    ],
+    "companyId": "google",
+    "companyName": "Google"
+  },
+  {
+    "id": "tcs-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design the database schema for a simple Library Management System.",
+    "sampleAnswer": "A Library Management System database requires tables for: Books (id, title, author, isbn, status), Users (id, name, email, register_date), and Transactions (id, book_id, user_id, issue_date, return_date). We establish one-to-many relationships between Users and Transactions, and Books and Transactions, using primary keys as foreign key constraints.",
+    "keyPoints": [
+      "Entity-Relationship model tables (Books, Users, Transactions)",
+      "Primary keys and Foreign keys normalization",
+      "Handling book availability status via transactional states",
+      "One-to-many database relationships mapping"
+    ],
+    "estimatedMinutes": 10,
+    "difficulty": "Easy",
+    "tags": [
+      "system-design",
+      "database",
+      "database-schema"
+    ],
+    "companyId": "tcs",
+    "companyName": "TCS"
+  },
+  {
+    "id": "gen-sys-1",
+    "category": "SystemDesign",
+    "type": "System Design",
+    "questionText": "Design a URL Shortener like Bitly.",
+    "sampleAnswer": "A URL shortener converts long URLs to short aliases (e.g. bit.ly/abcd12). We need: 1. A relational or NoSQL database mapping short key -> long URL, 2. Base62 encoding on an auto-incrementing ID to generate keys, 3. Cache layer (Redis) to serve active redirects instantly, 4. HTTP 301 (Permanent Redirect) for cache friendliness.",
+    "keyPoints": [
+      "Key generation using Base62 encoding",
+      "Handling collisions or pre-generating keys with Key Generation Service (KGS)",
+      "Caching redirection links for performance",
+      "Choice of HTTP redirect codes: 301 (Permanent) vs 302 (Temporary)",
+      "Database scaling (read-heavy, replica reads)"
+    ],
+    "estimatedMinutes": 20,
+    "difficulty": "Medium",
+    "tags": [
+      "system-design",
+      "scaling",
+      "hashing"
+    ],
+    "companyId": "general",
+    "companyName": "General Prep"
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "portfolio-website",
+    "title": "Personal Developer Portfolio Website",
+    "description": "Design and build a fully responsive personal portfolio site using React, showcasing your projects, skills, and contact details. Incorporate smooth animations, dark mode, and deploy to GitHub Pages.",
+    "track": "frontend",
+    "templateType": "Portfolio",
+    "difficulty": "Beginner",
+    "estimatedHours": 12,
+    "technologies": [
+      "React",
+      "React Router",
+      "CSS3",
+      "Vite",
+      "GitHub Pages"
+    ],
+    "skills": [
+      "React Component Architecture",
+      "Responsive Design",
+      "CSS Animations",
+      "React Router Navigation",
+      "GitHub Pages Deployment",
+      "Accessibility (WCAG 2.1)"
+    ],
+    "prerequisites": [],
+    "dependsOn": [],
+    "suggestsNext": [
+      "task-manager-api"
+    ],
+    "tags": [
+      "portfolio",
+      "react",
+      "frontend",
+      "beginner",
+      "deployment"
+    ],
+    "totalMilestones": 4,
+    "totalTasks": 14,
+    "paths": {
+      "overview": "projects/tracks/frontend/portfolio-website/overview.md",
+      "requirements": "projects/tracks/frontend/portfolio-website/requirements.md",
+      "architecture": "projects/tracks/frontend/portfolio-website/architecture.md",
+      "roadmap": "projects/tracks/frontend/portfolio-website/roadmap.md"
+    }
+  },
+  {
+    "id": "task-manager-api",
+    "title": "Task Manager REST API",
+    "description": "Build a full-stack Task Manager application — a Spring Boot REST API backend connected to a React frontend. Users can create, assign, prioritize, and track tasks with deadlines, with full CRUD operations and JSON API responses.",
+    "track": "fullstack",
+    "templateType": "Advanced",
+    "difficulty": "Advanced",
+    "estimatedHours": 24,
+    "technologies": [
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Data JPA",
+      "H2/MySQL",
+      "React",
+      "Axios",
+      "REST API"
+    ],
+    "skills": [
+      "RESTful API Design",
+      "Spring Boot Configuration",
+      "Spring MVC Controllers",
+      "Spring Data JPA & ORM",
+      "DTO Pattern",
+      "React + Axios API Integration",
+      "CORS Configuration",
+      "JSON Serialization",
+      "Error Handling (GlobalExceptionHandler)"
+    ],
+    "prerequisites": [
+      "library-management"
+    ],
+    "dependsOn": [
+      "library-management"
+    ],
+    "suggestsNext": [],
+    "tags": [
+      "spring-boot",
+      "rest-api",
+      "react",
+      "fullstack",
+      "advanced",
+      "jpa"
+    ],
+    "totalMilestones": 5,
+    "totalTasks": 15,
+    "paths": {
+      "overview": "projects/tracks/fullstack/task-manager-api/overview.md",
+      "requirements": "projects/tracks/fullstack/task-manager-api/requirements.md",
+      "architecture": "projects/tracks/fullstack/task-manager-api/architecture.md",
+      "roadmap": "projects/tracks/fullstack/task-manager-api/roadmap.md"
+    }
+  },
+  {
+    "id": "library-management",
+    "title": "Library Management System",
+    "description": "Build a console-based Java application that manages a library catalogue — books, members, borrowing records, and search. Apply core OOP, Java Collections, file I/O, and exception handling in a real use case.",
+    "track": "java",
+    "templateType": "Intermediate",
+    "difficulty": "Intermediate",
+    "estimatedHours": 16,
+    "technologies": [
+      "Java 17",
+      "Java Collections Framework",
+      "File I/O",
+      "OOP Design Patterns"
+    ],
+    "skills": [
+      "Object-Oriented Design",
+      "Java Collections (ArrayList, HashMap, LinkedList)",
+      "Exception Handling",
+      "File I/O with Serialization",
+      "Clean Code Principles",
+      "Unit Testing with JUnit",
+      "SOLID Principles"
+    ],
+    "prerequisites": [],
+    "dependsOn": [],
+    "suggestsNext": [
+      "task-manager-api"
+    ],
+    "tags": [
+      "java",
+      "oop",
+      "collections",
+      "backend",
+      "intermediate"
+    ],
+    "totalMilestones": 5,
+    "totalTasks": 13,
+    "paths": {
+      "overview": "projects/tracks/java/library-management/overview.md",
+      "requirements": "projects/tracks/java/library-management/requirements.md",
+      "architecture": "projects/tracks/java/library-management/architecture.md",
+      "roadmap": "projects/tracks/java/library-management/roadmap.md"
+    }
+  }
+]

@@ -48,4 +48,6 @@ export const useSearchStore = create((set, get) => ({
   },
 
   clearResults: () => set({ results: [], suggestions: [] }),
+
+  reset: () => set({ results: [], suggestions: [], recentSearches: [], isSearching: false, activeFilters: {} }),
 }));

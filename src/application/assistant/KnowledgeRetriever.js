@@ -6,12 +6,12 @@ export class KnowledgeRetriever {
 
   async _loadIndices() {
     if (!this._kwIndex) {
-      this._kwIndex = await fetch('/src/shared/generated/knowledge-index.json')
+      this._kwIndex = await fetch('/generated/knowledge-index.json')
         .then(r => r.json())
         .catch(() => []);
     }
     if (!this._hintIndex) {
-      this._hintIndex = await fetch('/src/shared/generated/hint-index.json')
+      this._hintIndex = await fetch('/generated/hint-index.json')
         .then(r => r.json())
         .catch(() => ({}));
     }
@@ -31,8 +31,8 @@ export class KnowledgeRetriever {
     if (!matched) return null;
 
     try {
-      const lessonText = await fetch(`/public/content/${matched.paths.lesson}`).then(r => r.text()).catch(() => '');
-      const cheatsheetText = await fetch(`/public/content/${matched.paths.cheatsheet}`).then(r => r.text()).catch(() => '');
+      const lessonText = await fetch(`/content/${matched.paths.lesson}`).then(r => r.text()).catch(() => '');
+      const cheatsheetText = await fetch(`/content/${matched.paths.cheatsheet}`).then(r => r.text()).catch(() => '');
       return {
         id: matched.id,
         title: matched.title,

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "project:portfolio-website",
+    "title": "Personal Developer Portfolio Website",
+    "description": "Design and build a fully responsive personal portfolio site using React, showcasing your projects, skills, and contact details. Incorporate smooth animations, dark mode, and deploy to GitHub Pages.",
+    "type": "project",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "React Router",
+      "CSS3",
+      "Vite",
+      "GitHub Pages"
+    ],
+    "track": "frontend",
+    "estimatedTime": 720,
+    "route": "/projects/portfolio-website"
+  },
+  {
+    "id": "project:task-manager-api",
+    "title": "Task Manager REST API",
+    "description": "Build a full-stack Task Manager application — a Spring Boot REST API backend connected to a React frontend. Users can create, assign, prioritize, and track tasks with deadlines, with full CRUD operations and JSON API responses.",
+    "type": "project",
+    "difficulty": "Advanced",
+    "technology": [
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Data JPA",
+      "H2/MySQL",
+      "React",
+      "Axios",
+      "REST API"
+    ],
+    "track": "fullstack",
+    "estimatedTime": 1440,
+    "route": "/projects/task-manager-api"
+  },
+  {
+    "id": "project:library-management",
+    "title": "Library Management System",
+    "description": "Build a console-based Java application that manages a library catalogue — books, members, borrowing records, and search. Apply core OOP, Java Collections, file I/O, and exception handling in a real use case.",
+    "type": "project",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java 17",
+      "Java Collections Framework",
+      "File I/O",
+      "OOP Design Patterns"
+    ],
+    "track": "java",
+    "estimatedTime": 960,
+    "route": "/projects/library-management"
+  }
+]

@@ -1,5 +1,5 @@
 import { db } from '../firebase/config';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { collection, doc, getDocs } from 'firebase/firestore';
 import { Bookmark } from '../../domain/models/Bookmark';
 import { IBookmarkRepository } from '../../domain/repository/IBookmarkRepository';
 import { localDB } from '../../shared/utils/indexedDB';
@@ -13,8 +13,12 @@ export class BookmarkRepository extends IBookmarkRepository {
     this.env = container.resolve('environment');
   }
 
+  _storeKey(uid, bookmarkId) {
+    return `${uid}_${bookmarkId}`;
+  }
+
   async getBookmark(uid, bookmarkId) {
-    const cached = await localDB.get('bookmarks', bookmarkId);
+    const cached = await localDB.get('bookmarks', this._storeKey(uid, bookmarkId));
     if (cached && cached.userId === uid) {
       return new Bookmark(cached);
     }
@@ -22,8 +26,7 @@ export class BookmarkRepository extends IBookmarkRepository {
   }
 
   async listBookmarks(uid) {
-    const all = await this._getAllLocalBookmarks();
-    const userBookmarks = all.filter(b => b.userId === uid);
+    const userBookmarks = await localDB.getAllByPrefix('bookmarks', uid);
     if (userBookmarks.length > 0) {
       return userBookmarks.map(b => new Bookmark(b));
     }
@@ -39,7 +42,7 @@ export class BookmarkRepository extends IBookmarkRepository {
       for (const d of snap.docs) {
         const data = d.data();
         const bookmark = new Bookmark({ ...data, id: d.id, userId: uid });
-        await localDB.put('bookmarks', bookmark.id, bookmark.toJSON());
+        await localDB.put('bookmarks', this._storeKey(uid, bookmark.id), bookmark.toJSON());
         list.push(bookmark);
       }
       return list;
@@ -52,30 +55,16 @@ export class BookmarkRepository extends IBookmarkRepository {
   async saveBookmark(uid, bookmark) {
     bookmark.userId = uid;
     const data = bookmark.toJSON();
-    await localDB.put('bookmarks', bookmark.id, data);
+    await localDB.put('bookmarks', this._storeKey(uid, bookmark.id), data);
     await syncQueue.enqueue('bookmarks', uid, data);
   }
 
   async deleteBookmark(uid, bookmarkId) {
-    const cached = await localDB.get('bookmarks', bookmarkId);
+    const compositeKey = this._storeKey(uid, bookmarkId);
+    const cached = await localDB.get('bookmarks', compositeKey);
     if (cached) {
-      await localDB.delete('bookmarks', bookmarkId);
+      await localDB.delete('bookmarks', compositeKey);
       await syncQueue.enqueue('bookmarks', uid, { id: bookmarkId, deleted: true });
-    }
-  }
-
-  async _getAllLocalBookmarks() {
-    try {
-      const dbInstance = await localDB.open();
-      return new Promise((resolve, reject) => {
-        const transaction = dbInstance.transaction('bookmarks', 'readonly');
-        const store = transaction.objectStore('bookmarks');
-        const request = store.getAll();
-        request.onsuccess = () => resolve(request.result || []);
-        request.onerror = () => resolve([]);
-      });
-    } catch {
-      return [];
     }
   }
 }

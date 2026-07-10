@@ -20,4 +20,6 @@ export const useTimelineStore = create((set) => ({
     set(state => ({ events: [event, ...state.events] }));
     return event;
   },
+
+  reset: () => set({ events: [], stats: null, isLoading: false }),
 }));

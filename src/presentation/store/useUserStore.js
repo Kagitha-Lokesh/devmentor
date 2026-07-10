@@ -138,5 +138,7 @@ export const useUserStore = create((set, get) => ({
     }
   },
 
-  clearProfile: () => set({ profile: null, error: null, isLoading: false })
+  clearProfile: () => set({ profile: null, error: null, isLoading: false }),
+
+  reset: () => set({ profile: null, error: null, isLoading: false }),
 }));

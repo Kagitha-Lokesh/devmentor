@@ -1,4 +1,3 @@
-import { container } from '../../infrastructure/di/container';
 import { eventBus } from '../../shared/events/EventBus';
 import { AssistantConversation } from '../../domain/models/AssistantConversation';
 import { AssistantMessage } from '../../domain/models/AssistantMessage';
@@ -8,17 +7,17 @@ import { ProviderManager } from './ProviderManager';
 import { Agent } from './Agent';
 
 export class AssistantUseCase {
-  constructor() {
-    this.prefRepo = container.resolve('IAssistantPreferencesRepository');
-    this.convRepo = container.resolve('IConversationRepository');
-    this.analytics = container.resolve('IAnalyticsService');
-    this.logger = container.resolve('ILogger');
+  constructor({ prefRepo, convRepo, analytics, logger } = {}) {
+    this.prefRepo = prefRepo;
+    this.convRepo = convRepo;
+    this.analytics = analytics;
+    this.logger = logger;
 
-    // Engine Instances
-    this.contextEngine = new ContextEngine();
-    this.promptBuilder = new PromptBuilder();
-    this.providerManager = new ProviderManager();
-    this.agent = new Agent();
+    // Engine Instances are initialized lazily to resolve circular dependency cycles
+    this.contextEngine = null;
+    this.promptBuilder = null;
+    this.providerManager = null;
+    this.agent = null;
   }
 
   // ─── Preferences ─────────────────────────────────────────────────────────
@@ -65,6 +64,14 @@ export class AssistantUseCase {
    */
   async sendMessage(uid, conversationId, messageText, activeContext = {}) {
     this.logger.info(`[AssistantUseCase] sendMessage in: ${conversationId}`);
+
+    // Lazy load engine instances to prevent circular import execution crashes
+    if (!this.contextEngine) {
+      this.contextEngine = new ContextEngine();
+      this.promptBuilder = new PromptBuilder();
+      this.providerManager = new ProviderManager();
+      this.agent = new Agent();
+    }
 
     // 1. Load or initialize conversation
     let conv = await this.convRepo.getConversation(uid, conversationId);

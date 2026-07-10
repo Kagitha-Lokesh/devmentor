@@ -1,10 +1,13 @@
 import { create } from 'zustand';
 import { AuthUseCase } from '../../application/auth/AuthUseCase';
 import { useUserStore } from './useUserStore';
+import { syncQueue } from '../../shared/utils/syncQueue';
+import { GlobalStateResetService } from '../../application/auth/GlobalStateResetService';
+import { authSyncManager } from '../../shared/utils/AuthSyncManager';
 
 const authUseCase = new AuthUseCase();
 
-export const useAuthStore = create((set) => ({
+export const useAuthStore = create((set, get) => ({
   user: null,
   isLoading: true,
   error: null,
@@ -15,9 +18,13 @@ export const useAuthStore = create((set) => ({
 
   init: () => {
     set({ isLoading: true });
+    // Initialize cross-tab sync context
+    authSyncManager.initialize();
+
     return authUseCase.onAuthStateChanged(async (authUser) => {
       if (authUser) {
         try {
+          syncQueue.setUid(authUser.uid);
           // Fetch student profile subdocuments
           await useUserStore.getState().fetchUserProfile(authUser.uid, authUser.email, authUser.displayName);
           set({ user: authUser, isLoading: false, error: null });
@@ -26,7 +33,12 @@ export const useAuthStore = create((set) => ({
           set({ user: authUser, isLoading: false, error: null });
         }
       } else {
-        useUserStore.getState().clearProfile();
+        const currentUser = get().user;
+        if (currentUser) {
+          await GlobalStateResetService.resetAll(currentUser.uid);
+        } else {
+          useUserStore.getState().clearProfile();
+        }
         set({ user: null, isLoading: false, error: null });
       }
     });
@@ -38,6 +50,7 @@ export const useAuthStore = create((set) => ({
 
     if (result.isSuccess) {
       set({ user: result.data, isLoading: false });
+      authSyncManager.broadcast('LOGIN');
       return result.data;
     } else {
       set({ error: result.error.message, isLoading: false });
@@ -51,6 +64,7 @@ export const useAuthStore = create((set) => ({
 
     if (result.isSuccess) {
       set({ user: result.data, isLoading: false });
+      authSyncManager.broadcast('LOGIN');
       return result.data;
     } else {
       set({ error: result.error.message, isLoading: false });
@@ -64,6 +78,7 @@ export const useAuthStore = create((set) => ({
 
     if (result.isSuccess) {
       set({ user: result.data, isLoading: false });
+      authSyncManager.broadcast('LOGIN');
       return result.data;
     } else {
       set({ error: result.error.message, isLoading: false });
@@ -77,6 +92,7 @@ export const useAuthStore = create((set) => ({
 
     if (result.isSuccess) {
       set({ user: result.data, isLoading: false });
+      authSyncManager.broadcast('LOGIN');
       return result.data;
     } else {
       set({ error: result.error.message, isLoading: false });
@@ -85,12 +101,18 @@ export const useAuthStore = create((set) => ({
   },
 
   signOut: async () => {
+    const currentUser = get().user;
     set({ isLoading: true, error: null });
     const result = await authUseCase.signOut();
 
     if (result.isSuccess) {
-      useUserStore.getState().clearProfile();
+      if (currentUser) {
+        await GlobalStateResetService.resetAll(currentUser.uid);
+      } else {
+        useUserStore.getState().clearProfile();
+      }
       set({ user: null, isLoading: false });
+      authSyncManager.broadcast('LOGOUT');
     } else {
       set({ error: result.error.message, isLoading: false });
       throw result.error;

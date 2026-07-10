@@ -46,4 +46,6 @@ export const useNotesStore = create((set, get) => ({
     const key = `${targetType}:${targetId}`;
     set(state => ({ highlights: { ...state.highlights, [key]: highlights } }));
   },
+
+  reset: () => set({ notes: [], highlights: {}, isLoading: false }),
 }));

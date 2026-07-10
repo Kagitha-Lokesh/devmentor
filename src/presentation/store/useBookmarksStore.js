@@ -32,4 +32,6 @@ export const useBookmarksStore = create((set) => ({
       set(state => ({ bookmarks: state.bookmarks.map(b => b.id === bookmarkId ? updated : b) }));
     }
   },
+
+  reset: () => set({ bookmarks: [], isLoading: false }),
 }));

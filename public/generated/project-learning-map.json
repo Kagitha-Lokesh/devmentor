@@ -1,0 +1,306 @@
+{
+  "portfolio-website:t1-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t1-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t1-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t1-4": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t2-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t2-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t2-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t2-4": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t3-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t3-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t3-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t4-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t4-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "portfolio-website:t4-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t1-1": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [
+      "V1-C1-T1"
+    ],
+    "questions": []
+  },
+  "task-manager-api:t1-2": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "task-manager-api:t1-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t2-1": {
+    "lessons": [],
+    "problems": [
+      "two-sum"
+    ],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "task-manager-api:t2-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t2-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t2-4": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t3-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t3-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "task-manager-api:t4-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t4-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t4-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t5-1": {
+    "lessons": [],
+    "problems": [
+      "two-sum"
+    ],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "task-manager-api:t5-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "task-manager-api:t5-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t1-1": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [
+      "V1-C1-T1"
+    ],
+    "questions": []
+  },
+  "library-management:t1-2": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [
+      "V1-C1-T1"
+    ],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "library-management:t1-3": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [
+      "V1-C1-T1"
+    ],
+    "questions": []
+  },
+  "library-management:t2-1": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [
+      "two-sum"
+    ],
+    "cards": [
+      "V1-C1-T1"
+    ],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "library-management:t2-2": {
+    "lessons": [],
+    "problems": [
+      "two-sum"
+    ],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  },
+  "library-management:t2-3": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t3-1": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t3-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t3-3": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t4-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t4-2": {
+    "lessons": [
+      "V1-C1-T1"
+    ],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t5-1": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": []
+  },
+  "library-management:t5-2": {
+    "lessons": [],
+    "problems": [],
+    "cards": [],
+    "questions": [
+      "amzn-tech-1"
+    ]
+  }
+}

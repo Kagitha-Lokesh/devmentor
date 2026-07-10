@@ -4,11 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, Command, ArrowRight, Hash, BookOpen, Terminal, MessageSquare,
   History, FolderGit2, LayoutDashboard, Calendar, StickyNote, Bookmark,
-  Trophy, Download, Upload, Zap, Moon, Sun, X
+  Trophy, Download, Upload, Zap, Moon, Sun, X, WifiOff
 } from 'lucide-react';
 import { useThemeStore } from '../../store/useThemeStore';
-import commandIndex from '../../../shared/generated/command-index.json';
-import globalSearchIndex from '../../../shared/generated/global-search-index.json';
 import Fuse from 'fuse.js';
 
 const iconMap = {
@@ -42,18 +40,6 @@ const typeColors = {
   portfolio_template: 'text-indigo-400 bg-indigo-950',
 };
 
-const contentFuse = new Fuse(globalSearchIndex, {
-  keys: ['title', 'description', 'type'],
-  threshold: 0.3,
-  includeScore: true
-});
-
-const commandFuse = new Fuse(commandIndex, {
-  keys: ['name', 'category'],
-  threshold: 0.35,
-  includeScore: true
-});
-
 export default function CommandPalette({ isOpen, onClose }) {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(0);
@@ -62,12 +48,72 @@ export default function CommandPalette({ isOpen, onClose }) {
   const navigate = useNavigate();
   const { toggleTheme } = useThemeStore();
 
+  const [commandIndex, setCommandIndex] = useState([]);
+  const [globalSearchIndex, setGlobalSearchIndex] = useState([]);
+  const [indexesLoaded, setIndexesLoaded] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  const contentFuseRef = useRef(null);
+  const commandFuseRef = useRef(null);
+
+  // Monitor network online status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // Lazy load search indexes when palette is open
+  useEffect(() => {
+    if (!isOpen) return;
+    if (indexesLoaded) return;
+    
+    let active = true;
+    const fetchIndexes = async () => {
+      try {
+        const [cmdRes, searchRes] = await Promise.all([
+          fetch('/generated/search/command-index.json').then(r => r.json()),
+          fetch('/generated/search/global-search-index.json').then(r => r.json())
+        ]);
+        if (!active) return;
+        setCommandIndex(cmdRes);
+        setGlobalSearchIndex(searchRes);
+        setIndexesLoaded(true);
+      } catch (err) {
+        console.error('Failed to load command palette indexes:', err);
+      }
+    };
+    fetchIndexes();
+    return () => { active = false; };
+  }, [isOpen, indexesLoaded]);
+
+  // Re-build Fuse instances when indexes load
+  useEffect(() => {
+    if (indexesLoaded) {
+      contentFuseRef.current = new Fuse(globalSearchIndex, {
+        keys: ['title', 'description', 'type', 'keywords', 'tags'],
+        threshold: 0.3,
+        includeScore: true
+      });
+      commandFuseRef.current = new Fuse(commandIndex, {
+        keys: ['name', 'category', 'keywords'],
+        threshold: 0.35,
+        includeScore: true
+      });
+    }
+  }, [indexesLoaded, globalSearchIndex, commandIndex]);
+
   const commandResults = query
-    ? commandFuse.search(query).map(r => ({ ...r.item, _kind: 'command' }))
+    ? (commandFuseRef.current ? commandFuseRef.current.search(query).map(r => ({ ...r.item, _kind: 'command' })) : [])
     : commandIndex.map(c => ({ ...c, _kind: 'command' }));
 
   const contentResults = query
-    ? contentFuse.search(query).slice(0, 8).map(r => ({ ...r.item, _kind: 'content' }))
+    ? (contentFuseRef.current ? contentFuseRef.current.search(query).slice(0, 8).map(r => ({ ...r.item, _kind: 'content' })) : [])
     : [];
 
   const results = [...commandResults.slice(0, query ? 4 : 10), ...contentResults];
@@ -85,6 +131,11 @@ export default function CommandPalette({ isOpen, onClose }) {
   }, [query]);
 
   const executeItem = useCallback((item) => {
+    // If offline and item does not support offline mode, ignore execution
+    if (!isOnline && item.offlineSupported === false) {
+      return;
+    }
+
     if (item._kind === 'command') {
       if (item.action === 'toggleTheme') {
         toggleTheme();
@@ -95,7 +146,7 @@ export default function CommandPalette({ isOpen, onClose }) {
       navigate(item.route);
     }
     onClose();
-  }, [navigate, toggleTheme, onClose]);
+  }, [navigate, toggleTheme, onClose, isOnline]);
 
   useEffect(() => {
     const handler = (e) => {
@@ -258,6 +309,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                     )}
                     {results.map((item, idx) => {
                       const isSelected = idx === selected;
+                      const isOfflineDisabled = !isOnline && item.offlineSupported === false;
                       const sep = query && item._kind === 'content' && (idx === 0 || results[idx - 1]._kind !== 'content');
                       return (
                         <React.Fragment key={item.id || idx}>
@@ -276,12 +328,18 @@ export default function CommandPalette({ isOpen, onClose }) {
                               isSelected
                                 ? 'bg-brand-950/60 text-brand-300'
                                 : 'text-text/80 hover:bg-surface-tertiary/50'
-                            }`}
+                            } ${isOfflineDisabled ? 'opacity-40 cursor-not-allowed' : ''}`}
                           >
                             <span className={isSelected ? 'text-brand-400' : 'text-text/40'}>
                               {getItemIcon(item)}
                             </span>
                             <span className="flex-1 text-sm font-medium truncate">{item.name || item.title}</span>
+                            {isOfflineDisabled && (
+                              <span className="text-[10px] px-1.5 py-0.5 rounded font-medium bg-red-950/60 text-red-400 border border-red-900/40 flex items-center gap-1 flex-shrink-0">
+                                <WifiOff className="h-3 w-3" />
+                                Offline Only
+                              </span>
+                            )}
                             {getTypeBadge(item)}
                             {isSelected && (
                               <ArrowRight className="h-3.5 w-3.5 text-brand-400 flex-shrink-0" />

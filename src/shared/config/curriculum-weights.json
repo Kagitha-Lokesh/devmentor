@@ -1,0 +1,81 @@
+{
+  "foundation": {
+    "weight": 10,
+    "label": "Foundation",
+    "order": 1,
+    "tags": ["Foundation", "Fundamentals"],
+    "color": "#6366f1",
+    "icon": "Layers"
+  },
+  "java": {
+    "weight": 20,
+    "label": "Java Core & Advanced",
+    "order": 2,
+    "tags": ["Java"],
+    "color": "#f59e0b",
+    "icon": "Code2"
+  },
+  "dsa": {
+    "weight": 20,
+    "label": "Data Structures & Algorithms",
+    "order": 3,
+    "tags": ["DSA", "Algorithms", "Data Structures"],
+    "color": "#10b981",
+    "icon": "GitBranch"
+  },
+  "sql": {
+    "weight": 10,
+    "label": "SQL & Databases",
+    "order": 4,
+    "tags": ["SQL", "Database", "Databases"],
+    "color": "#3b82f6",
+    "icon": "Database"
+  },
+  "backend": {
+    "weight": 15,
+    "label": "Spring Boot & Backend",
+    "order": 5,
+    "tags": ["Backend", "Spring Boot", "Spring"],
+    "color": "#22c55e",
+    "icon": "Server"
+  },
+  "react": {
+    "weight": 15,
+    "label": "React & Frontend",
+    "order": 6,
+    "tags": ["React", "Frontend"],
+    "color": "#06b6d4",
+    "icon": "Layout"
+  },
+  "projects": {
+    "weight": 5,
+    "label": "Projects",
+    "order": 7,
+    "tags": ["Projects"],
+    "color": "#8b5cf6",
+    "icon": "FolderGit2"
+  },
+  "interview": {
+    "weight": 3,
+    "label": "Interview Prep",
+    "order": 8,
+    "tags": ["Interview"],
+    "color": "#ec4899",
+    "icon": "MessageSquare"
+  },
+  "career": {
+    "weight": 2,
+    "label": "Career Readiness",
+    "order": 9,
+    "tags": ["Career"],
+    "color": "#f97316",
+    "icon": "Briefcase"
+  },
+  "_meta": {
+    "version": "1.2.0",
+    "description": "Weighted curriculum module configuration for the Full Stack Java Developer roadmap. Adjust weights without any code changes.",
+    "totalWeight": 100,
+    "journeyLabel": "Full Stack Java Developer",
+    "estimatedHoursTotal": 300
+  }
+}

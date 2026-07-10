@@ -1,0 +1,2422 @@
+[
+  {
+    "id": "course:backend",
+    "title": "BACKEND",
+    "description": "Structured curriculum career path for learning BACKEND.",
+    "type": "course",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React"
+    ],
+    "track": "BACKEND",
+    "route": "/courses"
+  },
+  {
+    "id": "course:database",
+    "title": "DATABASE",
+    "description": "Structured curriculum career path for learning DATABASE.",
+    "type": "course",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React"
+    ],
+    "track": "DATABASE",
+    "route": "/courses"
+  },
+  {
+    "id": "course:frontend",
+    "title": "FRONTEND",
+    "description": "Structured curriculum career path for learning FRONTEND.",
+    "type": "course",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React"
+    ],
+    "track": "FRONTEND",
+    "route": "/courses"
+  },
+  {
+    "id": "course:java",
+    "title": "Java Full Stack Career Path",
+    "description": "Structured curriculum career path for learning Java Full Stack Career Path.",
+    "type": "course",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React"
+    ],
+    "track": "Java Full Stack Career Path",
+    "route": "/courses"
+  },
+  {
+    "id": "topic:BE-V1-C1-T1",
+    "title": "Introduction to Spring Boot",
+    "description": "Get started with Spring Boot, auto-configuration, and standalone Spring applications.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/backend/topics/spring-boot-intro",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-boot-intro/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C1-T1",
+    "title": "Introduction to Spring Boot Quiz",
+    "description": "Test your understanding of Introduction to Spring Boot.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:BE-V1-C1-T2",
+    "title": "Spring REST APIs",
+    "description": "Build robust RESTful web services using Spring MVC and Controllers.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/backend/topics/spring-rest",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-rest/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C1-T2",
+    "title": "Spring REST APIs Quiz",
+    "description": "Test your understanding of Spring REST APIs.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:BE-V1-C1-T3",
+    "title": "Dependency Injection in Spring",
+    "description": "Master Inversion of Control (IoC) and Dependency Injection in the Spring framework.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/backend/topics/spring-di",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-1/topics/spring-di/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C1-T3",
+    "title": "Dependency Injection in Spring Quiz",
+    "description": "Test your understanding of Dependency Injection in Spring.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:BE-V1-C2-T1",
+    "title": "Spring Security",
+    "description": "Secure your Spring Boot APIs with authentication, authorization, and JWT tokens.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/backend/topics/spring-security",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/spring-security/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C2-T1",
+    "title": "Spring Security Quiz",
+    "description": "Test your understanding of Spring Security.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:BE-V1-C2-T2",
+    "title": "Spring Data JPA",
+    "description": "Persist data to relational databases using Spring Data JPA and Hibernate ORM.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/backend/topics/spring-data-jpa",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/spring-data-jpa/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C2-T2",
+    "title": "Spring Data JPA Quiz",
+    "description": "Test your understanding of Spring Data JPA.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:BE-V1-C2-T3",
+    "title": "Microservices Architecture",
+    "description": "Design and build scalable microservices with Spring Boot and REST communication.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/backend/topics/microservices",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/lesson.md",
+      "examples": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/examples.md",
+      "revision": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/revision.md",
+      "cheatsheet": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/cheatsheet.md",
+      "flashcards": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/flashcards.json",
+      "quiz": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/quiz.json",
+      "interview": "courses/backend/volume-1/chapters/chapter-2/topics/microservices/interview.json"
+    }
+  },
+  {
+    "id": "quiz:BE-V1-C2-T3",
+    "title": "Microservices Architecture Quiz",
+    "description": "Test your understanding of Microservices Architecture.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:DB-V1-C1-T1",
+    "title": "SQL Basics",
+    "description": "Learn the fundamentals of SQL: SELECT, INSERT, UPDATE, DELETE with real examples.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/database/topics/sql-basics",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-basics/interview.json"
+    }
+  },
+  {
+    "id": "quiz:DB-V1-C1-T1",
+    "title": "SQL Basics Quiz",
+    "description": "Test your understanding of SQL Basics.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:DB-V1-C1-T2",
+    "title": "SQL Joins",
+    "description": "Combine data from multiple tables using INNER JOIN, LEFT JOIN, RIGHT JOIN and more.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/database/topics/sql-joins",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-joins/interview.json"
+    }
+  },
+  {
+    "id": "quiz:DB-V1-C1-T2",
+    "title": "SQL Joins Quiz",
+    "description": "Test your understanding of SQL Joins.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:DB-V1-C1-T3",
+    "title": "SQL Aggregations & Grouping",
+    "description": "Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/database/topics/sql-aggregations",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-1/topics/sql-aggregations/interview.json"
+    }
+  },
+  {
+    "id": "quiz:DB-V1-C1-T3",
+    "title": "SQL Aggregations & Grouping Quiz",
+    "description": "Test your understanding of SQL Aggregations & Grouping.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:DB-V1-C2-T1",
+    "title": "PostgreSQL Setup & Basics",
+    "description": "Install PostgreSQL, create databases and tables, and run queries from the command line.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/database/topics/postgresql-setup",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-2/topics/postgresql-setup/interview.json"
+    }
+  },
+  {
+    "id": "quiz:DB-V1-C2-T1",
+    "title": "PostgreSQL Setup & Basics Quiz",
+    "description": "Test your understanding of PostgreSQL Setup & Basics.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:DB-V1-C2-T2",
+    "title": "Database Design & Normalization",
+    "description": "Design efficient databases using 1NF, 2NF, 3NF and ER diagrams.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/database/topics/database-design",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/database/volume-1/chapters/chapter-2/topics/database-design/lesson.md",
+      "examples": "courses/database/volume-1/chapters/chapter-2/topics/database-design/examples.md",
+      "revision": "courses/database/volume-1/chapters/chapter-2/topics/database-design/revision.md",
+      "cheatsheet": "courses/database/volume-1/chapters/chapter-2/topics/database-design/cheatsheet.md",
+      "flashcards": "courses/database/volume-1/chapters/chapter-2/topics/database-design/flashcards.json",
+      "quiz": "courses/database/volume-1/chapters/chapter-2/topics/database-design/quiz.json",
+      "interview": "courses/database/volume-1/chapters/chapter-2/topics/database-design/interview.json"
+    }
+  },
+  {
+    "id": "quiz:DB-V1-C2-T2",
+    "title": "Database Design & Normalization Quiz",
+    "description": "Test your understanding of Database Design & Normalization.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C1-T1",
+    "title": "CSS Fundamentals",
+    "description": "Learn how to style web pages using CSS, covering selectors, colors, and the box model.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/css-fundamentals",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-fundamentals/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C1-T1",
+    "title": "CSS Fundamentals Quiz",
+    "description": "Test your understanding of CSS Fundamentals.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C1-T2",
+    "title": "CSS Flexbox",
+    "description": "Build flexible and responsive layouts using the CSS Flexbox model.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/css-flexbox",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-flexbox/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C1-T2",
+    "title": "CSS Flexbox Quiz",
+    "description": "Test your understanding of CSS Flexbox.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C1-T3",
+    "title": "CSS Grid",
+    "description": "Create two-dimensional grid-based layouts for modern responsive web design.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/css-grid",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-1/topics/css-grid/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C1-T3",
+    "title": "CSS Grid Quiz",
+    "description": "Test your understanding of CSS Grid.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C2-T1",
+    "title": "JavaScript Basics",
+    "description": "Introduction to JavaScript variables, data types, and functions.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/frontend/topics/js-basics",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-basics/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C2-T1",
+    "title": "JavaScript Basics Quiz",
+    "description": "Test your understanding of JavaScript Basics.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C2-T2",
+    "title": "JavaScript DOM Manipulation",
+    "description": "Interact with the browser Document Object Model to make web pages dynamic.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/frontend/topics/js-dom",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-dom/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C2-T2",
+    "title": "JavaScript DOM Manipulation Quiz",
+    "description": "Test your understanding of JavaScript DOM Manipulation.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V1-C2-T3",
+    "title": "Async JavaScript",
+    "description": "Handle asynchronous operations using Promises, async/await, and Fetch API.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/frontend/topics/js-async",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/lesson.md",
+      "examples": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/examples.md",
+      "revision": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/revision.md",
+      "cheatsheet": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/flashcards.json",
+      "quiz": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/quiz.json",
+      "interview": "courses/frontend/volume-1/chapters/chapter-2/topics/js-async/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V1-C2-T3",
+    "title": "Async JavaScript Quiz",
+    "description": "Test your understanding of Async JavaScript.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V2-C1-T1",
+    "title": "React Components & JSX",
+    "description": "Understand the building blocks of React applications.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/react-components",
+    "volume": 2,
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-components/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V2-C1-T1",
+    "title": "React Components & JSX Quiz",
+    "description": "Test your understanding of React Components & JSX.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V2-C1-T2",
+    "title": "React Hooks",
+    "description": "Manage state and side effects in functional components using Hooks.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/react-hooks",
+    "volume": 2,
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-hooks/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V2-C1-T2",
+    "title": "React Hooks Quiz",
+    "description": "Test your understanding of React Hooks.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V2-C1-T3",
+    "title": "React Routing",
+    "description": "Navigate between pages in a single-page application using React Router.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/courses/frontend/topics/react-routing",
+    "volume": 2,
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-1/topics/react-routing/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V2-C1-T3",
+    "title": "React Routing Quiz",
+    "description": "Test your understanding of React Routing.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 1",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V2-C2-T1",
+    "title": "State Management in React",
+    "description": "Manage complex application state with Context API and useReducer.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/frontend/topics/react-state",
+    "volume": 2,
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-2/topics/react-state/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V2-C2-T1",
+    "title": "State Management in React Quiz",
+    "description": "Test your understanding of State Management in React.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:FE-V2-C2-T2",
+    "title": "Forms in React",
+    "description": "Handle user input efficiently using controlled components and form validation.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/frontend/topics/react-forms",
+    "volume": 2,
+    "paths": {
+      "lesson": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/lesson.md",
+      "examples": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/examples.md",
+      "revision": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/revision.md",
+      "cheatsheet": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/cheatsheet.md",
+      "flashcards": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/flashcards.json",
+      "quiz": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/quiz.json",
+      "interview": "courses/frontend/volume-2/chapters/chapter-2/topics/react-forms/interview.json"
+    }
+  },
+  {
+    "id": "quiz:FE-V2-C2-T2",
+    "title": "Forms in React Quiz",
+    "description": "Test your understanding of Forms in React.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T1",
+    "title": "Variables in Java",
+    "description": "Understand how data is declared, stored, and retrieved in JVM memory using variables.",
+    "type": "topic",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/variables",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/variables/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/variables/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/variables/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/variables/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/variables/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/variables/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/variables/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T1",
+    "title": "Variables in Java Quiz",
+    "description": "Test your understanding of Variables in Java.",
+    "type": "revision_card",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T2",
+    "title": "Loops in Java",
+    "description": "Master control flow structures using for, while, and do-while loops in Java.",
+    "type": "topic",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/loops",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/loops/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/loops/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/loops/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/loops/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/loops/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/loops/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/loops/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T2",
+    "title": "Loops in Java Quiz",
+    "description": "Test your understanding of Loops in Java.",
+    "type": "revision_card",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T3",
+    "title": "Methods in Java",
+    "description": "Learn how to encapsulate code into reusable blocks using methods.",
+    "type": "topic",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/methods",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/methods/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/methods/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/methods/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/methods/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/methods/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/methods/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/methods/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T3",
+    "title": "Methods in Java Quiz",
+    "description": "Test your understanding of Methods in Java.",
+    "type": "revision_card",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T4",
+    "title": "Arrays in Java",
+    "description": "Learn how to store and manipulate collections of elements using arrays.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/arrays",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/arrays/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/arrays/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/arrays/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/arrays/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/arrays/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/arrays/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/arrays/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T4",
+    "title": "Arrays in Java Quiz",
+    "description": "Test your understanding of Arrays in Java.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T5",
+    "title": "Strings in Java",
+    "description": "Master Java String manipulation, String methods, and immutability.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/strings",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/strings/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/strings/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/strings/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/strings/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/strings/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/strings/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/strings/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T5",
+    "title": "Strings in Java Quiz",
+    "description": "Test your understanding of Strings in Java.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C1-T6",
+    "title": "OOP Fundamentals",
+    "description": "Understand Object-Oriented Programming: classes, objects, encapsulation, and constructors.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/courses/java/topics/oop-basics",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-1/topics/oop-basics/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C1-T6",
+    "title": "OOP Fundamentals Quiz",
+    "description": "Test your understanding of OOP Fundamentals.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Introduction to Computer Science & Java",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C2-T1",
+    "title": "Inheritance in Java",
+    "description": "Learn how subclasses extend parent classes and reuse code with inheritance.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/java/topics/inheritance",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/inheritance/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C2-T1",
+    "title": "Inheritance in Java Quiz",
+    "description": "Test your understanding of Inheritance in Java.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C2-T2",
+    "title": "Polymorphism in Java",
+    "description": "Understand compile-time and runtime polymorphism, method overloading and overriding.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/java/topics/polymorphism",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/polymorphism/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C2-T2",
+    "title": "Polymorphism in Java Quiz",
+    "description": "Test your understanding of Polymorphism in Java.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C2-T3",
+    "title": "Abstraction & Interfaces",
+    "description": "Learn abstract classes and interfaces to design clean and extensible Java applications.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/java/topics/abstraction",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/abstraction/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C2-T3",
+    "title": "Abstraction & Interfaces Quiz",
+    "description": "Test your understanding of Abstraction & Interfaces.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C2-T4",
+    "title": "Exception Handling",
+    "description": "Handle runtime errors gracefully using try-catch-finally blocks and custom exceptions.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/courses/java/topics/exception-handling",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-2/topics/exception-handling/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C2-T4",
+    "title": "Exception Handling Quiz",
+    "description": "Test your understanding of Exception Handling.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 2",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C3-T1",
+    "title": "Java Collections Framework",
+    "description": "Master List, Set, Map, and Queue interfaces with their common implementations.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/courses/java/topics/collections",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/collections/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/collections/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/collections/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/collections/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/collections/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/collections/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/collections/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C3-T1",
+    "title": "Java Collections Framework Quiz",
+    "description": "Test your understanding of Java Collections Framework.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C3-T2",
+    "title": "Generics in Java",
+    "description": "Write type-safe code with generic classes, methods, and bounded type parameters.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/courses/java/topics/generics",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/generics/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/generics/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/generics/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/generics/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/generics/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/generics/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/generics/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C3-T2",
+    "title": "Generics in Java Quiz",
+    "description": "Test your understanding of Generics in Java.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/revision"
+  },
+  {
+    "id": "topic:V1-C3-T3",
+    "title": "Lambda Expressions & Streams",
+    "description": "Embrace functional programming with Java 8 lambdas, Stream API, and method references.",
+    "type": "topic",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/courses/java/topics/lambda-streams",
+    "volume": 1,
+    "paths": {
+      "lesson": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/lesson.md",
+      "examples": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/examples.md",
+      "revision": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/revision.md",
+      "cheatsheet": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/cheatsheet.md",
+      "flashcards": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/flashcards.json",
+      "quiz": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/quiz.json",
+      "interview": "courses/java/volume-1/chapters/chapter-3/topics/lambda-streams/interview.json"
+    }
+  },
+  {
+    "id": "quiz:V1-C3-T3",
+    "title": "Lambda Expressions & Streams Quiz",
+    "description": "Test your understanding of Lambda Expressions & Streams.",
+    "type": "revision_card",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Chapter 3",
+    "route": "/revision"
+  },
+  {
+    "id": "problem:two-sum",
+    "title": "Two Sum Using HashMap",
+    "description": "Coding practice problem: Two Sum Using HashMap. Target topic: Arrays.",
+    "type": "problem",
+    "difficulty": {
+      "level": 2,
+      "label": "Easy",
+      "color": "green"
+    },
+    "technology": [
+      "Java"
+    ],
+    "track": "Arrays",
+    "estimatedTime": 20,
+    "route": "/compiler/problems/two-sum"
+  },
+  {
+    "id": "project:portfolio-website",
+    "title": "Personal Developer Portfolio Website",
+    "description": "Design and build a fully responsive personal portfolio site using React, showcasing your projects, skills, and contact details. Incorporate smooth animations, dark mode, and deploy to GitHub Pages.",
+    "type": "project",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "React Router",
+      "CSS3",
+      "Vite",
+      "GitHub Pages"
+    ],
+    "track": "frontend",
+    "estimatedTime": 720,
+    "route": "/projects/portfolio-website"
+  },
+  {
+    "id": "project:task-manager-api",
+    "title": "Task Manager REST API",
+    "description": "Build a full-stack Task Manager application — a Spring Boot REST API backend connected to a React frontend. Users can create, assign, prioritize, and track tasks with deadlines, with full CRUD operations and JSON API responses.",
+    "type": "project",
+    "difficulty": "Advanced",
+    "technology": [
+      "Spring Boot",
+      "Spring MVC",
+      "Spring Data JPA",
+      "H2/MySQL",
+      "React",
+      "Axios",
+      "REST API"
+    ],
+    "track": "fullstack",
+    "estimatedTime": 1440,
+    "route": "/projects/task-manager-api"
+  },
+  {
+    "id": "project:library-management",
+    "title": "Library Management System",
+    "description": "Build a console-based Java application that manages a library catalogue — books, members, borrowing records, and search. Apply core OOP, Java Collections, file I/O, and exception handling in a real use case.",
+    "type": "project",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java 17",
+      "Java Collections Framework",
+      "File I/O",
+      "OOP Design Patterns"
+    ],
+    "track": "java",
+    "estimatedTime": 960,
+    "route": "/projects/library-management"
+  },
+  {
+    "id": "roadmap:roadmap-java-fullstack",
+    "title": "Java Full Stack Developer Career Roadmap",
+    "description": "The complete journey from Java basics to full-stack cloud-native deployment.",
+    "type": "career_roadmap",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "PostgreSQL",
+      "Docker"
+    ],
+    "track": "Full Stack",
+    "route": "/calendar"
+  },
+  {
+    "id": "roadmap:roadmap-frontend",
+    "title": "Modern Frontend Developer Roadmap",
+    "description": "Deep dive into web standards, performance, React components, and state management.",
+    "type": "career_roadmap",
+    "difficulty": "Beginner",
+    "technology": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    "track": "Frontend",
+    "route": "/calendar"
+  },
+  {
+    "id": "resume:resume-java-junior",
+    "title": "Junior Java Full Stack Developer Resume Template",
+    "description": "Perfect for entry-level developers or career switchers highlighting projects and foundational Java/Spring/React skills.",
+    "type": "resume_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "Java",
+      "Spring Boot",
+      "React",
+      "SQL"
+    ],
+    "track": "Resume",
+    "route": "/downloads"
+  },
+  {
+    "id": "resume:resume-react-junior",
+    "title": "Junior Frontend Engineer Resume Template",
+    "description": "Tailored for frontend developers focusing on UI development, performance, state management, and modern Web design.",
+    "type": "resume_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "CSS",
+      "Javascript",
+      "Tailwind"
+    ],
+    "track": "Resume",
+    "route": "/downloads"
+  },
+  {
+    "id": "portfolio:portfolio-minimalist",
+    "title": "Minimalist Developer Portfolio Template",
+    "description": "Clean, elegant, typography-focused single-page portfolio layout.",
+    "type": "portfolio_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "HTML",
+      "Vanilla CSS",
+      "Javascript"
+    ],
+    "track": "Portfolio",
+    "route": "/downloads"
+  },
+  {
+    "id": "portfolio:portfolio-terminal",
+    "title": "Terminal/IDE Style Portfolio Template",
+    "description": "Interactive developer portfolio designed to resemble an IDE workspace or Linux command terminal.",
+    "type": "portfolio_template",
+    "difficulty": "Beginner",
+    "technology": [
+      "React",
+      "Tailwind CSS",
+      "Zustand"
+    ],
+    "track": "Portfolio",
+    "route": "/downloads"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-1",
+    "title": "Flashcard: What does @SpringBootApplication do?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: It's a convenience annotation combining @SpringBootConfiguration, @EnableAutoCon...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-2",
+    "title": "Flashcard: What is auto-configuration in Spring Boot?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: Spring Boot automatically configures beans based on the dependencies on your cla...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-3",
+    "title": "Flashcard: What is the difference between @Controller and @RestController?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: @Controller is used for web MVC apps returning HTML views. @RestController is a ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T1-fc-4",
+    "title": "Flashcard: How does Spring Boot differ from traditional Spring Framework?",
+    "description": "Topic: Introduction to Spring Boot. Answer preview: Spring Framework requires extensive XML or Java configuration. Spring Boot provi...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-boot-intro"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Spring REST APIs?",
+    "description": "Topic: Spring REST APIs. Answer preview: To solve problems related to Backend, Java, Spring Boot, API....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-rest"
+  },
+  {
+    "id": "flashcard:BE-V1-C1-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of Dependency Injection in Spring?",
+    "description": "Topic: Dependency Injection in Spring. Answer preview: To solve problems related to Backend, Java, Spring, Architecture....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-di"
+  },
+  {
+    "id": "flashcard:BE-V1-C2-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of Spring Security?",
+    "description": "Topic: Spring Security. Answer preview: Secure your Spring Boot APIs with authentication, authorization, and JWT tokens....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-security"
+  },
+  {
+    "id": "flashcard:BE-V1-C2-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Spring Data JPA?",
+    "description": "Topic: Spring Data JPA. Answer preview: Persist data to relational databases using Spring Data JPA and Hibernate ORM....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/spring-data-jpa"
+  },
+  {
+    "id": "flashcard:BE-V1-C2-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of Microservices Architecture?",
+    "description": "Topic: Microservices Architecture. Answer preview: Design and build scalable microservices with Spring Boot and REST communication....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/microservices"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-1",
+    "title": "Flashcard: What is the correct SQL syntax to get all rows from a 'products' table?",
+    "description": "Topic: SQL Basics. Answer preview: SELECT * FROM products;  The * means all columns....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-2",
+    "title": "Flashcard: What happens if you run UPDATE without a WHERE clause?",
+    "description": "Topic: SQL Basics. Answer preview: It updates ALL rows in the table! Always include a WHERE clause to target specif...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-3",
+    "title": "Flashcard: What does the LIKE operator with '%' wildcard do?",
+    "description": "Topic: SQL Basics. Answer preview: '%' matches any sequence of zero or more characters. 'name LIKE J%' matches anyt...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T1-fc-4",
+    "title": "Flashcard: How do you check if a column value is NULL in SQL?",
+    "description": "Topic: SQL Basics. Answer preview: Use 'IS NULL' or 'IS NOT NULL'. You cannot use '= NULL' because NULL represents ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-basics"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-1",
+    "title": "Flashcard: What does an INNER JOIN return?",
+    "description": "Topic: SQL Joins. Answer preview: Only the rows that have matching values in BOTH joined tables. Rows from either ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-2",
+    "title": "Flashcard: What is the difference between LEFT JOIN and INNER JOIN?",
+    "description": "Topic: SQL Joins. Answer preview: INNER JOIN returns only matched rows from both tables. LEFT JOIN returns ALL row...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-3",
+    "title": "Flashcard: How can you find all records in Table A that have NO match in Table B?",
+    "description": "Topic: SQL Joins. Answer preview: Use a LEFT JOIN and filter WHERE b.id IS NULL: SELECT * FROM A LEFT JOIN B ON A....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T2-fc-4",
+    "title": "Flashcard: What is a CROSS JOIN?",
+    "description": "Topic: SQL Joins. Answer preview: A CROSS JOIN (Cartesian product) returns every possible combination of rows from...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-joins"
+  },
+  {
+    "id": "flashcard:DB-V1-C1-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of SQL Aggregations & Grouping?",
+    "description": "Topic: SQL Aggregations & Grouping. Answer preview: Summarize data using GROUP BY, HAVING, COUNT, SUM, AVG, MIN, and MAX....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/sql-aggregations"
+  },
+  {
+    "id": "flashcard:DB-V1-C2-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of PostgreSQL Setup & Basics?",
+    "description": "Topic: PostgreSQL Setup & Basics. Answer preview: Install PostgreSQL, create databases and tables, and run queries from the comman...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/postgresql-setup"
+  },
+  {
+    "id": "flashcard:DB-V1-C2-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Database Design & Normalization?",
+    "description": "Topic: Database Design & Normalization. Answer preview: Design efficient databases using 1NF, 2NF, 3NF and ER diagrams....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/database-design"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-1",
+    "title": "Flashcard: What are the four components of the CSS Box Model (from inside out)?",
+    "description": "Topic: CSS Fundamentals. Answer preview: Content → Padding → Border → Margin. Content is the actual element content, padd...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-2",
+    "title": "Flashcard: What does 'box-sizing: border-box' do?",
+    "description": "Topic: CSS Fundamentals. Answer preview: It makes the width and height properties include padding and border in their cal...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-3",
+    "title": "Flashcard: What is CSS specificity and how is it calculated?",
+    "description": "Topic: CSS Fundamentals. Answer preview: Specificity determines which CSS rule wins when multiple rules target the same e...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T1-fc-4",
+    "title": "Flashcard: What is the difference between 'display: none' and 'visibility: hidden'?",
+    "description": "Topic: CSS Fundamentals. Answer preview: display: none removes the element from the layout entirely (no space taken). vis...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-fundamentals"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of CSS Flexbox?",
+    "description": "Topic: CSS Flexbox. Answer preview: Build flexible and responsive layouts using the CSS Flexbox model....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-flexbox"
+  },
+  {
+    "id": "flashcard:FE-V1-C1-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of CSS Grid?",
+    "description": "Topic: CSS Grid. Answer preview: Create two-dimensional grid-based layouts for modern responsive web design....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/css-grid"
+  },
+  {
+    "id": "flashcard:FE-V1-C2-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of JavaScript Basics?",
+    "description": "Topic: JavaScript Basics. Answer preview: To solve problems related to Frontend, JavaScript, Programming....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/js-basics"
+  },
+  {
+    "id": "flashcard:FE-V1-C2-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of JavaScript DOM Manipulation?",
+    "description": "Topic: JavaScript DOM Manipulation. Answer preview: Interact with the browser Document Object Model to make web pages dynamic....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/js-dom"
+  },
+  {
+    "id": "flashcard:FE-V1-C2-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of Async JavaScript?",
+    "description": "Topic: Async JavaScript. Answer preview: Handle asynchronous operations using Promises, async/await, and Fetch API....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/js-async"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of React Components & JSX?",
+    "description": "Topic: React Components & JSX. Answer preview: To solve problems related to Frontend, React, UI....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-components"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-1",
+    "title": "Flashcard: What does the dependency array in useEffect control?",
+    "description": "Topic: React Hooks. Answer preview: It controls when the effect re-runs. Empty array [] = run once on mount. Array w...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-2",
+    "title": "Flashcard: Why should you never mutate state directly in React?",
+    "description": "Topic: React Hooks. Answer preview: React tracks state changes through the setter function. Directly mutating state ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-3",
+    "title": "Flashcard: What is the difference between useRef and useState?",
+    "description": "Topic: React Hooks. Answer preview: useState triggers a re-render when changed. useRef stores a mutable value that p...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T2-fc-4",
+    "title": "Flashcard: What are the two Rules of Hooks?",
+    "description": "Topic: React Hooks. Answer preview: 1) Only call Hooks at the top level (not inside if statements, loops, or nested ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-hooks"
+  },
+  {
+    "id": "flashcard:FE-V2-C1-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of React Routing?",
+    "description": "Topic: React Routing. Answer preview: To solve problems related to Frontend, React, Routing....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-routing"
+  },
+  {
+    "id": "flashcard:FE-V2-C2-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of State Management in React?",
+    "description": "Topic: State Management in React. Answer preview: Manage complex application state with Context API and useReducer....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-state"
+  },
+  {
+    "id": "flashcard:FE-V2-C2-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Forms in React?",
+    "description": "Topic: Forms in React. Answer preview: Handle user input efficiently using controlled components and form validation....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/react-forms"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-1",
+    "title": "Flashcard: What is the primary difference between Stack and Heap memory in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Stack memory stores method execution frames and local variables, and is allocate...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-2",
+    "title": "Flashcard: What happens if you try to use an uninitialized local variable in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Java triggers a compile-time error: 'variable might not have been initialized'....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-3",
+    "title": "Flashcard: How do you declare a variable as constant in Java?",
+    "description": "Topic: Variables in Java. Answer preview: By using the 'final' keyword. Once initialized, its value cannot be changed....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T1-fc-4",
+    "title": "Flashcard: Which scope of variables gets default values automatically in Java?",
+    "description": "Topic: Variables in Java. Answer preview: Instance variables (fields) and static variables get default values (like 0, fal...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/variables"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-1",
+    "title": "Flashcard: What is the key difference between while and do-while loops?",
+    "description": "Topic: Loops in Java. Answer preview: A while loop checks the condition BEFORE executing the body (may never run). A d...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-2",
+    "title": "Flashcard: What does the 'continue' keyword do inside a loop?",
+    "description": "Topic: Loops in Java. Answer preview: It immediately skips the rest of the current iteration and jumps to the next ite...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-3",
+    "title": "Flashcard: What are the three parts of a for loop header?",
+    "description": "Topic: Loops in Java. Answer preview: 1) Initialization (runs once), 2) Condition (checked each iteration), 3) Update ...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T2-fc-4",
+    "title": "Flashcard: When would you choose a while loop over a for loop?",
+    "description": "Topic: Loops in Java. Answer preview: When the number of iterations is not known in advance, such as reading input unt...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/loops"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-1",
+    "title": "Flashcard: What is method overloading?",
+    "description": "Topic: Methods in Java. Answer preview: Defining multiple methods with the same name but different parameter lists (type...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-2",
+    "title": "Flashcard: Is Java pass-by-value or pass-by-reference?",
+    "description": "Topic: Methods in Java. Answer preview: Always pass-by-value. For objects, a copy of the reference is passed — you can m...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-3",
+    "title": "Flashcard: What defines a method's signature in Java?",
+    "description": "Topic: Methods in Java. Answer preview: The method name plus the parameter types and their order. The return type is NOT...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T3-fc-4",
+    "title": "Flashcard: What is the difference between method overloading and overriding?",
+    "description": "Topic: Methods in Java. Answer preview: Overloading: same class, same name, different params (compile-time). Overriding:...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/methods"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-1",
+    "title": "Flashcard: What is the index of the first element in a Java array?",
+    "description": "Topic: Arrays in Java. Answer preview: 0. Arrays in Java are zero-indexed, so the first element is at index 0 and the l...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-2",
+    "title": "Flashcard: What exception is thrown when you access an invalid array index?",
+    "description": "Topic: Arrays in Java. Answer preview: ArrayIndexOutOfBoundsException — thrown at runtime when accessing an index < 0 o...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-3",
+    "title": "Flashcard: How do you get the number of elements in a Java array?",
+    "description": "Topic: Arrays in Java. Answer preview: Using the .length property (not a method — no parentheses). Example: arr.length...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T4-fc-4",
+    "title": "Flashcard: What are the default values for int[], String[], and boolean[] arrays?",
+    "description": "Topic: Arrays in Java. Answer preview: int[] defaults to 0, String[] defaults to null, boolean[] defaults to false....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/arrays"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-1",
+    "title": "Flashcard: Why should you use .equals() instead of == to compare Strings?",
+    "description": "Topic: Strings in Java. Answer preview: == compares memory references (locations). .equals() compares the actual charact...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-2",
+    "title": "Flashcard: What is String immutability in Java?",
+    "description": "Topic: Strings in Java. Answer preview: Once a String object is created, its character sequence cannot be changed. Metho...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-3",
+    "title": "Flashcard: What is the String Pool?",
+    "description": "Topic: Strings in Java. Answer preview: A special memory area (part of the heap) where Java stores String literals. When...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T5-fc-4",
+    "title": "Flashcard: When should you use StringBuilder instead of String concatenation?",
+    "description": "Topic: Strings in Java. Answer preview: When building strings inside loops. String concatenation in a loop is O(n²) beca...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/strings"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-1",
+    "title": "Flashcard: What is encapsulation and how is it implemented in Java?",
+    "description": "Topic: OOP Fundamentals. Answer preview: Encapsulation is hiding an object's internal state and requiring all interaction...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-2",
+    "title": "Flashcard: What is the purpose of the 'this' keyword in Java?",
+    "description": "Topic: OOP Fundamentals. Answer preview: 'this' refers to the current object instance. It's used to resolve naming confli...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-3",
+    "title": "Flashcard: What happens if you don't define any constructor in a Java class?",
+    "description": "Topic: OOP Fundamentals. Answer preview: Java automatically provides a default no-argument constructor. However, if you d...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C1-T6-fc-4",
+    "title": "Flashcard: What is the difference between a class and an object?",
+    "description": "Topic: OOP Fundamentals. Answer preview: A class is a blueprint or template that defines fields and methods. An object is...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/oop-basics"
+  },
+  {
+    "id": "flashcard:V1-C2-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of Inheritance in Java?",
+    "description": "Topic: Inheritance in Java. Answer preview: Learn how subclasses extend parent classes and reuse code with inheritance....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/inheritance"
+  },
+  {
+    "id": "flashcard:V1-C2-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Polymorphism in Java?",
+    "description": "Topic: Polymorphism in Java. Answer preview: Understand compile-time and runtime polymorphism, method overloading and overrid...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/polymorphism"
+  },
+  {
+    "id": "flashcard:V1-C2-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of Abstraction & Interfaces?",
+    "description": "Topic: Abstraction & Interfaces. Answer preview: Learn abstract classes and interfaces to design clean and extensible Java applic...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/abstraction"
+  },
+  {
+    "id": "flashcard:V1-C2-T4-fc-1",
+    "title": "Flashcard: What is the main purpose of Exception Handling?",
+    "description": "Topic: Exception Handling. Answer preview: Handle runtime errors gracefully using try-catch-finally blocks and custom excep...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/exception-handling"
+  },
+  {
+    "id": "flashcard:V1-C3-T1-fc-1",
+    "title": "Flashcard: What is the main purpose of Java Collections Framework?",
+    "description": "Topic: Java Collections Framework. Answer preview: Master List, Set, Map, and Queue interfaces with their common implementations....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/collections"
+  },
+  {
+    "id": "flashcard:V1-C3-T2-fc-1",
+    "title": "Flashcard: What is the main purpose of Generics in Java?",
+    "description": "Topic: Generics in Java. Answer preview: Write type-safe code with generic classes, methods, and bounded type parameters....",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/generics"
+  },
+  {
+    "id": "flashcard:V1-C3-T3-fc-1",
+    "title": "Flashcard: What is the main purpose of Lambda Expressions & Streams?",
+    "description": "Topic: Lambda Expressions & Streams. Answer preview: Embrace functional programming with Java 8 lambdas, Stream API, and method refer...",
+    "type": "flashcard",
+    "difficulty": "Intermediate",
+    "technology": [
+      "Java"
+    ],
+    "track": "Flashcards",
+    "route": "/revision/flashcards/lambda-streams"
+  },
+  {
+    "id": "question:amzn-tech-1",
+    "description": "Interview Question: In Java 8, a HashMap stores key-value pairs in an array of nodes (Node<K,V>[] table). The index is c...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-tech-2",
+    "description": "Interview Question: This problem can be resolved using a Monotonic Stack. We traverse the array from right to left, main...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-sys-1",
+    "description": "Interview Question: A distributed rate limiter limits API requests per user key across multiple load-balanced servers. W...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:amzn-hr-1",
+    "description": "Interview Question: I want to join Amazon because of its culture of customer obsession and operational excellence. At sc...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-tech-1",
+    "description": "Interview Question: To detect a cycle in a directed graph, we can use depth-first search (DFS) with node coloring: white...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-sys-1",
+    "description": "Interview Question: To design typeahead suggestions, we need a system that returns top 5 matching queries as a user type...",
+    "type": "interview_question",
+    "difficulty": "Hard",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:goog-hr-1",
+    "description": "Interview Question: To me, Googlyness means doing the right thing, valuing diversity, intellectual humility, and having ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-1",
+    "description": "Interview Question: The four pillars of OOP are: 1. Encapsulation (hiding data using private fields and public getters/s...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-tech-2",
+    "description": "Interview Question: The WHERE clause is used to filter records from a table before any groupings are made. The HAVING cl...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-sys-1",
+    "description": "Interview Question: A Library Management System database requires tables for: Books (id, title, author, isbn, status), U...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:tcs-hr-1",
+    "description": "Interview Question: Yes, I am completely comfortable relocating to any TCS development center in India. I believe reloca...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-beh-1",
+    "description": "Interview Question: undefined",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Behavioral",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-hr-1",
+    "description": "Interview Question: I am a full-stack developer specializing in building Java and React applications. I have experience ...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "HR",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-sys-1",
+    "description": "Interview Question: A URL shortener converts long URLs to short aliases (e.g. bit.ly/abcd12). We need: 1. A relational o...",
+    "type": "interview_question",
+    "difficulty": "Medium",
+    "technology": [
+      "General"
+    ],
+    "track": "SystemDesign",
+    "route": "/interviews"
+  },
+  {
+    "id": "question:gen-tech-1",
+    "description": "Interview Question: In Java, an abstract class can have state (non-static, non-final fields) and constructors, whereas i...",
+    "type": "interview_question",
+    "difficulty": "Easy",
+    "technology": [
+      "General"
+    ],
+    "track": "Technical",
+    "route": "/interviews"
+  }
+]

@@ -36,4 +36,6 @@ export const useCalendarStore = create((set, get) => ({
   },
 
   setViewMode: (mode) => set({ viewMode: mode }),
+
+  reset: () => set({ tasks: [], isLoading: false, viewMode: 'week' }),
 }));

@@ -1,0 +1,19 @@
+[
+  {
+    "id": "problem:two-sum",
+    "title": "Two Sum Using HashMap",
+    "description": "Coding practice problem: Two Sum Using HashMap. Target topic: Arrays.",
+    "type": "problem",
+    "difficulty": {
+      "level": 2,
+      "label": "Easy",
+      "color": "green"
+    },
+    "technology": [
+      "Java"
+    ],
+    "track": "Arrays",
+    "estimatedTime": 20,
+    "route": "/compiler/problems/two-sum"
+  }
+]

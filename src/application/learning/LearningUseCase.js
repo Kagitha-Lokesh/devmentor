@@ -37,6 +37,29 @@ export class LearningUseCase {
       }));
       await this.updateTopicMastery(uid, topicId);
     });
+
+    // Learning OS v1.2 event handlers
+    eventBus.subscribe('QUIZ_PASSED', async ({ uid, topicId, score }) => {
+      await this.activityRepo.logActivity(uid, new Activity({
+        type: ActivityType.QuizPassed,
+        topicId
+      }));
+      await this.updateTopicMastery(uid, topicId);
+    });
+
+    eventBus.subscribe('FLASHCARDS_REVIEWED', async ({ uid, topicId }) => {
+      await this.activityRepo.logActivity(uid, new Activity({
+        type: ActivityType.FlashcardsReviewed,
+        topicId
+      }));
+    });
+
+    eventBus.subscribe('TOPIC_MASTERED', async ({ uid, topicId }) => {
+      await this.activityRepo.logActivity(uid, new Activity({
+        type: ActivityType.TopicMastered,
+        topicId
+      }));
+    });
   }
 
   async startLesson(uid, topicId) {
@@ -109,6 +132,77 @@ export class LearningUseCase {
 
     await this.masteryRepo.saveMastery(uid, mastery);
     eventBus.publish('MASTERY_UPDATED', { uid, topicId, score });
+
+    // Fire TOPIC_MASTERED when all objectives are complete
+    if (progress && progress.isFullyComplete) {
+      eventBus.publish('TOPIC_MASTERED', { uid, topicId, score });
+    }
+  }
+
+  // ─── Learning OS Extensions ───────────────────────────────────────────────
+
+  /**
+   * Record a passed quiz for a topic and update mastery.
+   * @param {string} uid
+   * @param {string} topicId
+   * @param {number} score - 0–100
+   */
+  async passQuiz(uid, topicId, score) {
+    let progress = await this.progressRepo.getProgress(uid, topicId);
+    if (!progress) {
+      progress = new Progress({ topicId });
+    }
+    progress.quizPassed = true;
+    progress.quizScore = Math.max(progress.quizScore, score);
+    progress.lastActivity = new Date();
+
+    if (progress.isFullyComplete) {
+      progress.status = ProgressStatus.Mastered;
+      progress.completedAt = new Date();
+    }
+
+    await this.progressRepo.saveProgress(uid, progress);
+    eventBus.publish('QUIZ_PASSED', { uid, topicId, score });
+  }
+
+  /**
+   * Record that the learner completed a flashcard review session.
+   */
+  async markFlashcardsReviewed(uid, topicId) {
+    let progress = await this.progressRepo.getProgress(uid, topicId);
+    if (!progress) {
+      progress = new Progress({ topicId });
+    }
+    progress.flashcardsReviewed = true;
+    progress.lastActivity = new Date();
+    await this.progressRepo.saveProgress(uid, progress);
+    eventBus.publish('FLASHCARDS_REVIEWED', { uid, topicId });
+  }
+
+  /**
+   * Pure function — resolves the next action for the Continue button.
+   * Returns { action, label, targetTab } based on current progress state.
+   * @param {Progress|null} progress
+   * @param {LearningNode} topic
+   * @returns {{ action: string, label: string, targetTab: string }}
+   */
+  resolveContinueAction(progress, topic) {
+    if (!progress || progress.readingPercentage < 80) {
+      return { action: 'reading', label: 'Continue Reading →', targetTab: 'lesson' };
+    }
+    if (!progress.lessonCompleted) {
+      return { action: 'lesson', label: 'Finish Lesson →', targetTab: 'lesson' };
+    }
+    if (!progress.practiceCompleted) {
+      return { action: 'practice', label: 'Try Practice →', targetTab: 'examples' };
+    }
+    if (!progress.quizPassed) {
+      return { action: 'quiz', label: 'Take Quiz →', targetTab: 'quiz' };
+    }
+    if (!progress.flashcardsReviewed) {
+      return { action: 'flashcards', label: 'Review Flashcards →', targetTab: 'flashcards' };
+    }
+    return { action: 'next', label: 'Continue to Next Topic →', targetTab: null };
   }
 }
 

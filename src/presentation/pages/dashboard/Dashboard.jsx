@@ -20,11 +20,24 @@ import {
   Target,
   Zap,
   FolderGit2,
-  Trophy
+  Trophy,
+  ArrowRight
 } from 'lucide-react';
 
 import { container } from '../../../infrastructure/di/container';
 import { useAuthStore } from '../../store/useAuthStore';
+import { Card } from '../../components/ui/Card';
+import { Skeleton } from '../../components/ui/Skeleton';
+import { Badge } from '../../components/ui/Badge';
+import { Button } from '../../components/ui/Button';
+
+// Learning OS Components
+import { YouAreHere } from '../../components/course/YouAreHere';
+import { SkillRadar } from '../../components/course/SkillRadar';
+import { LearningHeatmap } from '../../components/course/LearningHeatmap';
+import { CurrentFocusCard } from '../../components/course/CurrentFocusCard';
+import { TodaysQueue } from '../../components/course/TodaysQueue';
+import { RemainingRoadmap } from '../../components/course/RemainingRoadmap';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -51,6 +64,15 @@ export default function Dashboard() {
   const [volumeCompletion, setVolumeCompletion] = useState([]);
   const [heatmapDays, setHeatmapDays] = useState([]);
   const [revisionQueue, setRevisionQueue] = useState(null);
+  const [graphData, setGraphData] = useState([]);
+
+  // Learning OS state
+  const [hubData, setHubData] = useState(null); // { overall, modules, readinessMap }
+  const [currentFocus, setCurrentFocus] = useState(null);
+  const [todaysQueue, setTodaysQueue] = useState([]);
+  const [remainingRoadmap, setRemainingRoadmap] = useState({ modules: [], totalHours: 0 });
+  const [estimatedCompletion, setEstimatedCompletion] = useState(null);
+  const [resumeBanner, setResumeBanner] = useState(null); // { title, slug } if in-progress topic
 
   // Projects Platform States
   const [activeProject, setActiveProject] = useState(null);
@@ -78,6 +100,7 @@ export default function Dashboard() {
         ]);
 
         // 1. Resolve Recommendations list
+        setGraphData(graph);
         const recs = await recommendationEngine.getRecommendations({
           uid,
           graph,
@@ -85,6 +108,39 @@ export default function Dashboard() {
           masteryList
         });
         setRecommendations(recs);
+
+        // ── Learning OS Hub Computations (no new repo calls) ───────────────
+        try {
+          const progressHubUseCase = container.resolve('ProgressHubUseCase');
+
+          // Weighted progress + module readiness
+          const hub = progressHubUseCase.computeWeightedProgress(graph, progressList, masteryList);
+          setHubData(hub);
+
+          // Current focus topic
+          const focus = progressHubUseCase.computeCurrentFocus(graph, progressList);
+          setCurrentFocus(focus);
+
+          // Today's queue
+          const queue = progressHubUseCase.computeTodaysQueue(graph, progressList, masteryList, recs);
+          setTodaysQueue(queue);
+
+          // Remaining roadmap
+          const remaining = progressHubUseCase.computeRemainingRoadmap(graph, progressList);
+          setRemainingRoadmap(remaining);
+
+          // Estimated completion
+          const est = progressHubUseCase.computeEstimatedCompletion(graph, progressList, activitiesList);
+          setEstimatedCompletion(est);
+
+          // Smart Resume Banner: if there's an in-progress topic
+          if (focus) {
+            setResumeBanner({ title: focus.node.title, slug: focus.node.slug });
+          }
+        } catch (hubErr) {
+          console.warn('Learning OS hub computation error:', hubErr.message);
+        }
+        // ──────────────────────────────────────────────────────────────────
 
         // 2. Identify Weak Topics (mastery < 70)
         const weak = [];
@@ -256,7 +312,7 @@ export default function Dashboard() {
         }
 
         // Fetch aggregate statistics from static learning-statistics.json
-        const stats = await fetch('/src/shared/generated/learning-statistics.json').then(r => r.json());
+        const stats = await fetch('/generated/learning-statistics.json').then(r => r.json());
         setStatistics(stats);
 
       } catch (err) {
@@ -271,22 +327,22 @@ export default function Dashboard() {
 
   if (isLoading) {
     return (
-      <div className="space-y-8 pb-12 animate-pulse" aria-busy="true">
+      <div className="space-y-8 pb-12" aria-busy="true">
         {/* Welcome greeting skeleton */}
-        <div className="h-44 bg-surface-secondary border border-surface-border rounded-2xl" />
+        <Skeleton className="h-44 rounded-2xl" />
         
         {/* Grid panel skeleton */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6">
-            <div className="h-32 bg-surface-secondary border border-surface-border rounded-2xl" />
+            <Skeleton className="h-32 rounded-2xl" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="h-40 bg-surface-secondary border border-surface-border rounded-xl" />
-              <div className="h-40 bg-surface-secondary border border-surface-border rounded-xl" />
+              <Skeleton className="h-40 rounded-xl" />
+              <Skeleton className="h-40 rounded-xl" />
             </div>
           </div>
           <div className="space-y-6">
-            <div className="h-44 bg-surface-secondary border border-surface-border rounded-xl" />
-            <div className="h-56 bg-surface-secondary border border-surface-border rounded-xl" />
+            <Skeleton className="h-44 rounded-xl" />
+            <Skeleton className="h-56 rounded-xl" />
           </div>
         </div>
       </div>
@@ -336,6 +392,111 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* ── Smart Resume Banner ─────────────────────────────────────────── */}
+      {resumeBanner && (
+        <div className="flex items-center gap-4 bg-brand-500/8 border border-brand-500/25 rounded-2xl p-4">
+          <div className="w-2 h-2 rounded-full bg-brand-500 animate-pulse flex-shrink-0" />
+          <p className="text-sm flex-1 text-text/70">
+            <span className="font-bold text-text">Welcome back.</span> You left off on{' '}
+            <span className="text-brand-500 font-bold">{resumeBanner.title}</span>.
+          </p>
+          <button
+            onClick={() => navigate(`/courses/java/topics/${resumeBanner.slug}`)}
+            className="btn-primary py-1.5 px-4 text-xs whitespace-nowrap flex items-center gap-2"
+          >
+            Resume <ArrowRight className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      )}
+
+      {/* ── Developer Progress Hub ──────────────────────────────────────── */}
+      {hubData && (
+        <div className="space-y-6">
+          {/* End Goal + Overall ring */}
+          <div className="bg-surface-secondary border border-surface-border rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="flex-1">
+              <p className="text-xs font-black uppercase tracking-widest text-brand-500 mb-1">Goal</p>
+              <h2 className="text-xl font-extrabold text-text">Full Stack Java Developer</h2>
+              {estimatedCompletion && estimatedCompletion.estimatedDate && (
+                <p className="text-xs text-text/40 mt-1">
+                  Est. completion: <span className="font-semibold text-text/60">
+                    {estimatedCompletion.estimatedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+                  </span>
+                  {' '} · {estimatedCompletion.remainingTopics} topics remaining
+                  {' '} · ~{remainingRoadmap.totalHours}h of study
+                </p>
+              )}
+              {/* Overall progress bar */}
+              <div className="mt-3">
+                <div className="flex justify-between text-xs font-semibold text-text/50 mb-1.5">
+                  <span>Overall Progress</span>
+                  <span className="text-brand-500 font-black">{hubData.overall}%</span>
+                </div>
+                <div className="h-2.5 bg-surface-border rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-brand-500 to-emerald-500 rounded-full transition-all duration-700"
+                    style={{ width: `${hubData.overall}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Mastery + Streak mini stats */}
+            <div className="flex gap-3 flex-shrink-0">
+              <div className="bg-surface border border-surface-border rounded-xl p-4 text-center min-w-[100px]">
+                <div className="text-xs text-text/40 font-medium">Mastery</div>
+                <div className="text-2xl font-extrabold text-brand-500 mt-1 flex items-center justify-center gap-1">
+                  <TrendingUp className="h-4 w-4" />
+                  {masteryOverview}%
+                </div>
+              </div>
+              <div className="bg-surface border border-surface-border rounded-xl p-4 text-center min-w-[100px]">
+                <div className="text-xs text-text/40 font-medium">Streak</div>
+                <div className="text-2xl font-extrabold text-amber-500 mt-1 flex items-center justify-center gap-1">
+                  <Flame className="h-4 w-4 fill-current" />
+                  {streakDays}d
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 3-column OS grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Col 1: You Are Here + Current Focus */}
+            <div className="space-y-4">
+              <div className="bg-surface-secondary border border-surface-border rounded-2xl p-5">
+                <h3 className="text-xs font-black uppercase tracking-widest text-text/40 mb-4">You Are Here</h3>
+                <YouAreHere modules={hubData.modules} />
+              </div>
+              <CurrentFocusCard focus={currentFocus} />
+            </div>
+
+            {/* Col 2: Today's Queue */}
+            <div className="bg-surface-secondary border border-surface-border rounded-2xl p-5">
+              <h3 className="text-xs font-black uppercase tracking-widest text-text/40 mb-4">Today's Queue</h3>
+              <TodaysQueue queue={todaysQueue} />
+            </div>
+
+            {/* Col 3: Skill Radar + Remaining */}
+            <div className="space-y-4">
+              <div className="bg-surface-secondary border border-surface-border rounded-2xl p-5">
+                <h3 className="text-xs font-black uppercase tracking-widest text-text/40 mb-3">Skill Radar</h3>
+                <SkillRadar readinessMap={hubData.readinessMap} size={220} />
+              </div>
+              <div className="bg-surface-secondary border border-surface-border rounded-2xl p-5">
+                <h3 className="text-xs font-black uppercase tracking-widest text-text/40 mb-3">Remaining</h3>
+                <RemainingRoadmap modules={remainingRoadmap.modules} totalHours={remainingRoadmap.totalHours} />
+              </div>
+            </div>
+          </div>
+
+          {/* Activity Heatmap */}
+          <div className="bg-surface-secondary border border-surface-border rounded-2xl p-5">
+            <h3 className="text-xs font-black uppercase tracking-widest text-text/40 mb-4">Activity Heatmap</h3>
+            <LearningHeatmap heatmapDays={heatmapDays} />
+          </div>
+        </div>
+      )}
 
       {/* Target goals dashboard progress indicator */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -495,7 +656,10 @@ export default function Dashboard() {
                     if (nextRec.type === 'WeakTopicRefresher' || nextRec.problemId) {
                       navigate(`/compiler`);
                     } else {
-                      navigate(`/courses`);
+                      const node = graphData.find(n => n.id === nextRec.topicId);
+                      const courseId = node?.paths?.lesson?.split('/')[1] || 'java';
+                      const slug = node?.slug || nextRec.topicId;
+                      navigate(`/courses/${courseId}/topics/${slug}`);
                     }
                   }}
                   className="btn-primary text-xs py-2 px-4 flex items-center gap-1 cursor-pointer"

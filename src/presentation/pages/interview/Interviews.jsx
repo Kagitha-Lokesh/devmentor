@@ -49,7 +49,7 @@ export default function Interviews() {
         setSessions(sessionsData);
 
         // Load manifest from generated file
-        const mf = await fetch('/src/shared/generated/interview-manifest.json')
+        const mf = await fetch('/generated/interview-manifest.json')
           .then(r => r.json())
           .catch(() => null);
         setManifest(mf);

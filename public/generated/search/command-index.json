@@ -1,0 +1,259 @@
+[
+  {
+    "id": "nav-dashboard",
+    "name": "Open Dashboard",
+    "category": "Navigation",
+    "route": "/",
+    "shortcut": "Alt+D",
+    "icon": "nav-dashboard",
+    "keywords": [
+      "home",
+      "main",
+      "dashboard",
+      "index"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-courses",
+    "name": "Open Courses & Lessons",
+    "category": "Navigation",
+    "route": "/courses",
+    "shortcut": "Alt+C",
+    "icon": "nav-courses",
+    "keywords": [
+      "learn",
+      "study",
+      "syllabus",
+      "topics"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-compiler",
+    "name": "Open Practice Compiler Sandbox",
+    "category": "Navigation",
+    "route": "/compiler",
+    "shortcut": "Alt+P",
+    "icon": "nav-compiler",
+    "keywords": [
+      "code",
+      "run",
+      "execution",
+      "sandbox",
+      "compile"
+    ],
+    "permission": null,
+    "offlineSupported": false
+  },
+  {
+    "id": "nav-interviews",
+    "name": "Open Mock Interviews",
+    "category": "Navigation",
+    "route": "/interviews",
+    "shortcut": "Alt+I",
+    "icon": "nav-interviews",
+    "keywords": [
+      "mock",
+      "qa",
+      "questions",
+      "companies"
+    ],
+    "permission": null,
+    "offlineSupported": false
+  },
+  {
+    "id": "nav-revision",
+    "name": "Open Spaced Revision",
+    "category": "Navigation",
+    "route": "/revision",
+    "shortcut": "Alt+R",
+    "icon": "nav-revision",
+    "keywords": [
+      "flashcards",
+      "spaced",
+      "repetition",
+      "review"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-projects",
+    "name": "Open Guided Projects Platform",
+    "category": "Navigation",
+    "route": "/projects",
+    "shortcut": "Alt+J",
+    "icon": "nav-projects",
+    "keywords": [
+      "project",
+      "code",
+      "github",
+      "milestones"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-assistant",
+    "name": "Open AI Learning Assistant",
+    "category": "Navigation",
+    "route": "/assistant",
+    "shortcut": "Alt+A",
+    "icon": "nav-assistant",
+    "keywords": [
+      "help",
+      "chat",
+      "explain",
+      "ai",
+      "socratic"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-calendar",
+    "name": "Open Learning Calendar",
+    "category": "Navigation",
+    "route": "/calendar",
+    "shortcut": "Alt+L",
+    "icon": "nav-calendar",
+    "keywords": [
+      "schedule",
+      "tasks",
+      "deadlines",
+      "planner"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-notes",
+    "name": "Open Notes & Highlights Center",
+    "category": "Navigation",
+    "route": "/notes",
+    "shortcut": "Alt+N",
+    "icon": "nav-notes",
+    "keywords": [
+      "take",
+      "write",
+      "highlights",
+      "editor"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-bookmarks",
+    "name": "Open Unified Bookmarks",
+    "category": "Navigation",
+    "route": "/bookmarks",
+    "shortcut": "Alt+B",
+    "icon": "nav-bookmarks",
+    "keywords": [
+      "save",
+      "favorite",
+      "marked"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-timeline",
+    "name": "Open Activity Timeline",
+    "category": "Navigation",
+    "route": "/timeline",
+    "shortcut": "Alt+T",
+    "icon": "nav-timeline",
+    "keywords": [
+      "history",
+      "events",
+      "completed",
+      "activities"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-achievements",
+    "name": "Open Achievement Board",
+    "category": "Navigation",
+    "route": "/achievements",
+    "shortcut": "Alt+G",
+    "icon": "nav-achievements",
+    "keywords": [
+      "trophy",
+      "medals",
+      "badges",
+      "points"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-downloads",
+    "name": "Open Download Center",
+    "category": "Navigation",
+    "route": "/downloads",
+    "shortcut": "Alt+W",
+    "icon": "nav-downloads",
+    "keywords": [
+      "pdf",
+      "cheat",
+      "sheets",
+      "offline"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "nav-exports",
+    "name": "Open Export Center",
+    "category": "Navigation",
+    "route": "/exports",
+    "shortcut": "Alt+E",
+    "icon": "nav-exports",
+    "keywords": [
+      "backup",
+      "restore",
+      "json",
+      "data"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "cmd-theme",
+    "name": "Toggle Color Theme (Dark/Light)",
+    "category": "Preferences",
+    "action": "toggleTheme",
+    "shortcut": "Ctrl+Shift+T",
+    "icon": "cmd-theme",
+    "keywords": [
+      "dark",
+      "light",
+      "color",
+      "appearance"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  },
+  {
+    "id": "cmd-sidebar",
+    "name": "Toggle Navigation Sidebar",
+    "category": "Preferences",
+    "action": "toggleSidebar",
+    "shortcut": "Ctrl+/",
+    "icon": "cmd-sidebar",
+    "keywords": [
+      "hide",
+      "show",
+      "drawer",
+      "sidebar"
+    ],
+    "permission": null,
+    "offlineSupported": true
+  }
+]

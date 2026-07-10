@@ -15,6 +15,10 @@ export class FirestoreConversationRepository extends IConversationRepository {
 
   _metadataKey(uid) { return `assistant_conv_meta_${uid}`; }
 
+  _msgKey(uid, convId) { return `${uid}_${convId}`; }
+
+  _draftKey(uid, topicId) { return `${uid}_${topicId}`; }
+
   // Helper to load/save flat thread metadata list cached locally in localStorage
   _getMetaCache(uid) {
     try {
@@ -27,14 +31,14 @@ export class FirestoreConversationRepository extends IConversationRepository {
 
   _saveMetaCache(uid, list) {
     try {
-      localStorage.setItem(this._key = this._metadataKey(uid), JSON.stringify(list));
+      localStorage.setItem(this._metadataKey(uid), JSON.stringify(list));
     } catch {}
   }
 
   async getConversation(uid, conversationId) {
     try {
-      // 1. Load messages list from local IndexedDB (assistantHistory store)
-      const cachedMessages = await localDB.get('assistantHistory', conversationId) || [];
+      // 1. Load messages list from local IndexedDB (assistantHistory store) partitioned by user
+      const cachedMessages = await localDB.get('assistantHistory', this._msgKey(uid, conversationId)) || [];
 
       // 2. Load metadata from cache
       const list = this._getMetaCache(uid);
@@ -84,8 +88,8 @@ export class FirestoreConversationRepository extends IConversationRepository {
         timestamp: m.timestamp.toISOString()
       }));
 
-      // 1. Save messages list to IndexedDB
-      await localDB.put('assistantHistory', conversation.id, serializedMessages);
+      // 1. Save messages list to IndexedDB (partitioned by user)
+      await localDB.put('assistantHistory', this._msgKey(uid, conversation.id), serializedMessages);
 
       // 2. Save metadata to local cache
       const metadata = {
@@ -118,8 +122,8 @@ export class FirestoreConversationRepository extends IConversationRepository {
 
   async deleteConversation(uid, conversationId) {
     try {
-      // 1. Delete messages from IndexedDB
-      await localDB.delete('assistantHistory', conversationId);
+      // 1. Delete messages from IndexedDB (partitioned by user)
+      await localDB.delete('assistantHistory', this._msgKey(uid, conversationId));
 
       // 2. Delete metadata from local cache
       const list = this._getMetaCache(uid).filter(c => c.id !== conversationId);
@@ -180,11 +184,11 @@ export class FirestoreConversationRepository extends IConversationRepository {
   }
 
   async getConversationDraft(uid, topicId) {
-    return await localDB.get('conversationDrafts', topicId) || '';
+    return await localDB.get('conversationDrafts', this._draftKey(uid, topicId)) || '';
   }
 
   async saveConversationDraft(uid, topicId, text) {
-    await localDB.put('conversationDrafts', topicId, text);
+    await localDB.put('conversationDrafts', this._draftKey(uid, topicId), text);
   }
 }
 

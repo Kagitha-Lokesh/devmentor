@@ -13,11 +13,15 @@ export class CalendarRepository extends ICalendarRepository {
     this.env = container.resolve('environment');
   }
 
+  _storeKey(uid, taskId) {
+    return `${uid}_${taskId}`;
+  }
+
   async getTasks(uid) {
-    const all = await this._getAllLocalTasks();
-    const userTasks = all.filter(t => t.userId === uid && !t.deleted);
-    if (userTasks.length > 0) {
-      return userTasks.map(t => new CalendarTask(t));
+    const userTasks = await localDB.getAllByPrefix('calendar', uid);
+    const activeTasks = userTasks.filter(t => !t.deleted);
+    if (activeTasks.length > 0) {
+      return activeTasks.map(t => new CalendarTask(t));
     }
 
     if (this.env.isMock || !navigator.onLine) return [];
@@ -29,7 +33,7 @@ export class CalendarRepository extends ICalendarRepository {
       for (const d of snap.docs) {
         const data = d.data();
         const task = new CalendarTask({ ...data, id: d.id, userId: uid });
-        await localDB.put('calendar', task.id, task.toJSON());
+        await localDB.put('calendar', this._storeKey(uid, task.id), task.toJSON());
         list.push(task);
       }
       return list;
@@ -42,28 +46,14 @@ export class CalendarRepository extends ICalendarRepository {
   async saveTask(uid, task) {
     task.userId = uid;
     const data = task.toJSON();
-    await localDB.put('calendar', task.id, data);
+    await localDB.put('calendar', this._storeKey(uid, task.id), data);
     await syncQueue.enqueue('calendar', uid, data);
   }
 
   async deleteTask(uid, taskId) {
-    await localDB.delete('calendar', taskId);
+    const compositeKey = this._storeKey(uid, taskId);
+    await localDB.delete('calendar', compositeKey);
     await syncQueue.enqueue('calendar', uid, { id: taskId, deleted: true });
-  }
-
-  async _getAllLocalTasks() {
-    try {
-      const dbInstance = await localDB.open();
-      return new Promise((resolve) => {
-        const tx = dbInstance.transaction('calendar', 'readonly');
-        const store = tx.objectStore('calendar');
-        const req = store.getAll();
-        req.onsuccess = () => resolve(req.result || []);
-        req.onerror = () => resolve([]);
-      });
-    } catch {
-      return [];
-    }
   }
 }
 export default CalendarRepository;

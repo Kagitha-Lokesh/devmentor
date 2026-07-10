@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageSquare, Settings, Pin, Trash2, Send, BrainCircuit,
   AlertCircle, ShieldCheck, Sparkles, BookOpen, Layers,
   Terminal, RefreshCw, ChevronRight, Check, Copy, HelpCircle } from 'lucide-react';

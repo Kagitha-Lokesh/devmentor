@@ -1,7 +1,7 @@
 class LocalDatabase {
   constructor() {
     this.dbName = 'DevMentorAI_LocalDB';
-    this.dbVersion = 6;
+    this.dbVersion = 7;
     this.db = null;
   }
 
@@ -21,6 +21,7 @@ class LocalDatabase {
       
       request.onupgradeneeded = (e) => {
         const db = e.target.result;
+        const transaction = request.transaction;
         const oldVersion = e.oldVersion;
 
         const v1Stores = [
@@ -112,12 +113,63 @@ class LocalDatabase {
             'downloads',
             'exports',
             'recentSearches',
-            'commandHistory'
+            'commandHistory',
+            'achievements'
           ];
           v6Stores.forEach((store) => {
             if (!db.objectStoreNames.contains(store)) {
               db.createObjectStore(store);
             }
+          });
+        }
+
+        // Fix 4: Transactional key migration inside v7 upgrade
+        if (oldVersion > 0 && oldVersion < 7) {
+          console.info(`[IndexedDB Migration] Upgrading database from v${oldVersion} to v7: migrating keys transactionally.`);
+          const userStores = [
+            'notes',
+            'bookmarks',
+            'timeline',
+            'calendar',
+            'downloads',
+            'exports',
+            'achievements',
+            'revisionHistory',
+            'assistantHistory',
+            'conversationDrafts'
+          ];
+
+          userStores.forEach((storeName) => {
+            if (!db.objectStoreNames.contains(storeName)) return;
+            const store = transaction.objectStore(storeName);
+            
+            const cursorReq = store.openCursor();
+            cursorReq.onsuccess = (evt) => {
+              const cursor = evt.target.result;
+              if (cursor) {
+                const oldKey = cursor.key;
+                const value = cursor.value;
+
+                // Skip if key is already composite (has '_' prefix)
+                if (typeof oldKey === 'string' && oldKey.includes('_')) {
+                  cursor.continue();
+                  return;
+                }
+
+                // Resolve owner UID
+                const recordUid = value.userId || value.uid || value.ownerId;
+                if (recordUid) {
+                  const newKey = `${recordUid}_${oldKey}`;
+                  try {
+                    store.delete(oldKey);
+                    store.put(value, newKey);
+                  } catch (err) {
+                    console.warn(`[IndexedDB Migration] Failed to migrate key ${oldKey} in store ${storeName}:`, err);
+                  }
+                }
+                cursor.continue();
+              }
+            };
           });
         }
       };
@@ -166,6 +218,23 @@ class LocalDatabase {
       });
     } catch (err) {
       console.warn(`IndexedDB delete failed on store ${storeName}:`, err);
+    }
+  }
+
+  async getAllByPrefix(storeName, prefix) {
+    try {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction(storeName, 'readonly');
+        const store = transaction.objectStore(storeName);
+        const range = IDBKeyRange.bound(`${prefix}_`, `${prefix}_\uffff`);
+        const request = store.getAll(range);
+        request.onsuccess = () => resolve(request.result || []);
+        request.onerror = () => reject(request.error);
+      });
+    } catch (err) {
+      console.warn(`IndexedDB getAllByPrefix failed on store ${storeName}:`, err);
+      return [];
     }
   }
 }

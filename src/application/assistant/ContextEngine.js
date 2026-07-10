@@ -2,29 +2,30 @@ import { container } from '../../infrastructure/di/container';
 
 export class ContextEngine {
   constructor() {
-    this.progressRepo = container.resolve('IProgressRepository');
-    this.masteryRepo = container.resolve('IMasteryRepository');
-    this.activityRepo = container.resolve('IActivityRepository');
-    this.revisionRepo = container.resolve('IRevisionRepository');
-    this.interviewRepo = container.resolve('IInterviewSessionRepository');
-    this.submissionRepo = container.resolve('ISubmissionRepository');
+    // Dependencies are resolved dynamically at runtime to break circular import cycles
   }
 
   async buildContext(uid, activeContext = {}) {
-    const [progress, mastery, revisionQueue, sessions, submissions] = await Promise.all([
-      this.progressRepo.getProgress(uid).catch(() => null),
-      this.masteryRepo.getMastery(uid).catch(() => null),
-      this.revisionRepo.getRevisionQueue(uid).catch(() => []),
-      this.interviewRepo.listSessions(uid).catch(() => []),
-      this.submissionRepo.getSubmissionsHistory(uid).catch(() => [])
+    const progressRepo = container.resolve('IProgressRepository');
+    const masteryRepo = container.resolve('IMasteryRepository');
+    const revisionUseCase = container.resolve('RevisionUseCase');
+    const interviewRepo = container.resolve('IInterviewSessionRepository');
+    const submissionRepo = container.resolve('ISubmissionRepository');
+
+    const [progressList, masteryList, revisionQueue, sessions, submissions] = await Promise.all([
+      progressRepo.listProgress(uid).catch(() => []),
+      masteryRepo.listMastery(uid).catch(() => []),
+      revisionUseCase.getRevisionQueue(uid).catch(() => null),
+      interviewRepo.listSessions(uid).catch(() => []),
+      submissionRepo.getSubmissionsHistory(uid).catch(() => [])
     ]);
 
     // Find weak topics: topics with mastery < 60
     const weakTopics = [];
-    if (mastery && typeof mastery.topicScores === 'object') {
-      Object.entries(mastery.topicScores).forEach(([topicId, score]) => {
-        if (score < 60) {
-          weakTopics.push({ topicId, score });
+    if (Array.isArray(masteryList)) {
+      masteryList.forEach((m) => {
+        if (m.score > 0 && m.score < 60) {
+          weakTopics.push({ topicId: m.topicId, score: m.score });
         }
       });
     }
@@ -51,17 +52,21 @@ export class ContextEngine {
       completedAt: sessions[0].completedAt
     } : null;
 
+    const revisionQueueLength = revisionQueue
+      ? (revisionQueue.today?.length || 0) + (revisionQueue.overdue?.length || 0)
+      : 0;
+
     return {
       currentTopic: activeContext.currentTopic || null,
       currentLesson: activeContext.currentLesson || null,
       activeProblem: activeContext.activeProblem || null,
       activeCompanyTrack: activeContext.activeCompanyTrack || null,
       learningProgress: {
-        completedTopicsCount: progress?.completedTopics?.length || 0,
-        startedTopicsCount: progress?.startedTopics?.length || 0,
+        completedTopicsCount: Array.isArray(progressList) ? progressList.filter(p => p.lessonCompleted).length : 0,
+        startedTopicsCount: Array.isArray(progressList) ? progressList.filter(p => p.readingPercentage > 0).length : 0,
         weakTopics
       },
-      revisionQueueLength: revisionQueue.length,
+      revisionQueueLength,
       lastCompilerRun,
       lastInterviewSession,
       recommendations: activeContext.recommendations || []

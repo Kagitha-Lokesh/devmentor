@@ -1,0 +1,197 @@
+[
+  {
+    "id": "accenture",
+    "name": "Accenture",
+    "difficulty": "Service",
+    "experience": [
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Cognitive & Technical Assessment",
+      "Technical Interview",
+      "HR Interview"
+    ],
+    "estimatedPreparationHours": 25,
+    "focus": [
+      "Core Java",
+      "SQL Query Fundamentals",
+      "Problem Solving"
+    ],
+    "topicCoverage": [
+      "DBMS",
+      "Data Structures Basics",
+      "Communication"
+    ]
+  },
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "difficulty": "FAANG",
+    "experience": [
+      "Intern",
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "OA",
+      "Technical Round 1",
+      "Technical Round 2",
+      "Bar Raiser",
+      "HR / Fit"
+    ],
+    "estimatedPreparationHours": 50,
+    "focus": [
+      "Leadership Principles",
+      "Data Structures",
+      "System Design",
+      "Object Oriented Design"
+    ],
+    "topicCoverage": [
+      "Dynamic Programming",
+      "Trees & Graphs",
+      "System Design",
+      "Behavioral"
+    ]
+  },
+  {
+    "id": "google",
+    "name": "Google",
+    "difficulty": "FAANG",
+    "experience": [
+      "Intern",
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Technical Phone Screen",
+      "Coding Round 1",
+      "Coding Round 2",
+      "System Design",
+      "Googlyness & Leadership"
+    ],
+    "estimatedPreparationHours": 60,
+    "focus": [
+      "Advanced Algorithms",
+      "System Design",
+      "Googlyness & Fit",
+      "Complexity Analysis"
+    ],
+    "topicCoverage": [
+      "Graph Algorithms",
+      "Concurrency",
+      "Scale & Sharding",
+      "Behavioral"
+    ]
+  },
+  {
+    "id": "infosys",
+    "name": "Infosys",
+    "difficulty": "Service",
+    "experience": [
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Infosys Certification / Aptitude",
+      "Technical Interview",
+      "HR Round"
+    ],
+    "estimatedPreparationHours": 20,
+    "focus": [
+      "Core Java",
+      "OOPs Concepts",
+      "Python basics",
+      "DBMS"
+    ],
+    "topicCoverage": [
+      "Relational Databases",
+      "Coding Basics",
+      "Polymorphism"
+    ]
+  },
+  {
+    "id": "meta",
+    "name": "Meta",
+    "difficulty": "FAANG",
+    "experience": [
+      "Intern",
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Technical Screening",
+      "Coding Loop 1",
+      "Coding Loop 2",
+      "System Design (Product/Systems)",
+      "Behavioral Round"
+    ],
+    "estimatedPreparationHours": 55,
+    "focus": [
+      "Advanced DSA",
+      "System Design",
+      "Behavioral (STAR)"
+    ],
+    "topicCoverage": [
+      "Facebook Scaling",
+      "Graphs",
+      "Dynamic Programming"
+    ]
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "difficulty": "FAANG",
+    "experience": [
+      "Intern",
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Codility Test",
+      "Technical 1",
+      "Technical 2",
+      "System Design",
+      "As Appropriate Round"
+    ],
+    "estimatedPreparationHours": 45,
+    "focus": [
+      "Data Structures",
+      "System Design",
+      "OS Fundamentals"
+    ],
+    "topicCoverage": [
+      "Arrays & Strings",
+      "Linked Lists",
+      "System Design"
+    ]
+  },
+  {
+    "id": "tcs",
+    "name": "TCS",
+    "difficulty": "Service",
+    "experience": [
+      "Fresher",
+      "Experienced"
+    ],
+    "rounds": [
+      "Aptitude Test",
+      "Technical Interview",
+      "Managerial Interview",
+      "HR Round"
+    ],
+    "estimatedPreparationHours": 20,
+    "focus": [
+      "Core Java",
+      "SQL Queries",
+      "OOPs Concepts",
+      "Aptitude"
+    ],
+    "topicCoverage": [
+      "Inheritance & Polymorphism",
+      "Basic Arrays",
+      "SQL Joins",
+      "Aptitude Basics"
+    ]
+  }
+]

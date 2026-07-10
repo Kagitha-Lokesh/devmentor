@@ -1,0 +1,113 @@
+[
+  {
+    "id": "ach-java-volume-1",
+    "title": "Java Fundamentals Champion",
+    "description": "Complete all topics in Java Volume 1.",
+    "type": "volume",
+    "target": 1,
+    "skills": [
+      "Java Syntax",
+      "Core OOP"
+    ]
+  },
+  {
+    "id": "ach-java-course",
+    "title": "Java Master Developer",
+    "description": "Complete the entire Java Full Stack Career Path.",
+    "type": "course",
+    "target": 1,
+    "skills": [
+      "Enterprise Java",
+      "Spring Boot",
+      "React Integration"
+    ]
+  },
+  {
+    "id": "ach-solve-100",
+    "title": "Problem Solver (Bronze)",
+    "description": "Solve 100 coding problems in the Practice Sandbox.",
+    "type": "problems",
+    "target": 100,
+    "skills": [
+      "Algorithm Design",
+      "Code Debugging"
+    ]
+  },
+  {
+    "id": "ach-solve-500",
+    "title": "Problem Solver (Gold)",
+    "description": "Solve 500 coding problems in the Practice Sandbox.",
+    "type": "problems",
+    "target": 500,
+    "skills": [
+      "Advanced Algorithms",
+      "Competitive Coding"
+    ]
+  },
+  {
+    "id": "ach-revision-cycle",
+    "title": "Revision Master",
+    "description": "Complete a full spaced repetition revision session.",
+    "type": "revision",
+    "target": 1,
+    "skills": [
+      "Spaced Repetition",
+      "Active Recall"
+    ]
+  },
+  {
+    "id": "ach-interview-ready",
+    "title": "Interview Ready",
+    "description": "Complete 5 company mock interview sessions.",
+    "type": "interview",
+    "target": 5,
+    "skills": [
+      "Interview Communication",
+      "Technical QA"
+    ]
+  },
+  {
+    "id": "ach-project-completed",
+    "title": "Shipped to Production",
+    "description": "Complete a full-stack guided project with all milestones.",
+    "type": "project",
+    "target": 1,
+    "skills": [
+      "Architecture Design",
+      "Deployment Pipelines"
+    ]
+  },
+  {
+    "id": "ach-resume-generated",
+    "title": "Career Launchpad",
+    "description": "Generate your professional developer resume.",
+    "type": "resume",
+    "target": 1,
+    "skills": [
+      "Career Assets",
+      "Resume Building"
+    ]
+  },
+  {
+    "id": "ach-portfolio-published",
+    "title": "Portfolio Creator",
+    "description": "Customize and export your portfolio template.",
+    "type": "portfolio",
+    "target": 1,
+    "skills": [
+      "Portfolio Development",
+      "Web Showcase"
+    ]
+  },
+  {
+    "id": "ach-career-ready",
+    "title": "Enterprise Career Ready",
+    "description": "Unlock career roadmap achievements, resume, and portfolio.",
+    "type": "career",
+    "target": 1,
+    "skills": [
+      "Job Hunt Strategy",
+      "Full Stack Competence"
+    ]
+  }
+]

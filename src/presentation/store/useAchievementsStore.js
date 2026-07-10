@@ -20,4 +20,6 @@ export const useAchievementsStore = create((set) => ({
     }
     return updated;
   },
+
+  reset: () => set({ achievements: [], isLoading: false }),
 }));

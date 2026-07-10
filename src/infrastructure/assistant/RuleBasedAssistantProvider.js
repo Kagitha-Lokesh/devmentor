@@ -73,7 +73,7 @@ You are fully on track! There are no immediate prerequisites pending.
     }
 
     try {
-      const hintIdx = await fetch('/src/shared/generated/hint-index.json').then(r => r.json());
+      const hintIdx = await fetch('/generated/hint-index.json').then(r => r.json());
       const hints = hintIdx[probId];
       if (!hints || hints.length === 0) {
         return `No predefined hints were found for the problem ID: **${probId}**. Try checking the problem description or writing test assertions.`;
@@ -125,7 +125,7 @@ If you have a compilation error, try running your code first, or paste the error
 
   async _getExplanationResponse(query, context) {
     try {
-      const kwIndex = await fetch('/src/shared/generated/knowledge-index.json').then(r => r.json());
+      const kwIndex = await fetch('/generated/knowledge-index.json').then(r => r.json());
       
       // Match keyword or title
       const terms = query.split(' ');
@@ -145,8 +145,8 @@ Try searching for topics like:
       }
 
       // Fetch Cheatsheet and Lesson path
-      const lessonUrl = `/public/content/${match.paths.lesson}`;
-      const csUrl = `/public/content/${match.paths.cheatsheet}`;
+      const lessonUrl = `/content/${match.paths.lesson}`;
+      const csUrl = `/content/${match.paths.cheatsheet}`;
 
       const [lessonText, csText] = await Promise.all([
         fetch(lessonUrl).then(r => r.text()).catch(() => ''),

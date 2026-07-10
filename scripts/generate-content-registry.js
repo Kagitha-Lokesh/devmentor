@@ -7,7 +7,8 @@ const __dirname = path.dirname(__filename);
 
 const CONTENT_DIR = path.resolve(__dirname, '../content');
 const PUBLIC_CONTENT_DIR = path.resolve(__dirname, '../public/content');
-const GENERATED_DIR = path.resolve(__dirname, '../src/shared/generated');
+const GENERATED_DIR = path.resolve(__dirname, '../public/generated');
+const SHARED_GENERATED_DIR = path.resolve(__dirname, '../src/shared/generated');
 
 // Ensure target directories exist
 if (!fs.existsSync(GENERATED_DIR)) {
@@ -15,6 +16,9 @@ if (!fs.existsSync(GENERATED_DIR)) {
 }
 if (!fs.existsSync(PUBLIC_CONTENT_DIR)) {
   fs.mkdirSync(PUBLIC_CONTENT_DIR, { recursive: true });
+}
+if (!fs.existsSync(SHARED_GENERATED_DIR)) {
+  fs.mkdirSync(SHARED_GENERATED_DIR, { recursive: true });
 }
 
 function copyRecursiveSync(src, dest) {
@@ -117,10 +121,34 @@ function buildRegistry() {
 
             const topicsPath = path.join(chapPath, 'topics');
             if (fs.existsSync(topicsPath)) {
-              const topics = fs.readdirSync(topicsPath);
+              const topicFolders = fs.readdirSync(topicsPath).filter(f => {
+                const p = path.join(topicsPath, f);
+                return fs.statSync(p).isDirectory();
+              });
+
+              // Sort topics by their numeric ID (e.g. V1-C1-T1, V1-C1-T2, BE-V1-C1-T1 etc.)
+              // Extract the trailing number from the last "-T<n>" segment for ordering
+              topicFolders.sort((a, b) => {
+                const getMeta = (folder) => {
+                  const mp = path.join(topicsPath, folder, 'metadata.json');
+                  if (fs.existsSync(mp)) {
+                    try { return JSON.parse(fs.readFileSync(mp, 'utf-8')); } catch { return null; }
+                  }
+                  return null;
+                };
+                const metaA = getMeta(a);
+                const metaB = getMeta(b);
+                const idA = metaA?.id || a;
+                const idB = metaB?.id || b;
+                // Extract trailing T<n> number for sort
+                const numA = parseInt((idA.match(/T(\d+)$/) || [0, 999])[1]);
+                const numB = parseInt((idB.match(/T(\d+)$/) || [0, 999])[1]);
+                return numA - numB;
+              });
+
+              const topics = topicFolders;
               topics.forEach((topicFolder) => {
                 const topicPath = path.join(topicsPath, topicFolder);
-                if (!fs.statSync(topicPath).isDirectory()) return;
                 totalTopics++;
 
                 const topicMetaPath = path.join(topicPath, 'metadata.json');
@@ -732,7 +760,8 @@ function buildRegistry() {
     description: node.description,
     difficulty: node.difficulty,
     tags: node.tags || [],
-    keywords: node.searchKeywords || []
+    keywords: node.searchKeywords || [],
+    paths: node.paths
   }));
 
   const toolIndex = [
@@ -779,6 +808,7 @@ function buildRegistry() {
 
   // Write registries files
   fs.writeFileSync(path.join(GENERATED_DIR, 'content-registry.json'), JSON.stringify(registry, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SHARED_GENERATED_DIR, 'content-registry.json'), JSON.stringify(registry, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'problems-registry.json'), JSON.stringify(problemsRegistry, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'search-index.json'), JSON.stringify(searchIndex, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'knowledge-graph.json'), JSON.stringify(graphNodes, null, 2), 'utf-8');
@@ -1235,22 +1265,22 @@ function buildRegistry() {
 
   // 3. Command Index
   const commandPaletteIndex = [
-    { "id": "nav-dashboard", "name": "Open Dashboard", "category": "Navigation", "route": "/" },
-    { "id": "nav-courses", "name": "Open Courses & Lessons", "category": "Navigation", "route": "/courses" },
-    { "id": "nav-compiler", "name": "Open Practice Compiler Sandbox", "category": "Navigation", "route": "/compiler" },
-    { "id": "nav-interviews", "name": "Open Mock Interviews", "category": "Navigation", "route": "/interviews" },
-    { "id": "nav-revision", "name": "Open Spaced Revision", "category": "Navigation", "route": "/revision" },
-    { "id": "nav-projects", "name": "Open Guided Projects Platform", "category": "Navigation", "route": "/projects" },
-    { "id": "nav-assistant", "name": "Open AI Learning Assistant", "category": "Navigation", "route": "/assistant" },
-    { "id": "nav-calendar", "name": "Open Learning Calendar", "category": "Navigation", "route": "/calendar" },
-    { "id": "nav-notes", "name": "Open Notes & Highlights Center", "category": "Navigation", "route": "/notes" },
-    { "id": "nav-bookmarks", "name": "Open Unified Bookmarks", "category": "Navigation", "route": "/bookmarks" },
-    { "id": "nav-timeline", "name": "Open Activity Timeline", "category": "Navigation", "route": "/timeline" },
-    { "id": "nav-achievements", "name": "Open Achievement Board", "category": "Navigation", "route": "/achievements" },
-    { "id": "nav-downloads", "name": "Open Download Center", "category": "Navigation", "route": "/downloads" },
-    { "id": "nav-exports", "name": "Open Export Center", "category": "Navigation", "route": "/exports" },
-    { "id": "cmd-theme", "name": "Toggle Color Theme (Dark/Light)", "category": "Preferences", "action": "toggleTheme" },
-    { "id": "cmd-sidebar", "name": "Toggle Navigation Sidebar", "category": "Preferences", "action": "toggleSidebar" }
+    { "id": "nav-dashboard", "name": "Open Dashboard", "category": "Navigation", "route": "/", "shortcut": "Alt+D", "icon": "nav-dashboard", "keywords": ["home", "main", "dashboard", "index"], "permission": null, "offlineSupported": true },
+    { "id": "nav-courses", "name": "Open Courses & Lessons", "category": "Navigation", "route": "/courses", "shortcut": "Alt+C", "icon": "nav-courses", "keywords": ["learn", "study", "syllabus", "topics"], "permission": null, "offlineSupported": true },
+    { "id": "nav-compiler", "name": "Open Practice Compiler Sandbox", "category": "Navigation", "route": "/compiler", "shortcut": "Alt+P", "icon": "nav-compiler", "keywords": ["code", "run", "execution", "sandbox", "compile"], "permission": null, "offlineSupported": false },
+    { "id": "nav-interviews", "name": "Open Mock Interviews", "category": "Navigation", "route": "/interviews", "shortcut": "Alt+I", "icon": "nav-interviews", "keywords": ["mock", "qa", "questions", "companies"], "permission": null, "offlineSupported": false },
+    { "id": "nav-revision", "name": "Open Spaced Revision", "category": "Navigation", "route": "/revision", "shortcut": "Alt+R", "icon": "nav-revision", "keywords": ["flashcards", "spaced", "repetition", "review"], "permission": null, "offlineSupported": true },
+    { "id": "nav-projects", "name": "Open Guided Projects Platform", "category": "Navigation", "route": "/projects", "shortcut": "Alt+J", "icon": "nav-projects", "keywords": ["project", "code", "github", "milestones"], "permission": null, "offlineSupported": true },
+    { "id": "nav-assistant", "name": "Open AI Learning Assistant", "category": "Navigation", "route": "/assistant", "shortcut": "Alt+A", "icon": "nav-assistant", "keywords": ["help", "chat", "explain", "ai", "socratic"], "permission": null, "offlineSupported": true },
+    { "id": "nav-calendar", "name": "Open Learning Calendar", "category": "Navigation", "route": "/calendar", "shortcut": "Alt+L", "icon": "nav-calendar", "keywords": ["schedule", "tasks", "deadlines", "planner"], "permission": null, "offlineSupported": true },
+    { "id": "nav-notes", "name": "Open Notes & Highlights Center", "category": "Navigation", "route": "/notes", "shortcut": "Alt+N", "icon": "nav-notes", "keywords": ["take", "write", "highlights", "editor"], "permission": null, "offlineSupported": true },
+    { "id": "nav-bookmarks", "name": "Open Unified Bookmarks", "category": "Navigation", "route": "/bookmarks", "shortcut": "Alt+B", "icon": "nav-bookmarks", "keywords": ["save", "favorite", "marked"], "permission": null, "offlineSupported": true },
+    { "id": "nav-timeline", "name": "Open Activity Timeline", "category": "Navigation", "route": "/timeline", "shortcut": "Alt+T", "icon": "nav-timeline", "keywords": ["history", "events", "completed", "activities"], "permission": null, "offlineSupported": true },
+    { "id": "nav-achievements", "name": "Open Achievement Board", "category": "Navigation", "route": "/achievements", "shortcut": "Alt+G", "icon": "nav-achievements", "keywords": ["trophy", "medals", "badges", "points"], "permission": null, "offlineSupported": true },
+    { "id": "nav-downloads", "name": "Open Download Center", "category": "Navigation", "route": "/downloads", "shortcut": "Alt+W", "icon": "nav-downloads", "keywords": ["pdf", "cheat", "sheets", "offline"], "permission": null, "offlineSupported": true },
+    { "id": "nav-exports", "name": "Open Export Center", "category": "Navigation", "route": "/exports", "shortcut": "Alt+E", "icon": "nav-exports", "keywords": ["backup", "restore", "json", "data"], "permission": null, "offlineSupported": true },
+    { "id": "cmd-theme", "name": "Toggle Color Theme (Dark/Light)", "category": "Preferences", "action": "toggleTheme", "shortcut": "Ctrl+Shift+T", "icon": "cmd-theme", "keywords": ["dark", "light", "color", "appearance"], "permission": null, "offlineSupported": true },
+    { "id": "cmd-sidebar", "name": "Toggle Navigation Sidebar", "category": "Preferences", "action": "toggleSidebar", "shortcut": "Ctrl+/", "icon": "cmd-sidebar", "keywords": ["hide", "show", "drawer", "sidebar"], "permission": null, "offlineSupported": true }
   ];
 
   // 4. Achievement Index
@@ -1357,13 +1387,30 @@ function buildRegistry() {
 
   console.log('[Content Builder] Validation passed. All IDs are unique and references are intact.');
 
-  // Write registries files
-  fs.writeFileSync(path.join(GENERATED_DIR, 'global-search-index.json'), JSON.stringify(globalSearchIndex, null, 2), 'utf-8');
-  fs.writeFileSync(path.join(GENERATED_DIR, 'command-index.json'), JSON.stringify(commandPaletteIndex, null, 2), 'utf-8');
+  // Ensure search directory exists
+  const SEARCH_DIR = path.join(GENERATED_DIR, 'search');
+  if (!fs.existsSync(SEARCH_DIR)) {
+    fs.mkdirSync(SEARCH_DIR, { recursive: true });
+  }
+
+  // Filter components of globalSearchIndex
+  const lessonIndex = globalSearchIndex.filter(item => item.type === 'lesson' || item.type === 'topic');
+  const problemsIndex = globalSearchIndex.filter(item => item.type === 'problem');
+  const projectsIndex = globalSearchIndex.filter(item => item.type === 'project');
+  const interviewIndex = globalSearchIndex.filter(item => item.type === 'interview_question');
+
+  // Write registries files to public/generated/search/
+  fs.writeFileSync(path.join(SEARCH_DIR, 'global-search-index.json'), JSON.stringify(globalSearchIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'command-index.json'), JSON.stringify(commandPaletteIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'lesson-index.json'), JSON.stringify(lessonIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'problems-index.json'), JSON.stringify(problemsIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'projects-index.json'), JSON.stringify(projectsIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'interview-index.json'), JSON.stringify(interviewIndex, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(SEARCH_DIR, 'notes-index.json'), JSON.stringify([], null, 2), 'utf-8');
+
+  // Write other general files to public/generated/
   fs.writeFileSync(path.join(GENERATED_DIR, 'achievement-index.json'), JSON.stringify(achievementIndex, null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'download-index.json'), JSON.stringify(downloadIndex, null, 2), 'utf-8');
-
-  // Schema placeholders
   fs.writeFileSync(path.join(GENERATED_DIR, 'calendar-index.json'), JSON.stringify([], null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'bookmark-index.json'), JSON.stringify([], null, 2), 'utf-8');
   fs.writeFileSync(path.join(GENERATED_DIR, 'export-index.json'), JSON.stringify([], null, 2), 'utf-8');
@@ -1372,7 +1419,7 @@ function buildRegistry() {
 
   console.log('[Content Builder] All Enterprise v1.1 index files successfully generated and written.');
 
-  console.log('[Content Builder] All graph & registry files written to src/shared/generated/');
+  console.log('[Content Builder] All graph & registry files written to public/generated/');
   copyRecursiveSync(CONTENT_DIR, PUBLIC_CONTENT_DIR);
   console.log('[Content Builder] Asset resources copied to public/content/');
 }

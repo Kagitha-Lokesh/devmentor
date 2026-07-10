@@ -40,6 +40,10 @@ const DownloadCenter = lazy(() => import('./presentation/pages/downloads/Downloa
 const ExportCenter = lazy(() => import('./presentation/pages/exports/ExportCenter'));
 const PreferencesPage = lazy(() => import('./presentation/pages/preferences/PreferencesPage'));
 
+// Learning OS Pages
+const ChapterDashboard = lazy(() => import('./presentation/pages/courses/ChapterDashboard'));
+const VolumeDashboard = lazy(() => import('./presentation/pages/courses/VolumeDashboard'));
+
 // Error Fallbacks
 const NotFound = lazy(() => import('./presentation/pages/errors/NotFound'));
 const Unauthorized = lazy(() => import('./presentation/pages/errors/Unauthorized'));
@@ -95,6 +99,20 @@ function PublicRoute({ children }) {
   }
 
   return children;
+}
+
+function EmailVerificationRoute() {
+  const { user, isLoading } = useAuthStore();
+
+  if (isLoading) {
+    return <LoadingFallback />;
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return <EmailVerification />;
 }
 
 export default function App() {
@@ -153,7 +171,7 @@ export default function App() {
                 path="/verify-email" 
                 element={
                   <Suspense fallback={<LoadingFallback />}>
-                    {useAuthStore.getState().user ? <EmailVerification /> : <Navigate to="/login" replace />}
+                    <EmailVerificationRoute />
                   </Suspense>
                 } 
               />
@@ -170,6 +188,8 @@ export default function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="courses" element={<Courses />} />
                 <Route path="courses/:courseId/topics/:topicSlug" element={<LessonViewer />} />
+                <Route path="courses/:courseId/volumes/:volumeId" element={<VolumeDashboard />} />
+                <Route path="courses/:courseId/chapters/:chapterId" element={<ChapterDashboard />} />
                 <Route path="compiler" element={<Compiler />} />
                 <Route path="compiler/problems/:problemId" element={<Compiler />} />
                 <Route path="search" element={<SearchResults />} />

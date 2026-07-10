@@ -1,0 +1,44 @@
+{
+  "accenture": {
+    "companyId": "accenture",
+    "companyName": "Accenture",
+    "roadmap": "# Accenture Roadmap\nWork through basic coding syntax, database normalization, and mock behavioral interviews.\n",
+    "tips": "# Accenture Interview Tips\nMaster OOPs principles, SQL, and display good communication/interpersonal skills.\n"
+  },
+  "amazon": {
+    "companyId": "amazon",
+    "companyName": "Amazon",
+    "roadmap": "# Amazon Interview Preparation Roadmap\n\n```mermaid\ngraph TD\n    A[Leadership Principles] --> B[Data Structures & Algos]\n    B --> C[Object-Oriented Design]\n    C --> D[System Design]\n    D --> E[Mock Interviews]\n```\n\n### Phase 1: Leadership Principles & Behavioral (Week 1)\n- Write 2 stories for each Leadership Principle.\n- Refine stories using the STAR format. Highlight data metrics.\n\n### Phase 2: Technical DSA & OOD (Week 2-3)\n- Focus on Trees, Graphs, BFS/DFS, Dynamic Programming.\n- Practice Object-Oriented Design (e.g. Design Parking Lot, Movie Booking).\n\n### Phase 3: High-Level System Design (Week 4)\n- Study rate limiters, key-value stores, distributed messaging, and CDNs.\n",
+    "tips": "# Amazon Interview Tips\n\n### 1. Master the 16 Leadership Principles (LPs)\nAmazon's culture is deeply rooted in its Leadership Principles. Every interviewer will evaluate you against at least two or three LPs.\n- **Customer Obsession**: Start with the customer and work backwards.\n- **Ownership**: Never say \"that's not my job.\"\n- **Bias for Action**: Speed matters in business. Many decisions are reversible.\n\n### 2. Format Answers in STAR\nFor all behavioral and HR questions, structure your answers strictly:\n- **Situation**: Set the scene and context.\n- **Task**: Explain the challenge and your specific responsibility.\n- **Action**: Describe *what* you did, *how* you did it, and *why*.\n- **Result**: Share quantified metrics (e.g., \"reduced latency by 20%\").\n"
+  },
+  "google": {
+    "companyId": "google",
+    "companyName": "Google",
+    "roadmap": "# Google Interview Roadmap\n\n- **Week 1-2**: Advanced Graph Algorithms (Tarjan's, Dijkstra, A*, Floyd-Warshall).\n- **Week 3**: Concurrency and Thread Safety in Java.\n- **Week 4**: System Design (Sharding, Consistent Hashing, Replication).\n- **Week 5**: Googlyness prep & Mock Interviews.\n",
+    "tips": "# Google Interview Tips\n\n### 1. Focus on Complexity & Trade-offs\nFor every coding problem, you must immediately state the Time and Space Complexity. Google interviewers care deeply about efficiency.\n- Compare multiple approaches (e.g., Brute Force vs. Dynamic Programming).\n- Explain *why* one is better in terms of memory vs CPU time.\n\n### 2. Learn Googlyness\nGoogle evaluates \"Googlyness & Leadership\" rounds.\n- Show how you deal with ambiguity.\n- Demonstrate that you are proactive and take initiative.\n- Maintain humility and respect for team members.\n"
+  },
+  "infosys": {
+    "companyId": "infosys",
+    "companyName": "Infosys",
+    "roadmap": "# Infosys Roadmap\nStudy core concepts, programming logic, and quantitative aptitude.\n",
+    "tips": "# Infosys Interview Tips\nReview basic programming syntax, SQL queries, and prepare for flexibility/shifting.\n"
+  },
+  "meta": {
+    "companyId": "meta",
+    "companyName": "Meta",
+    "roadmap": "# Meta Interview Roadmap\nSolve problems quickly and analyze complexity thoroughly.\n",
+    "tips": "# Meta Interview Tips\nFocus on high velocity, optimal coding efficiency, and strict STAR format behaviorals.\n"
+  },
+  "microsoft": {
+    "companyId": "microsoft",
+    "companyName": "Microsoft",
+    "roadmap": "# Microsoft Roadmap\nFocus on Arrays, Strings, Trees, and general System Design.\n",
+    "tips": "# Microsoft Interview Tips\nFocus on clean code, systems principles, and collaboration.\n"
+  },
+  "tcs": {
+    "companyId": "tcs",
+    "companyName": "TCS",
+    "roadmap": "# TCS Interview Roadmap\n\n- **Step 1**: Practice Quantitative & Logical Aptitude questions.\n- **Step 2**: Study Java Fundamentals (OOPs, Exceptions, Collections).\n- **Step 3**: Review DBMS basics (DML/DDL commands, joins).\n- **Step 4**: Prepare relocation/flexibility HR responses.\n",
+    "tips": "# TCS Interview Tips\n\n### 1. Master OOPs & SQL\nTCS interviews focus heavily on fundamental concepts.\n- Be ready to write basic SQL queries (joins, group by).\n- Know the differences between interfaces and abstract classes.\n\n### 2. Communicate Clearly\nSpeak slowly and maintain a professional posture.\n- Listen carefully to the interviewer's question.\n- Confirm your flexibility for shifts and relocation.\n"
+  }
+}

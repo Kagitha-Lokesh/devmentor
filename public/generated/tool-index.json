@@ -1,0 +1,35 @@
+[
+  {
+    "name": "explainConcept",
+    "description": "Explains curriculum concept by retrieving lesson.md and cheatsheet.md",
+    "parameters": [
+      "topicId"
+    ]
+  },
+  {
+    "name": "recommendNextStep",
+    "description": "Generates the next study recommend based on current progress & weak topics",
+    "parameters": []
+  },
+  {
+    "name": "revealHint",
+    "description": "Retrieves a non-spoiler hint for a coding problem",
+    "parameters": [
+      "problemId"
+    ]
+  },
+  {
+    "name": "explainCompilerError",
+    "description": "Interprets syntax, compilation or test execution verdicts errors",
+    "parameters": [
+      "errorMessage"
+    ]
+  },
+  {
+    "name": "querySearch",
+    "description": "Searches curriculum, coding problems and interview questions for matching terms",
+    "parameters": [
+      "keyword"
+    ]
+  }
+]

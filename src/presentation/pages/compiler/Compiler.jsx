@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { DiffEditor } from '@monaco-editor/react';
 import { 
   Play, 
   CheckCircle, 
@@ -79,6 +78,9 @@ export default function Compiler() {
   // Sibling problems
   const [prevProblem, setPrevProblem] = useState(null);
   const [nextProblem, setNextProblem] = useState(null);
+
+  // Responsive Mobile Workspace View Tab
+  const [mobileWorkspaceTab, setMobileWorkspaceTab] = useState('description');
 
   // Listen to network status
   useEffect(() => {
@@ -479,11 +481,48 @@ export default function Compiler() {
         </div>
       </div>
 
+      {/* Mobile Workspace Navigation TabBar */}
+      <div className="flex xl:hidden bg-surface-secondary border-b border-surface-border p-1 gap-1">
+        <button
+          onClick={() => setMobileWorkspaceTab('description')}
+          className={`flex-1 py-2 px-3 text-xs font-semibold rounded-lg text-center cursor-pointer transition-all ${
+            mobileWorkspaceTab === 'description'
+              ? 'bg-surface text-brand-600 shadow-sm border border-surface-border dark:text-brand-300'
+              : 'text-text/60 hover:bg-surface-tertiary'
+          }`}
+        >
+          Description
+        </button>
+        <button
+          onClick={() => setMobileWorkspaceTab('editor')}
+          className={`flex-1 py-2 px-3 text-xs font-semibold rounded-lg text-center cursor-pointer transition-all ${
+            mobileWorkspaceTab === 'editor'
+              ? 'bg-surface text-brand-600 shadow-sm border border-surface-border dark:text-brand-300'
+              : 'text-text/60 hover:bg-surface-tertiary'
+          }`}
+        >
+          Code Editor
+        </button>
+        <button
+          onClick={() => {
+            setMobileWorkspaceTab('console');
+            setConsoleTab('output');
+          }}
+          className={`flex-1 py-2 px-3 text-xs font-semibold rounded-lg text-center cursor-pointer transition-all ${
+            mobileWorkspaceTab === 'console'
+              ? 'bg-surface text-brand-600 shadow-sm border border-surface-border dark:text-brand-300'
+              : 'text-text/60 hover:bg-surface-tertiary'
+          }`}
+        >
+          Console Output
+        </button>
+      </div>
+
       {/* Main split dashboard pane */}
       <div className="flex-1 grid grid-cols-1 xl:grid-cols-2 gap-px bg-surface-border overflow-hidden">
         
         {/* LEFT COLUMN: Problem description vs Submissions log */}
-        <div className="bg-surface flex flex-col overflow-hidden border-x border-surface-border">
+        <div className={`bg-surface flex flex-col overflow-hidden border-x border-surface-border ${mobileWorkspaceTab === 'description' ? 'flex' : 'hidden xl:flex'}`}>
           {/* Header tabs */}
           <div className="bg-surface-secondary px-4 border-b border-surface-border flex gap-2">
             <button
@@ -578,16 +617,15 @@ export default function Compiler() {
                 </div>
 
                 <div className="flex-1 border border-surface-border rounded-lg overflow-hidden min-h-[300px]">
-                  <DiffEditor
-                    original={diffOriginalCode}
-                    modified={code}
+                  <MonacoWrapper
+                    isDiff={true}
+                    originalValue={diffOriginalCode}
+                    value={code}
                     theme={theme === 'dark' ? 'vs-dark' : 'light'}
                     language={selectedLang}
                     options={{
-                      readOnly: true,
                       originalEditable: false,
-                      renderSideBySide: true,
-                      minimap: { enabled: false }
+                      renderSideBySide: true
                     }}
                   />
                 </div>
@@ -632,7 +670,9 @@ export default function Compiler() {
         </div>
 
         {/* RIGHT COLUMN: Monaco editor + Output consoles */}
-        <div className="bg-surface flex flex-col overflow-hidden border-r border-surface-border">
+        <div className={`bg-surface flex flex-col overflow-hidden border-r border-surface-border ${
+          mobileWorkspaceTab === 'editor' || mobileWorkspaceTab === 'console' ? 'flex' : 'hidden xl:flex'
+        }`}>
           {/* Workspace Actions toolbar */}
           <div className="bg-surface-secondary px-4 py-2 border-b border-surface-border flex justify-between items-center">
             <span className="text-xs font-bold text-text/40 uppercase tracking-wider">Workspace Editor</span>
@@ -667,7 +707,7 @@ export default function Compiler() {
           </div>
 
           {/* Monaco Editor wrapped container */}
-          <div className="flex-1 min-h-[250px] relative">
+          <div className={`flex-1 min-h-[250px] relative ${mobileWorkspaceTab === 'console' ? 'hidden sm:block' : ''}`}>
             <MonacoWrapper
               language={selectedLang}
               value={code}
@@ -681,7 +721,9 @@ export default function Compiler() {
           </div>
 
           {/* Console Area Panel */}
-          <div className="h-56 bg-surface-secondary border-t border-surface-border flex flex-col overflow-hidden">
+          <div className={`bg-surface-secondary border-t border-surface-border flex flex-col overflow-hidden ${
+            mobileWorkspaceTab === 'console' ? 'flex-1' : 'h-56'
+          }`}>
             <div className="bg-surface px-4 border-b border-surface-border flex gap-2">
               <button
                 onClick={() => setConsoleTab('output')}

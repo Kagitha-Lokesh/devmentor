@@ -1,0 +1,49 @@
+[
+  {
+    "id": "two-sum",
+    "slug": "two-sum",
+    "title": "Two Sum Using HashMap",
+    "difficulty": {
+      "level": 2,
+      "label": "Easy",
+      "color": "green"
+    },
+    "topic": "Arrays",
+    "subtopic": "Hash Mapping",
+    "estimatedMinutes": 20,
+    "companies": [
+      "Amazon",
+      "Google",
+      "Meta"
+    ],
+    "patterns": [
+      "Two Pointers",
+      "Hashing"
+    ],
+    "timeComplexity": "O(N)",
+    "spaceComplexity": "O(N)",
+    "prerequisites": [
+      "V1-C1-T1"
+    ],
+    "related": [],
+    "next": [],
+    "interviewImportance": 5,
+    "paths": {
+      "problem": "problems/arrays/two-sum/problem.md",
+      "tests": "problems/arrays/two-sum/sample-tests.json",
+      "hints": "problems/arrays/two-sum/hints.json",
+      "starter": [
+        {
+          "filename": "java.java",
+          "language": "java",
+          "path": "problems/arrays/two-sum/starter/java.java"
+        },
+        {
+          "filename": "javascript.js",
+          "language": "javascript",
+          "path": "problems/arrays/two-sum/starter/javascript.js"
+        }
+      ]
+    }
+  }
+]

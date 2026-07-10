@@ -25,4 +25,6 @@ export const useDownloadsStore = create((set) => ({
         : [{ ...asset, downloadedAt: new Date() }, ...state.downloadedAssets]
     }));
   },
+
+  reset: () => set({ assets: [], downloadedAssets: [], isLoading: false }),
 }));

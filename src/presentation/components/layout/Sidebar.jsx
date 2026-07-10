@@ -154,7 +154,7 @@ export default function Sidebar({ isOpen, toggleSidebar, onOpenCommandPalette })
             <button
               onClick={toggleSidebar}
               aria-label="Close sidebar"
-              className="p-2 rounded-lg hover:bg-surface-tertiary text-text/60 hover:text-text transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
+              className="lg:hidden p-2 rounded-lg hover:bg-surface-tertiary text-text/60 hover:text-text transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <X className="h-5 w-5" />
             </button>
