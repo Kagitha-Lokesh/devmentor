@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,6 +13,40 @@ export default function Login() {
   const [authError, setAuthError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('demo') === 'true') {
+      const autoLogin = async () => {
+        setLoading(true);
+        setAuthError(null);
+        clearError();
+        try {
+          await signIn('demo@javamentor.com', 'demopass123');
+          navigate('/');
+        } catch (err) {
+          setAuthError(err.message || 'Auto-login failed. Please try signing in manually.');
+        } finally {
+          setLoading(false);
+        }
+      };
+      autoLogin();
+    }
+  }, [signIn, navigate, clearError]);
+
+  const handleGuestLogin = async () => {
+    setLoading(true);
+    setAuthError(null);
+    clearError();
+    try {
+      await signIn('demo@javamentor.com', 'demopass123');
+      navigate('/');
+    } catch (err) {
+      setAuthError(err.message || 'Demo login failed. Please try signing in manually.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),
@@ -136,6 +170,25 @@ export default function Login() {
             )}
           </button>
         </form>
+
+        <div className="relative my-6">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t border-default" />
+          </div>
+          <div className="relative flex justify-center text-xs uppercase">
+            <span className="bg-surface px-3 text-muted">Or try without account</span>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleGuestLogin}
+          disabled={loading}
+          className="w-full btn-secondary py-3 flex items-center justify-center gap-2 border border-default rounded-xl hover:bg-surface-secondary hover:text-primary hover:translate-y-[-1px] active:translate-y-[1px] transition-all"
+        >
+          <Sparkles className="h-4 w-4 text-brand-400" />
+          <span className="font-semibold">Explore as Guest (Demo)</span>
+        </button>
 
         {/* 
         <div className="relative my-8">
