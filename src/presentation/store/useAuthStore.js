@@ -10,14 +10,15 @@ const authUseCase = new AuthUseCase();
 export const useAuthStore = create((set, get) => ({
   user: null,
   isLoading: true,
+  isInitializing: true,
   error: null,
 
-  setUser: (user) => set({ user, isLoading: false, error: null }),
+  setUser: (user) => set({ user, isLoading: false, isInitializing: false, error: null }),
   setLoading: (isLoading) => set({ isLoading }),
-  setError: (error) => set({ error, isLoading: false }),
+  setError: (error) => set({ error, isLoading: false, isInitializing: false }),
 
   init: () => {
-    set({ isLoading: true });
+    set({ isLoading: true, isInitializing: true });
     // Initialize cross-tab sync context
     authSyncManager.initialize();
 
@@ -27,10 +28,10 @@ export const useAuthStore = create((set, get) => ({
           syncQueue.setUid(authUser.uid);
           // Fetch student profile subdocuments
           await useUserStore.getState().fetchUserProfile(authUser.uid, authUser.email, authUser.displayName);
-          set({ user: authUser, isLoading: false, error: null });
+          set({ user: authUser, isLoading: false, isInitializing: false, error: null });
         } catch {
           // Allow authentication to succeed even if profile fetching fails temporarily
-          set({ user: authUser, isLoading: false, error: null });
+          set({ user: authUser, isLoading: false, isInitializing: false, error: null });
         }
       } else {
         const currentUser = get().user;
@@ -39,7 +40,7 @@ export const useAuthStore = create((set, get) => ({
         } else {
           useUserStore.getState().clearProfile();
         }
-        set({ user: null, isLoading: false, error: null });
+        set({ user: null, isLoading: false, isInitializing: false, error: null });
       }
     });
   },

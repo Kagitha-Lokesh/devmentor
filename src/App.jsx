@@ -73,9 +73,9 @@ function LoadingFallback() {
 
 // Router guards
 function ProtectedRoute({ children }) {
-  const { user, isLoading } = useAuthStore();
+  const { user, isInitializing } = useAuthStore();
 
-  if (isLoading) {
+  if (isInitializing) {
     return <LoadingFallback />;
   }
 
@@ -87,9 +87,9 @@ function ProtectedRoute({ children }) {
 }
 
 function PublicRoute({ children }) {
-  const { user, isLoading } = useAuthStore();
+  const { user, isInitializing } = useAuthStore();
 
-  if (isLoading) {
+  if (isInitializing) {
     return <LoadingFallback />;
   }
 
@@ -102,9 +102,9 @@ function PublicRoute({ children }) {
 }
 
 function EmailVerificationRoute() {
-  const { user, isLoading } = useAuthStore();
+  const { user, isInitializing } = useAuthStore();
 
-  if (isLoading) {
+  if (isInitializing) {
     return <LoadingFallback />;
   }
 

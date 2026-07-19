@@ -13,14 +13,43 @@ export class AuthUseCase {
   async signIn(email, password) {
     this.logger.info(`Attempting signIn for: ${email}`);
     try {
-      const authUser = await this.authService.signIn(email, password);
+      let authUser;
+      try {
+        authUser = await this.authService.signIn(email, password);
+      } catch (err) {
+        // Self-heal/auto-register the demo user if missing from Firebase Auth
+        if (email === 'demo@javamentor.com' && password === 'demopass123') {
+          this.logger.info('Demo user login failed. Attempting to register demo user...');
+          const registerResult = await this.signUp(email, password);
+          if (registerResult.isSuccess) {
+            return registerResult;
+          }
+        }
+        throw err;
+      }
       
-      // Update last login timestamp in Firestore
-      await this.userRepository.updateUser(authUser.uid, {
-        lastLogin: new Date().toISOString()
-      });
+      let user = await this.userRepository.getUser(authUser.uid);
+      if (!user) {
+        this.logger.info(`Firestore user document not found for active auth user ${authUser.uid}. Creating one...`);
+        user = new User({
+          uid: authUser.uid,
+          email: authUser.email,
+          displayName: authUser.displayName,
+          createdAt: new Date().toISOString(),
+          lastLogin: new Date().toISOString(),
+          settings: {},
+          progress: {},
+          preferences: {}
+        });
+        await this.userRepository.createUser(user);
+      } else {
+        await this.userRepository.updateUser(authUser.uid, {
+          lastLogin: new Date().toISOString()
+        });
+        // Update local object to reflect the change
+        user.lastLogin = new Date().toISOString();
+      }
 
-      const user = await this.userRepository.getUser(authUser.uid);
       await this.analytics.logEvent('login', { method: 'email', userId: authUser.uid });
       return Result.success(user);
     } catch (err) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,20 +9,28 @@ import { LogIn, Mail, Lock, ShieldAlert, Sparkles } from 'lucide-react';
 import { FormInput } from '../../components/common/FormInput';
 
 export default function Login() {
-  const { signIn, signInWithGoogle, signInWithGithub, error, clearError } = useAuthStore();
+  const { signIn, signUp, signInWithGoogle, signInWithGithub, error, clearError } = useAuthStore();
   const [authError, setAuthError] = useState(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const hasAttemptedAutoLogin = useRef(false);
 
   useEffect(() => {
     const searchParams = new URLSearchParams(window.location.search);
-    if (searchParams.get('demo') === 'true') {
+    if (searchParams.get('demo') === 'true' && !hasAttemptedAutoLogin.current) {
+      hasAttemptedAutoLogin.current = true;
+      // Immediately remove the demo flag from URL query params to prevent auto-login retry loops
+      navigate('/login', { replace: true });
+
       const autoLogin = async () => {
         setLoading(true);
         setAuthError(null);
         clearError();
         try {
-          await signIn('demo@javamentor.com', 'demopass123');
+          const uniqueId = `${Date.now()}_${Math.floor(1000 + Math.random() * 9000)}`;
+          const email = `guest_${uniqueId}@javamentor.com`;
+          const password = `guestpass_${uniqueId}`;
+          await signUp(email, password);
           navigate('/');
         } catch (err) {
           setAuthError(err.message || 'Auto-login failed. Please try signing in manually.');
@@ -32,14 +40,17 @@ export default function Login() {
       };
       autoLogin();
     }
-  }, [signIn, navigate, clearError]);
+  }, [signUp, navigate, clearError]);
 
   const handleGuestLogin = async () => {
     setLoading(true);
     setAuthError(null);
     clearError();
     try {
-      await signIn('demo@javamentor.com', 'demopass123');
+      const uniqueId = `${Date.now()}_${Math.floor(1000 + Math.random() * 9000)}`;
+      const email = `guest_${uniqueId}@javamentor.com`;
+      const password = `guestpass_${uniqueId}`;
+      await signUp(email, password);
       navigate('/');
     } catch (err) {
       setAuthError(err.message || 'Demo login failed. Please try signing in manually.');
