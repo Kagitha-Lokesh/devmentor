@@ -112,6 +112,8 @@ export class FirestoreProgressRepository extends IProgressRepository {
       
       const list = [];
       querySnapshot.forEach((docSnap) => {
+        // Skip sentinel/metadata documents (e.g. _general) that have no topicId
+        if (docSnap.id.startsWith('_') || !docSnap.data().topicId) return;
         const data = docSnap.data();
         const progress = new Progress({
           ...data,

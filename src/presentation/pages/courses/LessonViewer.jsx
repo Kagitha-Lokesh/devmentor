@@ -29,6 +29,7 @@ import { GuidedFlowStepper } from '../../components/course/GuidedFlowStepper';
 import { ContinueButton } from '../../components/course/ContinueButton';
 import { TopicCompletionModal } from '../../components/course/TopicCompletionModal';
 import { CurriculumNavigator } from '../../components/course/CurriculumNavigator';
+import { InlineCodeEditor } from '../../components/common/InlineCodeEditor';
 
 const courseUseCase = new CourseUseCase();
 const contentLoaderUseCase = new ContentLoaderUseCase();
@@ -460,33 +461,69 @@ export default function LessonViewer() {
                 </article>
               )}
 
-              {/* TAB 2: Practice (Examples + Inline Compiler hint) */}
-              {activeTab === 'examples' && (
-                <div className="space-y-6">
-                  <article className="prose max-w-none">
-                    {lesson.examplesContent ? (
-                      <MarkdownRenderer content={lesson.examplesContent} />
-                    ) : (
-                      <p className="text-text/50 italic">No code examples found for this topic.</p>
-                    )}
-                  </article>
+              {/* TAB 2: Practice — Editor first, examples below */}
+              {activeTab === 'examples' && (() => {
+                const codeBlockMatch = lesson.examplesContent
+                  ? lesson.examplesContent.match(/```(?:java|javascript)?\n([\s\S]*?)```/)
+                  : null;
+                const extractedCode = codeBlockMatch ? codeBlockMatch[1].trim() : '';
+                const detectedLang = lesson.examplesContent?.includes('```javascript') ? 'javascript' : 'java';
 
-                  {/* Open in Compiler CTA */}
-                  <div className="flex items-center gap-3 p-4 bg-brand-500/5 border border-brand-500/20 rounded-xl">
-                    <Code className="h-5 w-5 text-brand-500 flex-shrink-0" />
-                    <div className="flex-1">
-                      <p className="text-sm font-bold text-text">Ready to practice?</p>
-                      <p className="text-xs text-text/50">Open the full compiler with this topic's problems.</p>
+                return (
+                  <div className="space-y-5">
+                    {/* ── Hero: Inline Code Sandbox (first thing visible) ── */}
+                    <div>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <Code className="h-4 w-4 text-brand-500" />
+                          <h3 className="font-bold text-text text-sm">Try It Yourself</h3>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-[11px] text-text/40">
+                          <kbd className="px-1.5 py-0.5 bg-surface-secondary border border-surface-border rounded font-mono">Ctrl+Enter</kbd>
+                          <span>to run</span>
+                        </div>
+                      </div>
+                      <InlineCodeEditor
+                        defaultCode={extractedCode}
+                        defaultLang={detectedLang}
+                        height={260}
+                      />
                     </div>
-                    <button
-                      onClick={() => navigate('/compiler')}
-                      className="btn-primary py-2 px-4 text-xs whitespace-nowrap"
-                    >
-                      Open Compiler →
-                    </button>
+
+                    {/* ── Collapsible: Full code examples & theory ── */}
+                    {lesson.examplesContent && (
+                      <details className="group border border-surface-border rounded-xl overflow-hidden">
+                        <summary className="flex items-center justify-between px-4 py-3 bg-surface-secondary cursor-pointer hover:bg-surface-tertiary transition-colors list-none">
+                          <div className="flex items-center gap-2">
+                            <BookOpen className="h-4 w-4 text-text/40" />
+                            <span className="text-sm font-semibold text-text">View Full Examples & Explanations</span>
+                          </div>
+                          <ChevronRight className="h-4 w-4 text-text/40 transition-transform group-open:rotate-90" />
+                        </summary>
+                        <article className="prose max-w-none px-6 py-5 border-t border-surface-border">
+                          <MarkdownRenderer content={lesson.examplesContent} />
+                        </article>
+                      </details>
+                    )}
+
+                    {/* ── Open full Compiler CTA ── */}
+                    <div className="flex items-center gap-3 p-4 bg-brand-500/5 border border-brand-500/20 rounded-xl">
+                      <Code className="h-5 w-5 text-brand-500 flex-shrink-0" />
+                      <div className="flex-1">
+                        <p className="text-sm font-bold text-text">Need structured practice problems?</p>
+                        <p className="text-xs text-text/50">Open the full compiler with curated problems for this topic.</p>
+                      </div>
+                      <button
+                        onClick={() => navigate('/compiler')}
+                        className="btn-primary py-2 px-4 text-xs whitespace-nowrap"
+                      >
+                        Open Compiler →
+                      </button>
+                    </div>
                   </div>
-                </div>
-              )}
+                );
+              })()}
+
 
               {/* TAB 3: Quick Revision */}
               {activeTab === 'revision' && (

@@ -9,6 +9,7 @@ import { LocalMetadataRepository } from '../repository/LocalMetadataRepository';
 import { StaticProblemRepository } from '../repository/StaticProblemRepository';
 import { FirestoreSubmissionRepository } from '../repository/FirestoreSubmissionRepository';
 import { PistonExecutionProvider } from '../execution/PistonExecutionProvider';
+import { Judge0ExecutionProvider } from '../execution/Judge0ExecutionProvider';
 import { IEvaluationService } from '../../domain/evaluation/IEvaluationService';
 import { StaticKnowledgeGraphRepository } from '../repository/StaticKnowledgeGraphRepository';
 import { StaticCurriculumRepository } from '../repository/StaticCurriculumRepository';
@@ -99,7 +100,12 @@ class Container {
     const submissionRepository = new FirestoreSubmissionRepository();
     this.services.set('ISubmissionRepository', submissionRepository);
 
-    const executionProvider = new PistonExecutionProvider();
+    // Judge0 CE is the default since the Piston public API was shut down (Feb 2026).
+    // To use self-hosted Piston, set VITE_COMPILER_PROVIDER=piston in .env.local.
+    const compilerProvider = import.meta.env.VITE_COMPILER_PROVIDER;
+    const executionProvider = compilerProvider === 'piston'
+      ? new PistonExecutionProvider()
+      : new Judge0ExecutionProvider();
     this.services.set('IExecutionProvider', executionProvider);
 
     const evaluationService = new IEvaluationService();

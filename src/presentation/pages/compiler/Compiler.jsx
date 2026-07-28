@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   Play, 
@@ -81,6 +81,77 @@ export default function Compiler() {
 
   // Responsive Mobile Workspace View Tab
   const [mobileWorkspaceTab, setMobileWorkspaceTab] = useState('description');
+
+  // Console resize state
+  const consoleRef = useRef(null);
+  const [inputPct, setInputPct] = useState(40);  // % width of Input panel
+  const [isDragging, setIsDragging] = useState(false);
+  const [showInput, setShowInput] = useState(true);
+
+  // Detect if code reads from stdin — if not, hide Input panel automatically
+  const codeNeedsStdin = useMemo(() => {
+    if (selectedLang === 'java') return /System\.in|BufferedReader|Scanner/.test(code);
+    if (selectedLang === 'javascript') return /readline|process\.stdin/.test(code);
+    return false;
+  }, [code, selectedLang]);
+
+  // Sync showInput with detection (but let user override manually)
+  useEffect(() => {
+    setShowInput(codeNeedsStdin);
+  }, [codeNeedsStdin]);
+
+  // Draggable divider logic (horizontal split within console)
+  const handleDividerMouseDown = useCallback((e) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isDragging) return;
+    const onMove = (e) => {
+      const el = consoleRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const pct = ((e.clientX - rect.left) / rect.width) * 100;
+      setInputPct(Math.max(15, Math.min(75, pct)));
+    };
+    const onUp = () => setIsDragging(false);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+  }, [isDragging]);
+
+  // Console HEIGHT resize
+  const rightColRef = useRef(null);
+  const [consoleHeight, setConsoleHeight] = useState(192); // px, default h-48
+  const [isHeightDragging, setIsHeightDragging] = useState(false);
+
+  const handleHeightDividerMouseDown = useCallback((e) => {
+    e.preventDefault();
+    setIsHeightDragging(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isHeightDragging) return;
+    const onMove = (e) => {
+      const el = rightColRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      // Distance from bottom of column to mouse = new console height
+      const newH = rect.bottom - e.clientY;
+      setConsoleHeight(Math.max(80, Math.min(rect.height * 0.65, newH)));
+    };
+    const onUp = () => setIsHeightDragging(false);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    return () => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+    };
+  }, [isHeightDragging]);
 
   // Listen to network status
   useEffect(() => {
@@ -261,10 +332,13 @@ export default function Compiler() {
 
   // Helper to load standard language specifications resolved from providers
   const getLanguageProvider = (lang) => {
+    const judge0Ids = { java: 62, javascript: 63, sql: 82 };
     return {
+      getLanguageId: () => lang,
       getPistonLanguageName: () => lang === 'javascript' ? 'javascript' : 'java',
       getPistonVersion: () => lang === 'javascript' ? '18.15.0' : '15.0.2',
-      getStarterFileName: () => lang === 'javascript' ? 'solution.js' : 'Solution.java'
+      getStarterFileName: () => lang === 'javascript' ? 'solution.js' : 'Solution.java',
+      getJudge0LanguageId: () => judge0Ids[lang] ?? null,
     };
   };
 
@@ -670,9 +744,12 @@ export default function Compiler() {
         </div>
 
         {/* RIGHT COLUMN: Monaco editor + Output consoles */}
-        <div className={`bg-surface flex flex-col overflow-hidden border-r border-surface-border ${
-          mobileWorkspaceTab === 'editor' || mobileWorkspaceTab === 'console' ? 'flex' : 'hidden xl:flex'
-        }`}>
+        <div
+          ref={rightColRef}
+          className={`bg-surface flex flex-col overflow-hidden border-r border-surface-border ${
+            mobileWorkspaceTab === 'editor' || mobileWorkspaceTab === 'console' ? 'flex' : 'hidden xl:flex'
+          } ${isHeightDragging ? 'cursor-row-resize select-none' : ''}`}
+        >
           {/* Workspace Actions toolbar */}
           <div className="bg-surface-secondary px-4 py-2 border-b border-surface-border flex justify-between items-center">
             <span className="text-xs font-bold text-text/40 uppercase tracking-wider">Workspace Editor</span>
@@ -707,7 +784,7 @@ export default function Compiler() {
           </div>
 
           {/* Monaco Editor wrapped container */}
-          <div className={`flex-1 min-h-[250px] relative ${mobileWorkspaceTab === 'console' ? 'hidden sm:block' : ''}`}>
+          <div className={`flex-1 min-h-0 overflow-hidden relative ${mobileWorkspaceTab === 'console' ? 'hidden sm:block' : ''}`}>
             <MonacoWrapper
               language={selectedLang}
               value={code}
@@ -720,141 +797,121 @@ export default function Compiler() {
             />
           </div>
 
-          {/* Console Area Panel */}
-          <div className={`bg-surface-secondary border-t border-surface-border flex flex-col overflow-hidden ${
-            mobileWorkspaceTab === 'console' ? 'flex-1' : 'h-56'
-          }`}>
-            <div className="bg-surface px-4 border-b border-surface-border flex gap-2">
-              <button
-                onClick={() => setConsoleTab('output')}
-                className={`py-3 px-3 text-xs font-bold uppercase border-b-2 transition-colors cursor-pointer ${
-                  consoleTab === 'output' ? 'border-brand-500 text-brand-600 dark:text-brand-300' : 'border-transparent text-text/40 hover:text-text'
-                }`}
-              >
-                Console Output
-              </button>
-              
-              <button
-                onClick={() => setConsoleTab('stdin')}
-                className={`py-3 px-3 text-xs font-bold uppercase border-b-2 transition-colors cursor-pointer ${
-                  consoleTab === 'stdin' ? 'border-brand-500 text-brand-600 dark:text-brand-300' : 'border-transparent text-text/40 hover:text-text'
-                }`}
-              >
-                Custom Stdin
-              </button>
+          {/* Horizontal height-resize grip */}
+          {mobileWorkspaceTab !== 'console' && (
+            <div
+              onMouseDown={handleHeightDividerMouseDown}
+              className="h-1.5 shrink-0 bg-zinc-800 hover:bg-brand-500/50 active:bg-brand-500 cursor-row-resize transition-colors flex items-center justify-center group"
+              title="Drag to resize console height"
+            >
+              <div className="w-8 h-0.5 rounded-full bg-zinc-600 group-hover:bg-brand-400 transition-colors" />
+            </div>
+          )}
 
-              {sampleTests.length > 0 && (
-                <button
-                  onClick={() => setConsoleTab('tests')}
-                  className={`py-3 px-3 text-xs font-bold uppercase border-b-2 transition-colors cursor-pointer ${
-                    consoleTab === 'tests' ? 'border-brand-500 text-brand-600 dark:text-brand-300' : 'border-transparent text-text/40 hover:text-text'
-                  }`}
-                >
-                  Test Results ({testCaseResults.filter(r => r.passed).length}/{sampleTests.length})
-                </button>
+          {/* Console — Programiz-style with resize + smart Input visibility */}
+          <div
+            ref={consoleRef}
+            className={`flex flex-col border-t border-zinc-800 shrink-0 select-none ${
+              isDragging || isHeightDragging ? 'cursor-col-resize' : ''
+            }`}
+            style={mobileWorkspaceTab === 'console' ? { flex: 1 } : { height: `${consoleHeight}px` }}
+          >
+            {/* Header bar */}
+            <div className="flex items-center gap-2 px-3 py-1 bg-zinc-900 border-b border-zinc-800 shrink-0">
+              {/* Toggle Input panel button */}
+              <button
+                onClick={() => setShowInput(v => !v)}
+                title={showInput ? 'Hide Input' : 'Show Input'}
+                className={`text-[10px] font-semibold px-2 py-0.5 rounded border transition-colors cursor-pointer ${
+                  showInput
+                    ? 'bg-brand-600/20 border-brand-500/40 text-brand-400 hover:bg-brand-600/30'
+                    : 'bg-zinc-800 border-zinc-700 text-zinc-500 hover:text-zinc-300'
+                }`}
+              >
+                {showInput ? '▶ Input' : '+ Input'}
+              </button>
+              {!codeNeedsStdin && showInput && (
+                <span className="text-[10px] text-zinc-600">code doesn't read stdin</span>
               )}
+              <div className="ml-auto flex items-center gap-3">
+                {metrics && (
+                  <span className="text-[10px] text-zinc-600 font-mono">{metrics.runtime}ms</span>
+                )}
+              </div>
             </div>
 
-            {/* Scrollable console terminal wrapper */}
-            <div className="flex-1 p-4 bg-surface text-primary font-mono text-xs overflow-y-auto leading-relaxed">
-              {consoleTab === 'output' && (
-                isExecuting ? (
-                  <div className="flex items-center gap-2 text-muted">
-                    <span className="h-3.5 w-3.5 border-2 border-default border-t-brand-500 rounded-full animate-spin" />
-                    Executing code in Piston API Sandbox...
+            {/* Panels row */}
+            <div className="flex flex-1 min-h-0">
+
+              {/* LEFT: Input (conditional) */}
+              {showInput && (
+                <>
+                  <div className="flex flex-col min-w-0 border-r border-zinc-800" style={{ width: `${inputPct}%` }}>
+                    <div className="flex items-center justify-between px-3 py-1 bg-zinc-900/60 border-b border-zinc-800 shrink-0">
+                      <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Input</span>
+                      {stdin && (
+                        <button onClick={() => setStdin('')} className="text-[10px] text-zinc-600 hover:text-zinc-400 cursor-pointer">clear</button>
+                      )}
+                    </div>
+                    <textarea
+                      value={stdin}
+                      onChange={(e) => setStdin(e.target.value)}
+                      placeholder={"2,7,11,15\n9"}
+                      spellCheck={false}
+                      className="flex-1 w-full bg-zinc-950 text-zinc-200 font-mono text-xs px-3 py-2 resize-none outline-none placeholder:text-zinc-700 border-none"
+                    />
                   </div>
-                ) : compileOutput || stdout || stderr ? (
-                  <div className="space-y-3">
-                    {compileOutput && (
-                      <div className="border-b border-default pb-2">
-                        <span className="text-red-400 font-semibold block uppercase text-[10px] tracking-wider mb-1">Compilation Log</span>
-                        <pre className="whitespace-pre-wrap text-red-300">{compileOutput}</pre>
-                      </div>
-                    )}
-                    {stdout && (
-                      <div>
-                        <span className="text-muted font-semibold block uppercase text-[10px] tracking-wider mb-1">Standard Output</span>
-                        <pre className="whitespace-pre-wrap">{stdout}</pre>
-                      </div>
-                    )}
-                    {stderr && (
-                      <div>
-                        <span className="text-amber-400 font-semibold block uppercase text-[10px] tracking-wider mb-1">Standard Error</span>
-                        <pre className="whitespace-pre-wrap text-amber-300">{stderr}</pre>
-                      </div>
-                    )}
-                    {metrics && (
-                      <div className="pt-2 border-t border-default text-[10px] text-muted flex gap-4">
-                        <span>Runtime: {metrics.runtime}ms</span>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <span className="text-secondary">No console outputs. Trigger run to execute code.</span>
-                )
+
+                  {/* Draggable Divider */}
+                  <div
+                    onMouseDown={handleDividerMouseDown}
+                    className="w-1 bg-zinc-800 hover:bg-brand-500/60 active:bg-brand-500 cursor-col-resize shrink-0 transition-colors"
+                  />
+                </>
               )}
 
-              {consoleTab === 'stdin' && (
-                <textarea
-                  value={stdin}
-                  onChange={(e) => setStdin(e.target.value)}
-                  placeholder="Type inputs here to feed into standard stdin..."
-                  className="w-full h-full bg-transparent border-none outline-none resize-none text-primary placeholder:text-secondary focus:ring-0 font-mono text-xs"
-                />
-              )}
+              {/* RIGHT: Output */}
+              <div className="flex flex-col min-w-0 flex-1">
+                <div className="flex items-center justify-between px-3 py-1 bg-zinc-900/60 border-b border-zinc-800 shrink-0">
+                  <span className="text-[10px] font-semibold text-zinc-400 uppercase tracking-wider">Output</span>
+                </div>
+                <div className="flex-1 bg-zinc-950 text-zinc-100 font-mono text-xs px-3 py-2 overflow-y-auto">
+                  {isExecuting ? (
+                    <div className="flex items-center gap-2 text-zinc-500">
+                      <span className="h-3 w-3 border-2 border-zinc-700 border-t-brand-400 rounded-full animate-spin" />
+                      Running...
+                    </div>
+                  ) : compileOutput ? (
+                    <pre className="whitespace-pre-wrap text-red-400">{compileOutput}</pre>
+                  ) : stdout ? (
+                    <pre className="whitespace-pre-wrap text-zinc-100">{stdout}</pre>
+                  ) : stderr ? (
+                    <pre className="whitespace-pre-wrap text-amber-300">{stderr}</pre>
+                  ) : testCaseResults.length > 0 ? (
+                    <div className="space-y-2">
+                      {derivedVerdict && (
+                        <div className={`text-[11px] font-bold mb-2 ${derivedVerdict === Verdict.Accepted ? 'text-green-400' : 'text-red-400'}`}>
+                          {derivedVerdict === Verdict.Accepted ? '✅ All tests passed' : '❌ Some tests failed'}
+                        </div>
+                      )}
+                      {testCaseResults.map((res) => (
+                        <div key={res.id} className={`border-l-2 pl-2 text-[11px] ${res.passed ? 'border-green-600' : 'border-red-600'}`}>
+                          <div className="font-semibold text-zinc-300">{res.name} {res.passed ? '✓' : '✗'}</div>
+                          {!res.passed && (
+                            <>
+                              <div className="text-zinc-600">Expected: <span className="text-zinc-400">{res.expected}</span></div>
+                              <div className="text-zinc-600">Got: <span className="text-red-400">{res.actual}</span></div>
+                            </>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="text-zinc-700">Output will appear here</span>
+                  )}
+                </div>
+              </div>
 
-              {consoleTab === 'tests' && (
-                isExecuting ? (
-                  <div className="flex items-center gap-2 text-muted">
-                    <span className="h-3.5 w-3.5 border-2 border-default border-t-brand-500 rounded-full animate-spin" />
-                    Evaluating solution against test assertions...
-                  </div>
-                ) : testCaseResults.length > 0 ? (
-                  <div className="space-y-4">
-                    {/* Final Verdict Summary */}
-                    {derivedVerdict && (
-                      <div className={`p-3 rounded-lg border text-xs font-bold ${
-                        derivedVerdict === Verdict.Accepted 
-                          ? 'bg-green-950/40 border-green-800 text-green-400' 
-                          : 'bg-red-950/40 border-red-800 text-red-400'
-                      }`}>
-                        Practice Check Verdict: {derivedVerdict === Verdict.Accepted ? 'Accepted ✅ (All sample tests passed)' : 'Wrong Answer ❌ (Failing test cases)'}
-                      </div>
-                    )}
-                    
-                    {testCaseResults.map((res) => (
-                      <div key={res.id} className="border border-default p-3 rounded-lg space-y-2 bg-surface/30">
-                        <div className="flex justify-between items-center">
-                          <span className="font-bold text-primary">{res.name}</span>
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${
-                            res.passed ? 'bg-green-950/50 text-green-400' : 'bg-red-950/50 text-red-400'
-                          }`}>
-                            {res.passed ? 'Passed' : 'Failed'}
-                          </span>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 pt-1.5 text-[10px]">
-                          <div>
-                            <span className="text-muted block">Input:</span>
-                            <span className="text-primary whitespace-pre">{res.input}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted block">Expected:</span>
-                            <span className="text-primary whitespace-pre">{res.expected}</span>
-                          </div>
-                          <div>
-                            <span className="text-muted block">Actual:</span>
-                            <span className={`whitespace-pre ${res.passed ? 'text-primary' : 'text-red-400'}`}>
-                              {res.actual}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <span className="text-secondary">No test results. Trigger Practice Check to verify correctness.</span>
-                )
-              )}
             </div>
           </div>
 

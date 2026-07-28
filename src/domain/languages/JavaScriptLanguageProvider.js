@@ -13,6 +13,10 @@ export class JavaScriptLanguageProvider extends ILanguageProvider {
     return '18.15.0'; // Standard execution version in Piston Sandbox
   }
 
+  getJudge0LanguageId() {
+    return 63; // JavaScript (Node.js 12.14.0) in Judge0 CE
+  }
+
   getStarterFileName() {
     return 'solution.js';
   }

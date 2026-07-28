@@ -13,6 +13,10 @@ export class SQLLanguageProvider extends ILanguageProvider {
     return '3.36.0';
   }
 
+  getJudge0LanguageId() {
+    return 82; // SQL (SQLite 3.27.2) in Judge0 CE
+  }
+
   getStarterFileName() {
     return 'query.sql';
   }
